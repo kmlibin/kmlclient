@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 //images
 
@@ -11,13 +11,14 @@ import { gsap } from "gsap";
 import { MotionPathPlugin } from "gsap/MotionPathPlugin";
 
 const ContactImages = () => {
+  const [isOrbiting, setIsOrbiting] = useState(false);
   gsap.registerPlugin(MotionPathPlugin);
   useEffect(() => {
     const animateElement = document.querySelector("#kelli-image");
 
     gsap.fromTo(
       animateElement,
-      { opacity: 0, x: "-50vw" },
+      { opacity: 0, x: "-10vw" },
       {
         opacity: 1,
         duration: 6,
@@ -32,46 +33,60 @@ const ContactImages = () => {
         ease: "power1.inOut",
       }
     );
-  },
-   []);
+  }, []);
 
-     // Click handler for orbit animation
+  // Click handler for orbit animation
   const handleOrbitClick = () => {
-    gsap.to("#kelli-image", {
-      duration: 5,
-      motionPath: {
-        path: [
-          { x: -100, y: -150 }, // Top left
-          { x: 100, y: -100 }, // Top right
-          { x: 150, y: 100 }, // Bottom right
-          { x: -150, y: 50 }, // Bottom left
-          { x: 0, y: 0 }, // Back to resting position
-        ],
-        curviness: 2,
-      },
-      ease: "power1.inOut",
-      autoRotate: true, // Auto-rotate image during orbit
-    });
+    const animateElement = document.querySelector("#kelli-image");
+    if (isOrbiting) {
+      // stop animation if it's already orbiting
+      gsap.killTweensOf(animateElement);
+      setIsOrbiting(false);
+      gsap.to(animateElement, {
+        duration: 0,
+        //resets to resting position
+        motionPath: {
+          path: [{ x: 0, y: 0 }], // Reset position to final resting position
+          curviness: 0,
+        },
+      });
+    } else {
+      //start orbit
+      gsap.to(animateElement, {
+        duration: 3,
+        motionPath: {
+          path: [
+            { x: 5, y: 5 }, // bottom right
+            { x: -3, y: 3 }, // bottom left
+
+            { x: 0, y: 0 }, // rest position
+          ],
+          curviness: 2,
+        },
+        ease: "power1.inOut",
+        autoRotate: true,
+        repeat: -1, //perpetual motion
+      });
+      setIsOrbiting(true);
+    }
   };
 
+  //   const handleClick = () => {
+  //     const animateElement = document.querySelector("#kelli-image");
 
-
-//   const handleClick = () => {
-//     const animateElement = document.querySelector("#kelli-image");
-
-//     gsap.to(animateElement, {
-//       x: "100vw", // Move to the far right of the screen
-//       y: "-50vh", // Move up
-//       scale: 0.5, // Shrink the image to simulate zooming out
-//       rotation: 360, // Rotate as it moves
-//       duration: 2,
-//       ease: "power4.inOut",
-//     //   onComplete: () => {
-//     //     // Optional: After the animation completes, you could bring the image back
-//     //     gsap.to(animateElement, { x: "0", y: "0", scale: 1, duration: 1 });
-//     //   },
-//     });
-//   };
+  //     gsap.to(animateElement, {
+  //       x: "100vw", // Move to the far right of the screen
+  //       y: "-50vh", // Move up
+  //       scale: 0.5, // Shrink the image to simulate zooming out
+  //       rotation: 360, // Rotate as it moves
+  //       duration: 2,
+  //       ease: "power4.inOut",
+  //     //   onComplete: () => {
+  //     //     // Optional: After the animation completes, you could bring the image back
+  //     //     gsap.to(animateElement, { x: "0", y: "0", scale: 1, duration: 1 });
+  //     //   },
+  //     });
+  //   };
   return (
     <div className="fixed -bottom-[125%] my-9 right-0 z-10 flex -translate-y-1/2 flex-col min-h-[100vh]">
       <div className="relative h-full w-[200px]">
