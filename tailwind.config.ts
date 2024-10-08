@@ -9,8 +9,14 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        brightOrange: "#e15c3a",
+        customIndigo: "rgb(17, 17, 103)",
+        customGold: "#fec246",
+        customBlue: "#057ee6",
+        lightGrey: "rgb(243, 243, 243)",
+      },
+      boxShadow: {
+        customGray: "0 0 50px rgba(60, 60, 60, 1)",
       },
     },
   },
