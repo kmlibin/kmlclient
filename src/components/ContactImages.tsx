@@ -66,13 +66,13 @@ const ParticleExplosion = ({ id }: ParticleProps) => {
           y: 75, // Emitter position (near bottom) move to 95 to be more at bottom, moved up so under space ship
         },
         rate: {
-          quantity: 75, // Emit amount of particles at a time
-          delay: 0.4, //delay between emissions
-        },
+          quantity: 800, // Emit amount of particles at a time
+          delay: 1000, //delay between emissions
+        }
       },
       particles: {
         color: {
-          value: ["#1E00FF", "#FF0061", "#E1FF00", "#00FF9E"], // Set particle colors
+          value: ["#e15c3a", "#fec246", "rgb(98, 211, 228)", "#057ee6"], // Set particle colors
         },
         move: {
           decay: 0.05, // Slow down particle speed over time
@@ -80,16 +80,16 @@ const ParticleExplosion = ({ id }: ParticleProps) => {
           enable: true, // Enable particle movement
           gravity: {
             enable: true, // Enable gravity effect on particles
-            acceleration: .3,
+            acceleration: 0.3,
           },
           outModes: {
             top: "none", // Particles don't disappear at the top
             default: "destroy", // Particles are destroyed when they move out of bounds
           },
-          speed: { min: 40, max: 100 },
+          speed: { min: 0, max: 65 },
         },
         number: {
-          value: 0, // Initial particle number
+          value: 50, // Initial particle number
         },
         opacity: {
           value: 1, // Full opacity for particles
@@ -128,7 +128,7 @@ const ParticleExplosion = ({ id }: ParticleProps) => {
           speed: { min: -7, max: 7 }, // Wobble speed range
         },
         shape: {
-          type: "star", // Use circular shape for particles
+          type: ["star", "circle"], // Use circular shape for particles
         },
       },
     }),
@@ -146,7 +146,7 @@ const ParticleExplosion = ({ id }: ParticleProps) => {
 
 const ContactImages = () => {
   const [isParticleVisible, setIsParticleVisible] = useState(false);
-  const [particlePosition, setParticlePosition] = useState({ x: "0", y: "0" });
+
   gsap.registerPlugin(MotionPathPlugin);
 
   useEffect(() => {
@@ -196,7 +196,7 @@ const ContactImages = () => {
     <>
       {isParticleVisible && (
         // @ts-ignore
-        <ParticleExplosion id="particles" className="w-full h-full" />
+        <ParticleExplosion id="particles" />
       )}
       <div className="fixed -bottom-[125%] my-9 right-0 z-10 flex -translate-y-1/2 flex-col min-h-[100vh]">
         <div className="relative h-full w-[200px]">
