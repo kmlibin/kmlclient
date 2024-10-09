@@ -47,24 +47,27 @@ const ParticleExplosion = ({ id }: ParticleProps) => {
     () => ({
       background: {
         color: {
-          value: "#000000", // Set background color to black
+          value: "rgba(0,0,0, .5)", // Set background color to black
         },
       },
       fullScreen: {
         enable: true,
         zIndex: -1, // Set zIndex so that the particles appear behind other content
       },
+      detectRetina: true,
+      duration: 0,
+      fpsLimit: 120,
       interactivity: {
-        detectsOn: "window", // Set interactivity detection to the whole window
+        detectsOn: "window",
       },
       emitters: {
         position: {
-          x: 50, // Emitter position (centered horizontally)
-          y: 100, // Emitter position (near bottom)
+          x: 93, // Emitter position (right side) move to 50 for centered
+          y: 75, // Emitter position (near bottom) move to 95 to be more at bottom, moved up so under space ship
         },
         rate: {
-          quantity: 5, // Emit 5 particles at a time
-          delay: 0.25, // 0.25s delay between emissions
+          quantity: 75, // Emit amount of particles at a time
+          delay: 0.4, //delay between emissions
         },
       },
       particles: {
@@ -73,16 +76,17 @@ const ParticleExplosion = ({ id }: ParticleProps) => {
         },
         move: {
           decay: 0.05, // Slow down particle speed over time
-          direction: "top", // Particles move upwards
+          direction: "bottom", // Particles move downwards. switch to "top" to move up
           enable: true, // Enable particle movement
           gravity: {
             enable: true, // Enable gravity effect on particles
+            acceleration: .3,
           },
           outModes: {
             top: "none", // Particles don't disappear at the top
             default: "destroy", // Particles are destroyed when they move out of bounds
           },
-          speed: { min: 25, max: 50 }, // Particle speed range
+          speed: { min: 40, max: 100 },
         },
         number: {
           value: 0, // Initial particle number
@@ -108,7 +112,7 @@ const ParticleExplosion = ({ id }: ParticleProps) => {
           },
         },
         size: {
-          value: 8, // Set particle size
+          value: 3, // Set particle size
         },
         roll: {
           darken: {
@@ -124,7 +128,7 @@ const ParticleExplosion = ({ id }: ParticleProps) => {
           speed: { min: -7, max: 7 }, // Wobble speed range
         },
         shape: {
-          type: ["circle"], // Use circular shape for particles
+          type: "star", // Use circular shape for particles
         },
       },
     }),
@@ -170,23 +174,13 @@ const ContactImages = () => {
   const handleClick = () => {
     const animateElement = document.querySelector("#kelli-image");
 
-    if (animateElement) {
-      const rect = animateElement.getBoundingClientRect();
-
-      // Update particle position based on the clicked element's position
-      setParticlePosition({
-        x: rect.left + rect.width / 2 + "px",
-        y: rect.top + rect.height + "px",
-      });
-    }
-
     // Show particles for explosion
     setIsParticleVisible(true);
 
     // Hide particles after 1 second
     setTimeout(() => {
       setIsParticleVisible(false);
-    }, 1000);
+    }, 1500);
 
     // Animate the clicked image
     gsap.to(animateElement, {
