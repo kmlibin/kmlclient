@@ -14,6 +14,8 @@ const config: Config = {
         customGold: "#fec246",
         customBlue: "#057ee6",
         lightGrey: "rgb(243, 243, 243)",
+        customPink: "rgb(198, 55, 92)",
+        customTurquoise: "rgb(98, 211, 228)",
       },
       boxShadow: {
         customGray: "0 0 50px rgba(60, 60, 60, 1)",
