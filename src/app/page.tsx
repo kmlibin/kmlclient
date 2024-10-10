@@ -4,6 +4,7 @@ import background from "../../public/images/kmlbg.jpg";
 
 import fulllogo from "../../public/images/largerlogo.svg";
 import ContactWrapper from "@/components/Wrapper/ContactWrapper";
+import {australia, ibm} from '../app/utils/fonts';
 
 function Home() {
   return (
@@ -24,8 +25,8 @@ function Home() {
       <div className="relative flex justify-end items-center ml-[5rem] py-10 mb-4">
         <Image src={fulllogo} width={650} alt="logo" />
 
-        <div className="absolute -right-[40%] bottom-0 flex flex-col justify-end mb-2 py-10 text-gray-900 text-2xl leading-loose list-none">
-          <ul className="pl-9">
+        <div className="absolute -right-[50%] bottom-0 flex flex-col justify-end mb-2 py-10 text-gray-900 text-2xl leading-loose list-none">
+          <ul className={` ${ibm.className} mb-7`}>
             <li>/ About</li>
             <li>/ View Client Portfolio</li>
             <li>/ Getting Started</li>
