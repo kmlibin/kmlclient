@@ -1,9 +1,9 @@
 import Image from "next/image";
 
-import background from "../../public/images/rainbow.svg";
+import background from "../../public/images/kmlbg.jpg";
 
 import fulllogo from "../../public/images/largerlogo.svg";
-import ContactWrapper from "@/components/ContactWrapper";
+import ContactWrapper from "@/components/Wrapper/ContactWrapper";
 
 function Home() {
   return (
@@ -12,6 +12,7 @@ function Home() {
       <div className="absolute inset-0 -z-10">
         <Image
           src={background}
+          priority
           fill
           style={{ objectFit: "cover" }}
           alt="CanvaBG"
@@ -32,10 +33,8 @@ function Home() {
           </ul>
         </div>
       </div>
-
     </div>
   );
 }
 
-
-export default ContactWrapper(Home)
+export default ContactWrapper(Home);
