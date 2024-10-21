@@ -1,34 +1,65 @@
-'use client';
+"use client";
 import React, { useState } from "react";
-import { useSpring, a } from '@react-spring/web';
-import "./Portfolio.css"
+import BreakoutGame from "../Breakout";
+
+import "./Portfolio.css";
 
 //@ts-ignore
-const PortfolioCard = ({ frontImage, backImage, height }) => {
-  const [flipped, set] = useState(false);
-  const { transform, opacity } = useSpring({
-    opacity: flipped ? 1 : 0,
-    transform: `perspective(600px) rotateX(${flipped ? 180 : 0}deg)`,
-    config: { mass: 5, tension: 500, friction: 80 },
-  });
+const Cube = ({ frontImage, backImage, height }) => {
+  const [currentSide, setCurrentSide] = useState("show-front");
+  const isCube = height === "250px";
 
-  return (
-    <div className="container" onClick={() => set(state => !state)} style={{ height: height }}>
-      <a.div
-        className={`c back`}
-        style={{ opacity: opacity.to(o => 1 - o), transform, backgroundImage: `url(${backImage})` }}
-      />
-      <a.div
-        className={`c front`}
+  const handleMouseEnter = () => {
+    setCurrentSide("show-bottom");
+  };
+
+  const handleMouseLeave = () => {
+    setCurrentSide("show-front");
+  };
+
+  if (isCube) {
+    // Render the cube template
+    return (
+      <div className={`scene`}>
+        <div
+          className={`cube ${currentSide}`}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        >
+          <div
+            className="cube__face cube__face--front cursor-pointer"
+            style={{
+              backgroundImage: `url(${frontImage})`,
+            }}
+          >
+            front
+          </div>
+          <div
+            className="cube__face cube__face--bottom"
+            style={{
+              backgroundImage: `url(${backImage})`,
+            }}
+          >
+            bottom
+          </div>
+        </div>
+      </div>
+    );
+  } else {
+    //template for non-cubes
+    return (
+      <div
         style={{
-          opacity,
-          transform,
-          backgroundImage: `url(${frontImage})`,
-          rotateX: '180deg',
+          width: "100%",
+          height: height,
+          backgroundColor: "lightgray",
         }}
-      />
-    </div>
-  );
+      >
+        {/* <div>front</div> */}
+        <BreakoutGame />
+      </div>
+    );
+  }
 };
 
-export default PortfolioCard;
+export default Cube;
