@@ -10,8 +10,8 @@ import { gsap } from "gsap";
 import { MotionPathPlugin } from "gsap/MotionPathPlugin";
 //components
 import ParticleExplosion from "./Explosion";
-
-
+//fonts
+import { ibm, ibmBold } from "@/app/utils/fonts";
 
 const ContactImages = () => {
   const [isParticleVisible, setIsParticleVisible] = useState(false);
@@ -36,6 +36,18 @@ const ContactImages = () => {
           curviness: 2,
         },
         ease: "power1.inOut",
+        onComplete: () => {
+          // timeline for the shaking
+          const shakeTimeline = gsap.timeline({ repeat: -1, repeatDelay: 10 });
+          // shake animation: left and right for 1.2 seconds
+          shakeTimeline.to(animateElement, {
+            x: "-=10",
+            duration: 0.1,
+            ease: "power1.inOut",
+            yoyo: true,
+            repeat: 5, // Repeat back and forth 5 times (0.1s * 6 = 1.2s)
+          });
+        },
       }
     );
   }, []);
@@ -49,7 +61,7 @@ const ContactImages = () => {
     // hide particles after 1 second
     setTimeout(() => {
       setIsParticleVisible(false);
-    }, 2000);
+    }, 2500);
 
     // animate the clicked image
     gsap.to(animateElement, {
@@ -74,18 +86,20 @@ const ContactImages = () => {
             height={150}
             alt="kelli"
             id="kelli-image"
-            className="absolute -top-10 z-10"
+            className="absolute -top-12 z-10 cursor-pointer"
             onClick={handleClick}
           />
-          <div className="absolute right-5 top-16 flex flex-col gap-2 items-center justify-center hover:scale-110 hover:z-[11] cursor:pointer">
+          <div className="absolute right-5 top-16 flex flex-col gap-2 items-center justify-center">
             <Image
               src={message}
               height={75}
               width={75}
               alt="message"
-              className="shadow-customGray rounded-full border-[1px] border-opacity-55 border-customIndigo"
+              className="shadow-customGray rounded-full border-[1px] border-opacity-55 border-customIndigo hover:scale-110 hover:z-[11] cursor-pointer"
             />
-            <p className="p-2 rounded-xl bg-lightGrey bg-opacity-70">
+            <p
+              className={`${ibmBold.className} p-2 rounded-xl shadow-sm bg-lightGrey bg-opacity-70 text-md border-[1px] border-opacity-55 border-customIndigo`}
+            >
               Got Questions?
             </p>
           </div>
