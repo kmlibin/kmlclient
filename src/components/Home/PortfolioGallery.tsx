@@ -15,7 +15,7 @@ const PortfolioGallery = () => {
     },
     {
       id: 2,
-      height: "100px",
+      height: "175px",
       frontImage:
         "https://images.unsplash.com/photo-1540206395-68808572332f?ixlib=rb-1.2.1&w=1181&q=80&auto=format&fit=crop",
       backImage:
@@ -50,7 +50,7 @@ const PortfolioGallery = () => {
     },
     {
       id: 6,
-      height: "175px",
+      height: "250px",
       frontImage:
         "https://images.unsplash.com/photo-1540206395-68808572332f?ixlib=rb-1.2.1&w=1181&q=80&auto=format&fit=crop",
       backImage:
@@ -69,20 +69,13 @@ const PortfolioGallery = () => {
     },
     {
       id: 8,
-      height: "100px",
+      height: "443px",
       frontImage:
         "https://images.unsplash.com/photo-1540206395-68808572332f?ixlib=rb-1.2.1&w=1181&q=80&auto=format&fit=crop",
       backImage:
         "https://images.unsplash.com/photo-1544511916-0148ccdeb877?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1901&q=80&auto=format&fit=crop",
     },
-    {
-      id: 9,
-      height: "250px",
-      frontImage:
-        "https://images.unsplash.com/photo-1540206395-68808572332f?ixlib=rb-1.2.1&w=1181&q=80&auto=format&fit=crop",
-      backImage:
-        "https://images.unsplash.com/photo-1544511916-0148ccdeb877?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1901&q=80&auto=format&fit=crop",
-    },
+
   ];
 
   return (
