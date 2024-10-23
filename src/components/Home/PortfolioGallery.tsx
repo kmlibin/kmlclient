@@ -14,38 +14,8 @@ import jpel2 from "../../../public/images/jpel2.png";
 const PortfolioGallery = () => {
   const portfolioItems = [
     {
-      id: 1,
-      height: "250px",
-      frontImage: fittees,
-      complete: false,
-      link: "https://poetic-selkie-096f2e.netlify.app/",
-      review: "Under construction, check back soon!",
-      backImage: fittees2,
-    },
-    {
-      id: 2,
-      height: "175px",
-    },
-    {
-      id: 3,
-      height: "250px",
-      frontImage: kellinetlify,
-      link: "https://kelli-portfolio.netlify.app/",
-      complete: true,
-      review:
-        "This is a personal site that I use for larger employers, as the projects are more skill focused and not nearly as pretty :)",
-      backImage: kellinetlify2,
-    },
-  ];
-
-  const portfolioItems2 = [
-    {
-      id: 4,
-      height: "175px",
-    },
-    {
       id: 5,
-      height: "250px",
+      height: "400px",
       frontImage: cw,
       complete: true,
       link: "https://conciergewellnessandpt.com/",
@@ -54,28 +24,67 @@ const PortfolioGallery = () => {
       backImage: cw2,
     },
     {
+      id: 2,
+      height: "175px",
+      bubbles: true,
+    },
+    {
+      id: 3,
+      height: "400px",
+      frontImage: kellinetlify,
+      link: "https://kelli-portfolio.netlify.app/",
+      complete: true,
+      review:
+        "This is a personal site that I use for larger employers, as the projects are more skill focused and not nearly as pretty :)",
+      backImage: kellinetlify2,
+    },
+    {
+      id: 4,
+      height: "175px",
+      bubbles: true,
+      review: "this is a review",
+    },
+
+    {
+      id: 7,
+      height: "400px",
+    },
+  ];
+
+  const portfolioItems2 = [
+    {
+      id: 4,
+      height: "175px",
+      bubbles: true,
+      review: "this is a review x 2",
+    },
+    {
+      id: 1,
+      height: "400px",
+      frontImage: fittees,
+      complete: false,
+      link: "https://poetic-selkie-096f2e.netlify.app/",
+      review: "Under construction, check back soon!",
+      backImage: fittees2,
+    },
+    {
       id: 6,
-      height: "250px",
+      height: "400px",
       frontImage: jpel,
       review: "Under construction, check back soon!",
       complete: false,
       backImage: jpel2,
     },
-  ];
-
-  const portfolioItems3 = [
-    {
-      id: 7,
-      height: "250px",
-    },
     {
       id: 8,
-      height: "443px",
+      height: "466px",
     },
   ];
 
   return (
-    <div className="grid grid-cols-3 justify-start items-start gap-4 p-5 w-4/5 mx-auto">
+    <>
+
+    <div className="grid grid-cols-2 justify-start items-start gap-4 px-5 2xl:w-2/3 py-32 w-4/5 mx-auto">
       <div className="flex flex-col justify-start gap-4">
         {portfolioItems.map((item) => (
           <PortfolioCard
@@ -84,6 +93,7 @@ const PortfolioGallery = () => {
             complete={item.complete}
             review={item.review}
             link={item.link}
+            bubbles={item.bubbles}
             frontImage={item.frontImage}
             backImage={item.backImage}
           />
@@ -95,6 +105,7 @@ const PortfolioGallery = () => {
             key={item.id}
             link={item.link}
             height={item.height}
+            bubbles={item.bubbles}
             complete={item.complete}
             review={item.review}
             frontImage={item.frontImage}
@@ -102,12 +113,8 @@ const PortfolioGallery = () => {
           />
         ))}
       </div>
-      <div className="flex flex-col justify-start gap-4">
-        {portfolioItems3.map((item) => (
-          <PortfolioCard key={item.id} height={item.height} />
-        ))}
-      </div>
     </div>
+    </>
   );
 };
 
