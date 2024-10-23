@@ -2,16 +2,18 @@
 import React, { useState } from "react";
 import BreakoutGame from "../Breakout";
 import Image from "next/image";
+import Bubbles from "./Bubbles";
 
 import "./Portfolio.css";
 
 type CubeProps = {
   frontImage?: any;
   backImage?: any;
-  height: string;
+  height?: string;
   complete?: boolean;
   review?: string;
   link?: string;
+  bubbles?: boolean;
 };
 //@ts-ignore
 const Cube = ({
@@ -21,9 +23,10 @@ const Cube = ({
   complete,
   review,
   link,
+  bubbles,
 }: CubeProps) => {
   const [currentSide, setCurrentSide] = useState("show-front");
-  const isCube = height === "250px";
+  const isCube = height === "400px";
 
   const handleMouseEnter = () => {
     setCurrentSide("show-bottom");
@@ -38,7 +41,7 @@ const Cube = ({
     return (
       <div className="scene w-[100%] h-auto overflow-hidden ">
         <div
-          className={`cube ${currentSide} w-[100%] h-[250px] relative transition-transform duration-1000`}
+          className={`cube ${currentSide} w-full h-[275px] relative transition-transform duration-1000`}
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >
@@ -47,35 +50,44 @@ const Cube = ({
             src={frontImage}
             alt="CW"
           />
-   
-   <div className="cube__face cube__face--bottom cursor-pointer absolute w-[100%] h-[100%]">
-        <Image
-          className="absolute w-full h-full"
-          src={backImage}
-          alt="Back Image"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-gray-900 to-transparent z-10"></div>
-        <div className="absolute inset-0 z-20 flex items-center justify-center text-white text-xl">
-          Add review text, stars, links
-        </div>
-        </div>
 
+          <div className="cube__face cube__face--bottom cursor-pointer absolute w-[100%] h-[100%]">
+            <Image
+              className="absolute w-full h-full"
+              src={backImage}
+              alt="Back Image"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-gray-900 to-transparent z-10"></div>
+            <div className="absolute inset-0 z-20 flex items-center justify-center text-white text-xl">
+              Add review text, stars, links
+            </div>
+          </div>
         </div>
       </div>
     );
+  }
+  if (bubbles) {
+    return (
+      <div
+        style={{
+          width: "100%",
+          minHeight: height,
+          cursor: "pointer",
+        }}
+      >
+        <Bubbles id={review ? review : "string"} />
+      </div>
+    );
   } else {
-    //template for non-cubes
+    //template for non-cube and non-bubble
     return (
       <div
         style={{
           width: "100%",
           height: height,
-          backgroundColor: "lightgray",
+          backgroundColor: "pink",
         }}
-      >
-        {/* <div>front</div> */}
-        <BreakoutGame />
-      </div>
+      ></div>
     );
   }
 };

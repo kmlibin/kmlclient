@@ -1,6 +1,8 @@
+
+
 .cube {
   transform-style: preserve-3d;
-  transform: translateZ(-100px);
+  transform: translateZ(-137.5px);
 
 }
 
@@ -13,8 +15,8 @@
 }
 
 .cube__face--front {
-  transform: rotateY(0deg) translateZ(125px);
+  transform: rotateY(0deg) translateZ(137.5px);
 }
 .cube__face--bottom {
-  transform: rotateX(-90deg) translateZ(125px);
+  transform: rotateX(-90deg) translateZ(137.5px);
 }
