@@ -8,7 +8,7 @@ function Home() {
   return (
     <div className="flex flex-col w-full h-full">
       <Hero />
-      <div className="w-full  bg-customIndigo justify-center items-center ">
+      <div className="w-full  bg-customWhite justify-center items-center ">
         <PortfolioGallery />
       </div>
     </div>
