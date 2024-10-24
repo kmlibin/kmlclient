@@ -59,7 +59,7 @@ const Bubbles = ({ id }: BubblesProps) => {
             distance: 400,
             duration: 2,
             mix: false,
-            size: 20,
+            size: 10,
           },
           push: {
             quantity: 4,
@@ -75,8 +75,8 @@ const Bubbles = ({ id }: BubblesProps) => {
         },
         size: {
             value: {
-              min: 40, 
-              max: 70, 
+              min: 30, 
+              max: 60, 
             },
             animation: {
               count: 0,
