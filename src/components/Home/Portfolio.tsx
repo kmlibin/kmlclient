@@ -6,6 +6,7 @@ import Bubbles from "./Bubbles";
 
 import "./Portfolio.css";
 
+
 type CubeProps = {
   frontImage?: any;
   backImage?: any;
@@ -73,6 +74,7 @@ const Cube = ({
           width: "100%",
           minHeight: height,
           cursor: "pointer",
+          zIndex: "20"
         }}
       >
         <Bubbles id={review ? review : "string"} />
