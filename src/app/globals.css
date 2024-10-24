@@ -114,3 +114,12 @@
 "https://media.geeksforgeeks.org/wp-content/uploads/20231130123541/mole.png");
   }
 }
+
+
+.rainbow {
+  width: 100%;
+  height: 30px;
+  background-image: url('../../public/images/kmlbg.jpg');
+  background-size: cover;
+  background-position: center;
+}
