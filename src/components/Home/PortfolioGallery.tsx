@@ -14,6 +14,8 @@ import myport from "../../../public/images/7.png";
 
 import portfolio from "../../../public/images/portfolio.svg";
 import Image from "next/image";
+import { ibm } from "@/app/utils/fonts";
+
 const PortfolioGallery = () => {
   const portfolioItems = [
     {
@@ -28,7 +30,7 @@ const PortfolioGallery = () => {
     },
     {
       id: 2,
-      height: "175px",
+      height: "100px",
       bubbles: true,
     },
     {
@@ -48,7 +50,7 @@ const PortfolioGallery = () => {
     },
     {
       id: 4,
-      height: "175px",
+      height: "100px",
       bubbles: true,
       review: "this is a review",
     },
@@ -74,25 +76,38 @@ const PortfolioGallery = () => {
     },
     {
       id: 4,
-      height: "175px",
+      height: "100px",
       bubbles: true,
       review: "this is a review x 2",
     },
     {
       id: 8,
-      height: "466px",
+      height: "393px",
     },
   ];
 
   return (
-    <div className=" w-full relative bg-customWhite justify-start items-start flex  pt-2">
-      <div className="absolute w-2/3 bg-customGoldRGBA h-[100%] left-2 border-2 border-customGold"></div>
-      <div className="absolute w-[95%] bg-customPink h-[10%] left-[18.5%] top-[3%] border-2 border-customPink z-10"></div>
+    <div className=" w-full relative bg-customWhite justify-start items-start flex">
+  
+      <div className="absolute w-2/3 bg-customIndigoRGBA h-[100%] left-2 border-2 border-customIndigo border-opacity-50"></div>
+
       <div className="sticky top-[14rem]">
-        <Image alt="portfolio" src={myport} className="w-[350px]" />
+        <Image
+          alt="portfolio"
+          src={myport}
+          className="w-[350px]"
+        />
       </div>
 
-      <div className="h-full grid grid-cols-2 justify-center items-start gap-4 p-4 w-4/5 mr-6 3xl:w-2/3 mt-[220px] box-content bg-lightGrey z-20">
+      <div className="relative h-full grid grid-cols-2 justify-center items-start gap-4 p-4 w-4/5 mr-5 ml-2 3xl:w-2/3 mt-[220px] box-content bg-lightGrey z-20">
+        <div className="absolute w-[57%] shadow-md bg-customWhite h-[13%] rounded-xl -top-[16.25%] z-10 flex justify-center items-center">
+          <p className={`${ibm.className} text-md w-5/6`}>
+            See the difference I've made for other small businesses! From
+            eye-catching designs to seamless functionality, my work speaks for
+            itself. Explore the projects that have helped my clients grow online
+            and stand out from the competition.
+          </p>
+        </div>
         <div className="flex flex-col justify-start gap-4 w-full">
           {portfolioItems.map((item) => (
             <PortfolioCard
@@ -122,6 +137,7 @@ const PortfolioGallery = () => {
           ))}
         </div>
       </div>
+  
     </div>
   );
 };
