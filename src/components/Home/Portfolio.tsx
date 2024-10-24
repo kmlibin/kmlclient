@@ -72,7 +72,7 @@ const Cube = ({
       <div
         style={{
           width: "100%",
-          minHeight: height,
+          height: height,
           cursor: "pointer",
           zIndex: "20"
         }}
