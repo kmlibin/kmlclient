@@ -15,9 +15,10 @@ import bwsvg8 from "../../../public/images/bwsvg8.svg";
 
 import { ibm } from "../../app/utils/fonts";
 
+
 const Hero = () => {
   return (
-    <div className="relative h-[100vh] flex w-full items-center">
+    <div className="relative h-[100vh] flex w-full items-center z-10">
       {/* bg */}
       <div className="absolute inset-0 -z-10">
         <Image
