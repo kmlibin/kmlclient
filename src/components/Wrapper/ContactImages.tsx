@@ -79,7 +79,7 @@ const ContactImages = () => {
         // @ts-ignore
         <ParticleExplosion id="particles" />
       )}
-      <div className="fixed -bottom-[125%] my-9 right-0 z-10 flex -translate-y-1/2 flex-col min-h-[100vh]">
+      <div className="fixed -bottom-[125%] my-9 right-0  flex -translate-y-1/2 flex-col min-h-[100vh] !z-[50]">
         <div className="relative h-full w-[200px]">
           <Image
             src={kelli2}

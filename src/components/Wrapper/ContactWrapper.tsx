@@ -12,7 +12,7 @@ const ContactWrapper = (Component: React.ComponentType) => {
       <>
         {/* social media icons on side */}
 
-        <div className="fixed mt-[5%] top-5 left-4 z-10 flex -translate-y-1/2 flex-col">
+        <div className="fixed mt-[5%] top-5 left-4 z-50 flex -translate-y-1/2 flex-col">
           <SMIcons href={"https://github.com/kmlibin"} icon={FaEtsy} />
           <SMIcons href={"https://github.com/kmlibin"} icon={FaLinkedinIn} />
           <SMIcons href={"https://github.com/kmlibin"} icon={FaGithub} />
