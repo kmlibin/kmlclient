@@ -125,7 +125,7 @@ const Bubbles = ({ id }: BubblesProps) => {
       },
       responsive: [],
       style: {
-        height: "175px",
+        height: "100px",
         width: "100%"
       }
     }),
