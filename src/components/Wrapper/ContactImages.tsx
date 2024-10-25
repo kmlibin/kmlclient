@@ -77,9 +77,11 @@ const ContactImages = () => {
     <>
       {isParticleVisible && (
         // @ts-ignore
+       <div className="w-full h-full !z-[40] absolute">
         <ParticleExplosion id="particles" />
+        </div>
       )}
-      <div className="fixed -bottom-[125%] my-9 right-0  flex -translate-y-1/2 flex-col min-h-[100vh] !z-[50]">
+      <div className="fixed -bottom-[125%] my-9 right-0  flex -translate-y-1/2 flex-col min-h-[100vh] z-[50]">
         <div className="relative h-full w-[200px]">
           <Image
             src={kelli2}
