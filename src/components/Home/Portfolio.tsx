@@ -40,7 +40,7 @@ const Cube = ({
   if (isCube) {
     // Render the cube template
     return (
-      <div className="scene w-[100%] h-auto overflow-hidden ">
+      <div className="scene w-[100%] h-auto overflow-hidden z-[20] ">
         <div
           className={`cube ${currentSide} w-full h-[275px] relative transition-transform duration-1000`}
           onMouseEnter={handleMouseEnter}
