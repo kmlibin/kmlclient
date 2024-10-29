@@ -20,7 +20,7 @@ const config: Config = {
       colors: {
         brightOrange: "#e15c3a",
         customIndigo: "rgb(17, 17, 103)",
-        customIndigoRGBA: "rgb(17, 17, 103, .2)",
+        customIndigoRGBA: "rgb(17, 17, 103, .25)",
         customGold: "#fec246",
         customGoldRGBA: "rgba(254, 194, 70, .4)",
         customOrangeRGBA: "rgba(225, 92, 58, .5)",
@@ -33,6 +33,8 @@ const config: Config = {
       },
       boxShadow: {
         customGray: "0 0 50px rgba(60, 60, 60, .5)",
+        customSmallGrey: "0 0 5px rgba(60, 60, 60, .5)",
+        customIndigo: "0 0 10px rgba(17, 17, 103, .25)",
       },
     },
   },
