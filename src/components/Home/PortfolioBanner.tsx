@@ -40,7 +40,7 @@ type Props = {};
 
 const PortfolioBanner = (props: Props) => {
   return (
-    <div className="relative min-h-[60vh] flex justify-center items-center py-12 flex-col w-full">
+    <div className="relative min-h-[60vh] flex justify-center items-center py-[6rem] flex-col w-full">
       <div className="absolute inset-0  bg-customIndigoRGBA z-10"></div>
 
       <div className="flex flex-col w-3/4 justify-start items-end gap-8 z-[15] h-full p-2">
@@ -70,7 +70,8 @@ const PortfolioBanner = (props: Props) => {
             <span className={` ${ibm.className} bg-customIndigo p-4 text-lightGrey flex items-center gap-3 justify-center`}>See More! <Gi3dGlasses /></span>
           </Link>
       </div>
-
+      <div className="w-full h-[30px] absolute bottom-0 rainbow mt-[4rem] z-[15]"></div>
+      <div className="w-full absolute top-0 h-[30px] rainbow z-[12]"></div>
     </div>
   );
 };

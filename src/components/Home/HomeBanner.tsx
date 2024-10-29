@@ -8,7 +8,7 @@ type Props = {};
 
 const HomeBanner = (props: Props) => {
   return (
-    <div className="relative w-full bg-customWhite pt-[6rem] pb-[8rem] h-full flex flex-col justify-center items-center border-t-customIndigo border-t-2">
+    <div className="relative w-full bg-customWhite py-[6rem] h-full flex flex-col justify-center items-center border-t-customIndigo border-t-2">
       <div className="flex w-5/6 justify-center items-center">
         <div className="w-1/2 h-full flex flex-col justify-end item-end">
           <h1 className={`text-4xl mb-4 w-full tracking-wide ${fredoka.className}`}>
@@ -40,8 +40,7 @@ const HomeBanner = (props: Props) => {
           />
         </div>
       </div>
-      <div className="w-full h-[30px] absolute bottom-0 rainbow mt-[4rem]">
-      </div>
+
     </div>
   );
 };
