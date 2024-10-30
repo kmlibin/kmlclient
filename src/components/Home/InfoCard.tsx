@@ -13,7 +13,7 @@ type Props = {
 const InfoCard = ({ title, text, src, alt }: Props) => {
   return (
     <div
-      className={` w-[275px]  min-h-[680px] info-card flex flex-col justify-start items-center gap-4 shadow-customIndigo border-2 border-customIndigo py-10 px-12 rounded-xl box-content`}
+      className={` w-[275px]  min-h-[680px] info-card flex flex-col justify-start items-center gap-4 border-2  border-lightGrey py-10 px-12 rounded-xl box-content`}
     >
       <h3
         className={`${fredoka.className} text-2xl tracking-wide text-center h-[75px] w-4/5`}
