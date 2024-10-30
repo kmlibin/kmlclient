@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-
+import Trail from "./Trail";
 import background from "../../../public/images/kmlbg.jpg";
 
 import fulllogo from "../../../public/images/largerlogo.svg";
@@ -14,6 +14,7 @@ import bwsvg7 from "../../../public/images/bwsvg7.svg";
 import bwsvg8 from "../../../public/images/bwsvg8.svg";
 
 import { ibm } from "../../app/utils/fonts";
+import NavLinks from "./NavLinks";
 
 
 const Hero = () => {
@@ -36,12 +37,15 @@ const Hero = () => {
         <Image src={bwsvg4} width={650} alt="logo" />
 
         <div className="absolute -right-[52%] bottom-0 flex flex-col justify-end mb-2 py-10 text-gray-900 text-2xl leading-loose list-none">
-          <ul className={` ${ibm.className} mb-5`}>
+          {/* <ul className={` ${ibm.className} mb-5`}>
+            <Trail open= {true} >
             <li>/ About</li>
             <li>/ View Client Portfolio</li>
             <li>/ Getting Started</li>
             <li>/ FAQ</li>
-          </ul>
+            </Trail>
+          </ul> */}
+          <NavLinks />
         </div>
       </div>
     </div>
