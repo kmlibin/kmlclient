@@ -6,7 +6,7 @@ import { ibm } from "@/app/utils/fonts";
 const Info = () => {
   return (
     <div id="info-section" className="relative flex w-full flex-col justify-center items-center bg-customWhite py-[8rem]">
-      <div className="flex w-3/4 justify-evenly items-start gap-14 ">
+      <div className="flex w-5/6 justify-evenly items-start gap-14 h-full ">
         {infoCards.map((card, index) => (
           <InfoCard
             alt={card.alt}

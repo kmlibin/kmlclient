@@ -13,14 +13,14 @@ type Props = {
 const InfoCard = ({ title, text, src, alt }: Props) => {
   return (
     <div
-      className={` w-[275px]  min-h-[680px] info-card flex flex-col justify-start items-center gap-4 border-2  border-lightGrey py-10 px-12 rounded-xl box-content`}
+      className={`3xl:w-1/4 w-1/3 h-[550px] 3xl:min-h-[600px] info-card flex flex-col justify-start items-center gap-4 border-2  border-lightGrey p-6 rounded-xl box-content`}
     >
       <h3
         className={`${fredoka.className} text-2xl tracking-wide text-center h-[75px] w-4/5`}
       >
         {title}
       </h3>
-      <div className="w-[200px] h-[200px] mb-10 flex justify-center items-center">
+      <div className="3xl:w-[200px] 3xl:h-[200px] h-[150px] w-[150px] mb-10 flex justify-center items-center">
         {src !== "bank" ? (
           <Image src={src} alt={alt} />
         ) : (
@@ -32,7 +32,7 @@ const InfoCard = ({ title, text, src, alt }: Props) => {
       </div>
       <div className="flex justify-start items-start">
         <p
-          className={`${ibm.className} text-md text-center flex justify-start items-start`}
+          className={`${ibm.className}  text-md text-center flex justify-start items-start`}
         >
           {text}
         </p>
