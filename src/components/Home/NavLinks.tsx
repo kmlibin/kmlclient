@@ -20,10 +20,34 @@ const NavLinks = (props: Props) => {
   return (
     <ul className={` ${ibm.className} mb-5`}>
       <Trail open={true}>
-        <li>/ About</li>
-        <li>/ View Client Portfolio</li>
-        <li>/ Getting Started</li>
-        <li>/ FAQ</li>
+        <li className="relative flex items-center ">
+          <span className="slash transition-transform duration-300">/</span>
+          <span className="ml-2 transition-all duration-300 relative hover:text-customPink">
+            About
+            <span className="underline"></span>
+          </span>
+        </li>
+        <li className="relative flex items-center">
+          <span className="slash transition-transform duration-300">/</span>
+          <span className="ml-2 transition-all duration-300 relative hover:text-customPink">
+            View Client Portfolio
+            <span className="underline"></span>
+          </span>
+        </li>
+        <li className="relative flex items-center ">
+          <span className="slash transition-transform duration-300">/</span>
+          <span className="ml-2 transition-all duration-300 relative hover:text-customPink">
+            Getting Started
+            <span className="underline"></span>
+          </span>
+        </li>
+        <li className="relative flex items-center">
+          <span className="slash transition-transform duration-300">/</span>
+          <span className="ml-2 transition-all duration-300 relative hover:text-customPink">
+            FAQ
+            <span className="underline"></span>
+          </span>
+        </li>
       </Trail>
     </ul>
   );

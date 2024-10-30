@@ -203,3 +203,45 @@
 .trailsText > div {
   overflow: hidden;
 }
+
+
+.slash {
+  display: inline-block; /* Keep it inline for better control */
+  transform: rotate(0deg); /* Start flat */
+  transition: transform 0.3s ease; /* Smooth transition */
+}
+
+/* For the text underline */
+.relative {
+  position: relative; /* Required for absolute positioning of the underline */
+}
+
+.underline {
+  position: absolute;
+  bottom: -3px; 
+  left: 0;
+  width: 0; /* Start with zero width */
+  height: 2px; 
+  background: rgb(118, 31, 52); 
+  transition: width 0.3s ease; /* Transition width instead of transform */
+ 
+}
+
+li:hover {
+  cursor: pointer;
+}
+
+li:hover .underline {
+  width: 100%; /* Expand to full width on hover */
+  
+}
+
+.slash {
+  transition: transform 0.3s ease; 
+  font-weight:bolder
+}
+
+li:hover .slash {
+  transform: translateX(5px); /* Move slash to the right on hover */
+  color: rgb(98, 211, 228);
+}
