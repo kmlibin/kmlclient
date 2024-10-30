@@ -66,7 +66,7 @@ const ContactImages = () => {
       threshold: 0.5, // Trigger when 50% of section is in view
     };
 
-    // Iit
+    // Init
     const observer = new IntersectionObserver(
       handleSectionInView,
       observerOptions
