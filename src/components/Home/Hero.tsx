@@ -1,7 +1,9 @@
+"use client";
 import React from "react";
 import Image from "next/image";
 import Trail from "./Trail";
 import background from "../../../public/images/kmlbg.jpg";
+import { Fade } from "react-awesome-reveal";
 
 import fulllogo from "../../../public/images/largerlogo.svg";
 import bwsvg1 from "../../../public/images/bwsvg1.svg";
@@ -16,10 +18,12 @@ import bwsvg8 from "../../../public/images/bwsvg8.svg";
 import { ibm } from "../../app/utils/fonts";
 import NavLinks from "./NavLinks";
 
-
 const Hero = () => {
   return (
-    <div id="hero-section" className="relative h-[100vh] flex w-full items-center z-10">
+    <div
+      id="hero-section"
+      className="relative h-[100vh] flex w-full items-center z-10"
+    >
       {/* bg */}
       <div className="absolute inset-0 -z-10">
         <Image
@@ -34,8 +38,9 @@ const Hero = () => {
       {/* image */}
 
       <div className="relative flex justify-end items-center ml-[5rem] py-10 mb-4">
-        <Image src={bwsvg4} width={650} alt="logo" />
-
+        <Fade triggerOnce>
+          <Image src={bwsvg4} width={650} alt="logo" />
+        </Fade>
         <div className="absolute -right-[52%] bottom-0 flex flex-col justify-end mb-2 py-10 text-gray-900 text-2xl leading-loose list-none">
           {/* <ul className={` ${ibm.className} mb-5`}>
             <Trail open= {true} >

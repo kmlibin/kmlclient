@@ -1,19 +1,28 @@
+"use client";
 import React from "react";
 import Image from "next/image";
 import nowOnline from "../../../public/images/nowonline.svg";
 import { ibm, fredoka } from "@/app/utils/fonts";
 import Link from "next/link";
-import background from "../../../public/images/kmlbg.jpg";
+import { AttentionSeeker, Roll, Fade, Zoom, Slide } from "react-awesome-reveal";
 type Props = {};
 
 const HomeBanner = (props: Props) => {
   return (
-    <div id="banner-section" className="relative w-full bg-customWhite py-[6rem] h-full flex flex-col justify-center items-center border-t-customIndigo border-t-2">
+    <div
+      id="banner-section"
+      className="relative w-full bg-customWhite py-[6rem] h-full flex flex-col justify-center items-center border-t-customIndigo border-t-2"
+    >
       <div className="flex w-5/6 justify-center items-center">
         <div className="w-1/2 h-full flex flex-col justify-end item-end">
-          <h1 className={`text-4xl mb-4 w-full tracking-wide ${fredoka.className}`}>
-            Say Goodbye to DIY Website Hassles!
-          </h1>
+          <Zoom direction="down" duration={1500}>
+            <h1
+              className={`text-4xl mb-4 w-full tracking-wide ${fredoka.className}`}
+            >
+              Say Goodbye to DIY Website Hassles!
+            </h1>
+          </Zoom>
+
           <p className={`text-md w-full ${ibm.className}`}>
             Running a small business but struggling to find time for a website?
             I get it — there’s a lot to juggle, and creating a professional
@@ -24,6 +33,7 @@ const HomeBanner = (props: Props) => {
             what you do best. From SEO optimization to sites that look great on
             every screen size, I’m here to help your business shine online!
           </p>
+
           <div className="w-full flex items-end justify-end mt-9">
             <Link
               href={"/getStarted"}
@@ -33,6 +43,7 @@ const HomeBanner = (props: Props) => {
             </Link>
           </div>
         </div>
+
         <div className="w-1/2 flex justify-end">
           <Image
             src={nowOnline}
@@ -40,7 +51,6 @@ const HomeBanner = (props: Props) => {
           />
         </div>
       </div>
-
     </div>
   );
 };
