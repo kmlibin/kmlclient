@@ -18,7 +18,7 @@ const Footer = () => {
           alt="libin web development logo"
         />
       </div>
-      <p className="w-full items-center  gap-4  pr-5 flex justify-end">
+      <p className="w-full items-center text-md gap-4  pr-5 flex justify-end">
         Libin Web Development <RiCopyrightLine /> 2024
       </p>
     </div>
