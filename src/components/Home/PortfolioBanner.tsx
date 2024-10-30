@@ -1,7 +1,6 @@
 import React from "react";
-import portfolio from "../../../public/images/7.png";
-import Image from "next/image";
-import Portfolio from "../Home/Portfolio";
+
+import Portfolio from "../Portfolio/Portfolio";
 import fittees from "../../../public/images/fittees.png";
 import fittees2 from "../../../public/images/fittees2.png";
 import cw from "../../../public/images/cw.png";
@@ -40,11 +39,18 @@ type Props = {};
 
 const PortfolioBanner = (props: Props) => {
   return (
-    <div id="portfolio-section" className="relative min-h-[60vh] flex justify-center items-center py-[6rem] flex-col w-full">
+    <div
+      id="portfolio-section"
+      className="relative min-h-[60vh] flex justify-center items-center py-[6rem] flex-col w-full"
+    >
       <div className="absolute inset-0  bg-customIndigoRGBA z-10"></div>
 
-      <div className="flex flex-col w-3/4 justify-start items-end gap-8 z-[15] h-full p-2">
-        <h3 className={`${fredoka.className} text-5xl w-full text-left tracking-wide flex items-center gap-3`}>Bringing Ideas to Life <FcIdea /></h3>
+      <div className="flex flex-col w-3/4 justify-start items-end gap-8 z-[15] h-full p-2 3xl:w-2/3">
+        <h3
+          className={`${fredoka.className} text-5xl w-full text-left tracking-wide flex items-center gap-3`}
+        >
+          Bringing Ideas to Life <FcIdea />
+        </h3>
         <div className="w-full flex flex-col items-end gap-6 text-md bg-lightGrey bg-opacity-50 shadow-customSmallGrey rounded-xl p-5">
           <p className={`${ibm.className} text-right px-5`}>
             See the difference I've made for other small businesses! From
@@ -67,8 +73,12 @@ const PortfolioBanner = (props: Props) => {
           ))}
         </div>
         <Link href="/myportfolio" className="px-5  ">
-            <span className={` ${ibm.className} bg-customIndigo relative overflow-hidden z-10 btn w-full p-4 text-lightGrey flex items-center gap-3 justify-center`}>See More! <Gi3dGlasses /></span>
-          </Link>
+          <span
+            className={` ${ibm.className} bg-customIndigo relative overflow-hidden z-10 btn w-full p-4 text-lightGrey flex items-center gap-3 justify-center`}
+          >
+            See More! <Gi3dGlasses />
+          </span>
+        </Link>
       </div>
       <div className="w-full h-[30px] absolute bottom-0 rainbow mt-[4rem] z-[15]"></div>
       <div className="w-full absolute top-0 h-[30px] rainbow z-[12]"></div>
