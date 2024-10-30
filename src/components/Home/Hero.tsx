@@ -18,7 +18,7 @@ import { ibm } from "../../app/utils/fonts";
 
 const Hero = () => {
   return (
-    <div className="relative h-[100vh] flex w-full items-center z-10">
+    <div id="hero-section" className="relative h-[100vh] flex w-full items-center z-10">
       {/* bg */}
       <div className="absolute inset-0 -z-10">
         <Image

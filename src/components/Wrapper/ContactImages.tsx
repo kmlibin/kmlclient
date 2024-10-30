@@ -15,6 +15,7 @@ import { ibm, ibmBold } from "@/app/utils/fonts";
 
 const ContactImages = () => {
   const [isParticleVisible, setIsParticleVisible] = useState(false);
+  const [flyBack, setFlyBack] = useState(false);
 
   gsap.registerPlugin(MotionPathPlugin);
 
@@ -50,7 +51,57 @@ const ContactImages = () => {
         },
       }
     );
+
+    // handles fly-back when any section is visible
+    const handleSectionInView = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setFlyBack(true);
+        }
+      });
+    };
+
+    // set up options for Intersection Observer
+    const observerOptions = {
+      threshold: 0.5, // Trigger when 50% of section is in view
+    };
+
+    // Iit
+    const observer = new IntersectionObserver(
+      handleSectionInView,
+      observerOptions
+    );
+
+    //sections to be observed
+    const sections = [
+      document.querySelector("#banner-section"),
+      document.querySelector("#portfolio-section"),
+      document.querySelector("#info-section"),
+    ];
+    sections.forEach((section) => {
+      if (section) observer.observe(section);
+    });
+
+    return () => observer.disconnect();
   }, []);
+
+  useEffect(() => {
+    const animateElement = document.querySelector("#kelli-image");
+
+    if (flyBack) {
+      gsap.to(animateElement, {
+        y: 0, // Reset the vertical position
+        x: "0", // Reset the horizontal position
+        opacity: 1,
+        scale: 1, // Reset the scale
+        duration: 2,
+        ease: "power4.out",
+      });
+
+      // resets state after animation completes
+      setFlyBack(false);
+    }
+  }, [flyBack]);
 
   const handleClick = () => {
     const animateElement = document.querySelector("#kelli-image");
@@ -77,11 +128,11 @@ const ContactImages = () => {
     <>
       {isParticleVisible && (
         // @ts-ignore
-       <div className="w-full h-full !z-[40] absolute">
-        <ParticleExplosion id="particles" />
+        <div className="w-full h-full !z-[40] absolute">
+          <ParticleExplosion id="particles" />
         </div>
       )}
-      <div className="fixed -bottom-[125%] my-9 right-0  flex -translate-y-1/2 flex-col min-h-[100vh] z-[50]">
+      <div className="fixed -bottom-[122%] my-9 right-0  flex -translate-y-1/2 flex-col min-h-[100vh] z-[50]">
         <div className="relative h-full w-[200px]">
           <Image
             src={kelli2}
@@ -97,10 +148,10 @@ const ContactImages = () => {
               height={75}
               width={75}
               alt="message"
-              className="shadow-customGray rounded-full border-[1px] border-opacity-55 border-customIndigo hover:scale-110 hover:z-[11] cursor-pointer"
+              className="shadow-customIndigo rounded-full border-[1px] border-opacity-55 border-customIndigo hover:scale-110 hover:z-[11]  duration-200 cursor-pointer"
             />
             <p
-              className={`${ibmBold.className} p-2 rounded-xl shadow-sm bg-lightGrey bg-opacity-70 text-md border-[1px] border-opacity-55 border-customIndigo`}
+              className={`${ibmBold.className} py-2 px-3 rounded-xl shadow-sm bg-lightGrey bg-opacity-70 text-md border-[1px] border-opacity-55 border-customIndigo`}
             >
               Got Questions?
             </p>

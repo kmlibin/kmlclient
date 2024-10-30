@@ -40,7 +40,7 @@ type Props = {};
 
 const PortfolioBanner = (props: Props) => {
   return (
-    <div className="relative min-h-[60vh] flex justify-center items-center py-[6rem] flex-col w-full">
+    <div id="portfolio-section" className="relative min-h-[60vh] flex justify-center items-center py-[6rem] flex-col w-full">
       <div className="absolute inset-0  bg-customIndigoRGBA z-10"></div>
 
       <div className="flex flex-col w-3/4 justify-start items-end gap-8 z-[15] h-full p-2">
