@@ -1,8 +1,5 @@
 import ContactWrapper from "@/components/Wrapper/ContactWrapper";
-
 import Hero from "@/components/Home/Hero";
-
-import PortfolioGallery from "@/components/Home/PortfolioGallery";
 import PortfolioBanner from "@/components/Home/PortfolioBanner";
 import HomeBanner from "@/components/Home/HomeBanner";
 import Info from "@/components/Home/Info";
