@@ -66,8 +66,8 @@ const PortfolioBanner = (props: Props) => {
             />
           ))}
         </div>
-        <Link href="/myportfolio" className="px-5">
-            <span className={` ${ibm.className} bg-customIndigo p-4 text-lightGrey flex items-center gap-3 justify-center`}>See More! <Gi3dGlasses /></span>
+        <Link href="/myportfolio" className="px-5  ">
+            <span className={` ${ibm.className} bg-customIndigo relative overflow-hidden z-10 btn w-full p-4 text-lightGrey flex items-center gap-3 justify-center`}>See More! <Gi3dGlasses /></span>
           </Link>
       </div>
       <div className="w-full h-[30px] absolute bottom-0 rainbow mt-[4rem] z-[15]"></div>

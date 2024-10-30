@@ -27,7 +27,7 @@ const HomeBanner = (props: Props) => {
           <div className="w-full flex items-end justify-end mt-9">
             <Link
               href={"/getStarted"}
-              className={`${ibm.className} bg-customIndigo w-1/4 text-customWhite flex justify-center items-center py-4`}
+              className={`${ibm.className} z-10 overflow-hidden text-customWhite bg-customIndigo relative btn w-1/4 flex justify-center items-center py-4`}
             >
               Get Started!
             </Link>
