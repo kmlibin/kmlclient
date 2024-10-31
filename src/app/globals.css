@@ -206,24 +206,23 @@
 
 
 .slash {
-  display: inline-block; /* Keep it inline for better control */
-  transform: rotate(0deg); /* Start flat */
-  transition: transform 0.3s ease; /* Smooth transition */
+  display: inline-block; 
+  transition: transform 0.3s ease; 
 }
 
-/* For the text underline */
+
 .relative {
-  position: relative; /* Required for absolute positioning of the underline */
+  position: relative; 
 }
 
 .underline {
   position: absolute;
   bottom: -3px; 
   left: 0;
-  width: 0; /* Start with zero width */
+  width: 0; 
   height: 2px; 
   background: rgb(118, 31, 52); 
-  transition: width 0.3s ease; /* Transition width instead of transform */
+  transition: width 0.3s ease; 
  
 }
 
@@ -232,7 +231,7 @@ li:hover {
 }
 
 li:hover .underline {
-  width: 100%; /* Expand to full width on hover */
+  width: 100%; 
   
 }
 
@@ -242,6 +241,6 @@ li:hover .underline {
 }
 
 li:hover .slash {
-  transform: translateX(5px); /* Move slash to the right on hover */
+  transform: translateX(5px); 
   color: rgb(98, 211, 228);
 }
