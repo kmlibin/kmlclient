@@ -1,11 +1,24 @@
+'use client'
 import { infoCards } from "./homeContent";
 import InfoCard from "./InfoCard";
+import { fredoka, ibm } from "@/app/utils/fonts";
 import Link from "next/link";
-import { ibm } from "@/app/utils/fonts";
+import { Zoom } from "react-awesome-reveal";
 
+// py-[6rem]
 const Info = () => {
   return (
-    <div id="info-section" className="relative flex w-full flex-col justify-center items-center bg-customWhite py-[8rem]">
+    <div
+      id="info-section"
+      className="relative flex w-full flex-col justify-center items-center gap-2 bg-customWhite pb-[6rem]"
+    >
+      {/* <div className="mb-[5rem]">
+      <Zoom direction="down" duration={1500} triggerOnce>
+        <h2 className={`${fredoka.className} text-5xl`}>
+          Don’t Settle for Less — Get a Site That Works
+        </h2>
+        </Zoom>
+      </div> */}
       <div className="flex w-5/6 justify-evenly items-start gap-14 h-full ">
         {infoCards.map((card, index) => (
           <InfoCard
@@ -16,6 +29,14 @@ const Info = () => {
             title={card.title}
           />
         ))}
+      </div>
+      <div className="flex justify-center mt-[3rem] items-center w-5/6">
+        <Link
+          href="/"
+          className={` ${ibm.className}  bg-customIndigo relative overflow-hidden z-10 btn p-4 text-lightGrey flex items-center gap-3 justify-center`}
+        >
+          Button Here?
+        </Link>
       </div>
     </div>
   );

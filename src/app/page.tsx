@@ -9,9 +9,9 @@ function Home() {
     <div className="flex flex-col w-full h-full">
       <Hero />
       <HomeBanner /> 
-      <PortfolioBanner />
+    
       <Info />
-      
+        <PortfolioBanner />
      
     </div>
   );
