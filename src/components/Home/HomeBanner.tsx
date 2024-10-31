@@ -15,7 +15,7 @@ const HomeBanner = (props: Props) => {
     >
       <div className="flex w-5/6 justify-center items-center">
         <div className="w-1/2 h-full flex flex-col justify-end item-end">
-          <Zoom direction="down" duration={1500}>
+          <Zoom direction="down" duration={1500} triggerOnce>
             <h1
               className={`text-4xl mb-4 w-full tracking-wide ${fredoka.className}`}
             >
