@@ -142,7 +142,7 @@ const ContactImages = () => {
             className="absolute -top-12 z-10 cursor-pointer"
             onClick={handleClick}
           />
-          <div className="absolute right-2 top-16 flex flex-col gap-2 items-center justify-center">
+          <div className="absolute right-2 top-16 flex flex-col gap-2 items-center justify-center hover:cursor-pointer">
             <Image
               src={message}
               height={75}
