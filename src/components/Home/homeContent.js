@@ -10,7 +10,7 @@ export const infoCards = [
     text: "  DIY site builders often slow down with extra plugins and features, which can impact SEO. My sites are custom-built for speed and search optimization, so customers can find you easily and enjoy a seamless experience. Reach more clients with a high-performance site designed to boost your SEO.",
   },
   {
-    title: "Get More Website for Less",
+    title: "Maximize Value, Minimize Cost",
     alt: "putting money in a piggy bank",
     src: "bank",
     text: " Unlike DIY platforms that can charge extra for premium features or add-on plugins, my pricing includes all essential features from the start — no surprise fees. With packages starting at just $350 and hosting for $60 per year, get a professionally designed, fully optimized site at a fraction of the cost of other solutions.",
