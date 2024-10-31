@@ -27,7 +27,7 @@ const ContactImages = () => {
       { opacity: 0, x: "-10vw" },
       {
         opacity: 1,
-        duration: 6,
+        duration: 5,
         motionPath: {
           path: [
             { x: -100, y: -150 }, // up
@@ -36,7 +36,7 @@ const ContactImages = () => {
           ],
           curviness: 2,
         },
-        ease: "power1.inOut",
+        ease: "power1.in",
         onComplete: () => {
           // timeline for the shaking
           const shakeTimeline = gsap.timeline({ repeat: -1, repeatDelay: 10 });
