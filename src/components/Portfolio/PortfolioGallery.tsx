@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import PortfolioCard from "./Portfolio";
+import PortfolioCard from "./PortfolioCube";
 import "./Portfolio.css";
 import fittees from "../../../public/images/fittees.png";
 import cw from "../../../public/images/cw.png";
@@ -88,15 +88,10 @@ const PortfolioGallery = () => {
 
   return (
     <div className=" w-full relative bg-customWhite justify-start items-start flex">
-  
       <div className="absolute w-2/3 bg-customIndigoRGBA h-[100%] left-2 border-2 border-customIndigo border-opacity-50"></div>
 
       <div className="sticky top-[14rem]">
-        <Image
-          alt="portfolio"
-          src={myport}
-          className="w-[350px]"
-        />
+        <Image alt="portfolio" src={myport} className="w-[350px]" />
       </div>
 
       <div className="relative h-full grid grid-cols-2 justify-center items-start gap-4 p-4 w-4/5 mr-5 ml-2 3xl:w-2/3 mt-[220px] box-content bg-lightGrey z-20">
@@ -137,7 +132,6 @@ const PortfolioGallery = () => {
           ))}
         </div>
       </div>
-  
     </div>
   );
 };

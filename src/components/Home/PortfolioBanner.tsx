@@ -1,6 +1,6 @@
 import React from "react";
 
-import Portfolio from "../Portfolio/Portfolio";
+import Portfolio from "../Portfolio/PortfolioCube";
 import fittees from "../../../public/images/fittees.png";
 import fittees2 from "../../../public/images/fittees2.png";
 import cw from "../../../public/images/cw.png";
@@ -13,7 +13,8 @@ import { FcIdea } from "react-icons/fc";
 const portfolioItems = [
   {
     id: 5,
-    height: "400px",
+    height: "275px",
+    cube: true,
     frontImage: cw,
     complete: true,
     link: "https://conciergewellnessandpt.com/",
@@ -24,7 +25,8 @@ const portfolioItems = [
 
   {
     id: 1,
-    height: "400px",
+    height: "275px",
+    cube: true,
     frontImage: fittees,
     complete: false,
     link: "https://poetic-selkie-096f2e.netlify.app/",
@@ -59,9 +61,10 @@ const PortfolioBanner = (props: Props) => {
             and stand out from the competition.
           </p>
         </div>
-        <div className="w-full flex gap-5">
+        <div className="w-full flex gap-5 justify-center">
           {portfolioItems.map((item) => (
             <Portfolio
+              cube={item.cube}
               key={item.id}
               height={item.height}
               complete={item.complete}
