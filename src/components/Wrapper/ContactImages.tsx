@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 
 //images
 import kelli2 from "../../../public/images/kelli2.png";
@@ -8,6 +8,7 @@ import message from "../../../public/images/mborder.png";
 import Image from "next/image";
 import { gsap } from "gsap";
 import { MotionPathPlugin } from "gsap/MotionPathPlugin";
+import {Fade }from 'react-awesome-reveal'
 //components
 import ParticleExplosion from "./Explosion";
 //fonts
@@ -15,110 +16,110 @@ import { ibm, ibmBold } from "@/app/utils/fonts";
 
 const ContactImages = () => {
   const [isParticleVisible, setIsParticleVisible] = useState(false);
+  const [initialAnimationPlayed, setInitialAnimationPlayed] = useState(false);
   const [flyBack, setFlyBack] = useState(false);
+  const observerRef = useRef<NodeJS.Timeout | null>(null);
 
   gsap.registerPlugin(MotionPathPlugin);
+
+
+// Debounced state setter
+const debouncedSetFlyBack = () => {
+  if (observerRef.current) {
+    clearTimeout(observerRef.current);
+  }
+  observerRef.current = setTimeout(() => setFlyBack(true), 100); 
+};
 
   useEffect(() => {
     const animateElement = document.querySelector("#kelli-image");
 
-    gsap.fromTo(
-      animateElement,
-      { opacity: 0, x: "-10vw" },
-      {
-        opacity: 1,
-        duration: 5,
-        motionPath: {
-          path: [
-            { x: -100, y: -150 }, // up
-            { x: -50, y: 100 }, // down
-            { x: 0, y: 0 }, // final position
-          ],
-          curviness: 2,
-        },
-        ease: "power1.in",
-        onComplete: () => {
-          // timeline for the shaking
-          const shakeTimeline = gsap.timeline({ repeat: -1, repeatDelay: 10 });
-          // shake animation: left and right for 1.2 seconds
-          shakeTimeline.to(animateElement, {
-            x: "-=10",
-            duration: 0.1,
-            ease: "power1.inOut",
-            yoyo: true,
-            repeat: 5, // Repeat back and forth 5 times (0.1s * 6 = 1.2s)
-          });
-        },
-      }
-    );
+    if (!initialAnimationPlayed) {
+      gsap.fromTo(
+        animateElement,
+        { opacity: 0, x: "-10vw" },
+        {
+          opacity: 1,
+          duration: 5,
+          motionPath: {
+            path: [
+              { x: -100, y: -150 }, // up
+              { x: -50, y: 100 },   // down
+              { x: 0, y: 0 },       // final position
+            ],
+            curviness: 2,
+          },
+          ease: "power2.out",
+          onComplete: () => {
+            const shakeTimeline = gsap.timeline({ repeat: -1, repeatDelay: 10 });
+            shakeTimeline.to(animateElement, {
+              x: "-=10",
+              duration: 0.1,
+              ease: "power1.inOut",
+              yoyo: true,
+              repeat: 5,
+            });
+            setInitialAnimationPlayed(true);
+          },
+        }
+      );
+    }
+  }, [initialAnimationPlayed]);
 
-    // handles fly-back when any section is visible
-    const handleSectionInView = (entries: IntersectionObserverEntry[]) => {
-      entries.forEach((entry) => {
+  useEffect(() => {
+    if (!initialAnimationPlayed) return; // avoid fly-back on initial load
+
+    const handleSectionInView = (entries: any) => {
+      entries.forEach((entry:any) => {
         if (entry.isIntersecting) {
-          setFlyBack(true);
+          debouncedSetFlyBack(); // debounced to avoid re-trigger
         }
       });
     };
 
-    // set up options for Intersection Observer
-    const observerOptions = {
-      threshold: 0.5, // Trigger when 50% of section is in view
-    };
-
-    // Init
-    const observer = new IntersectionObserver(
-      handleSectionInView,
-      observerOptions
-    );
-
-    //sections to be observed
+    //set up and init observer
+    const observerOptions = { threshold: 0.5 };
+    const observer = new IntersectionObserver(handleSectionInView, observerOptions);
     const sections = [
       document.querySelector("#banner-section"),
       document.querySelector("#portfolio-section"),
       document.querySelector("#info-section"),
+      document.querySelector("#hero-section"),
     ];
+
     sections.forEach((section) => {
       if (section) observer.observe(section);
     });
 
     return () => observer.disconnect();
-  }, []);
+  }, [initialAnimationPlayed]);
 
   useEffect(() => {
     const animateElement = document.querySelector("#kelli-image");
 
     if (flyBack) {
       gsap.to(animateElement, {
-        y: 0, // Reset the vertical position
-        x: "0", // Reset the horizontal position
+        y: 0,
+        x: "0",
         opacity: 1,
-        scale: 1, // Reset the scale
+        scale: 1,
         duration: 2,
         ease: "power4.out",
+        onComplete: () => setFlyBack(false) // reset state on animation complete
       });
-
-      // resets state after animation completes
-      setFlyBack(false);
     }
   }, [flyBack]);
 
   const handleClick = () => {
     const animateElement = document.querySelector("#kelli-image");
 
-    // show particles for explosion
     setIsParticleVisible(true);
+    setTimeout(() => setIsParticleVisible(false), 2500);
 
-    // hide particles after 1 second
-    setTimeout(() => {
-      setIsParticleVisible(false);
-    }, 2500);
-
-    // animate the clicked image
     gsap.to(animateElement, {
-      x: "-10", // Move to the far right of the screen
-      y: "-100vh", // Move up
-      scale: 0.2, // Shrink the image to simulate zooming out
+      x: "-10",
+      y: "-100vh",
+      scale: 0.2,
       duration: 2,
       ease: "power4.inOut",
     });
@@ -142,6 +143,7 @@ const ContactImages = () => {
             className="absolute -top-12 z-10 cursor-pointer"
             onClick={handleClick}
           />
+          <Fade triggerOnce delay={3500}>
           <div className="absolute right-2 top-16 flex flex-col gap-2 items-center justify-center hover:cursor-pointer">
             <Image
               src={message}
@@ -156,6 +158,7 @@ const ContactImages = () => {
               Got Questions?
             </p>
           </div>
+          </Fade>
         </div>
       </div>
     </>
