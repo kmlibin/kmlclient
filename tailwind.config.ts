@@ -35,6 +35,7 @@ const config: Config = {
         customGray: "0 0 50px rgba(60, 60, 60, .5)",
         customSmallGrey: "0 0 5px rgba(60, 60, 60, .5)",
         customIndigo: "0 0 10px rgba(17, 17, 103, .25)",
+        indigo: " 0 8px 20px rgba(17, 17, 103, 0.3);"
       },
     },
   },
