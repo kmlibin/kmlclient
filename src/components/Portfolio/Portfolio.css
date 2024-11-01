@@ -1,9 +1,13 @@
-
+.scene {
+  width: auto;
+  height: var(--cube-height);
+  position: relative;
+}
 
 .cube {
+  aspect-ratio: 2; 
   transform-style: preserve-3d;
-  transform: translateZ(-137.5px);
-
+  transform: translateZ(var(--cube-depth));
 }
 
 .cube.show-front {
@@ -15,8 +19,8 @@
 }
 
 .cube__face--front {
-  transform: rotateY(0deg) translateZ(137.5px);
+  transform: rotateY(0deg) translateZ(var(--cube-depth));
 }
 .cube__face--bottom {
-  transform: rotateX(-90deg) translateZ(137.5px);
+  transform: rotateX(-90deg) translateZ(var(--cube-depth));
 }
