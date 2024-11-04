@@ -1,0 +1,50 @@
+.trailsText {
+    color:  rgb(17 24 39);
+    will-change: transform, opacity;
+    overflow: hidden;
+  }
+  
+  .trailsText > div {
+    overflow: hidden;
+  }
+  
+  
+  .slash {
+    display: inline-block; 
+    transition: transform 0.3s ease; 
+  }
+  
+  
+  .relative {
+    position: relative; 
+  }
+  
+  .underline {
+    position: absolute;
+    bottom: -3px; 
+    left: 0;
+    width: 0; 
+    height: 2px; 
+    background: rgb(118, 31, 52); 
+    transition: width 0.3s ease; 
+   
+  }
+  
+  li:hover {
+    cursor: pointer;
+  }
+  
+  li:hover .underline {
+    width: 100%; 
+    
+  }
+  
+  .slash {
+    transition: transform 0.3s ease; 
+    font-weight:bolder
+  }
+  
+  li:hover .slash {
+    transform: translateX(5px); 
+    color: rgb(98, 211, 228);
+  }
