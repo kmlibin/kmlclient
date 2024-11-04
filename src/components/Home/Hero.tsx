@@ -14,6 +14,7 @@ import bwsvg5 from "../../../public/images/bwsvg5.svg";
 import bwsvg6 from "../../../public/images/bwsvg6.svg";
 import bwsvg7 from "../../../public/images/bwsvg7.svg";
 import bwsvg8 from "../../../public/images/bwsvg8.svg";
+import './Home.css'
 
 import { ibm } from "../../app/utils/fonts";
 import NavLinks from "./NavLinks";
