@@ -12,7 +12,7 @@ const page = (props: Props) => {
       <Navbar />
       <div className=" bg-customWhite flex w-full">
         <div className="w-1/2 relative  h-[100vh] flex flex-col items-center justify-center">
-          <div className="absolute -top-1/4 -left-1/4 rainbow-circle w-[120%] rounded-full h-[120%]"></div>
+          <div className="absolute -top-1/4 -left-1/4 rainbow-circle w-[900px] h-[900px] 3xl:w-[1100px] rounded-full 3xl:h-[1100px]"></div>
           <Image
             src={kelli}
             alt="kelli"
