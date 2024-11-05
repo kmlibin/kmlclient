@@ -9,7 +9,7 @@ type Props = {};
 const Footer = () => {
   return (
     <div
-      className={`${ibm.className} w-full h-[150px] bg-customIndigoRGBA relative flex flex-col justify-end border-t-customIndigo border-t`}
+      className={`${ibm.className} w-full h-[150px] bg-lightIndigo relative flex flex-col justify-end border-t-customIndigo border-t`}
     >
       
       <div className="w-full absolute top-16 h-[30px] rainbow z-[12]">
