@@ -5,7 +5,7 @@ import { BiSolidSquareRounded, BiChevronDown } from "react-icons/bi";
 import logo from "../../public/images/klbg.svg";
 import Image from "next/image";
 import { Fade } from "react-awesome-reveal";
-import { ibmBold } from "@/app/utils/fonts";
+import { ibm } from "@/app/utils/fonts";
 
 type Props = {};
 
@@ -30,8 +30,8 @@ const Navbar = (props: Props) => {
               transform ${isOpen ? "translate-x-0" : "-translate-x-full"}
               transition-transform duration-300 ease-in-out z-40 flex items-center`}
       >
-        <ul className={`${ibmBold.className} flex-grow flex w-full gap-6 items-center justify-between text-customWhite`}>
-          <Image src={logo} alt="logo" height={80} className="ml-4 rounded-full box-content border-4 border-customGold "/>
+        <ul className={`${ibm.className} flex-grow flex w-full gap-6 items-center justify-between text-customWhite`}>
+          <Image src={logo} alt="logo" height={75} className="ml-4 rounded-full box-content border-4 border-customGold "/>
           <div className="flex mr-10 gap-24 items-center">
             <li className="relative text-xl group hover:cursor-pointer">
               <span className="block hover:text-gray-400">Home</span>
