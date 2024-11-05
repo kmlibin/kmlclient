@@ -17,12 +17,16 @@
   background-position: center;
 }
 
+.rainbow-circle {
+  background-image: url("../../public/images/kmlbg.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
 /* //changes shadow color on infocards*/
 .info-card {
   animation: shadow-move 10s ease infinite;
 }
-
-
 
 @keyframes shadow-move {
   0% {
@@ -70,22 +74,26 @@
   height: 190%;
 }
 
-
 /* for navbar */
 @keyframes rotateAndColor {
   0% {
     transform: rotate(0deg);
-    color: #fec246; 
+    color: #fec246;
+  }
+  25% {
+    color: #e15c3a;
   }
   50% {
-    color: #1f2937; 
+    color: rgb(98, 211, 228);
+  }
+  75% {
+    color: #1f2937;
   }
   100% {
     transform: rotate(360deg);
-    color: #4b5563; 
+    color: #fec246;
   }
 }
-
 
 .rotate-color-360 {
   animation: rotateAndColor 0.5s ease-in-out;
