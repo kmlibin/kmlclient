@@ -2,9 +2,10 @@
 import React, { useState } from "react";
 import { BiSolidSquareRounded, BiChevronDown } from "react-icons/bi";
 
-import logo from "../../public/images/icon.png";
+import logo from "../../public/images/klbg.svg";
 import Image from "next/image";
 import { Fade } from "react-awesome-reveal";
+import { ibmBold } from "@/app/utils/fonts";
 
 type Props = {};
 
@@ -25,20 +26,20 @@ const Navbar = (props: Props) => {
   return (
     <div className="relative w-full">
       <div
-        className={`absolute top-2 right-0 h-[100px] w-3/4 bg-gray-800 text-white p-4 rounded-tl-lg rounded-bl-lg
-              transform ${isOpen ? "translate-x-0" : "translate-x-full"}
+        className={`absolute top-2 left-0 h-[100px] w-2/3 bg-customIndigo  shadow-customSmallGrey text-white p-4 rounded-tr-lg rounded-br-lg
+              transform ${isOpen ? "translate-x-0" : "-translate-x-full"}
               transition-transform duration-300 ease-in-out z-40 flex items-center`}
       >
-        <ul className="flex-grow flex w-full gap-6 items-center justify-between">
-          <Image src={logo} alt="logo" height={60} />
-          <div className="flex mr-20 gap-24 items-center">
+        <ul className={`${ibmBold.className} flex-grow flex w-full gap-6 items-center justify-between text-customWhite`}>
+          <Image src={logo} alt="logo" height={80} className="ml-4 rounded-full box-content border-4 border-customGold "/>
+          <div className="flex mr-10 gap-24 items-center">
             <li className="relative text-xl group hover:cursor-pointer">
               <span className="block hover:text-gray-400">Home</span>
               <span className="absolute left-1/2 -bottom-2 w-1 h-1 bg-white rounded-full transition-opacity duration-300 opacity-0 group-hover:opacity-100 transform -translate-x-1/2"></span>
             </li>
             <li className="relative text-xl group hover:cursor-pointer">
               <span className="block hover:text-gray-400">Portfolio</span>
-              <span className="absolute left-1/2 -bottom-2 w-1 h-1 bg-white rounded-full transition-opacity duration-300 opacity-0 group-hover:opacity-100 transform -translate-x-1/2"></span>{" "}
+              <span className="absolute left-1/2 -bottom-3 w-[.5rem] h-[.5rem] bg-white rounded-full transition-opacity duration-300 opacity-0 group-hover:opacity-100 transform -translate-x-1/2"></span>{" "}
             </li>
             <button
               onClick={toggleDropdown}
@@ -53,7 +54,6 @@ const Navbar = (props: Props) => {
                 />
               </span>
 
-              {/* Dropdown menu */}
               {dropdownOpen && (
                 <Fade>
                   <div
