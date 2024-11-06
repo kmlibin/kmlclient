@@ -1,18 +1,19 @@
-import React from "react";
 
+import React from "react";
 //libraries
 import { FaEtsy, FaLinkedinIn, FaGithub } from "react-icons/fa";
 //components
 import SMIcons from "./SMIcons";
 import ContactImages from "./ContactImages";
 
+
 const ContactWrapper = (Component: React.ComponentType) => {
   const Wrapper: React.FC = (props) => {
+
     return (
       <>
         {/* social media icons on side */}
-
-        <div className="fixed mt-[5%] top-5 left-4 z-50 flex -translate-y-1/2 flex-col">
+        <div className={`fixed mt-[5%] top-5 left-4 z-50 flex -translate-y-1/2 flex-col `}>
           <SMIcons href={"https://etsy.com/shop/CreationsKMP"} icon={FaEtsy} />
           <SMIcons href={"https://www.linkedin.com/in/kelli-libin-b5ba78151/"} icon={FaLinkedinIn} />
           <SMIcons href={"https://github.com/kmlibin"} icon={FaGithub} />
@@ -21,7 +22,7 @@ const ContactWrapper = (Component: React.ComponentType) => {
         <ContactImages />
 
         {/* wrapper */}
-        <div className=" w-full">
+        <div className=" w-full ">
           <Component {...props} />
         </div>
       </>

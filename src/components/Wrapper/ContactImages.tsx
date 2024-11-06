@@ -8,11 +8,11 @@ import message from "../../../public/images/mborder.png";
 import Image from "next/image";
 import { gsap } from "gsap";
 import { MotionPathPlugin } from "gsap/MotionPathPlugin";
-import {Fade }from 'react-awesome-reveal'
+import { Fade } from "react-awesome-reveal";
 //components
 import ParticleExplosion from "./Explosion";
 //fonts
-import { ibm, ibmBold } from "@/app/utils/fonts";
+import { ibmBold } from "@/app/utils/fonts";
 
 const ContactImages = () => {
   const [isParticleVisible, setIsParticleVisible] = useState(false);
@@ -22,14 +22,13 @@ const ContactImages = () => {
 
   gsap.registerPlugin(MotionPathPlugin);
 
-
-// Debounced state setter
-const debouncedSetFlyBack = () => {
-  if (observerRef.current) {
-    clearTimeout(observerRef.current);
-  }
-  observerRef.current = setTimeout(() => setFlyBack(true), 100); 
-};
+  // Debounced state setter
+  const debouncedSetFlyBack = () => {
+    if (observerRef.current) {
+      clearTimeout(observerRef.current);
+    }
+    observerRef.current = setTimeout(() => setFlyBack(true), 100);
+  };
 
   useEffect(() => {
     const animateElement = document.querySelector("#kelli-image");
@@ -44,14 +43,17 @@ const debouncedSetFlyBack = () => {
           motionPath: {
             path: [
               { x: -100, y: -150 }, // up
-              { x: -50, y: 100 },   // down
-              { x: 0, y: 0 },       // final position
+              { x: -50, y: 100 }, // down
+              { x: 0, y: 0 }, // final position
             ],
             curviness: 2,
           },
           ease: "power2.out",
           onComplete: () => {
-            const shakeTimeline = gsap.timeline({ repeat: -1, repeatDelay: 10 });
+            const shakeTimeline = gsap.timeline({
+              repeat: -1,
+              repeatDelay: 10,
+            });
             shakeTimeline.to(animateElement, {
               x: "-=10",
               duration: 0.1,
@@ -70,7 +72,7 @@ const debouncedSetFlyBack = () => {
     if (!initialAnimationPlayed) return; // avoid fly-back on initial load
 
     const handleSectionInView = (entries: any) => {
-      entries.forEach((entry:any) => {
+      entries.forEach((entry: any) => {
         if (entry.isIntersecting) {
           debouncedSetFlyBack(); // debounced to avoid re-trigger
         }
@@ -79,7 +81,10 @@ const debouncedSetFlyBack = () => {
 
     //set up and init observer
     const observerOptions = { threshold: 0.5 };
-    const observer = new IntersectionObserver(handleSectionInView, observerOptions);
+    const observer = new IntersectionObserver(
+      handleSectionInView,
+      observerOptions
+    );
     const sections = [
       document.querySelector("#banner-section"),
       document.querySelector("#portfolio-section"),
@@ -105,7 +110,7 @@ const debouncedSetFlyBack = () => {
         scale: 1,
         duration: 2,
         ease: "power4.out",
-        onComplete: () => setFlyBack(false) // reset state on animation complete
+        onComplete: () => setFlyBack(false), // reset state on animation complete
       });
     }
   }, [flyBack]);
@@ -133,7 +138,7 @@ const debouncedSetFlyBack = () => {
           <ParticleExplosion id="particles" />
         </div>
       )}
-      <div className="fixed -bottom-[122%] my-9 right-0  flex -translate-y-1/2 flex-col min-h-[100vh] z-[50]">
+      <div className="fixed -bottom-[130%] my-9 right-0  flex -translate-y-1/2 flex-col min-h-[100vh] z-[50]">
         <div className="relative h-full w-[200px]">
           <Image
             src={kelli2}
@@ -144,20 +149,20 @@ const debouncedSetFlyBack = () => {
             onClick={handleClick}
           />
           <Fade triggerOnce delay={3500}>
-          <div className="absolute right-2 top-16 flex flex-col gap-2 items-center justify-center hover:cursor-pointer">
-            <Image
-              src={message}
-              height={75}
-              width={75}
-              alt="message"
-              className="shadow-customIndigo rounded-full border-[1px] border-opacity-55 border-customIndigo hover:scale-110 hover:z-[11]  duration-200 cursor-pointer"
-            />
-            <p
-              className={`${ibmBold.className} py-2 px-3 rounded-xl shadow-sm bg-lightGrey bg-opacity-70 text-md border-[1px] border-opacity-55 border-customIndigo`}
-            >
-              Got Questions?
-            </p>
-          </div>
+            <div className="absolute right-2 top-16 flex flex-col gap-2 items-center justify-center hover:cursor-pointer">
+              <Image
+                src={message}
+                height={75}
+                width={75}
+                alt="message"
+                className="shadow-customIndigo rounded-full border-[1px] border-opacity-55 border-customIndigo hover:scale-110 hover:z-[11]  duration-200 cursor-pointer"
+              />
+              <p
+                className={`${ibmBold.className} py-2 px-3 rounded-xl shadow-sm bg-lightGrey bg-opacity-70 text-md border-[1px] border-opacity-55 border-customIndigo`}
+              >
+                Got Questions?
+              </p>
+            </div>
           </Fade>
         </div>
       </div>
