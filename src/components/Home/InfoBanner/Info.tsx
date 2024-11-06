@@ -1,5 +1,5 @@
 'use client'
-import { infoCards } from "./homeContent";
+import { infoCards } from "../homeContent";
 import InfoCard from "./InfoCard";
 import { fredoka, ibm } from "@/app/utils/fonts";
 import Link from "next/link";

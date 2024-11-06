@@ -1,10 +1,10 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import nowOnline from "../../../public/images/nowonline.svg";
+import nowOnline from "../../../../public/images/nowonline.svg";
 import { ibm, fredoka } from "@/app/utils/fonts";
 import Link from "next/link";
-import { AttentionSeeker, Roll, Fade, Zoom, Slide } from "react-awesome-reveal";
+import {  Zoom, } from "react-awesome-reveal";
 type Props = {};
 
 const HomeBanner = (props: Props) => {

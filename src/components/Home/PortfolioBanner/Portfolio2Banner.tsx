@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import logosmall from "../../../public/images/logosmall.png";
-import Portfolio from "../Portfolio/PortfolioCube";
+import Portfolio from "../../Portfolio/PortfolioCube";
 
 import cw from "../../../public/images/cw.png";
 import cw2 from "../../../public/images/cw2.png";
@@ -12,13 +12,14 @@ import { FcIdea } from "react-icons/fc";
 import Slider from "./Slider";
 import { Zoom } from "react-awesome-reveal";
 
-
-
 type Props = {};
 
 const Portfolio2Banner = (props: Props) => {
   return (
-    <div id="portfolio-section" className="relative bg-gradient-to-t from-customIndigoRGBA to-customWhite flex flex-col justify-center items-center w-full pb-[4rem]">
+    <div
+      id="portfolio-section"
+      className="relative bg-gradient-to-t from-customIndigoRGBA to-customWhite flex flex-col justify-center items-center w-full pb-[4rem]"
+    >
       <Zoom direction="down" duration={1500} triggerOnce>
         <h3
           className={`${fredoka.className} text-5xl w-full tracking-wide flex items-center justify-center gap-3`}

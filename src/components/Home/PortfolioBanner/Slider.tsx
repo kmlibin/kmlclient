@@ -1,22 +1,17 @@
 "use client";
 import { useState, useEffect } from "react";
 import { Fade } from "react-awesome-reveal";
-import Link from "next/link";
+
 import Image from "next/image";
-import logosmall from "../../../public/images/logosmall.png";
-import { FaArrowAltCircleRight } from "react-icons/fa";
+import logosmall from "../../../../public/images/logosmall.png";
 
-import { ibm, fredoka } from "../../app/utils/fonts";
-import { RiExternalLinkLine } from "react-icons/ri";
-
-import { IoIosArrowDropright, IoIosArrowDropleft } from "react-icons/io";
-import cw from "../../../public/images/cw.png";
-import cw2 from "../../../public/images/cw2.png";
-import Portfolio from "../Portfolio/PortfolioCube";
-import fittees from "../../../public/images/fittees.png";
-import fitteeslogo from "../../../public/images/goldpng.png";
-import right from "../../../public/images/fwdarrow.svg";
-import left from "../../../public/images/leftarrow.svg";
+import cw from "../../../../public/images/cw.png";
+import cw2 from "../../../../public/images/cw2.png";
+import Portfolio from "../../Portfolio/PortfolioCube";
+import fittees from "../../../../public/images/fittees.png";
+import fitteeslogo from "../../../../public/images/goldpng.png";
+import right from "../../../../public/images/fwdarrow.svg";
+import left from "../../../../public/images/leftarrow.svg";
 
 const portfolioItems = [
   {

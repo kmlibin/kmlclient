@@ -1,7 +1,7 @@
 import React from "react";
 import { fredoka, ibm } from "@/app/utils/fonts";
 import Image, { StaticImageData } from "next/image";
-import bank from "../../../public/images/bank.svg";
+import bank from "../../../../public/images/bank.svg";
 
 type Props = {
   title: string;

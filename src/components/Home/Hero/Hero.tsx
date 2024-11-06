@@ -1,22 +1,11 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import Trail from "./Trail";
-import background from "../../../public/images/kmlbg.jpg";
+
+import background from "../../../../public/images/kmlbg.jpg";
 import { Fade } from "react-awesome-reveal";
-
-import fulllogo from "../../../public/images/largerlogo.svg";
-import bwsvg1 from "../../../public/images/bwsvg1.svg";
-import bwsvg2 from "../../../public/images/bwsvg2.svg";
-import bwsvg3 from "../../../public/images/bwsvg3.svg";
-import bwsvg4 from "../../../public/images/bwsvg4.svg";
-import bwsvg5 from "../../../public/images/bwsvg5.svg";
-import bwsvg6 from "../../../public/images/bwsvg6.svg";
-import bwsvg7 from "../../../public/images/bwsvg7.svg";
-import bwsvg8 from "../../../public/images/bwsvg8.svg";
-import './Home.css'
-
-import { ibm } from "../../app/utils/fonts";
+import bwsvg4 from "../../../../public/images/bwsvg4.svg";
+import "./Home.css";
 import NavLinks from "./NavLinks";
 
 const Hero = () => {
