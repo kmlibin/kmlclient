@@ -12,7 +12,7 @@ type Props = {
 
 const PricingCards = ({ title, text, src, alt, isList }: Props) => {
   return (
-    <div className="flex w-full flex-col border-2 border-gray-200 shadow-lg  box-content">
+    <div className="flex w-full flex-col border-2 border-gray-200 shadow-lg  box-content z-[50] bg-customWhite">
       <div className="flex w-full gap-6 items-start p-8">
         <div className="w-1/5 flex">
           <Image src={src} alt={alt} height={150} />
