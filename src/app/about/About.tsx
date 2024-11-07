@@ -22,7 +22,7 @@ const About = (props: Props) => {
       <div className="relative w-1/2 flex flex-col items-start justify-start mt-[11rem] gap-10 tracking-wide pb-[8rem]">
         <div className="absolute -bottom-20 -right-[20%] rainbow-circle w-[500px] rounded-full h-[500px]"></div>
         <h2 className={`text-5xl ${fredoka.className}`}>Nice to Meet You!</h2>
-        <p className={`w-2/3 ${ibm.className} text-md`}>
+        <p className={`w-2/3 ${ibm.className} text-md z-[20]`}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
           tristique commodo velit, sit amet vestibulum sem imperdiet ut. Donec
           sodales ante sed est fermentum mattis. Pellentesque elementum nisi non
