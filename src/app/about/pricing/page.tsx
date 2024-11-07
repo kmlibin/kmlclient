@@ -10,6 +10,7 @@ import table from "./table.svg";
 import info from "../../../../public/images/info.svg";
 import TableComparison from "./TableComparison";
 import AdditionalInfo from "./AdditionalInfo";
+import GetStartedButton from "./GetStartedButton";
 
 type Props = {};
 
@@ -67,8 +68,11 @@ const page = (props: Props) => {
             ))}
           </div>
         </div>
+
         <AdditionalInfo />
+        <GetStartedButton />
         <TableComparison />
+        
       </div>
     </>
   );
