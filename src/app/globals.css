@@ -20,7 +20,6 @@
 .rainbow-circle {
   background-image: url("../../public/images/kmlbg.jpg");
   background-size: cover;
-
 }
 
 /* //changes shadow color on infocards*/
@@ -97,4 +96,22 @@
 
 .rotate-color-360 {
   animation: rotateAndColor 0.5s ease-in-out;
+}
+
+.info-bg {
+  background: linear-gradient(212deg, #fec246, rgb(98, 211, 228), #057ee6);
+  background-size: 600% 600%;
+  animation: change 15s ease infinite;
+}
+
+@keyframes change {
+  0% {
+    background-position: 96% 0%;
+  }
+  50% {
+    background-position: 5% 100%;
+  }
+  100% {
+    background-position: 96% 0%;
+  }
 }
