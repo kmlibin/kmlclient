@@ -64,9 +64,9 @@ const FAQ = (props: Props) => {
   };
   return (
     <div className="w-full h-full flex">
-      <div className="w-full h-[100vh] relative flex justify-evenly items-start mt-[150px]">
+      <div className="w-full h-[100vh] relative flex justify-evenly items-start mt-[180px]">
         {/* rainbows */}
-        <div className="absolute -top-[50%] -left-[15%] rainbow-circle w-[900px] h-[900px] 3xl:w-[1100px] rounded-full 3xl:h-[1100px]"></div>
+        <div className="absolute -top-[55%] -left-[15%] rainbow-circle w-[900px] h-[900px] 3xl:w-[1100px] rounded-full 3xl:h-[1100px]"></div>
         <div className="absolute -bottom-20 -right-[10%] rainbow-circle w-[500px] rounded-full h-[500px]"></div>
 
         <div className="w-1/3 h-full flex flex-col items-end justify-start ">
