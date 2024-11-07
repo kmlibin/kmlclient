@@ -12,7 +12,7 @@ const TableComparison = (props: Props) => {
       </h3>
       <p className={`${ibm.className} text-lg w-3/4 text-center`}>
         Our flat-fee approach includes everything you need to establish a
-        strong, professional online presence—without the surprise charges.
+        strong, professional online presence — without the surprise charges.
         Compare below to see the comprehensive features of our package against
         common options in the market.
       </p>
