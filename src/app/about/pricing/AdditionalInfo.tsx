@@ -7,7 +7,7 @@ type Props = {};
 
 const AdditionalInfo = (props: Props) => {
   return (
-    <div className="flex w-3/4 items-start p-8 justify-center mt-20 mb-32 gap-4 bg-customWhite border-2 border-gray-200 shadow-lg  box-content">
+    <div className="flex w-3/4 items-start p-8 justify-center mt-20 mb-10 gap-4 bg-customWhite border-2 border-gray-200 shadow-lg  box-content">
       <div className="w-[200px] h-[200px] info-bg flex justify-center items-center rounded-full">
         <Image src={info} alt="an information logo" height={175} width={175} />
       </div>
