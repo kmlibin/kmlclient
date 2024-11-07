@@ -1,12 +1,15 @@
 import React, { ReactNode } from "react";
 import Image from "next/image";
 import pricing from "./pricing.svg";
-import { ibm, fredoka } from "@/app/utils/fonts";
+import { ibm, fredoka, ibmBold } from "@/app/utils/fonts";
 import Navbar from "@/components/Navbar";
 import { pricingCards } from "./pricingContent";
 import PricingCards from "./PricingCards";
 import { StaticImageData } from "next/image";
 import table from "./table.svg";
+import info from "../../../../public/images/info.svg";
+import TableComparison from "./TableComparison";
+import AdditionalInfo from "./AdditionalInfo";
 
 type Props = {};
 
@@ -24,19 +27,20 @@ const page = (props: Props) => {
   return (
     <>
       <Navbar />
-      <div className="w-full flex h-full flex-col bg-customWhite">
-        <div className="w-full min-h-[100vh] relative flex justify-evenly items-start mt-[180px] pb-16">
+      <div className="w-full flex h-full flex-col bg-customWhite items-center">
+        <div className="w-full  relative flex justify-evenly items-start mt-[180px] pb-16">
           {/* rainbows */}
           <div className="absolute -top-[16%] -left-[15%] rainbow-circle w-[900px] h-[900px] 3xl:w-[1100px] rounded-full 3xl:h-[1100px]"></div>
           <div className="absolute -bottom-20 -right-[10%] rainbow-circle w-[500px] rounded-full h-[500px]"></div>
-
-          <div className="w-1/3 h-full flex flex-col items-end justify-start ">
-            <Image
-              src={pricing}
-              alt="faq image"
-              height={400}
-              className="z-10 sticky top-1/4  -mt-[3.75rem]"
-            />
+          <div className="w-1/3 flex flex-col items-end justify-start relative h-[300vh] 3xl:h-[230vh]">
+            <div className="sticky top-[4vh] -mt-[3rem]">
+              <Image
+                src={pricing}
+                alt="faq image"
+                height={400}
+                className="z-10"
+              />
+            </div>
           </div>
 
           <div
@@ -63,40 +67,8 @@ const page = (props: Props) => {
             ))}
           </div>
         </div>
-        <div className="w-full flex flex-col">
-          <h3 className={`${fredoka.className} text-3xl`}>
-            Additional Services
-          </h3>
-          <ul>
-            <li>
-              Extra pages: $50 per additional page, beyond the initial four
-            </li>
-            <li>
-              Domain Registration: If you choose to host with me on Netlify, I
-              can assist with domain registration. If you decide to host the
-              site yourself, you'll be responsible for purchasing and setting up
-              your own domain.
-            </li>
-          </ul>
-          <h4>Note on Self-Hosting</h4>
-          <p>
-            While I offer hosting on Netlify as part of the package, if you
-            choose to host the site yourself, I do not provide support for
-            self-hosting setup, including purchasing a domain, selecting a
-            hosting provider, or connecting your domain to the hosting service.
-            You will need to handle these tasks independently.
-          </p>
-        </div>
-        <div className="w-full">
-          <Image src={table} alt="table" />
-        </div>
-        <p className="w-5/6 text-xs">
-          * My services are perfect for small business websites that focus on
-          performance and ease of use, without requiring complex features like
-          user logins or databases. If you do need those advanced
-          functionalities, I can still help, but please note that they may
-          increase the overall cost due to additional hosting and development.
-        </p>
+        <AdditionalInfo />
+        <TableComparison />
       </div>
     </>
   );
