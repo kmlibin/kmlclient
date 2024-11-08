@@ -7,7 +7,7 @@ import logosmall from "../../../../public/images/logosmall.png";
 
 import cw from "../../../../public/images/cw.png";
 import cw2 from "../../../../public/images/cw2.png";
-import Portfolio from "../../Portfolio/PortfolioCube";
+import Portfolio from "../../../app/portfolio/PortfolioCube";
 import fittees from "../../../../public/images/fittees.png";
 import fitteeslogo from "../../../../public/images/goldpng.png";
 import right from "../../../../public/images/fwdarrow.svg";

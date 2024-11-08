@@ -1,6 +1,6 @@
 import React from "react";
 
-import Portfolio from "../../Portfolio/PortfolioCube";
+import Portfolio from "../../../app/portfolio/PortfolioCube";
 import fittees from "../../../public/images/fittees.png";
 import fittees2 from "../../../public/images/fittees2.png";
 import cw from "../../../public/images/cw.png";

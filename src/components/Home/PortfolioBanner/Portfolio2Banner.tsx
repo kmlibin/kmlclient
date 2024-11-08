@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import logosmall from "../../../public/images/logosmall.png";
-import Portfolio from "../../Portfolio/PortfolioCube";
+import Portfolio from "../../../app/portfolio/PortfolioCube";
 
 import cw from "../../../public/images/cw.png";
 import cw2 from "../../../public/images/cw2.png";
