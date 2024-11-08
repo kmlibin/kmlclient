@@ -27,21 +27,20 @@ const AdditionalInfo = (props: Props) => {
             own domain.
           </li>
           <li>
-            <span className={`text-lg ${ibmBold.className} underline`}>
-              Note on Self-Hosting:
-            </span>
-            &nbsp; While I offer hosting on Netlify as part of the package, if
-            you choose to host the site yourself, I do not provide support for
-            self-hosting setup, including purchasing a domain, selecting a
-            hosting provider, or connecting your domain to the hosting service.
-            You will need to handle these tasks independently.
-          </li>
-          <li>
             My services are perfect for small business websites that focus on
             performance and ease of use, without requiring complex features like
             user logins or databases. If you do need those advanced
             functionalities, I can still help, but please note that they may
             increase the overall cost due to additional hosting and development.
+          </li>
+          <li>
+            <span className={`text-lg ${ibmBold.className} underline`}>
+              Note on Self-Hosting:
+            </span>
+            &nbsp; If you choose to host the site yourself, I do not provide
+            support for self-hosting setup, including purchasing a domain,
+            selecting a hosting provider, or connecting your domain to the
+            hosting service. You will need to handle these tasks independently.
           </li>
         </ul>
       </div>
