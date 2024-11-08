@@ -13,6 +13,9 @@ import { Fade } from "react-awesome-reveal";
 import ParticleExplosion from "./Explosion";
 //fonts
 import { ibmBold } from "@/app/utils/fonts";
+//paths
+import paths from "@/app/paths";
+import Link from "next/link";
 
 const ContactImages = () => {
   const [isParticleVisible, setIsParticleVisible] = useState(false);
@@ -33,7 +36,7 @@ const ContactImages = () => {
   useEffect(() => {
     const animateElement = document.querySelector("#kelli-image");
     if (!initialAnimationPlayed) {
-      gsap.set(animateElement, { opacity: 0 }); 
+      gsap.set(animateElement, { opacity: 0 });
       gsap.fromTo(
         animateElement,
         { opacity: 0, x: "-10vw" },
@@ -139,7 +142,7 @@ const ContactImages = () => {
         </div>
       )}
 
-        <div className="fixed -bottom-[130%] my-9 right-0  flex -translate-y-1/2 flex-col min-h-[100vh] z-[50]">
+      <div className="fixed -bottom-[130%] my-9 right-0  flex -translate-y-1/2 flex-col min-h-[100vh] z-[50]">
         <div className="relative h-full w-[200px]">
           <Image
             src={kelli2}
@@ -150,7 +153,10 @@ const ContactImages = () => {
             onClick={handleClick}
           />
           <Fade triggerOnce delay={3500}>
-            <div className="absolute right-2 top-16 flex flex-col gap-2 items-center justify-center hover:cursor-pointer">
+            <Link
+              href={paths.contactPath()}
+              className="absolute right-2 top-16 flex flex-col gap-2 items-center justify-center hover:cursor-pointer"
+            >
               <Image
                 src={message}
                 height={75}
@@ -163,11 +169,10 @@ const ContactImages = () => {
               >
                 Got Questions?
               </p>
-            </div>
+            </Link>
           </Fade>
         </div>
       </div>
-
     </>
   );
 };
