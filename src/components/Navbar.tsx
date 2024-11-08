@@ -1,11 +1,12 @@
 "use client";
 import React, { useState } from "react";
 import { BiSolidSquareRounded, BiChevronDown } from "react-icons/bi";
-
 import logo from "../../public/images/klbg.svg";
 import Image from "next/image";
 import { Fade } from "react-awesome-reveal";
 import { ibm } from "@/app/utils/fonts";
+import paths from "@/app/paths";
+import Link from "next/link";
 
 type Props = {};
 
@@ -31,14 +32,14 @@ const Navbar = (props: Props) => {
               transition-transform duration-300 ease-in-out z-40 flex items-center`}
       >
         <ul className={`${ibm.className} flex-grow flex w-full gap-6 items-center justify-between text-customWhite`}>
-          <Image src={logo} alt="logo" height={75} className="ml-4 rounded-full box-content border-4 border-customGold "/>
+        <Link  href={paths.homePath()}><Image src={logo} alt="logo" height={75} className="ml-4 rounded-full box-content border-4 border-customGold "/></Link>
           <div className="flex mr-10 gap-24 items-center">
             <li className="relative text-xl group hover:cursor-pointer">
-              <span className="block hover:text-gray-400">Home</span>
-              <span className="absolute left-1/2 -bottom-2 w-1 h-1 bg-white rounded-full transition-opacity duration-300 opacity-0 group-hover:opacity-100 transform -translate-x-1/2"></span>
+              <Link className="block hover:text-gray-400" href={paths.homePath()}>Home</Link>
+              <span className="absolute left-1/2 -bottom-3 w-[.5rem] h-[.5rem] bg-white rounded-full transition-opacity duration-300 opacity-0 group-hover:opacity-100 transform -translate-x-1/2"></span>{" "}
             </li>
             <li className="relative text-xl group hover:cursor-pointer">
-              <span className="block hover:text-gray-400">Portfolio</span>
+              <Link className="block hover:text-gray-400" href={paths.portfolioPath()}>Portfolio</Link>
               <span className="absolute left-1/2 -bottom-3 w-[.5rem] h-[.5rem] bg-white rounded-full transition-opacity duration-300 opacity-0 group-hover:opacity-100 transform -translate-x-1/2"></span>{" "}
             </li>
             <button
@@ -63,38 +64,38 @@ const Navbar = (props: Props) => {
                     aria-labelledby="menu-button"
                   >
                     <div className="py-1 flex w-full items-end flex-col" role="none">
-                      <a
-                        href="#"
+                      <Link
+                        href={paths.aboutPath()}
                         className="w-full text-right px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                         role="menuitem"
                         id="menu-item-0"
                       >
                         Meet Kelli
-                      </a>
-                      <a
-                        href="#"
+                      </Link>
+                      <Link
+                        href={paths.faqPath()}
                         className="w-full text-right px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                         role="menuitem"
                         id="menu-item-1"
                       >
                         FAQ
-                      </a>
-                      <a
-                        href="#"
+                      </Link>
+                      <Link
+                        href={paths.pricingPath()}
                         className="w-full text-right px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                         role="menuitem"
                         id="menu-item-2"
                       >
                         Package Pricing
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </Fade>
               )}
             </button>
             <li className="relative text-xl group hover:cursor-pointer">
-              <span className="block hover:text-gray-400">Contact</span>
-              <span className="absolute left-1/2 -bottom-2 w-1 h-1 bg-white rounded-full transition-opacity duration-300 opacity-0 group-hover:opacity-100 transform -translate-x-1/2"></span>{" "}
+              <Link className="block hover:text-gray-400" href={paths.contactPath()}>Contact</Link>
+              <span className="absolute left-1/2 -bottom-3 w-[.5rem] h-[.5rem] bg-white rounded-full transition-opacity duration-300 opacity-0 group-hover:opacity-100 transform -translate-x-1/2"></span>{" "}
             </li>
           </div>
         </ul>
