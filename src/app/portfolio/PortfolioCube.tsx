@@ -37,7 +37,6 @@ const Cube = ({
   business,
 }: CubeProps) => {
   const [currentSide, setCurrentSide] = useState("show-front");
-
   const [cubeDepth, setCubeDepth] = useState("175px");
   //change value from height to "isCube"
 
