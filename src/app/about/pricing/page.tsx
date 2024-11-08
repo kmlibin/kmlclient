@@ -2,7 +2,7 @@ import React, { ReactNode } from "react";
 import Image from "next/image";
 import pricing from "./pricing.svg";
 import { ibm, fredoka } from "@/app/utils/fonts";
-import Navbar from "@/components/Navbar";
+import Navbar from "@/components/Navbar/Navbar";
 import { pricingCards } from "./pricingContent";
 import PricingCards from "./PricingCards";
 import { StaticImageData } from "next/image";

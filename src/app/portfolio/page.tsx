@@ -1,4 +1,4 @@
-import Navbar from "@/components/Navbar";
+import Navbar from "@/components/Navbar/Navbar";
 import PortfolioGallery from "./PortfolioGallery";
 import React from "react";
 

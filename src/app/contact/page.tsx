@@ -1,4 +1,4 @@
-import Navbar from "@/components/Navbar";
+import Navbar from "@/components/Navbar/Navbar";
 import React from "react";
 import { fredoka, ibm } from "../utils/fonts";
 import Link from "next/link";
@@ -27,23 +27,23 @@ const page = (props: Props) => {
                 </Link>{" "}
                 or use the form to send me a message!
               </p>
-<div className="flex flex-col w-full border-2 border-gray-200 shadow-lg p-8 bg-customWhite">
-              <p className={`${ibm.className} text-lg mb-2`}>
-                If you're ready to start chatting about a custom site:
-              </p>
+              <div className="flex flex-col w-full border-2 border-gray-200 shadow-lg p-8 bg-customWhite">
+                <p className={`${ibm.className} text-lg mb-2`}>
+                  If you're ready to start chatting about a custom site:
+                </p>
 
-              <ul className={`list-disc pl-8 ${ibm.className} text-lg`}>
-                <li>
-                  Please make sure you look at{" "}
-                  <Link
-                    href={"/faq/#gettingStarted"}
-                    className="hover:cursor text-customBlue hover:text-customTurquoise"
-                  >
-                    Getting Started
-                  </Link>{" "}
-                  in my FAQ
-                </li>
-              </ul>
+                <ul className={`list-disc pl-8 ${ibm.className} text-lg`}>
+                  <li>
+                    Please make sure you look at{" "}
+                    <Link
+                      href={"/faq/#gettingStarted"}
+                      className="hover:cursor text-customBlue hover:text-customTurquoise"
+                    >
+                      Getting Started
+                    </Link>{" "}
+                    in my FAQ
+                  </li>
+                </ul>
               </div>
             </div>
           </div>

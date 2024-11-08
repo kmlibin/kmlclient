@@ -1,4 +1,4 @@
-import Navbar from "@/components/Navbar";
+import Navbar from "@/components/Navbar/Navbar";
 import React, { useState, useEffect } from "react";
 import FAQ from "./FAQ";
 import NotHomeContactWrapper from "@/components/Wrapper/NotHomeContactWrapper";
