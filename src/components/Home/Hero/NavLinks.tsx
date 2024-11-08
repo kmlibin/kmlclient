@@ -3,6 +3,8 @@
 import React, { useState, useEffect } from "react";
 import Trail from "./Trail";
 import { ibm } from "@/app/utils/fonts";
+import paths from "@/app/paths";
+import Link from "next/link";
 
 type Props = {};
 
@@ -17,37 +19,26 @@ const NavLinks = (props: Props) => {
 
     return () => clearTimeout(timer); // Clean up timeout on unmount
   }, []);
+
+  //links
+  const navItems = [
+    { label: "About", path: paths.aboutPath() },
+    { label: "View Client Portfolio", path: paths.portfolioPath() },
+    { label: "FAQ", path: paths.faqPath() },
+    { label: "Getting Started", path: paths.getStartedPath()},
+  ];
   return (
     <ul className={` ${ibm.className} mb-5`}>
       <Trail open={true}>
-        <li className="relative flex items-center ">
-          <span className="slash transition-transform duration-300">/</span>
-          <span className="ml-2 transition-all duration-300 relative hover:text-customPink">
-            About
-            <span className="underline"></span>
-          </span>
-        </li>
-        <li className="relative flex items-center">
-          <span className="slash transition-transform duration-300">/</span>
-          <span className="ml-2 transition-all duration-300 relative hover:text-customPink">
-            View Client Portfolio
-            <span className="underline"></span>
-          </span>
-        </li>
-        <li className="relative flex items-center ">
-          <span className="slash transition-transform duration-300">/</span>
-          <span className="ml-2 transition-all duration-300 relative hover:text-customPink">
-            Getting Started
-            <span className="underline"></span>
-          </span>
-        </li>
-        <li className="relative flex items-center">
-          <span className="slash transition-transform duration-300">/</span>
-          <span className="ml-2 transition-all duration-300 relative hover:text-customPink">
-            FAQ
-            <span className="underline"></span>
-          </span>
-        </li>
+      {navItems.map(({ label, path }, index) => (
+          <li key={index} className="relative flex items-center">
+            <span className="slash transition-transform duration-300">/</span>
+            <Link href={path} className="ml-2 transition-all duration-300 relative hover:text-customPink">
+              {label}
+              <span className="underline"></span>
+            </Link>
+          </li>
+        ))}
       </Trail>
     </ul>
   );
