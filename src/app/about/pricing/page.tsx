@@ -1,13 +1,12 @@
 import React, { ReactNode } from "react";
 import Image from "next/image";
 import pricing from "./pricing.svg";
-import { ibm, fredoka, ibmBold } from "@/app/utils/fonts";
+import { ibm, fredoka } from "@/app/utils/fonts";
 import Navbar from "@/components/Navbar";
 import { pricingCards } from "./pricingContent";
 import PricingCards from "./PricingCards";
 import { StaticImageData } from "next/image";
-import table from "./table.svg";
-import info from "../../../../public/images/info.svg";
+import paths from "@/app/paths";
 import TableComparison from "./TableComparison";
 import AdditionalInfo from "./AdditionalInfo";
 import GetStartedButton from "./GetStartedButton";
@@ -70,9 +69,8 @@ const page = (props: Props) => {
         </div>
 
         <AdditionalInfo />
-        <GetStartedButton />
+        <GetStartedButton path={paths.contactPath()} />
         <TableComparison />
-        
       </div>
     </>
   );

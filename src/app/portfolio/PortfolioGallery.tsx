@@ -11,10 +11,9 @@ import cw2 from "../../../public/images/cw2.png";
 import kellinetlify2 from "../../../public/images/kellinetlify2.png";
 import jpel2 from "../../../public/images/jpel2.png";
 import myport from "../../../public/images/7.png";
-
-import portfolio from "../../../public/images/portfolio.svg";
+import paths from "../paths";
 import Image from "next/image";
-import { ibm } from "@/app/utils/fonts";
+
 import GetStartedButton from "../about/pricing/GetStartedButton";
 
 const PortfolioGallery = () => {
@@ -107,55 +106,55 @@ const PortfolioGallery = () => {
 
   return (
     <div className="flex flex-col w-full bg-customWhite">
-    <div className=" w-full relative justify-start items-start flex mb-10">
-      <div className="absolute -top-[11rem] -left-[15rem] rainbow-circle w-[900px] h-[900px] 3xl:w-[1100px] rounded-full 3xl:h-[1100px]"></div>
-      <div className="sticky top-[168px]">
-        <Image
-          alt="portfolio"
-          src={myport}
-          className="w-[270px] 3xl:w-[350px]"
-        />
+      <div className=" w-full relative justify-start items-start flex mb-10">
+        <div className="absolute -top-[11rem] -left-[15rem] rainbow-circle w-[900px] h-[900px] 3xl:w-[1100px] rounded-full 3xl:h-[1100px]"></div>
+        <div className="sticky top-[168px]">
+          <Image
+            alt="portfolio"
+            src={myport}
+            className="w-[270px] 3xl:w-[350px]"
+          />
+        </div>
+
+        <div className="relative h-full grid grid-cols-2 justify-center items-start gap-4 p-4 mx-auto mt-[180px] box-content shadow-customSmallGrey border-2 border-customIndigo border-opacity-50 bg-customWhite z-20">
+          <div className="flex flex-col justify-start gap-4 overflow-hidden">
+            {portfolioItems.map((item) => (
+              <PortfolioCard
+                key={item.id}
+                cube={item.cube}
+                business={item.business}
+                owner={item.owner}
+                height={item.height}
+                complete={item.complete}
+                review={item.review}
+                link={item.link}
+                bubbles={item.bubbles}
+                frontImage={item.frontImage}
+                backImage={item.backImage}
+              />
+            ))}
+          </div>
+          <div className="flex flex-col justify-start gap-4 ">
+            {portfolioItems2.map((item) => (
+              <PortfolioCard
+                key={item.id}
+                cube={item.cube}
+                link={item.link}
+                business={item.business}
+                owner={item.owner}
+                height={item.height}
+                bubbles={item.bubbles}
+                complete={item.complete}
+                review={item.review}
+                frontImage={item.frontImage}
+                backImage={item.backImage}
+              />
+            ))}
+          </div>
+        </div>
       </div>
 
-      <div className="relative h-full grid grid-cols-2 justify-center items-start gap-4 p-4 mx-auto mt-[180px] box-content shadow-customSmallGrey border-2 border-customIndigo border-opacity-50 bg-customWhite z-20">
-        <div className="flex flex-col justify-start gap-4 overflow-hidden">
-          {portfolioItems.map((item) => (
-            <PortfolioCard
-              key={item.id}
-              cube={item.cube}
-              business={item.business}
-              owner={item.owner}
-              height={item.height}
-              complete={item.complete}
-              review={item.review}
-              link={item.link}
-              bubbles={item.bubbles}
-              frontImage={item.frontImage}
-              backImage={item.backImage}
-            />
-          ))}
-        </div>
-        <div className="flex flex-col justify-start gap-4 ">
-          {portfolioItems2.map((item) => (
-            <PortfolioCard
-              key={item.id}
-              cube={item.cube}
-              link={item.link}
-              business={item.business}
-              owner={item.owner}
-              height={item.height}
-              bubbles={item.bubbles}
-              complete={item.complete}
-              review={item.review}
-              frontImage={item.frontImage}
-              backImage={item.backImage}
-            />
-          ))}
-        </div>
-      </div>
-    </div>
-
-    <GetStartedButton />
+      <GetStartedButton path={paths.pricingPath()} />
     </div>
   );
 };
