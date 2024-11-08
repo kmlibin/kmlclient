@@ -32,8 +32,8 @@ const ContactImages = () => {
 
   useEffect(() => {
     const animateElement = document.querySelector("#kelli-image");
-
     if (!initialAnimationPlayed) {
+      gsap.set(animateElement, { opacity: 0 }); 
       gsap.fromTo(
         animateElement,
         { opacity: 0, x: "-10vw" },
@@ -138,14 +138,15 @@ const ContactImages = () => {
           <ParticleExplosion id="particles" />
         </div>
       )}
-      <div className="fixed -bottom-[130%] my-9 right-0  flex -translate-y-1/2 flex-col min-h-[100vh] z-[50]">
+
+        <div className="fixed -bottom-[130%] my-9 right-0  flex -translate-y-1/2 flex-col min-h-[100vh] z-[50]">
         <div className="relative h-full w-[200px]">
           <Image
             src={kelli2}
             height={150}
             alt="kelli"
             id="kelli-image"
-            className="absolute -top-12 z-10 cursor-pointer"
+            className="absolute -top-12 z-10 cursor-pointer opacity-0"
             onClick={handleClick}
           />
           <Fade triggerOnce delay={3500}>
@@ -166,6 +167,7 @@ const ContactImages = () => {
           </Fade>
         </div>
       </div>
+
     </>
   );
 };
