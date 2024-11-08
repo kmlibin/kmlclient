@@ -17,6 +17,9 @@ const paths = {
   portfolioPath() {
     return "/portfolio";
   },
+  getStartedPath() {
+    return "/about/faq/#getStarted"
+  }
 };
 
 export default paths;
