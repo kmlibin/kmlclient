@@ -32,14 +32,6 @@ const Hero = () => {
           <Image src={bwsvg4} width={650} alt="logo" />
         </Fade>
         <div className="absolute -right-[52%] bottom-0 flex flex-col justify-end mb-2 py-10 text-gray-900 text-2xl leading-loose list-none">
-          {/* <ul className={` ${ibm.className} mb-5`}>
-            <Trail open= {true} >
-            <li>/ About</li>
-            <li>/ View Client Portfolio</li>
-            <li>/ Getting Started</li>
-            <li>/ FAQ</li>
-            </Trail>
-          </ul> */}
           <NavLinks />
         </div>
       </div>
