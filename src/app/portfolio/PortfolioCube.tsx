@@ -6,6 +6,7 @@ import { IoStarSharp } from "react-icons/io5";
 import { RiExternalLinkLine } from "react-icons/ri";
 import { ibm } from "@/app/utils/fonts";
 
+
 import "./Portfolio.css";
 import Link from "next/link";
 
@@ -21,6 +22,7 @@ type CubeProps = {
   logo?: any;
   owner?: string;
   business?: string;
+  isLarge?: boolean;
 };
 //@ts-ignore
 const Cube = ({
@@ -35,12 +37,27 @@ const Cube = ({
   bubbles,
   owner,
   business,
+  isLarge,
 }: CubeProps) => {
   const [currentSide, setCurrentSide] = useState("show-front");
   const [cubeDepth, setCubeDepth] = useState("175px");
+  const [showFullReview, setShowFullReview] = useState(false);
   //change value from height to "isCube"
 
   const cubeRef = useRef<HTMLDivElement>(null);
+
+  // truncates text to 30 words, use for small cubes
+  const truncateText = (text: string, wordLimit: number) => {
+    const words = text.split(" ");
+    return words.length > wordLimit
+      ? words.slice(0, wordLimit).join(" ") + "..."
+      : text;
+  };
+  const shouldTruncate = cube && !isLarge;
+  // toggle review
+  const handleToggleReview = () => {
+    setShowFullReview(!showFullReview);
+  };
 
   const handleMouseEnter = () => {
     setCurrentSide("show-bottom");
@@ -87,24 +104,60 @@ const Cube = ({
             <div
               className={`${ibm.className} absolute tracking-wide inset-0 z-20 flex flex-col items-center justify-center text-white text-xl gap-5`}
             >
-              <h3 className="text-4xl">{owner}</h3>
+              {isLarge && <h3 className="text-4xl">{owner}</h3>}
               <Link
-                href={link ? link : "/"}
+                href={link ? link : ""}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-xl cursor-pointer flex items-center gap-4 hover:text-customTurquoise hover:underline transition duration-300 hover:underline-offset-4"
               >
                 {business}
-                <RiExternalLinkLine />
+                {complete && <RiExternalLinkLine />}
               </Link>
-              <div className="flex w-full gap-4 justify-center mb-4">
-                {[...Array(5)].map((_, index) => (
-                  <IoStarSharp key={index} size={35} color={"#fec246"} />
-                ))}
-              </div>
-              <p className={`w-2/3 text-sm bg-customWhite text-black p-7`}>
-                {review}
+              {complete && (
+                <div
+                  className={`flex w-full gap-4 justify-center ${
+                    cube && isLarge ? "mb-4" : "mb-0"
+                  }`}
+                >
+                  {[...Array(5)].map((_, index) => (
+                    <IoStarSharp
+                      key={index}
+                      size={`${cube && isLarge ? 35 : 15}`}
+                      color={"#fec246"}
+                    />
+                  ))}
+                </div>
+              )}
+              <p
+                className={`${
+                  cube && isLarge ? "text-lg w-2/3" : "text-xs w-5/6"
+                } bg-customWhite text-black p-7 relative`}
+              >
+                {review && shouldTruncate && !showFullReview
+                  ? truncateText(review, 30)
+                  : review}
+                {review && shouldTruncate && review.split(" ").length > 30 && (
+                  <span
+                    className="text-customBlue hover:underline cursor-pointer"
+                    onClick={handleToggleReview}
+                  >
+                    .see more
+                  </span>
+                )}
               </p>
+              {/* popover for show more */}
+              {showFullReview && (
+                <div className="absolute flex flex-col items-center justify-center -top-2 left-0 mt-2 p-4 h-full bg-customWhite shadow-lg border border-gray-300 w-full z-30">
+                  <p className="text-xs text-black">{review}</p>
+                  <button
+                    onClick={handleToggleReview}
+                    className="text-customBlue hover:underline mt-2 absolute  bottom-0 right-0 p-6 "
+                  >
+                    ...show less
+                  </button>
+                </div>
+              )}
             </div>
           </div>
         </div>

@@ -30,7 +30,7 @@ const PortfolioGallery = () => {
       review:
         "Kelli has been outstanding with all of her help building my company website! She far exceeded any of my expectations and went above and beyond. I’m so thankful for her knowledge and attention to detail because it made the whole process so much easier for me. She even helped me figure out how to activate my company email and all other IT questions I had. I highly recommend Kelli for any web development or anything related!",
       backImage: cw2,
-      largeCube: false,
+      isLarge: false,
     },
     {
       id: 2,
@@ -48,7 +48,7 @@ const PortfolioGallery = () => {
       review:
         "This is a personal site that I use for larger employers, as the projects are more skill focused and not nearly as pretty :)",
       backImage: kellinetlify2,
-      largeCube: false,
+      isLarge: false,
     },
 
     {
@@ -57,7 +57,7 @@ const PortfolioGallery = () => {
       cube: true,
       frontImage: kellinetlify,
       backImage: kellinetlify2,
-      largeCube: false,
+      isLarge: false,
     },
     {
       id: 10,
@@ -79,7 +79,7 @@ const PortfolioGallery = () => {
       link: "https://poetic-selkie-096f2e.netlify.app/",
       review: "Under construction, check back soon!",
       backImage: fittees2,
-      largeCube: false,
+      isLarge: false,
     },
     {
       id: 6,
@@ -90,7 +90,7 @@ const PortfolioGallery = () => {
       review: "Under construction, check back soon!",
       complete: false,
       backImage: jpel2,
-      largeCube: false,
+      isLarge: false,
     },
     {
       id: 4,
@@ -131,6 +131,7 @@ const PortfolioGallery = () => {
                 bubbles={item.bubbles}
                 frontImage={item.frontImage}
                 backImage={item.backImage}
+                isLarge={item.isLarge}
               />
             ))}
           </div>
@@ -148,6 +149,7 @@ const PortfolioGallery = () => {
                 review={item.review}
                 frontImage={item.frontImage}
                 backImage={item.backImage}
+                isLarge={item.isLarge}
               />
             ))}
           </div>
