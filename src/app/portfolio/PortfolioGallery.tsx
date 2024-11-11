@@ -155,8 +155,6 @@ const PortfolioGallery = () => {
           </div>
         </div>
       </div>
-
-      <GetStartedButton path={paths.pricingPath()} />
     </div>
   );
 };
