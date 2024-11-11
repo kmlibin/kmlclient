@@ -11,6 +11,7 @@ import "./Portfolio.css";
 import Link from "next/link";
 
 import { PiArrowFatLinesRightFill } from "react-icons/pi";
+import { Fade, Slide } from "react-awesome-reveal";
 
 type CubeProps = {
   frontImage?: any;
@@ -24,7 +25,6 @@ type CubeProps = {
   logo?: any;
   owner?: string;
   business?: string;
-  isLarge?: boolean;
 };
 //@ts-ignore
 const Cube = ({
@@ -39,11 +39,11 @@ const Cube = ({
   bubbles,
   owner,
   business,
-  isLarge,
 }: CubeProps) => {
   const [currentSide, setCurrentSide] = useState("show-front");
   const [cubeDepth, setCubeDepth] = useState("175px");
   const [showFullReview, setShowFullReview] = useState(false);
+  const [popup, setPopup] = useState(false);
   //change value from height to "isCube"
 
   const cubeRef = useRef<HTMLDivElement>(null);
@@ -55,10 +55,19 @@ const Cube = ({
       ? words.slice(0, wordLimit).join(" ") + "..."
       : text;
   };
-  const shouldTruncate = cube && !isLarge;
+  // const shouldTruncate = cube && !isLarge;
+
+  const handleToggleReviewOn = () => {
+    setPopup(true);
+    setTimeout(() => {
+      setShowFullReview(!showFullReview);
+    }, 1000);
+  };
+
   // toggle review
-  const handleToggleReview = () => {
-    setShowFullReview(!showFullReview);
+  const handleToggleReviewOff = () => {
+    setShowFullReview(false);
+    setPopup(false);
   };
 
   const handleMouseEnter = () => {
@@ -106,7 +115,7 @@ const Cube = ({
             <div
               className={`${ibm.className} absolute tracking-wide inset-0 z-20 flex flex-col items-center justify-center text-white text-xl gap-5`}
             >
-              {isLarge && <h3 className="text-4xl">{owner}</h3>}
+              <h3 className="text-4xl">{owner}</h3>
               <Link
                 href={link ? link : ""}
                 target="_blank"
@@ -117,48 +126,43 @@ const Cube = ({
                 {complete && <RiExternalLinkLine />}
               </Link>
               {complete && (
-                <div
-                  className={`flex w-full gap-4 justify-center ${
-                    cube && isLarge ? "mb-4" : "mb-0"
-                  }`}
-                >
+                <div className={`flex w-full gap-4 justify-center mb-4`}>
                   {[...Array(5)].map((_, index) => (
-                    <IoStarSharp
-                      key={index}
-                      size={`${cube && isLarge ? 35 : 15}`}
-                      color={"#fec246"}
-                    />
+                    <IoStarSharp key={index} size={35} color={"#fec246"} />
                   ))}
                 </div>
               )}
-              <p
+              {/* <p
                 className={`${
                   cube && isLarge ? "text-lg w-2/3" : "text-xs w-5/6"
                 } bg-customWhite text-black p-7 relative`}
-              >
-                {review && shouldTruncate && !showFullReview
-                  ? truncateText(review, 30)
-                  : review}
-                {review && shouldTruncate && review.split(" ").length > 30 && (
+              > */}
+              <p className="text-lg w-2/3 bg-customWhite text-black p-7 relative">
+                {review && truncateText(review, 40)}
+
+                {/* Show more button only if the text is truncated */}
+                {review && !showFullReview && review.split(" ").length > 30 && (
                   <span
                     className="text-customBlue hover:underline cursor-pointer"
-                    onClick={handleToggleReview}
+                    onClick={handleToggleReviewOn}
                   >
                     .see more
                   </span>
                 )}
               </p>
               {/* popover for show more */}
-              {showFullReview && (
-                <div className="absolute flex flex-col items-center justify-center -top-2 left-0 mt-2 p-4 h-full bg-customWhite shadow-lg border border-gray-300 w-full z-30">
-                  <p className="text-xs text-black">{review}</p>
-                  <button
-                    onClick={handleToggleReview}
-                    className="text-customBlue hover:underline mt-2 absolute  bottom-0 right-0 p-6 "
-                  >
-                    ...show less
-                  </button>
-                </div>
+              {popup && (
+                <Fade duration={500}>
+                  <div className="absolute flex flex-col items-center justify-center -top-2 left-0 mt-2 p-4 h-full bg-customWhite shadow-lg border border-gray-300 w-full z-30">
+                    <p className="text-lg text-black w-5/6">{review}</p>
+                    <button
+                      onClick={handleToggleReviewOff}
+                      className="text-customBlue hover:underline mt-2 absolute  bottom-0 right-0 p-6 "
+                    >
+                      ...show less
+                    </button>
+                  </div>
+                </Fade>
               )}
             </div>
           </div>
@@ -170,7 +174,7 @@ const Cube = ({
     return (
       <div
         style={{
-          width: "100%",
+          width: "58%",
           height: height,
           cursor: "pointer",
           zIndex: "20",
@@ -183,29 +187,30 @@ const Cube = ({
     //template for non-cube and non-bubble
     return (
       <div
-        className={`flex flex-col w-[546px] bg-customWhite p-10 tracking-wider justify-between`}
+        className={`flex flex-col w-3/4 bg-customWhite p-10 tracking-wider justify-between`}
         style={{
           height: height,
         }}
       >
         <div className="flex flex-col w-full gap-4">
-        <h3 className={`${fredoka.className} text-3xl`}>
-          Ready to create something amazing?
-        </h3>
-        <p className={`${ibm.className} text-[15px]`}>
-          You've seen what a difference the right website can make. If you're
-          ready to elevate your business with a customized site, reach out
-          today, and let’s start building something great together!
-        </p>
-       </div>
-       <div>
-       <Link
-        className={` ${ibm.className}  bg-customIndigo relative overflow-hidden z-10 btn p-4 text-lightGrey flex items-center gap-3 justify-center`}
-        href="/about/faq/#getStarted"
-      >
-        <span className="flex justify-center items-center gap-3">Get Started <PiArrowFatLinesRightFill />
-        </span>
-      </Link>
+          <h3 className={`${fredoka.className} text-3xl`}>
+            Ready to create something amazing?
+          </h3>
+          <p className={`${ibm.className} text-[15px]`}>
+            You've seen what a difference the right website can make. If you're
+            ready to elevate your business with a customized site, reach out
+            today, and let’s start building something great together!
+          </p>
+        </div>
+        <div>
+          <Link
+            className={` ${ibm.className}  bg-customIndigo relative overflow-hidden z-10 btn p-4 text-lightGrey flex items-center gap-3 justify-center`}
+            href="/about/faq/#getStarted"
+          >
+            <span className="flex justify-center items-center gap-3">
+              Get Started <PiArrowFatLinesRightFill />
+            </span>
+          </Link>
         </div>
       </div>
     );

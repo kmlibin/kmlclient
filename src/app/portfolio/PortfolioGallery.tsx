@@ -107,7 +107,8 @@ const PortfolioGallery = () => {
   return (
     <div className="flex flex-col w-full bg-customWhite">
       <div className=" w-full relative justify-start items-start flex mb-10">
-        <div className="absolute -top-[11rem] -left-[15rem] rainbow-circle w-[900px] h-[900px] 3xl:w-[1100px] rounded-full 3xl:h-[1100px]"></div>
+        <div className="absolute -bottom-[11rem] -right-[15rem] rainbow-circle w-[900px] h-[900px] 3xl:w-[1100px] rounded-full 3xl:h-[1100px]"></div>
+
         <div className="sticky top-[168px]">
           <Image
             alt="portfolio"
@@ -131,7 +132,7 @@ const PortfolioGallery = () => {
                 bubbles={item.bubbles}
                 frontImage={item.frontImage}
                 backImage={item.backImage}
-                isLarge={item.isLarge}
+             
               />
             ))}
           </div>
@@ -149,7 +150,7 @@ const PortfolioGallery = () => {
                 review={item.review}
                 frontImage={item.frontImage}
                 backImage={item.backImage}
-                isLarge={item.isLarge}
+        
               />
             ))}
           </div>
