@@ -5,6 +5,7 @@ import nowOnline from "../../../../public/images/nowonline.svg";
 import { ibm, fredoka } from "@/app/utils/fonts";
 import Link from "next/link";
 import {  Zoom, } from "react-awesome-reveal";
+import { PiArrowFatLinesRightFill } from "react-icons/pi";
 type Props = {};
 
 const HomeBanner = (props: Props) => {
@@ -35,12 +36,12 @@ const HomeBanner = (props: Props) => {
           </p>
 
           <div className="w-full flex items-end justify-end mt-9">
-            <Link
-              href={"/getStarted"}
-              className={`${ibm.className} z-10 overflow-hidden text-customWhite bg-customIndigo relative btn w-1/4 flex justify-center items-center py-4`}
-            >
-              Get Started!
-            </Link>
+          <Link
+          href="/about/faq/#getStarted"
+          className={` ${ibm.className}  bg-customIndigo relative overflow-hidden z-10 btn p-4 text-lightGrey flex items-center gap-3 justify-center`}
+        >
+          <span className="flex justify-center items-center gap-3">Get Started <PiArrowFatLinesRightFill /></span>
+        </Link>
           </div>
         </div>
 

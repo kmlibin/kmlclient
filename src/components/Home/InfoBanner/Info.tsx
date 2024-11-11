@@ -4,6 +4,7 @@ import InfoCard from "./InfoCard";
 import { fredoka, ibm } from "@/app/utils/fonts";
 import Link from "next/link";
 import { Zoom } from "react-awesome-reveal";
+import { PiArrowFatLinesRightFill } from "react-icons/pi";
 
 // py-[6rem]
 const Info = () => {
@@ -33,10 +34,10 @@ const Info = () => {
       </div>
       <div className="flex justify-center mt-[3rem] items-center w-5/6">
         <Link
-          href="/"
+          href="/about/faq/#comparison"
           className={` ${ibm.className}  bg-customIndigo relative overflow-hidden z-10 btn p-4 text-lightGrey flex items-center gap-3 justify-center`}
         >
-          Button Here?
+          <span className="flex justify-center items-center gap-3">Learn More <PiArrowFatLinesRightFill /></span>
         </Link>
       </div>
     </div>

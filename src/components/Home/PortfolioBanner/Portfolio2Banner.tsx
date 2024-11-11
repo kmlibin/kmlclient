@@ -2,7 +2,7 @@
 import React from "react";
 import logosmall from "../../../public/images/logosmall.png";
 import Portfolio from "../../../app/portfolio/PortfolioCube";
-
+import { PiArrowFatLinesRightFill } from "react-icons/pi";
 import cw from "../../../public/images/cw.png";
 import cw2 from "../../../public/images/cw2.png";
 import Link from "next/link";
@@ -37,11 +37,11 @@ const Portfolio2Banner = (props: Props) => {
       </div>
       <Slider />
       <div className="flex justify-center mt-[3rem] items-center w-5/6">
-        <Link
-          href="/"
+      <Link
+          href="/portfolio"
           className={` ${ibm.className}  bg-customIndigo relative overflow-hidden z-10 btn p-4 text-lightGrey flex items-center gap-3 justify-center`}
         >
-          Button Here?
+          <span className="flex justify-center items-center gap-3">See More <PiArrowFatLinesRightFill /></span>
         </Link>
       </div>
     </div>
