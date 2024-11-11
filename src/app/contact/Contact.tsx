@@ -3,8 +3,9 @@ import React, { useState, useRef } from "react";
 import Link from "next/link";
 import emailjs from "@emailjs/browser";
 import SuccessErrorModal from "./SuccessErrorModal";
+import { LuSend } from "react-icons/lu";
 
-import { ibm, fredoka } from "../utils/fonts";
+import { ibm, fredoka, ibmBold } from "../utils/fonts";
 type formState = {
   name: string;
   email: string;
@@ -55,6 +56,18 @@ const Contact = (props: Props) => {
   //validate data, submit data to emailJS, reset form state
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    //rough rate limiting - mmaybe find a third party or use server actions
+    const lastSent = localStorage.getItem("lastSentTime");
+    const now = Date.now();
+    if (lastSent && now - parseInt(lastSent) < 60000) {
+      setSubmissionStatus({
+        heading: "Oops!",
+        message: "Please wait before sending another message.",
+      });
+      setShowErrorOrSuccessModal(true);
+      return
+    }
     setButtonStatus("Loading...");
 
     //check for errors and email validation
@@ -85,7 +98,7 @@ const Contact = (props: Props) => {
         formRef.current || "",
         process.env.NEXT_PUBLIC_PUBLIC_KEY || ""
       );
-
+      localStorage.setItem("lastSentTime", now.toString());
       console.log(result);
       setSubmissionStatus({
         heading: "You're all set!",
@@ -156,16 +169,16 @@ const Contact = (props: Props) => {
           {/* rainbows */}
 
           <form
-            className="space-y-6 w-3/4 p-8 bg-white rounded-lg shadow-lg"
+            className="space-y-6 w-3/4 p-8 bg-customWhite rounded-lg shadow-lg border-customGold border-4 border-opacity-90"
             ref={formRef}
             onSubmit={handleSubmit}
           >
-            <h3 className="text-2xl font-semibold text-gray-800 mb-4">
-              Contact Us
+            <h3 className={`${ibmBold.className} text-2xl text-black mb-4`}>
+              Let's Bring Your Vision to Life!
             </h3>
 
-            <div className="flex flex-col">
-              <label htmlFor="name" className="text-gray-700 font-medium">
+            <div className={`${ibm.className} flex flex-col tracking-wider`}>
+              <label htmlFor="name" className="text-black text-[16px] ">
                 Name
               </label>
               <input
@@ -175,9 +188,9 @@ const Contact = (props: Props) => {
                 className={`w-full rounded-xl border-2 p-3 focus:outline-none ${
                   formErrors.name
                     ? "border-red-500 focus:ring-red-500"
-                    : "border-darkTeal focus:ring-darkTeal"
+                    : "border-gray-300 border-opacity-50"
                 }`}
-                required
+              
                 value={formData.name}
                 onChange={handleChange}
               />
@@ -186,8 +199,8 @@ const Contact = (props: Props) => {
               )}
             </div>
 
-            <div className="flex flex-col">
-              <label htmlFor="email" className="text-gray-700 font-medium">
+            <div className={`${ibm.className} flex flex-col tracking-wider`}>
+              <label htmlFor="email" className="text-black text-[16px]">
                 Email
               </label>
               <input
@@ -199,7 +212,7 @@ const Contact = (props: Props) => {
                 className={`w-full rounded-xl border-2 p-3 focus:outline-none ${
                   formErrors.email
                     ? "border-red-500 focus:ring-red-500"
-                    : "border-darkTeal focus:ring-darkTeal"
+                    : "border-gray-300 border-opacity-50"
                 }`}
                 required
               />
@@ -208,8 +221,8 @@ const Contact = (props: Props) => {
               )}
             </div>
 
-            <div className="flex flex-col">
-              <label htmlFor="message" className="text-gray-700 font-medium">
+            <div className={`${ibm.className} flex flex-col tracking-wider`}>
+              <label htmlFor="message" className="text-black text-[16px]">
                 Message
               </label>
               <textarea
@@ -219,7 +232,7 @@ const Contact = (props: Props) => {
                 className={`w-full rounded-xl border-2 p-3 focus:outline-none ${
                   formErrors.message
                     ? "border-red-500 focus:ring-red-500"
-                    : "border-darkTeal focus:ring-darkTeal"
+                    : "border-gray-300 border-opacity-50"
                 }`}
                 required
                 value={formData.message}
@@ -234,9 +247,9 @@ const Contact = (props: Props) => {
 
             <button
               type="submit"
-              className="w-full py-3 px-6 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600 transition-colors"
+              className={`${ibm.className} flex items-center justify-center gap-3 w-full z-10 overflow-hidden text-customWhite bg-customIndigo btn relative py-3 px-6 rounded-lg`}
             >
-              {buttonStatus}
+              {buttonStatus} <LuSend className="mt-[.1rem]"/>
             </button>
           </form>
         </div>
@@ -247,7 +260,6 @@ const Contact = (props: Props) => {
           setIsOpen={setShowErrorOrSuccessModal}
           submissionStatus={submissionStatus}
           setSubmissionStatus={setSubmissionStatus}
-   
         />
       )}
     </div>
