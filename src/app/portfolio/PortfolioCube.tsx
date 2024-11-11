@@ -4,11 +4,13 @@ import Image from "next/image";
 import Bubbles from "./Bubbles";
 import { IoStarSharp } from "react-icons/io5";
 import { RiExternalLinkLine } from "react-icons/ri";
-import { ibm } from "@/app/utils/fonts";
 
+import { fredoka, ibm } from "@/app/utils/fonts";
 
 import "./Portfolio.css";
 import Link from "next/link";
+
+import { PiArrowFatLinesRightFill } from "react-icons/pi";
 
 type CubeProps = {
   frontImage?: any;
@@ -181,12 +183,31 @@ const Cube = ({
     //template for non-cube and non-bubble
     return (
       <div
+        className={`flex flex-col w-[546px] bg-customWhite p-10 tracking-wider justify-between`}
         style={{
-          width: "100%",
           height: height,
-          backgroundColor: "pink",
         }}
-      ></div>
+      >
+        <div className="flex flex-col w-full gap-4">
+        <h3 className={`${fredoka.className} text-3xl`}>
+          Ready to create something amazing?
+        </h3>
+        <p className={`${ibm.className} text-[15px]`}>
+          You've seen what a difference the right website can make. If you're
+          ready to elevate your business with a customized site, reach out
+          today, and let’s start building something great together!
+        </p>
+       </div>
+       <div>
+       <Link
+        className={` ${ibm.className}  bg-customIndigo relative overflow-hidden z-10 btn p-4 text-lightGrey flex items-center gap-3 justify-center`}
+        href="/about/faq/#getStarted"
+      >
+        <span className="flex justify-center items-center gap-3">Get Started <PiArrowFatLinesRightFill />
+        </span>
+      </Link>
+        </div>
+      </div>
     );
   }
 };
