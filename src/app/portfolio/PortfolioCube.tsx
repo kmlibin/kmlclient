@@ -90,7 +90,7 @@ const Cube = ({
           }
         >
           <Image
-            className="cube__face cube__face--front cursor-pointer absolute w-[100%] h-[100%] border-2 border-black text-3xl text-center text-white"
+            className="cube__face cube__face--front cursor-pointer absolute w-[100%] h-[100%] border-2 border-gray-200 text-3xl text-center text-white"
             src={frontImage}
             alt="CW"
           />
