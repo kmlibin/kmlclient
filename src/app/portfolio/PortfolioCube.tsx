@@ -25,6 +25,7 @@ type CubeProps = {
   logo?: any;
   owner?: string;
   business?: string;
+  isHome?: boolean;
 };
 //@ts-ignore
 const Cube = ({
@@ -35,7 +36,7 @@ const Cube = ({
   cube,
   review,
   link,
-  logo,
+  isHome,
   bubbles,
   owner,
   business,
@@ -88,7 +89,7 @@ const Cube = ({
 
   if (cube) {
     return (
-      <div className="scene w-auto h-auto overflow-hidden z-[20] ">
+      <div className="scene w-auto h-auto overflow-hidden z-[30] ">
         <div
           ref={cubeRef}
           className={`cube ${currentSide} w-auto relative transition-transform duration-1000`}
@@ -154,7 +155,7 @@ const Cube = ({
               {popup && (
                 <Fade duration={500}>
                   <div className="absolute flex flex-col items-center justify-center -top-2 left-0 mt-2 p-4 h-full bg-customWhite shadow-lg border border-gray-300 w-full z-30">
-                    <p className="text-lg text-black w-5/6">{review}</p>
+                    <p className={`${isHome? "w-[70%]" : "w-5/6" } text-lg text-black`}>{review}</p>
                     <button
                       onClick={handleToggleReviewOff}
                       className="text-customBlue hover:underline mt-2 absolute  bottom-0 right-0 p-6 "
@@ -187,13 +188,13 @@ const Cube = ({
     //template for non-cube and non-bubble
     return (
       <div
-        className={`flex flex-col w-3/4 bg-customWhite p-10 tracking-wider justify-between`}
+        className={`flex flex-col w-3/4 bg-customWhite p-10 tracking-wider justify-between 3xl:w-2/3`}
         style={{
           height: height,
         }}
       >
         <div className="flex flex-col w-full gap-4">
-          <h3 className={`${fredoka.className} text-3xl`}>
+          <h3 className={`${fredoka.className} text-4xl`}>
             Ready to create something amazing?
           </h3>
           <p className={`${ibm.className} text-[15px]`}>

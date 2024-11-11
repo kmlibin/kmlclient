@@ -126,6 +126,7 @@ export default function Slider() {
                     link={item.link}
                     review={item.review}
                     backImage={item.backImage}
+                    isHome={true}
               
                   />
                 </div>
