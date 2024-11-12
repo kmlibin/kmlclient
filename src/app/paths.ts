@@ -18,7 +18,13 @@ const paths = {
     return "/portfolio";
   },
   getStartedPath() {
-    return "/about/faq/#getStarted"
+    return "/about/faq/#getting-started"
+  },
+  tablePath() {
+    return "/about/pricing/#comparison-table"
+  },
+  emailjsPath() {
+    return '/about/faq/#what-is-emailjs'
   }
 };
 
