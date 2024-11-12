@@ -1,5 +1,4 @@
 import Navbar from "@/components/Navbar/Navbar";
-import PortfolioGallery from "./PortfolioGallery";
 import React from "react";
 import PortfolioPage from "./PortfolioPage";
 
@@ -9,7 +8,6 @@ const page = (props: Props) => {
   return (
     <>
       <Navbar />
-      {/* <PortfolioGallery /> */}
       <PortfolioPage />
     </>
   );
