@@ -1,17 +1,20 @@
 import React, { ReactNode } from "react";
-import Image from "next/image";
-import pricing from "./pricing.svg";
-import { ibm, fredoka } from "@/app/utils/fonts";
-import Navbar from "@/components/Navbar/Navbar";
+
+//utils and content
 import { pricingCards } from "./pricingContent";
-import PricingCards from "./PricingCards";
+import { ibm, fredoka } from "@/app/utils/fonts";
+//images
 import { StaticImageData } from "next/image";
+import pricing from "./images/pricing.svg";
+import Image from "next/image";
+//paths
 import paths from "@/app/paths";
+//components
+import Button from "@/components/Button";
 import TableComparison from "./TableComparison";
 import AdditionalInfo from "./AdditionalInfo";
-import GetStartedButton from "./GetStartedButton";
-
-type Props = {};
+import Navbar from "@/components/Navbar/Navbar";
+import PricingCards from "./PricingCards";
 
 type PricingData = {
   title: ReactNode | string;
@@ -23,7 +26,7 @@ type PricingData = {
 
 //fix the what's included, it's no longer tracking with the screen. change to fixed and remove top, it works, but then scrolls all the way to the bottom
 //of the screen, irregardless of container.
-const page = (props: Props) => {
+const page = () => {
   return (
     <>
       <Navbar />
@@ -69,7 +72,9 @@ const page = (props: Props) => {
         </div>
 
         <AdditionalInfo />
-        <GetStartedButton path={paths.contactPath()} />
+        <div className="h-[150px] bg-customBlue bg-opacity-20 w-full flex items-center justify-center mb-10">
+          <Button path={paths.contactPath()} text="Get Started" />
+        </div>
         <TableComparison />
       </div>
     </>
