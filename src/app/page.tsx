@@ -1,7 +1,7 @@
 import HomeContactWrapper from "@/components/Wrapper/HomeContactWrapper";
 import Hero from "@/components/Home/Hero/Hero";
 import PortfolioBanner from "@/components/Home/PortfolioBanner/Portfolio2Banner";
-import HomeBanner from "@/components/Home/Hero/HomeBanner";
+import HomeBanner from "@/components/Home/HomeBanner/HomeBanner";
 import Info from "@/components/Home/InfoBanner/Info";
 
 function Home() {

@@ -1,20 +1,20 @@
 "use client";
 import React from "react";
-import logosmall from "../../../public/images/logosmall.png";
-import Portfolio from "../../../app/portfolio/PortfolioCube";
-import { PiArrowFatLinesRightFill } from "react-icons/pi";
-import cw from "../../../public/images/cw.png";
-import cw2 from "../../../public/images/cw2.png";
-import Link from "next/link";
+//fonts and utils
 import { fredoka, ibm } from "@/app/utils/fonts";
-import { Gi3dGlasses } from "react-icons/gi";
+import paths from "@/app/paths";
+import { portfolioBanner } from "../homeContent";
+//libraries
 import { FcIdea } from "react-icons/fc";
-import Slider from "./Slider";
 import { Zoom } from "react-awesome-reveal";
+//components
+import Slider from "./Slider";
+import Button from "@/components/Button";
 
-type Props = {};
 
-const Portfolio2Banner = (props: Props) => {
+
+
+const Portfolio2Banner = () => {
   return (
     <div
       id="portfolio-section"
@@ -29,20 +29,12 @@ const Portfolio2Banner = (props: Props) => {
       </Zoom>
       <div className="w-2/3 text-md  bg-customWhite bg-opacity-55 shadow-indigo rounded-xl p-5 my-10">
         <p className={`${ibm.className} text-center px-5`}>
-          See the difference I've made for other small businesses! From
-          eye-catching designs to seamless functionality, my work speaks for
-          itself. Explore the projects that have helped my clients grow online
-          and stand out from the competition.
+          {portfolioBanner.mainText}
         </p>
       </div>
       <Slider />
       <div className="flex justify-center mt-[3rem] items-center w-5/6">
-      <Link
-          href="/portfolio"
-          className={` ${ibm.className}  bg-customIndigo relative overflow-hidden z-10 btn p-4 text-lightGrey flex items-center gap-3 justify-center`}
-        >
-          <span className="flex justify-center items-center gap-3">See More <PiArrowFatLinesRightFill /></span>
-        </Link>
+        <Button path={paths.portfolioPath()} text="See More" />
       </div>
     </div>
   );

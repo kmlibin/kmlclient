@@ -1,11 +1,14 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import Image from "next/image";
-import info from "./info.svg";
+import info from "./images/info.svg";
 import { fredoka, ibm, ibmBold } from "@/app/utils/fonts";
+import { additionalInfo } from "./pricingContent";
 
-type Props = {};
+type listItem = {
+  content: string | ReactNode;
+};
 
-const AdditionalInfo = (props: Props) => {
+const AdditionalInfo = () => {
   return (
     <div className="flex w-3/4 items-start p-8 justify-center mt-20 mb-10 gap-4 bg-customWhite border-2 border-gray-200 shadow-lg  box-content">
       <div className="w-[200px] h-[200px] info-bg flex justify-center items-center rounded-full">
@@ -19,29 +22,9 @@ const AdditionalInfo = (props: Props) => {
         <ul
           className={`${ibm.className} w-full flex items-start flex-col list-disc list-outside pl-10 text-md space-y-4 text-md`}
         >
-          <li>Extra pages: $50 per additional page, beyond the initial four</li>
-          <li>
-            Domain Registration: If you choose to host with me on Netlify, I can
-            assist with domain registration. If you decide to host the site
-            yourself, you'll be responsible for purchasing and setting up your
-            own domain.
-          </li>
-          <li>
-            My services are perfect for small business websites that focus on
-            performance and ease of use, without requiring complex features like
-            user logins or databases. If you do need those advanced
-            functionalities, I can still help, but please note that they may
-            increase the overall cost due to additional hosting and development.
-          </li>
-          <li>
-            <span className={`text-lg ${ibmBold.className} underline`}>
-              Note on Self-Hosting:
-            </span>
-            &nbsp; If you choose to host the site yourself, I do not provide
-            support for self-hosting setup, including purchasing a domain,
-            selecting a hosting provider, or connecting your domain to the
-            hosting service. You will need to handle these tasks independently.
-          </li>
+          {additionalInfo.map((item: listItem) => (
+            <li>{item.content}</li>
+          ))}
         </ul>
       </div>
     </div>

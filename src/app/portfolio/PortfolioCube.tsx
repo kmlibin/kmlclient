@@ -11,7 +11,9 @@ import "./Portfolio.css";
 import Link from "next/link";
 
 import { PiArrowFatLinesRightFill } from "react-icons/pi";
-import { Fade, Slide } from "react-awesome-reveal";
+import { Fade } from "react-awesome-reveal";
+import Button from "@/components/Button";
+import paths from "../paths";
 
 type CubeProps = {
   frontImage?: any;
@@ -133,15 +135,11 @@ const Cube = ({
                   ))}
                 </div>
               )}
-              {/* <p
-                className={`${
-                  cube && isLarge ? "text-lg w-2/3" : "text-xs w-5/6"
-                } bg-customWhite text-black p-7 relative`}
-              > */}
+
               <p className="text-lg w-2/3 bg-customWhite text-black p-7 relative">
                 {review && truncateText(review, 40)}
 
-                {/* Show more button only if the text is truncated */}
+                {/* show more button only if the text is truncated */}
                 {review && !showFullReview && review.split(" ").length > 30 && (
                   <span
                     className="text-customBlue hover:underline cursor-pointer"
@@ -155,7 +153,13 @@ const Cube = ({
               {popup && (
                 <Fade duration={500}>
                   <div className="absolute flex flex-col items-center justify-center -top-2 left-0 mt-2 p-4 h-full bg-customWhite shadow-lg border border-gray-300 w-full z-30">
-                    <p className={`${isHome? "w-[70%]" : "w-5/6" } text-lg text-black`}>{review}</p>
+                    <p
+                      className={`${
+                        isHome ? "w-[70%]" : "w-5/6"
+                      } text-lg text-black`}
+                    >
+                      {review}
+                    </p>
                     <button
                       onClick={handleToggleReviewOff}
                       className="text-customBlue hover:underline mt-2 absolute  bottom-0 right-0 p-6 "
@@ -204,14 +208,7 @@ const Cube = ({
           </p>
         </div>
         <div>
-          <Link
-            className={` ${ibm.className}  bg-customIndigo relative overflow-hidden z-10 btn p-4 text-lightGrey flex items-center gap-3 justify-center`}
-            href="/about/faq/#getStarted"
-          >
-            <span className="flex justify-center items-center gap-3">
-              Get Started <PiArrowFatLinesRightFill />
-            </span>
-          </Link>
+          <Button path={paths.getStartedPath()} text="Get Started" />
         </div>
       </div>
     );

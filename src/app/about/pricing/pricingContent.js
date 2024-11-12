@@ -1,11 +1,14 @@
+//images
 import design from "../../../../public/images/design.svg";
-import communication from "../../../../public/images/communication.svg";
-import responsive from "../../../../public/images/responsive.svg";
-import multiple from "../../../../public/images/multiple.svg";
-import message from "../../../../public/images/message.svg";
+import communication from "./images/communication.svg";
+import responsive from "./images/responsive.svg";
+import multiple from "./images/multiple.svg";
+import message from "./images/message.svg";
 import seo from "../../../../public/images/seo.svg";
-import hosting from "../../../../public/images/hosting.svg";
+import hosting from "./images/hosting.svg";
+//fonts
 import { fredoka, ibm, ibmBold } from "@/app/utils/fonts";
+//routing
 import Link from "next/link";
 
 export const pricingCards = [
@@ -48,9 +51,18 @@ export const pricingCards = [
     src: message,
     text: (
       <p className={`${ibm.className} text-md`}>
-        Set up a custom contact form for client inquiries and engagement.<br></br> <small><span className={`${ibmBold.className} underline`}>Note:</span>
-        &nbsp; Clients will need an EmailJS account (using the free tier). <Link href={"/about/faq"} className="cursor:hover text-customBlue hover:underline hover:text-customIndigo duration-300 transition-all">See FAQ for
-        details.</Link></small>
+        Set up a custom contact form for client inquiries and engagement.
+        <br></br>{" "}
+        <small>
+          <span className={`${ibmBold.className} underline`}>Note:</span>
+          &nbsp; Clients will need an EmailJS account (using the free tier).{" "}
+          <Link
+            href={"/about/faq"}
+            className="cursor:hover text-customBlue hover:underline hover:text-customIndigo duration-300 transition-all"
+          >
+            See FAQ for details.
+          </Link>
+        </small>
       </p>
     ),
     isList: true,
@@ -89,5 +101,32 @@ export const pricingCards = [
       </>
     ),
     isList: true,
+  },
+];
+
+export const additionalInfo = [
+  {
+    content: "Extra pages: $50 per additional page, beyond the initial four",
+  },
+  {
+    content:
+      "Domain Registration: If you choose to host with me on Netlify, I can assist with domain registration. If you decide to host the site yourself, you'll be responsible for purchasing and setting up your own domain.",
+  },
+  {
+    content:
+      "My services are perfect for small business websites that focus on performance and ease of use, without requiring complex features like user logins, managing inventories, or databases. If you do need those advanced functionalities, I can still help, but please note that they may increase the overall cost due to additional hosting and development.",
+  },
+  {
+    content: (
+      <>
+        <span className={`text-lg ${ibmBold.className} underline`}>
+          Note on Self-Hosting:
+        </span>
+        &nbsp; If you choose to host the site yourself, I do not provide support
+        for self-hosting setup, including purchasing a domain, selecting a
+        hosting provider, or connecting your domain to the hosting service. You
+        will need to handle these tasks independently.
+      </>
+    ),
   },
 ];

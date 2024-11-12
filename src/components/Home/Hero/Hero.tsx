@@ -4,7 +4,7 @@ import Image from "next/image";
 
 import background from "../../../../public/images/kmlbg.jpg";
 import { Fade } from "react-awesome-reveal";
-import bwsvg4 from "../../../../public/images/bwsvg4.svg";
+import bwsvg4 from "./bwsvg4.svg";
 import "./Home.css";
 import NavLinks from "./NavLinks";
 

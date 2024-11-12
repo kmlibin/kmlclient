@@ -1,12 +1,15 @@
 import React from "react";
+//fonts
 import { fredoka, ibm } from "@/app/utils/fonts";
+//libs
 import Image from "next/image";
-import table from "./table.svg";
-type Props = {};
+//images
+import table from './images/table.svg'
 
-const TableComparison = (props: Props) => {
+
+const TableComparison = () => {
   return (
-    <div className="w-[95%] flex flex-col tracking-wide items-center justify-center border-2 border-customBlue mb-10 border-opacity-50">
+    <div id="comparison-table" className="w-[95%] flex flex-col tracking-wide items-center justify-center border-2 border-customBlue mb-10 border-opacity-50">
       <h3 className={`${fredoka.className} text-4xl mb-4 pt-8 `}>
         See How We Compare to Other Platforms
       </h3>
