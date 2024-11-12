@@ -39,7 +39,7 @@ const SuccessErrorModal = ({
           <Fireworks id="tsparticles" />
         </div>
       ) : (
-        <div className="fixed min-w-full min-h-full z-50 bg-black bg-opacity-60"></div>
+        <div className="fixed inset-0  z-50 bg-black bg-opacity-60"></div>
       )}
       {/* modal start */}
       <div className="fixed inset-0 z-50 flex items-center justify-center">
