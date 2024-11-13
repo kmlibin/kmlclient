@@ -22,8 +22,8 @@ const AdditionalInfo = () => {
         <ul
           className={`${ibm.className} w-full flex items-start flex-col list-disc list-outside pl-10 text-md space-y-4 text-md`}
         >
-          {additionalInfo.map((item: listItem) => (
-            <li>{item.content}</li>
+          {additionalInfo.map((item: listItem, index) => (
+            <li key={index}>{item.content}</li>
           ))}
         </ul>
       </div>
