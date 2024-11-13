@@ -1,36 +1,24 @@
-"use client";
-import React, { useState, useRef } from "react";
+import React from "react";
 import Link from "next/link";
-import emailjs from "@emailjs/browser";
-import SuccessErrorModal from "./SuccessErrorModal";
-import { LuSend } from "react-icons/lu";
-import Fireworks from "./Fireworks";
-
-import { ibm, fredoka, ibmBold } from "../utils/fonts";
+import { ibm, fredoka } from "../utils/fonts";
 import paths from "../paths";
 import ContactForm from "./ContactForm";
-type formState = {
-  name: string;
-  email: string;
-  message: string;
-  hasDomain: string;
-  domainProvider?: string;
-  hostingPreference: string;
-  otherHostingPlatform?: string;
-};
+import ZoomHeading from "@/components/ZoomHeading";
 
-type Props = {};
-
-const Contact = (props: Props) => {
+const Contact = () => {
   return (
     <div className=" relative bg-customWhite flex w-full min-h-[100vh] overflow-hidden">
+      {/* rainbows */}
       <div className="absolute -bottom-[20rem] -right-[15rem] rainbow-circle w-[1100px] rounded-full h-[1100px] "></div>
       <div className="flex justify-center items-start w-full mt-[180px] mb-10">
         <div className="w-1/3 flex items-center justify-center tracking-wide">
           <div className="z-10 w-full flex flex-col justify-center items-start">
-            <h2 className={`${fredoka.className} text-5xl mb-4`}>
+            <ZoomHeading
+              as="h2"
+              className={`${fredoka.className} text-5xl mb-4`}
+            >
               Ready to Connect?
-            </h2>
+            </ZoomHeading>
             <p className={`${ibm.className} text-lg mb-8`}>
               If you have any questions, see my{" "}
               <Link
@@ -62,7 +50,6 @@ const Contact = (props: Props) => {
           </div>
         </div>
         <div className="w-1/2 relative flex items-center justify-end">
-          {/* rainbows */}
           <ContactForm />
         </div>
       </div>

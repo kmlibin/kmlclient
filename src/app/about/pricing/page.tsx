@@ -15,6 +15,7 @@ import TableComparison from "./TableComparison";
 import AdditionalInfo from "./AdditionalInfo";
 import Navbar from "@/components/Navbar/Navbar";
 import PricingCards from "./PricingCards";
+import ZoomHeading from "@/components/ZoomHeading";
 
 type PricingData = {
   title: ReactNode | string;
@@ -50,12 +51,18 @@ const page = () => {
             className={`${ibm.className} tracking-wide  w-1/2 relative  flex flex-col items-center justify-start gap-16`}
           >
             <div className="w-full flex flex-col items-center justify-start ">
-              <h2 className={`${fredoka.className} text-5xl text-center mb-2`}>
+              <ZoomHeading
+                as="h2"
+                className={`${fredoka.className} text-5xl text-center mb-2`}
+              >
                 Everything You Need <br></br> in a Website
-              </h2>
-              <h4 className={`${ibm.className} text-xl text-left mb-4 `}>
+              </ZoomHeading>
+              <ZoomHeading
+                as="h4"
+                className={`${ibm.className} text-xl text-center mb-4 `}
+              >
                 Starting at $350
-              </h4>
+              </ZoomHeading>
             </div>
 
             {pricingCards.map((item: PricingData) => (

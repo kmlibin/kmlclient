@@ -11,7 +11,7 @@ import { homeBanner } from "../homeContent";
 import { Zoom } from "react-awesome-reveal";
 //components
 import Button from "../../Button";
-
+import ZoomHeading from "@/components/ZoomHeading";
 
 const HomeBanner = () => {
   return (
@@ -21,13 +21,12 @@ const HomeBanner = () => {
     >
       <div className="flex w-5/6 justify-center items-center">
         <div className="w-1/2 h-full flex flex-col justify-end item-end">
-          <Zoom direction="down" duration={1500} triggerOnce>
-            <h1
-              className={`text-4xl mb-4 w-full tracking-wide ${fredoka.className}`}
-            >
-              Say Goodbye to DIY Website Hassles!
-            </h1>
-          </Zoom>
+          <ZoomHeading
+            as="h2"
+            className={`text-4xl mb-4 w-full tracking-wide ${fredoka.className}`}
+          >
+            Say Goodbye to DIY Website Hassles!
+          </ZoomHeading>
 
           <p className={`text-md w-full ${ibm.className}`}>
             {homeBanner.mainText}

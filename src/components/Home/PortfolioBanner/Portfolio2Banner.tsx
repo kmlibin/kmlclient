@@ -10,9 +10,7 @@ import { Zoom } from "react-awesome-reveal";
 //components
 import Slider from "./Slider";
 import Button from "@/components/Button";
-
-
-
+import ZoomHeading from "@/components/ZoomHeading";
 
 const Portfolio2Banner = () => {
   return (
@@ -20,13 +18,13 @@ const Portfolio2Banner = () => {
       id="portfolio-section"
       className="relative bg-gradient-to-t from-customIndigoRGBA to-customWhite flex flex-col justify-center items-center w-full pb-[4rem]"
     >
-      <Zoom direction="down" duration={1500} triggerOnce>
-        <h3
-          className={`${fredoka.className} text-5xl w-full tracking-wide flex items-center justify-center gap-3`}
-        >
-          Bringing Ideas to Life <FcIdea />
-        </h3>
-      </Zoom>
+      <ZoomHeading
+        as="h3"
+        className={`${fredoka.className} text-5xl w-full tracking-wide flex items-center justify-center gap-3`}
+      >
+        Bringing Ideas to Life <FcIdea />
+      </ZoomHeading>
+
       <div className="w-2/3 text-md  bg-customWhite bg-opacity-55 shadow-indigo rounded-xl p-5 my-10">
         <p className={`${ibm.className} text-center px-5`}>
           {portfolioBanner.mainText}
