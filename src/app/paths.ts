@@ -3,28 +3,28 @@ const paths = {
     return "/";
   },
   faqPath() {
-    return "about/faq";
+    return "/main/about/faq";
   },
   aboutPath() {
-    return "/about";
+    return "/main/about";
   },
   pricingPath() {
-    return "/about/pricing";
+    return "/main/about/pricing";
   },
   contactPath() {
-    return "/contact";
+    return "/main/contact";
   },
   portfolioPath() {
-    return "/portfolio";
+    return "/main/portfolio";
   },
   getStartedPath() {
-    return "/about/faq/#getting-started"
+    return "/main/about/faq/#getting-started"
   },
   tablePath() {
-    return "/about/pricing/#comparison-table"
+    return "/main/about/pricing/#comparison-table"
   },
   emailjsPath() {
-    return '/about/faq/#what-is-emailjs'
+    return '/main/about/faq/#what-is-emailjs'
   }
 };
 
