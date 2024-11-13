@@ -32,6 +32,7 @@ const config: Config = {
         customDarkPink: "rgb(148, 30, 62)",
         customTurquoise: "rgb(98, 211, 228)",
         customWhite: "rgb(250, 249, 247)",
+        blackTextFont: "#333333",
       },
       boxShadow: {
         customGray: "0 0 50px rgba(60, 60, 60, .5)",
