@@ -10,6 +10,7 @@ import hosting from "./images/hosting.svg";
 import { fredoka, ibm, ibmBold } from "@/app/utils/fonts";
 //routing
 import Link from "next/link";
+import paths from "@/app/paths";
 
 export const pricingCards = [
   {
@@ -57,7 +58,7 @@ export const pricingCards = [
           <span className={`${ibmBold.className} underline`}>Note:</span>
           &nbsp; Clients will need an EmailJS account (using the free tier).{" "}
           <Link
-            href={"/about/faq"}
+            href={paths.emailjsPath()}
             className="cursor:hover text-customBlue hover:underline hover:text-customIndigo duration-300 transition-all"
           >
             See FAQ for details.
