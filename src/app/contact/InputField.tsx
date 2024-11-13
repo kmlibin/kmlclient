@@ -19,7 +19,7 @@ const InputField = ({
   onChange,
 }: InputFieldProps) => (
   <div className={`${ibm.className} flex flex-col tracking-wider`}>
-    <label htmlFor={name} className="text-black text-[16px]">
+    <label htmlFor={name} className="text-[16px]">
       {label}
     </label>
     <input

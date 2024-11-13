@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import Link from "next/link";
 import { BiChevronDown } from "react-icons/bi";
@@ -33,7 +32,7 @@ const Links = ({ linkName, path }: Props) => {
                 <Link
                   key={id}
                   href={href}
-                  className="w-full text-right px-4 py-2 text-sm text-black hover:bg-gray-100  hover:text-customBlue"
+                  className="w-full text-right px-4 py-2 text-sm text-blackTextFont hover:bg-gray-100  hover:text-customBlue"
                   role="menuitem"
                   id={id}
                 >

@@ -149,7 +149,7 @@ const ContactForm = (props: Props) => {
         ref={formRef}
         onSubmit={handleSubmit}
       >
-        <h3 className={`${ibmBold.className} text-2xl text-black mb-4`}>
+        <h3 className={`${ibmBold.className} text-2xl  mb-4`}>
           Let's Bring Your Vision to Life!
         </h3>
 
@@ -210,7 +210,7 @@ const ContactForm = (props: Props) => {
         )}
 
         <div className={`${ibm.className} flex flex-col tracking-wider`}>
-          <label htmlFor="message" className="text-black text-[16px]">
+          <label htmlFor="message" className=" text-[16px]">
             Message
           </label>
           <textarea

@@ -11,7 +11,7 @@ interface SelectFieldProps {
 
 const SelectField = ({ label, name, value, options, onChange }: SelectFieldProps) => (
     <div className={`${ibm.className} flex flex-col tracking-wider`}>
-    <label className="text-black text-[16px]">{label}</label>
+    <label className=" text-[16px]">{label}</label>
     <select
       name={name}
       value={value}

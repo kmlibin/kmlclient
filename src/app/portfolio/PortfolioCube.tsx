@@ -9,8 +9,6 @@ import { fredoka, ibm } from "@/app/utils/fonts";
 
 import "./Portfolio.css";
 import Link from "next/link";
-
-import { PiArrowFatLinesRightFill } from "react-icons/pi";
 import { Fade } from "react-awesome-reveal";
 import Button from "@/components/Button";
 import paths from "../paths";
@@ -102,7 +100,7 @@ const Cube = ({
           }
         >
           <Image
-            className="cube__face cube__face--front cursor-pointer absolute w-[100%] h-[100%] border-2 border-gray-200 text-3xl text-center text-white"
+            className="cube__face cube__face--front cursor-pointer absolute w-[100%] h-[100%] border-2 border-gray-200 text-3xl text-center text-customWhite"
             src={frontImage}
             alt="CW"
           />
@@ -116,7 +114,7 @@ const Cube = ({
             <div className="absolute inset-0 bg-gradient-to-b from-gray-900 bg-gray-900 bg-opacity-60 to-transparent z-10"></div>
 
             <div
-              className={`${ibm.className} absolute tracking-wide inset-0 z-20 flex flex-col items-center justify-center text-white text-xl gap-5`}
+              className={`${ibm.className} absolute tracking-wide inset-0 z-20 flex flex-col items-center justify-center text-customWhite text-xl gap-5`}
             >
               <h3 className="text-4xl">{owner}</h3>
               <Link
@@ -136,7 +134,7 @@ const Cube = ({
                 </div>
               )}
 
-              <p className="text-lg w-2/3 bg-customWhite text-black p-7 relative">
+              <p className="text-lg w-2/3 bg-customWhite text-blackTextFont p-7 relative">
                 {review && truncateText(review, 40)}
 
                 {/* show more button only if the text is truncated */}
@@ -156,7 +154,7 @@ const Cube = ({
                     <p
                       className={`${
                         isHome ? "w-[70%]" : "w-5/6"
-                      } text-lg text-black`}
+                      } text-lg text-blackTextFont`}
                     >
                       {review}
                     </p>
