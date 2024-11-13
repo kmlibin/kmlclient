@@ -1,8 +1,11 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+//components
 import Trail from "./Trail";
+//fonts
 import { ibm } from "@/app/utils/fonts";
+//routing
 import paths from "@/app/paths";
 import Link from "next/link";
 

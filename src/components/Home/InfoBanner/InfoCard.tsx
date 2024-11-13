@@ -1,5 +1,7 @@
 import React from "react";
+//fonts
 import { fredoka, ibm } from "@/app/utils/fonts";
+//images
 import Image, { StaticImageData } from "next/image";
 import bank from "../../../../public/images/bank.svg";
 

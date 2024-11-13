@@ -3,12 +3,10 @@ import React from "react";
 //images
 import Image from "next/image";
 import nowOnline from "./nowonline.svg";
-//fonts and utils
+//fonts and utils and content
 import { ibm, fredoka } from "@/app/utils/fonts";
 import paths from "@/app/paths";
 import { homeBanner } from "../homeContent";
-//animations
-import { Zoom } from "react-awesome-reveal";
 //components
 import Button from "../../Button";
 import ZoomHeading from "@/components/ZoomHeading";

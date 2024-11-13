@@ -1,11 +1,14 @@
 "use client";
 import React from "react";
+//images
 import Image from "next/image";
-
 import background from "../../../../public/images/kmlbg.jpg";
-import { Fade } from "react-awesome-reveal";
 import bwsvg4 from "./bwsvg4.svg";
+//libraries
+import { Fade } from "react-awesome-reveal";
+//css
 import "./Home.css";
+//components
 import NavLinks from "./NavLinks";
 
 const Hero = () => {

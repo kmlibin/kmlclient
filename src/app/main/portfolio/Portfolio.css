@@ -1,0 +1,26 @@
+.scene {
+  width: auto;
+  height: var(--cube-height);
+  position: relative;
+}
+
+.cube {
+  aspect-ratio: 2; 
+  transform-style: preserve-3d;
+  transform: translateZ(var(--cube-depth));
+}
+
+.cube.show-front {
+  transform: translateZ(-100px) rotateY(0deg);
+}
+
+.cube.show-bottom {
+  transform: translateZ(-100px) rotateX(90deg);
+}
+
+.cube__face--front {
+  transform: rotateY(0deg) translateZ(var(--cube-depth));
+}
+.cube__face--bottom {
+  transform: rotateX(-90deg) translateZ(var(--cube-depth));
+}

@@ -1,12 +1,18 @@
 "use client";
+import React from "react";
+//content
 import { infoCards } from "../homeContent";
+//components
 import InfoCard from "./InfoCard";
-import { fredoka} from "@/app/utils/fonts";
+//fonts
+import { fredoka } from "@/app/utils/fonts";
+//paths
 import paths from "@/app/paths";
+//components
 import Button from "@/components/Button";
 import ZoomHeading from "@/components/ZoomHeading";
 
-// py-[6rem]
+
 const Info = () => {
   return (
     <div

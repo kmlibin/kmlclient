@@ -1,4 +1,4 @@
-"use client";
+
 import React from "react";
 //fonts and utils
 import { fredoka, ibm } from "@/app/utils/fonts";
@@ -6,7 +6,6 @@ import paths from "@/app/paths";
 import { portfolioBanner } from "../homeContent";
 //libraries
 import { FcIdea } from "react-icons/fc";
-import { Zoom } from "react-awesome-reveal";
 //components
 import Slider from "./Slider";
 import Button from "@/components/Button";

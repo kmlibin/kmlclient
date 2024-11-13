@@ -1,10 +1,9 @@
 'use client'
-import React, { useState } from 'react'
+import React from 'react'
+//libraries
 import { useTrail, a } from '@react-spring/web'
 
-type Props = {};
 
-//@ts-ignore
 const Trail: React.FC<{ open: boolean; children: React.ReactNode }> = ({ open, children }) => {
     const items = React.Children.toArray(children)
     const trail = useTrail(items.length, {

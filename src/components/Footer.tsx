@@ -1,10 +1,12 @@
 import React from "react";
+//fonts
 import { ibm } from "@/app/utils/fonts";
+//images
 import webdevlogo from "../../public/images/fulllogo.png";
-import { RiCopyrightLine } from "react-icons/ri";
 import Image from "next/image";
+//libraries
+import { RiCopyrightLine } from "react-icons/ri";
 
-type Props = {};
 
 const Footer = () => {
   return (

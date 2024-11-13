@@ -2,10 +2,10 @@
 import { useState, useEffect } from "react";
 //libraries
 import { Fade } from "react-awesome-reveal";
-import Image from "next/image";
 //components
-import PortfolioCube from "../../../app/portfolio/PortfolioCube";
+import PortfolioCube from "../../../app/main/portfolio/PortfolioCube";
 //images
+import Image from "next/image";
 import right from "./fwdarrow.svg";
 import left from "./leftarrow.svg";
 //content

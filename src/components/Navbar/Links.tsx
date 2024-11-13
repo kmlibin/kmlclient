@@ -1,8 +1,9 @@
 import React from "react";
+//routing
 import Link from "next/link";
-import { BiChevronDown } from "react-icons/bi";
-
 import paths from "@/app/paths";
+//libraries
+import { BiChevronDown } from "react-icons/bi";
 
 type Props = {
   path: string;

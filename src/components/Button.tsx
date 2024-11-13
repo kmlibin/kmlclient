@@ -1,6 +1,9 @@
 import React from "react";
+//routing
 import Link from "next/link";
+//fonts
 import { ibm } from "@/app/utils/fonts";
+//libraries
 import { PiArrowFatLinesRightFill } from "react-icons/pi";
 
 type Props = {

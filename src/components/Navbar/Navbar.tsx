@@ -1,11 +1,16 @@
 "use client";
 import React, { useState } from "react";
+//libraries
 import { BiSolidSquareRounded } from "react-icons/bi";
+//images
 import logo from "../../../public/images/klbg.svg";
 import Image from "next/image";
+//fonts
 import { ibm } from "@/app/utils/fonts";
+//routing
 import paths from "@/app/paths";
 import Link from "next/link";
+//components
 import Links from "./Links";
 
 

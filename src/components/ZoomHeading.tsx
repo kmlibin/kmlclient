@@ -1,5 +1,6 @@
 "use client";
 import React, { ReactNode } from "react";
+//libraries
 import { Zoom } from "react-awesome-reveal";
 
 interface ZoomHeadingProps {
