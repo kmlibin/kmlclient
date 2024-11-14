@@ -73,7 +73,7 @@ const Fireworks = ({ id }: FireworksProps) => {
             },
             particles: {
               color: {
-                value: ["#FF0000", "#FFD700", "#00FF00", "#00BFFF", "#FF1493"],
+                value: ["rgb(198, 55, 92)", "#057ee6", "#fec246", "#e15c3a", "#c3c3d9"],
               },
               stroke: {
                 width: 0,
