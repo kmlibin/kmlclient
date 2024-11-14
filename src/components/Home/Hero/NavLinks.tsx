@@ -9,10 +9,9 @@ import { ibm } from "@/app/utils/fonts";
 import paths from "@/app/paths";
 import Link from "next/link";
 
-type Props = {};
 
-const NavLinks = (props: Props) => {
-  const [open, setOpen] = useState(false); // Local state to control animation
+const NavLinks = () => {
+  const [open, setOpen] = useState(false); 
 
   useEffect(() => {
     // Set open to true after the component mounts
@@ -32,7 +31,7 @@ const NavLinks = (props: Props) => {
   ];
   return (
     <ul className={` ${ibm.className} mb-5`}>
-      <Trail open={true}>
+      <Trail open={open}>
       {navItems.map(({ label, path }, index) => (
           <li key={index} className="relative flex items-center">
             <span className="slash transition-transform duration-300">/</span>

@@ -11,7 +11,7 @@ import InputField from "./InputField";
 //components
 import SelectField from "./SelectField";
 
-type Props = {};
+
 type formState = {
   name: string;
   email: string;
@@ -21,7 +21,7 @@ type formState = {
   hostingPreference: string;
   otherHostingPlatform?: string;
 };
-const ContactForm = (props: Props) => {
+const ContactForm = () => {
   const formRef = useRef<HTMLFormElement>(null);
   const [buttonStatus, setButtonStatus] = useState<string>("Send Message");
   const [showErrorOrSuccessModal, setShowErrorOrSuccessModal] =
@@ -152,7 +152,7 @@ const ContactForm = (props: Props) => {
         onSubmit={handleSubmit}
       >
         <h3 className={`${ibmBold.className} text-2xl  mb-4`}>
-          Let's Bring Your Vision to Life!
+          Let&apos;s Bring Your Vision to Life!
         </h3>
 
         <InputField

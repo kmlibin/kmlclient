@@ -18,7 +18,6 @@ const NyanCat = ({ id }: NyanCatProps) => {
   // init ts particles
   useEffect(() => {
     initParticlesEngine(async (engine) => {
-      //@ts-ignore
       await loadFull(engine);
     }).then(() => {
       setInit(true);
@@ -30,7 +29,7 @@ const NyanCat = ({ id }: NyanCatProps) => {
   };
 
   //options that control the particles
-  //@ts-ignore
+//@ts-expect-error
   const options: ISourceOptions = useMemo(
     () => ({
       autoPlay: true,

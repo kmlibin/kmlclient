@@ -34,7 +34,7 @@ const Contact = () => {
             </p>
             <div className="flex flex-col w-full border-2 border-gray-200 shadow-lg p-8 bg-customWhite">
               <p className={`${ibm.className} text-lg mb-2`}>
-                If you're ready to start chatting about a custom site:
+                If you&apos;re ready to start chatting about a custom site:
               </p>
 
               <ul className={`list-disc pl-8 ${ibm.className} text-lg`}>

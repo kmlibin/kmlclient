@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useRef, useEffect } from "react";
 //images
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 //components
 import Bubbles from "./Bubbles";
 //libraries
@@ -20,20 +20,20 @@ import Button from "@/components/Button";
 
 
 type CubeProps = {
-  frontImage?: any;
-  backImage?: any;
+  frontImage?: StaticImageData | string;
+  backImage?: StaticImageData | string;
   height?: string;
   complete?: boolean;
   review?: string;
   link?: string;
   bubbles?: boolean;
   cube?: boolean;
-  logo?: any;
+  logo?: StaticImageData | string;
   owner?: string;
   business?: string;
   isHome?: boolean;
 };
-//@ts-ignore
+
 const Cube = ({
   frontImage,
   backImage,
@@ -107,14 +107,14 @@ const Cube = ({
         >
           <Image
             className="cube__face cube__face--front cursor-pointer absolute w-[100%] h-[100%] border-2 border-gray-200 text-3xl text-center text-customWhite"
-            src={frontImage}
+            src={frontImage ? frontImage :  ""}
             alt="CW"
           />
 
           <div className="cube__face cube__face--bottom absolute w-[100%] h-[100%]">
             <Image
               className="absolute w-full h-full"
-              src={backImage}
+              src={backImage ? backImage : ""}
               alt="Back Image"
             />
             <div className="absolute inset-0 bg-gradient-to-b from-gray-900 bg-gray-900 bg-opacity-60 to-transparent z-10"></div>
@@ -206,9 +206,9 @@ const Cube = ({
             Ready to create something amazing?
           </h3>
           <p className={`${ibm.className} text-[15px]`}>
-            You've seen what a difference the right website can make. If you're
+            You&apos;ve seen what a difference the right website can make. If you're
             ready to elevate your business with a customized site, reach out
-            today, and let’s start building something great together!
+            today, and let&apos;s start building something great together!
           </p>
         </div>
         <div>

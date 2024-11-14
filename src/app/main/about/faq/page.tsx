@@ -3,9 +3,8 @@ import React from "react";
 import FAQ from "./FAQ";
 
 
-type Props = {};
 
-const page = (props: Props) => {
+const page = () => {
   return (
       <FAQ />
   );

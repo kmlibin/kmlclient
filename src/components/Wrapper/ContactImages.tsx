@@ -74,8 +74,8 @@ const ContactImages = () => {
   useEffect(() => {
     if (!initialAnimationPlayed) return; // avoid fly-back on initial load
 
-    const handleSectionInView = (entries: any) => {
-      entries.forEach((entry: any) => {
+    const handleSectionInView = (entries: IntersectionObserverEntry[] ) => {
+      entries.forEach((entry: IntersectionObserverEntry) => {
         if (entry.isIntersecting) {
           debouncedSetFlyBack(); // debounced to avoid re-trigger
         }
@@ -136,7 +136,6 @@ const ContactImages = () => {
   return (
     <>
       {isParticleVisible && (
-        // @ts-ignore
         <div className="w-full h-full !z-[40] absolute">
           <ParticleExplosion id="particles" />
         </div>

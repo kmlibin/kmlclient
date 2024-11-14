@@ -2,10 +2,8 @@
 import React, { useState, useMemo, useEffect } from "react";
 
 // libraries
-import { loadFireworksPreset } from "tsparticles-preset-fireworks";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadFull } from "tsparticles";
-import { tsParticles } from "tsparticles-engine";
 // types
 import { Container, ISourceOptions } from "@tsparticles/engine";
 
@@ -19,8 +17,6 @@ const Fireworks = ({ id }: FireworksProps) => {
   useEffect(() => {
     initParticlesEngine(async (engine) => {
       await loadFull(engine);
-      //@ts-ignore
-      await loadFireworksPreset(tsParticles);
     }).then(() => {
       setInit(true);
     });
@@ -29,7 +25,7 @@ const Fireworks = ({ id }: FireworksProps) => {
   const particlesLoaded = async (container?: Container): Promise<void> => {
     console.log(container);
   };
-  console.log(init);
+
 
   const particlesConfig: ISourceOptions = useMemo(
     () => ({

@@ -29,7 +29,7 @@ const Bubbles = ({ id }: BubblesProps) => {
   };
 
   // Options that control the particles
-  //@ts-ignore
+  //@ts-expect-error
   const particlesOptions: ISourceOptions = useMemo(
     () => ({
       autoPlay: true,
