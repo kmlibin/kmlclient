@@ -40,8 +40,9 @@ const ContactImages = () => {
       gsap.set(animateElement, { opacity: 0 });
       gsap.fromTo(
         animateElement,
-        { opacity: 0, x: "-10vw" },
+        { autoAlpha: 0, x: "-10vw" },
         {
+          autoAlpha: 1,
           opacity: 1,
           duration: 5,
           motionPath: {
@@ -75,32 +76,32 @@ const ContactImages = () => {
   useEffect(() => {
     if (!initialAnimationPlayed) return; // avoid fly-back on initial load
 
-    const handleSectionInView = (entries: IntersectionObserverEntry[] ) => {
-      entries.forEach((entry: IntersectionObserverEntry) => {
-        if (entry.isIntersecting) {
-          debouncedSetFlyBack(); // debounced to avoid re-trigger
-        }
-      });
-    };
+    // const handleSectionInView = (entries: IntersectionObserverEntry[] ) => {
+    //   entries.forEach((entry: IntersectionObserverEntry) => {
+    //     if (entry.isIntersecting) {
+    //       debouncedSetFlyBack(); // debounced to avoid re-trigger
+    //     }
+    //   });
+    // };
 
-    //set up and init observer
-    const observerOptions = { threshold: 0.5 };
-    const observer = new IntersectionObserver(
-      handleSectionInView,
-      observerOptions
-    );
-    const sections = [
-      document.querySelector("#banner-section"),
-      document.querySelector("#portfolio-section"),
-      document.querySelector("#info-section"),
-      document.querySelector("#hero-section"),
-    ];
+    // //set up and init observer
+    // const observerOptions = { threshold: 0.5 };
+    // const observer = new IntersectionObserver(
+    //   handleSectionInView,
+    //   observerOptions
+    // );
+    // const sections = [
+    //   document.querySelector("#banner-section"),
+    //   document.querySelector("#portfolio-section"),
+    //   document.querySelector("#info-section"),
+    //   document.querySelector("#hero-section"),
+    // ];
 
-    sections.forEach((section) => {
-      if (section) observer.observe(section);
-    });
+    // sections.forEach((section) => {
+    //   if (section) observer.observe(section);
+    // });
 
-    return () => observer.disconnect();
+    // return () => observer.disconnect();
   }, [initialAnimationPlayed]);
 
   useEffect(() => {
