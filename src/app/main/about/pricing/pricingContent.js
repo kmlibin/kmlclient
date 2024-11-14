@@ -7,10 +7,8 @@ import message from "./images/message.svg";
 import seo from "../../../../../public/images/seo.svg";
 import hosting from "./images/hosting.svg";
 //fonts
-import { fredoka, ibm, ibmBold } from "@/app/utils/fonts";
-//routing
-import Link from "next/link";
-import paths from "@/app/paths";
+import { fredoka, ibmBold } from "@/app/utils/fonts";
+
 
 export const pricingCards = [
   {
@@ -50,23 +48,9 @@ export const pricingCards = [
 
     alt: "logo of a message bubble",
     src: message,
-    text: (
-      <p className={`${ibm.className} text-md`}>
-        Set up a custom contact form for client inquiries and engagement.
-        <br></br>{" "}
-        <small>
-          <span className={`${ibmBold.className} underline`}>Note:</span>
-          &nbsp; Clients will need an EmailJS account (using the free tier).{" "}
-          <Link
-            href={paths.emailjsPath()}
-            className="cursor:hover text-customBlue hover:underline hover:text-customIndigo duration-300 transition-all"
-          >
-            See FAQ for details.
-          </Link>
-        </small>
-      </p>
-    ),
-    isList: true,
+    text: null,
+    isNote1: true,
+    isList: false,
   },
   {
     title: "Optimized for Speed & SEO",
@@ -118,16 +102,7 @@ export const additionalInfo = [
       "My services are perfect for small business websites that focus on performance and ease of use, without requiring complex features like user logins, managing inventories, or databases. If you do need those advanced functionalities, I can still help, but please note that they may increase the overall cost due to additional hosting and development.",
   },
   {
-    content: (
-      <>
-        <span className={`text-lg ${ibmBold.className} underline`}>
-          Note on Self-Hosting:
-        </span>
-        &nbsp; If you choose to host the site yourself, I do not provide support
-        for self-hosting setup, including purchasing a domain, selecting a
-        hosting provider, or connecting your domain to the hosting service. You
-        will need to handle these tasks independently.
-      </>
-    ),
+    isNote2: true,
+    content: null,
   },
 ];

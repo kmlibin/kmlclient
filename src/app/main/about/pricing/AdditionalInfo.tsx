@@ -3,11 +3,12 @@ import React, { ReactNode } from "react";
 import Image from "next/image";
 import info from "./images/info.svg";
 //fonts and content
-import { fredoka, ibm} from "@/app/utils/fonts";
+import { fredoka, ibm, ibmBold } from "@/app/utils/fonts";
 import { additionalInfo } from "./pricingContent";
 
 type listItem = {
   content: string | ReactNode;
+  isNote2?: boolean;
 };
 
 const AdditionalInfo = () => {
@@ -24,9 +25,22 @@ const AdditionalInfo = () => {
         <ul
           className={`${ibm.className} w-full flex items-start flex-col list-disc list-outside pl-10 text-md space-y-4 text-md`}
         >
-          {additionalInfo.map((item: listItem, index) => (
-            <li key={index}>{item.content}</li>
-          ))}
+          {additionalInfo.map((item: listItem, index) =>
+            item.isNote2 ? (
+              <p>
+                <span className={`text-lg ${ibmBold.className} underline`}>
+                  Note on Self-Hosting:
+                </span>
+                &nbsp; If you choose to host the site yourself, I do not provide
+                support for self-hosting setup, including purchasing a domain,
+                selecting a hosting provider, or connecting your domain to the
+                hosting service. You will need to handle these tasks
+                independently.
+              </p>
+            ) : (
+              <li key={index}>{item.content}</li>
+            )
+          )}
         </ul>
       </div>
     </div>

@@ -23,6 +23,7 @@ type PricingData = {
   src: StaticImageData;
   alt: string;
   isList: boolean;
+  isNote1?: boolean;
 };
 
 //fix the what's included, it's no longer tracking with the screen. change to fixed and remove top, it works, but then scrolls all the way to the bottom
@@ -73,6 +74,7 @@ const page = () => {
               alt={item.alt}
               src={item.src}
               isList={item.isList}
+              isNote1={item.isNote1}
             />
           ))}
         </div>
