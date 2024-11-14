@@ -21,6 +21,7 @@ const ContactImages = () => {
   const [isParticleVisible, setIsParticleVisible] = useState(false);
   const [initialAnimationPlayed, setInitialAnimationPlayed] = useState(false);
   const [flyBack, setFlyBack] = useState(false);
+  
   const observerRef = useRef<NodeJS.Timeout | null>(null);
 
   gsap.registerPlugin(MotionPathPlugin);
@@ -112,7 +113,7 @@ const ContactImages = () => {
         opacity: 1,
         scale: 1,
         duration: 2,
-        ease: "power4.out",
+        ease: "power1.inOut",
         onComplete: () => setFlyBack(false), // reset state on animation complete
       });
     }

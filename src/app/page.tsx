@@ -1,4 +1,4 @@
-// import HomeContactWrapper from "@/components/Wrapper/HomeContactWrapper";
+import HomeContactWrapper from "@/components/Wrapper/HomeContactWrapper";
 import Hero from "@/components/Home/Hero/Hero";
 import PortfolioBanner from "@/components/Home/PortfolioBanner/Portfolio2Banner";
 import HomeBanner from "@/components/Home/HomeBanner/HomeBanner";
@@ -15,4 +15,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default HomeContactWrapper(Home);
