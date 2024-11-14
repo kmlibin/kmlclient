@@ -16,7 +16,6 @@ export default function Slider() {
   const [currentLogo, setCurrentLogo] = useState(sliderItems[0].logo);
   const [fadeKey, setFadeKey] = useState(0);
 
-
   //slider controls
   const showPreviousSlide = () => {
     setFactIndex((index) => (index === 0 ? sliderItems.length - 1 : index - 1));
@@ -38,6 +37,7 @@ export default function Slider() {
       <div className="absolute left-10 z-[30] min-w-[150px] max-w-[150px] min-h-[150px] bg-customIndigo border-4 shadow-customSmallGrey border-customWhite p-10 box-content rounded-full flex justify-center items-center">
         <Fade key={fadeKey} duration={1500}>
           <Image
+            loading="lazy"
             alt="Concierge Wellness Logo"
             className="object-cover"
             src={currentLogo}
@@ -82,6 +82,7 @@ export default function Slider() {
               alt="back arrow"
               src={left}
               height={100}
+              loading="lazy"
             />
           </button>
           <button
@@ -89,6 +90,7 @@ export default function Slider() {
             className="absolute text-3xl top-2 -right-[4rem] hover:scale-110 transition duration-400"
           >
             <Image
+              loading="lazy"
               className="fill-customWhite"
               alt="fwd arrow"
               src={right}

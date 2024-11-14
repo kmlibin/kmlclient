@@ -3,7 +3,7 @@ import React from "react";
 //images
 import Image from "next/image";
 import background from "../../../../public/images/kmlbg.jpg";
-import bwsvg4 from "../../../../public/images/bwsvg4.svg";
+import bwsvg4 from "../../../../public/images/newlogo.png";
 //libraries
 import { Fade } from "react-awesome-reveal";
 //css

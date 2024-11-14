@@ -25,7 +25,7 @@ const InfoCard = ({ title, text, src, alt }: Props) => {
       </h3>
       <div className="3xl:w-[200px] 3xl:h-[200px] h-[150px] w-[150px] mb-10 flex justify-center items-center">
         {src !== "bank" ? (
-          <Image src={src} alt={alt} />
+          <Image src={src} alt={alt} loading="lazy"/>
         ) : (
           <video loop playsInline muted autoPlay className="w-full">
             <source src={bankvid} type="video/mp4" />

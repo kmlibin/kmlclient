@@ -37,6 +37,7 @@ const HomeBanner = () => {
 
         <div className="w-1/2 flex justify-end">
           <Image
+            loading="lazy"
             src={nowOnline}
             alt="small business with sign saying Our Business is Now Online!"
           />
