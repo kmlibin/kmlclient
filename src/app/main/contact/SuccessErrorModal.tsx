@@ -48,14 +48,13 @@ const SuccessErrorModal = ({
       {/* modal start */}
       <div className="fixed inset-0 z-50 flex items-center justify-center">
         <div className="relative w-full max-w-sm transform rounded-xl bg-customWhite p-6 shadow-xl">
-          <div className="mb-4 flex items-center justify-between">
+          <div className="mb-4 flex items-center justify-between tracking-wider">
             <h5
-              className={`${fredoka.className} w-full border-b-2 border-lighterTeal pb-4 text-center text-lg font-semibold text-darkestTeal`}
+              className={`${fredoka.className} w-full border-b-2 border-customGold pb-4 text-center text-lg text-blackTextFont`}
             >
               {submissionStatus?.heading}
             </h5>
             <button
-              className="text-gray-500 hover:text-darkestTeal"
               onClick={() => {
                 setIsOpen(false);
                 setSubmissionStatus(null);
@@ -63,19 +62,19 @@ const SuccessErrorModal = ({
             >
               <IoMdClose
                 size={24}
-                className="absolute right-4 top-4 text-xl text-gray-500 hover:text-darkestTeal"
+                className="absolute right-4 top-4 text-xl text-gray-500 hover:text-customTurquoise transition duration-300"
               />
             </button>
           </div>
 
           {/* text */}
-          <div className={`${ibm.className} mb-6 text-center text-darkestTeal`}>
+          <div className={`${ibm.className} mb-6 text-center text-blackTextFont tracking-wider`}>
             <p>{submissionStatus?.message}</p>
           </div>
 
           <div className="flex justify-center">
             <button
-              className={`${fredoka.className} mt-4 w-full border-2 border-lighterTeal bg-darkTeal py-3 tracking-wider text-lightGrey shadow-md transition-all duration-300 hover:bg-customGold active:translate-y-[2px] active:scale-[0.95] active:shadow-none`}
+              className={`${fredoka.className} mt-4 w-full border-2 border-lightIndigo bg-customIndigo py-3 tracking-wider text-customWhite shadow-md transition-all duration-300 hover:bg-customGold hover:text-blackTextFont active:translate-y-[2px] active:scale-[0.95] active:shadow-none`}
               onClick={handleClose}
             >
               Close
