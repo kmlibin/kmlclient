@@ -206,7 +206,7 @@ const Cube = ({
             Ready to create something amazing?
           </h3>
           <p className={`${ibm.className} text-[15px]`}>
-            You&apos;ve seen what a difference the right website can make. If you're
+            You&apos;ve seen what a difference the right website can make. If you&apos;re
             ready to elevate your business with a customized site, reach out
             today, and let&apos;s start building something great together!
           </p>

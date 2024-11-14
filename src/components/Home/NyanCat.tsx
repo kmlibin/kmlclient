@@ -29,7 +29,7 @@ const NyanCat = ({ id }: NyanCatProps) => {
   };
 
   //options that control the particles
-//@ts-expect-error
+//@ts-expect-error i need to add a comment
   const options: ISourceOptions = useMemo(
     () => ({
       autoPlay: true,

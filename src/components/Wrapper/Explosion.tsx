@@ -18,7 +18,6 @@ const ParticleExplosion = ({ id }: ParticleProps) => {
   // init ts particles
   useEffect(() => {
     initParticlesEngine(async (engine) => {
-      //@ts-ignore
       await loadFull(engine);
     }).then(() => {
       setInit(true);
