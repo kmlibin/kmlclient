@@ -4,6 +4,7 @@ import { fredoka, ibm } from "@/app/utils/fonts";
 //images
 import Image, { StaticImageData } from "next/image";
 import bank from "../../../../public/images/bank.svg";
+import bankvid from '../../../../public/videos/bankvid.mp4'
 
 type Props = {
   title: string;
@@ -27,7 +28,7 @@ const InfoCard = ({ title, text, src, alt }: Props) => {
           <Image src={src} alt={alt} />
         ) : (
           <video loop playsInline muted autoPlay className="w-full">
-            <source src="bankvid.mp4" type="video/mp4" />
+            <source src={bankvid} type="video/mp4" />
             <Image src={bank} alt="putting money in a piggy bank" />
           </video>
         )}
