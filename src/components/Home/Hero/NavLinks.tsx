@@ -1,5 +1,4 @@
 "use client";
-
 import React, { useState, useEffect } from "react";
 //components
 import Trail from "./Trail";
@@ -17,7 +16,7 @@ const NavLinks = () => {
     // Set open to true after the component mounts
     const timer = setTimeout(() => {
       setOpen(true);
-    }, 100); // Slight delay to allow for rendering (adjust if needed)
+    }, 20); // Slight delay to allow for rendering (adjust if needed)
 
     return () => clearTimeout(timer); // Clean up timeout on unmount
   }, []);
