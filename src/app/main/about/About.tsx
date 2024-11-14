@@ -24,6 +24,7 @@ const About = () => {
             alt="kelli"
             height={450}
             className="z-10 border-8 border-customIndigo"
+            priority
           />
         </Fade>
       </div>
