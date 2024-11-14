@@ -39,7 +39,7 @@ const PricingCards = ({ title, text, src, alt, isList, isNote1 }: Props) => {
                 engagement.
               </p>
               <small>
-                <span className={`${ibmBold.className} underline`}>Note:</span>
+                <span className={`${ibmBold.className} border-b border-b-blackTextFont`}>Note:</span>
                 <span>
                  &nbsp; Clients will need an EmailJS account (using the free tier).{" "}
                   <Link
