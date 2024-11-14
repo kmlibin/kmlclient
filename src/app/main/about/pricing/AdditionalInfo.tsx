@@ -27,7 +27,7 @@ const AdditionalInfo = () => {
         >
           {additionalInfo.map((item: listItem, index) =>
             item.isNote2 ? (
-              <p>
+              <p key={index}>
                 <span className={`text-lg ${ibmBold.className} underline`}>
                   Note on Self-Hosting:
                 </span>
