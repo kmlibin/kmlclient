@@ -30,13 +30,12 @@ const Hero = () => {
       </div>
       {/* image */}
 
-      <div className="relative flex justify-end items-center ml-[5rem] py-10 mb-4">
+      <div className="relative flex justify-end items-center ml-[5rem] py-10 mb-4 z-[10]">
         <Fade triggerOnce>
           <Image
             src={bwsvg4}
             width={650}
             alt="Libin Web Development and image of Kelli"
-            priority
           />
         </Fade>
         <div className="absolute -right-[52%] bottom-0 flex flex-col justify-end mb-2 py-10 text-gray-900 text-2xl leading-loose list-none">
