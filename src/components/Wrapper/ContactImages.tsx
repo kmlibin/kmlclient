@@ -21,7 +21,7 @@ const ContactImages = () => {
   const [isParticleVisible, setIsParticleVisible] = useState(false);
   const [initialAnimationPlayed, setInitialAnimationPlayed] = useState(false);
   const [flyBack, setFlyBack] = useState(false);
-  
+
   const observerRef = useRef<NodeJS.Timeout | null>(null);
 
   gsap.registerPlugin(MotionPathPlugin);
@@ -76,32 +76,32 @@ const ContactImages = () => {
   useEffect(() => {
     if (!initialAnimationPlayed) return; // avoid fly-back on initial load
 
-    // const handleSectionInView = (entries: IntersectionObserverEntry[] ) => {
-    //   entries.forEach((entry: IntersectionObserverEntry) => {
-    //     if (entry.isIntersecting) {
-    //       debouncedSetFlyBack(); // debounced to avoid re-trigger
-    //     }
-    //   });
-    // };
+    const handleSectionInView = (entries: IntersectionObserverEntry[] ) => {
+      entries.forEach((entry: IntersectionObserverEntry) => {
+        if (entry.isIntersecting) {
+          debouncedSetFlyBack(); // debounced to avoid re-trigger
+        }
+      });
+    };
 
-    // //set up and init observer
-    // const observerOptions = { threshold: 0.5 };
-    // const observer = new IntersectionObserver(
-    //   handleSectionInView,
-    //   observerOptions
-    // );
-    // const sections = [
-    //   document.querySelector("#banner-section"),
-    //   document.querySelector("#portfolio-section"),
-    //   document.querySelector("#info-section"),
-    //   document.querySelector("#hero-section"),
-    // ];
+    //set up and init observer
+    const observerOptions = { threshold: 0.5 };
+    const observer = new IntersectionObserver(
+      handleSectionInView,
+      observerOptions
+    );
+    const sections = [
+      document.querySelector("#banner-section"),
+      document.querySelector("#portfolio-section"),
+      document.querySelector("#info-section"),
+      document.querySelector("#hero-section"),
+    ];
 
-    // sections.forEach((section) => {
-    //   if (section) observer.observe(section);
-    // });
+    sections.forEach((section) => {
+      if (section) observer.observe(section);
+    });
 
-    // return () => observer.disconnect();
+    return () => observer.disconnect();
   }, [initialAnimationPlayed]);
 
   useEffect(() => {
@@ -146,6 +146,7 @@ const ContactImages = () => {
       <div className="fixed -bottom-[130%] my-9 right-0  flex -translate-y-1/2 flex-col min-h-[100vh] z-[50]">
         <div className="relative h-full w-[200px]">
           <Image
+            priority
             src={kelli2}
             height={150}
             alt="kelli"
