@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 //libraries
 import { Fade } from "react-awesome-reveal";
+import { RiArrowRightSLine, RiArrowLeftSLine } from "react-icons/ri";
 //components
 import PortfolioCube from "../../../app/main/portfolio/PortfolioCube";
 //images
@@ -34,7 +35,7 @@ export default function Slider() {
 
   return (
     <div className="flex justify-center items-center w-5/6 relative">
-      <div className="absolute left-10 z-[30] min-w-[150px] max-w-[150px] min-h-[150px] bg-customIndigo border-4 shadow-customSmallGrey border-gray-200 p-10 box-content rounded-full flex justify-center items-center">
+      <div className="absolute right-10  z-[30] min-w-[100px] max-w-[100px] min-h-[100px] bg-customIndigo border-4 shadow-customSmallGrey border-gray-200 p-10 box-content rounded-full flex justify-center items-center">
         <Fade key={fadeKey} duration={1500}>
           <Image
             loading="lazy"
@@ -75,27 +76,15 @@ export default function Slider() {
           </div>
           <button
             onClick={showPreviousSlide}
-            className="absolute text-3xl top-2 -left-[4rem] hover:scale-110 transition duration-400 z-10"
+            className="absolute text-blackTextFont -left-[4rem] hover:scale-110 transition duration-400 z-10 hover:text-brightOrange"
           >
-            <Image
-              className="fill-customWhite"
-              alt="back arrow"
-              src={left}
-              height={100}
-              loading="lazy"
-            />
+            <RiArrowLeftSLine size={50} />
           </button>
           <button
             onClick={showNextSlide}
-            className="absolute text-3xl top-2 -right-[4rem] hover:scale-110 transition duration-400"
+            className="absolute text-blackTextFont -right-[4rem] hover:scale-110 transition duration-400 hover:text-brightOrange"
           >
-            <Image
-              loading="lazy"
-              className="fill-customWhite"
-              alt="fwd arrow"
-              src={right}
-              height={100}
-            />
+            <RiArrowRightSLine size={50} />
           </button>
         </div>
       </div>
