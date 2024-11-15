@@ -18,7 +18,6 @@ import paths from "../../paths";
 //components
 import Button from "@/components/Button";
 
-
 type CubeProps = {
   frontImage?: StaticImageData | string;
   backImage?: StaticImageData | string;
@@ -47,7 +46,7 @@ const Cube = ({
   owner,
   business,
 }: CubeProps) => {
-  const [currentSide, setCurrentSide] = useState("show-front");
+  const [isFront, setIsFront] = useState(true);
   const [cubeDepth, setCubeDepth] = useState("175px");
   const [showFullReview, setShowFullReview] = useState(false);
   const [popup, setPopup] = useState(false);
@@ -77,14 +76,6 @@ const Cube = ({
     setPopup(false);
   };
 
-  const handleMouseEnter = () => {
-    setCurrentSide("show-bottom");
-  };
-
-  const handleMouseLeave = () => {
-    setCurrentSide("show-front");
-  };
-
   //check the height of the cube, which then calculates the height of the cube, divides by two and sends to css
   useEffect(() => {
     if (cubeRef.current) {
@@ -93,88 +84,108 @@ const Cube = ({
     }
   }, [cubeRef]);
 
+  const toggleFace = () => {
+    setIsFront((prev) => !prev);
+  };
+
   if (cube) {
     return (
-      <div className="scene w-auto h-auto overflow-hidden z-[30] ">
-        <div
-          ref={cubeRef}
-          className={`cube ${currentSide} w-auto relative transition-transform duration-1000`}
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
-          style={
-            { "--cube-depth": cubeDepth, height: height } as React.CSSProperties
-          }
-        >
-          <Image
-            className="cube__face cube__face--front cursor-pointer absolute w-[100%] h-[100%] border-2 border-gray-200 text-3xl text-center text-customWhite"
-            src={frontImage ? frontImage :  ""}
-            alt="CW"
-          />
+      <div className="flex flex-col w-auto items-center justify-center">
+        <div className="scene w-auto h-auto overflow-hidden z-[30] relative ">
+          <div
+            ref={cubeRef}
+            className={`cube ${
+              isFront ? "show-front" : "show-bottom"
+            } w-auto relative transition-transform duration-1000`}
+            style={
+              {
+                "--cube-depth": cubeDepth,
+                height: height,
+              } as React.CSSProperties
+            }
+          >
+            <div className="cube__face cube__face--front cursor-pointer absolute w-[100%] h-[100%] border-2 border-gray-200">
+              <Image
+                className="absolute w-full h-full"
+                src={frontImage ? frontImage : ""}
+                alt="Front Image"
+              />
+              {/* caret for toggling */}
+            </div>
+            <div className="cube__face cube__face--bottom absolute w-[100%] h-[100%]">
+              <Image
+                className="absolute w-full h-full"
+                src={backImage ? backImage : ""}
+                alt="Back Image"
+              />
 
-          <div className="cube__face cube__face--bottom absolute w-[100%] h-[100%]">
-            <Image
-              className="absolute w-full h-full"
-              src={backImage ? backImage : ""}
-              alt="Back Image"
-            />
-            <div className="absolute inset-0 bg-gradient-to-b from-gray-900 bg-gray-900 bg-opacity-60 to-transparent z-10"></div>
+              <div className="absolute inset-0 bg-gradient-to-b from-gray-900 bg-gray-900 bg-opacity-60 to-transparent z-10"></div>
 
-            <div
-              className={`${ibm.className} absolute tracking-wide inset-0 z-20 flex flex-col items-center justify-center text-customWhite text-xl gap-5`}
-            >
-              <h3 className="text-4xl">{owner}</h3>
-              <Link
-                href={link ? link : ""}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-xl cursor-pointer flex items-center gap-4 hover:text-customTurquoise hover:underline transition duration-300 hover:underline-offset-4"
+              <div
+                className={`${ibm.className} absolute tracking-wide inset-0 z-20 flex flex-col items-center justify-center text-customWhite text-xl gap-5`}
               >
-                {business}
-                {complete && <RiExternalLinkLine />}
-              </Link>
-              {complete && (
-                <div className={`flex w-full gap-4 justify-center mb-4`}>
-                  {[...Array(5)].map((_, index) => (
-                    <IoStarSharp key={index} size={35} color={"#fec246"} />
-                  ))}
-                </div>
-              )}
-
-              <p className="text-lg w-2/3 bg-customWhite text-blackTextFont p-7 relative">
-                {review && truncateText(review, 40)}
-
-                {/* show more button only if the text is truncated */}
-                {review && !showFullReview && review.split(" ").length > 30 && (
-                  <span
-                    className="text-customBlue hover:underline cursor-pointer"
-                    onClick={handleToggleReviewOn}
-                  >
-                    .see more
-                  </span>
-                )}
-              </p>
-              {/* popover for show more */}
-              {popup && (
-                <Fade duration={500}>
-                  <div className="absolute flex flex-col items-center justify-center -top-2 left-0 mt-2 p-4 h-full bg-customWhite shadow-lg border border-gray-300 w-full z-30">
-                    <p
-                      className={`${
-                        isHome ? "w-[70%]" : "w-5/6"
-                      } text-lg text-blackTextFont`}
-                    >
-                      {review}
-                    </p>
-                    <button
-                      onClick={handleToggleReviewOff}
-                      className="text-customBlue hover:underline mt-2 absolute  bottom-0 right-0 p-6 "
-                    >
-                      ...show less
-                    </button>
+                <h3 className="text-4xl">{owner}</h3>
+                <Link
+                  href={link ? link : ""}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xl cursor-pointer flex items-center gap-4 hover:text-customTurquoise hover:underline transition duration-300 hover:underline-offset-4"
+                >
+                  {business}
+                  {complete && <RiExternalLinkLine />}
+                </Link>
+                {complete && (
+                  <div className={`flex w-full gap-4 justify-center mb-4`}>
+                    {[...Array(5)].map((_, index) => (
+                      <IoStarSharp key={index} size={35} color={"#fec246"} />
+                    ))}
                   </div>
-                </Fade>
-              )}
+                )}
+
+                <p className="text-lg w-2/3 bg-customWhite text-blackTextFont p-7 relative">
+                  {review && truncateText(review, 40)}
+
+                  {/* show more button only if the text is truncated */}
+                  {review &&
+                    !showFullReview &&
+                    review.split(" ").length > 30 && (
+                      <span
+                        className="text-customBlue hover:underline cursor-pointer"
+                        onClick={handleToggleReviewOn}
+                      >
+                        .see more
+                      </span>
+                    )}
+                </p>
+                {/* popover for show more */}
+                {popup && (
+                  <Fade duration={500}>
+                    <div className="absolute flex flex-col items-center justify-center -top-2 left-0 mt-2 p-4 h-full bg-customWhite shadow-lg border border-gray-300 w-full z-30">
+                      <p
+                        className={`${
+                          isHome ? "w-[70%]" : "w-5/6"
+                        } text-lg text-blackTextFont`}
+                      >
+                        {review}
+                      </p>
+                      <button
+                        onClick={handleToggleReviewOff}
+                        className="text-customBlue hover:underline mt-2 absolute  bottom-0 right-0 p-6 "
+                      >
+                        ...show less
+                      </button>
+                    </div>
+                  </Fade>
+                )}
+              </div>
             </div>
           </div>
+        </div>
+        <div
+          className="w-[99.8%] h-[50px] mt-2 flex justify-center items-center bg-slate-400 bg-opacity-70 z-[50] cursor-pointer text-2xl text-gray-500 hover:text-gray-700"
+          onClick={toggleFace}
+        >
+          {isFront ? "▼ View Bottom" : "▲ View Front"}
         </div>
       </div>
     );
@@ -206,9 +217,10 @@ const Cube = ({
             Ready to create something amazing?
           </h3>
           <p className={`${ibm.className} text-[15px]`}>
-            You&apos;ve seen what a difference the right website can make. If you&apos;re
-            ready to elevate your business with a customized site, reach out
-            today, and let&apos;s start building something great together!
+            You&apos;ve seen what a difference the right website can make. If
+            you&apos;re ready to elevate your business with a customized site,
+            reach out today, and let&apos;s start building something great
+            together!
           </p>
         </div>
         <div>
