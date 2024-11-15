@@ -6,8 +6,8 @@ import { Fade } from "react-awesome-reveal";
 import PortfolioCube from "../../../app/main/portfolio/PortfolioCube";
 //images
 import Image from "next/image";
-import right from "./fwdarrow.svg";
-import left from "./leftarrow.svg";
+import right from "./rarrow.png";
+import left from "./larrow.png";
 //content
 import { sliderItems } from "./sliderCubes";
 
@@ -34,7 +34,7 @@ export default function Slider() {
 
   return (
     <div className="flex justify-center items-center w-5/6 relative">
-      <div className="absolute left-10 z-[30] min-w-[150px] max-w-[150px] min-h-[150px] bg-customIndigo border-4 shadow-customSmallGrey border-customWhite p-10 box-content rounded-full flex justify-center items-center">
+      <div className="absolute left-10 z-[30] min-w-[150px] max-w-[150px] min-h-[150px] bg-customIndigo border-4 shadow-customSmallGrey border-gray-200 p-10 box-content rounded-full flex justify-center items-center">
         <Fade key={fadeKey} duration={1500}>
           <Image
             loading="lazy"
@@ -75,7 +75,7 @@ export default function Slider() {
           </div>
           <button
             onClick={showPreviousSlide}
-            className="absolute text-3xl top-2 -left-[4rem] hover:scale-110 transition duration-400"
+            className="absolute text-3xl top-2 -left-[4rem] hover:scale-110 transition duration-400 z-10"
           >
             <Image
               className="fill-customWhite"
