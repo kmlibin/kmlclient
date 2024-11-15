@@ -23,6 +23,7 @@ const config: Config = {
         customIndigoRGBA: "rgb(17, 17, 103, .25)",
         lightIndigo: "#c3c3d9",
         customGold: "#fec246",
+        customDarkGold: "#d49d36",
         customGoldRGBA: "rgba(254, 194, 70, .4)",
         customOrangeRGBA: "rgba(225, 92, 58, .5)",
         customBlue: "#057ee6",
