@@ -1,7 +1,7 @@
 "use client";
 import React, { ReactNode } from "react";
 //libraries
-import { Zoom } from "react-awesome-reveal";
+
 
 interface ZoomHeadingProps {
   as?: "h1" | "h2" | "h3" | "h4";
@@ -21,9 +21,9 @@ const ZoomHeading: React.FC<ZoomHeadingProps> = ({
   const HeadingTag = as;
 
   return (
-    <Zoom direction="down" duration={1200} triggerOnce={triggerOnce}>
+
       <HeadingTag className={`${className}`}>{children}</HeadingTag>
-    </Zoom>
+
   );
 };
 
