@@ -2,9 +2,9 @@
 import React from "react";
 //images
 import Image from "next/image";
-import nowOnline from "./nowonline.svg";
+
 import smallcomp from './smallcomp2.svg'
-import businessonline from './businessonline.svg';
+
 //fonts and utils and content
 import { ibm, fredoka, ibmBold } from "@/app/utils/fonts";
 import paths from "@/app/paths";

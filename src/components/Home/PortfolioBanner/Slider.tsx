@@ -7,8 +7,6 @@ import { RiArrowRightSLine, RiArrowLeftSLine } from "react-icons/ri";
 import PortfolioCube from "../../../app/main/portfolio/PortfolioCube";
 //images
 import Image from "next/image";
-import right from "./rarrow.png";
-import left from "./larrow.png";
 //content
 import { sliderItems } from "./sliderCubes";
 

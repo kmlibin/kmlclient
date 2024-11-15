@@ -1,8 +1,8 @@
 import React from "react";
 //fonts and utils
-import { fredoka, ibm } from "@/app/utils/fonts";
+import { fredoka } from "@/app/utils/fonts";
 import paths from "@/app/paths";
-import { portfolioBanner } from "../homeContent";
+
 
 //libraries
 import { FcIdea } from "react-icons/fc";
