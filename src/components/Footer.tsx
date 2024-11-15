@@ -2,7 +2,7 @@ import React from "react";
 //fonts
 import { ibm } from "@/app/utils/fonts";
 //images
-import webdevlogo from "../../public/images/fulllogo.png";
+import webdevlogo from "../../public/images/libinlogowhite.png";
 import Image from "next/image";
 //libraries
 import { RiCopyrightLine } from "react-icons/ri";
@@ -11,7 +11,7 @@ import { RiCopyrightLine } from "react-icons/ri";
 const Footer = () => {
   return (
     <div
-      className={`${ibm.className} w-full h-[150px] bg-lightIndigo relative flex flex-col justify-end border-t-customIndigo border-t`}
+      className={`${ibm.className} w-full h-[150px] bg-customWhite relative flex flex-col justify-end border-t-customIndigo border-t`}
     >
       
       <div className="w-full absolute top-16 h-[30px] rainbow z-[12]">
