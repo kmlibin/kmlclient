@@ -11,12 +11,13 @@ type Props = {
   text: string;
   src: StaticImageData | string;
   alt: string;
+  className:string;
 };
 
-const InfoCard = ({ title, text, src, alt }: Props) => {
+const InfoCard = ({ title, text, src, alt, className }: Props) => {
   return (
     <div
-      className={`3xl:w-1/4 w-1/3 h-[550px] 3xl:min-h-[600px] info-card flex flex-col justify-start items-center gap-4 border-2  border-lightGrey p-6 rounded-xl box-content`}
+      className={`3xl:w-1/4 w-1/3 h-[450px] 3xl:h-[500px] bg-customWhite ${className} flex flex-col justify-start items-center gap-4 border-2  border-lightGrey p-6 rounded-xl box-content z-10`}
     >
       <h3
         className={`${fredoka.className} text-2xl tracking-wide text-center h-[75px] w-4/5`}
@@ -35,7 +36,7 @@ const InfoCard = ({ title, text, src, alt }: Props) => {
       </div>
       <div className="flex justify-start items-start">
         <p
-          className={`${ibm.className}  text-md text-center flex justify-start items-start`}
+          className={`${ibm.className}  text-lg text-center flex justify-start items-start`}
         >
           {text}
         </p>
