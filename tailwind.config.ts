@@ -32,7 +32,7 @@ const config: Config = {
         customPinkRGBA: "rgb(198, 55, 92, .5)",
         customDarkPink: "rgb(148, 30, 62)",
         customTurquoise: "rgb(98, 211, 228)",
-        customWhite: "rgb(250, 249, 247)",
+        customWhite: "#fefefe",
         blackTextFont: "#333333",
       },
       boxShadow: {
