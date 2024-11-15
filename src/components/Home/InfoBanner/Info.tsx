@@ -17,8 +17,10 @@ const Info = () => {
   return (
     <div
       id="info-section"
-      className="relative flex w-full flex-col justify-center items-center gap-2 bg-customWhite pb-[6rem]"
+      className="relative flex w-full flex-col justify-center items-center gap-2 bg-customWhite py-[10rem]"
     >
+            <div className="absolute -bottom-[0vh] -left-[10%] rotate-90 rainbow-circle w-[700px] h-[700px] 3xl:w-[900px] rounded-full 3xl:h-[900px] z-10"></div>
+
       <div className="mb-[5rem]">
         <ZoomHeading as="h2" className={`${fredoka.className} text-5xl`}>
           Don’t Settle for Less — Get a Site That Works
@@ -32,6 +34,7 @@ const Info = () => {
             src={card.src}
             text={card.text}
             title={card.title}
+            className={card.className}
           />
         ))}
       </div>
