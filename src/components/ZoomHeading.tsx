@@ -16,7 +16,7 @@ const ZoomHeading: React.FC<ZoomHeadingProps> = ({
   as = "h1",
   children,
   className = "",
-  triggerOnce = true,
+
 }) => {
   const HeadingTag = as;
 
