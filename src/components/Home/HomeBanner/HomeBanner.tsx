@@ -22,7 +22,7 @@ const HomeBanner = () => {
                   <div className="absolute -bottom-[15vh] -left-[4vw] rotate-90 rainbow-circle w-[500px] h-[500px]  rounded-full  z-10"></div>
                   <div className="absolute top-[10vh] right-[2vw] rotate-180 rainbow-circle w-[200px] h-[200px]  rounded-full -z-10"></div>
 
-      <div className="flex w-[90%] justify-evenly items-center  bg-customWhite border-2 border-customBlue shadow-customSmallGrey p-5 py-10 rounded-xl z-20">
+      <div className="flex w-[90%] justify-evenly items-center  bg-customBlue border-2 border-gray-400 shadow-customSmallGrey p-5 py-10 rounded-xl z-20">
         <div className="w-[60%] h-full flex flex-col justify-end item-end gap-10 bg-customIndigo  bg-opacity-80 shadow-lg rounded-xl">
           <div className="px-10 pt-10">
             <ZoomHeading
