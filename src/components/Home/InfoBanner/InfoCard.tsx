@@ -17,7 +17,7 @@ type Props = {
 const InfoCard = ({ title, text, src, alt, className }: Props) => {
   return (
     <div
-      className={`3xl:w-2/3 w-3/4 mx-auto  bg-customWhite ${className} flex justify-between items-between gap-6 border-2  border-lightGrey p-4 rounded-xl box-content z-[40] my-10`}
+      className={`3xl:w-2/3 w-3/4 mx-auto  bg-customWhite ${className} flex justify-between items-between gap-6 border-2  border-gray-300 p-4 rounded-xl box-content z-[40] my-10`}
     >
       <div className="w-1/4  p-4 flex justify-center items-center">
         {src !== "bank" ? (
