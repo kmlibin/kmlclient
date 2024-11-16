@@ -12,21 +12,20 @@ import paths from "@/app/paths";
 import Button from "@/components/Button";
 import ZoomHeading from "@/components/ZoomHeading";
 
-
 const Info = () => {
   return (
     <div
       id="info-section"
-      className="relative flex w-full flex-col justify-center items-center gap-2 bg-customWhite py-[10rem]"
+      className="relative flex w-full flex-col justify-center items-center gap-2 bg-customWhite pb-[10rem]"
     >
-            <div className="absolute -bottom-[0vh] -left-[10%] rotate-90 rainbow-circle w-[700px] h-[700px] 3xl:w-[900px] rounded-full 3xl:h-[900px] z-10"></div>
+      <div className="absolute -bottom-[0vh] -right-[10%] rotate-80 rainbow-circle w-[700px] h-[700px] 3xl:w-[900px] rounded-full 3xl:h-[900px] -z-1"></div>
 
-      <div className="mb-[5rem]">
+      <div className=" z-10">
         <ZoomHeading as="h2" className={`${fredoka.className} text-5xl`}>
           Don’t Settle for Less — Get a Site That Works
         </ZoomHeading>
       </div>
-      <div className="flex w-5/6 justify-evenly items-start gap-14 h-full ">
+      <div className="flex-col w-5/6 justify-center items-center gap-14 h-full z-[40] ">
         {infoCards.map((card, index) => (
           <InfoCard
             alt={card.alt}
