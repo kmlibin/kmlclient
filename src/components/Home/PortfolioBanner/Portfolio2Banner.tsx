@@ -17,7 +17,7 @@ const Portfolio2Banner = () => {
       id="portfolio-section"
       className="relative flex flex-col justify-center items-center w-full pb-[4rem]"
     >
-      <div className="absolute -bottom-[10vh] -left-[10vw] rainbow-circle w-[500px] rounded-full h-[500px] -z-1"></div>
+      <div className="absolute -bottom-[10vh] -right-[10vw] rainbow-circle w-[500px] rounded-full h-[500px] -z-1"></div>
       <ZoomHeading
         as="h3"
         className={`${fredoka.className} text-5xl w-full tracking-wide flex items-center justify-center gap-3 pt-10  mb-10 z-10`}

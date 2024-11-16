@@ -18,7 +18,7 @@ const Info = () => {
       id="info-section"
       className="relative flex w-full flex-col justify-center items-center gap-2 bg-customWhite pb-[10rem]"
     >
-      <div className="absolute -bottom-[0vh] -right-[10%] rotate-80 rainbow-circle w-[700px] h-[700px] 3xl:w-[900px] rounded-full 3xl:h-[900px] -z-1"></div>
+      <div className="absolute -bottom-[0vh] -left-[10%] rotate-90 rainbow-circle w-[700px] h-[700px] 3xl:w-[900px] rounded-full 3xl:h-[900px] -z-1"></div>
 
       <div className=" z-10">
         <ZoomHeading as="h2" className={`${fredoka.className} text-5xl`}>
