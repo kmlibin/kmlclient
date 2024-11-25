@@ -3,7 +3,8 @@ import React from "react";
 //images
 import Image from "next/image";
 
-import smallcomp from './smallcomp2.svg'
+import smallcomp from "./peoplecomputer.svg";
+
 
 //fonts and utils and content
 import { ibm, fredoka, ibmBold } from "@/app/utils/fonts";
@@ -19,8 +20,8 @@ const HomeBanner = () => {
       id="banner-section"
       className="relative w-full bg-opacity-85 py-[8rem] h-full flex flex-col justify-center items-center border-t-customIndigo border-t-2"
     >
-                  <div className="absolute top-[5vh] -left-[4vw] rotate-45 rainbow-circle w-[500px] h-[500px]  rounded-full  z-10"></div>
-                  <div className="absolute -bottom-[10vh] -right-[2vw] rotate-180 rainbow-circle w-[300px] h-[300px]  rounded-full z-10"></div>
+      <div className="absolute top-[5vh] -left-[4vw] rotate-45 rainbow-circle w-[500px] h-[500px]  rounded-full  z-10"></div>
+      <div className="absolute -bottom-[10vh] -right-[2vw] rotate-180 rainbow-circle w-[300px] h-[300px]  rounded-full z-10"></div>
 
       <div className="flex w-[90%] justify-evenly items-center  bg-customBlue border-2 border-gray-400 shadow-customSmallGrey p-5 py-10 rounded-xl z-20">
         <div className="w-[60%] h-full flex flex-col justify-end item-end gap-10 bg-customIndigo  bg-opacity-80 shadow-lg rounded-xl">
@@ -51,12 +52,13 @@ const HomeBanner = () => {
         </div>
 
         <div className="w-1/3 flex justify-center box-content">
-          <Image
-            loading="lazy"
-            src={smallcomp}
-            
-            alt="small business with sign saying Our Business is Now Online!"
-          />
+
+            <Image
+              loading="lazy"
+              src={smallcomp}
+              alt="small business with sign saying Our Business is Now Online!"
+            />
+     
         </div>
       </div>
     </div>
