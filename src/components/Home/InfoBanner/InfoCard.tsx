@@ -30,7 +30,7 @@ const InfoCard = ({ title, text, src, alt, className }: Props) => {
         )}
       </div>
 
-      <div className="flex flex-col items-start justify-center w-2/3 gap-4 pr-10">   
+      <div className="flex flex-col items-start justify-evenly w-2/3 gap-4 pr-10">   
         <h3
             className={`${fredoka.className} text-3xl tracking-wide text-center`}
           >
