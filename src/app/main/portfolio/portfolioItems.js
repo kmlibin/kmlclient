@@ -8,7 +8,7 @@ import fittees2 from "../../portfolioImages/fittees2.png";
 import cw2 from "../../portfolioImages/cw2.png";
 import kellinetlify2 from "../../portfolioImages/kellinetlify2.png";
 import jpel2 from "../../portfolioImages/jpel2.png";
-import IFScreen1 from '../../portfolioImages/IFScreen1.png';
+import IFScreen1 from '../../portfolioImages/IFscreen1.png';
 import IFScreen2 from '../../portfolioImages/IFscreen2.png'
 
 export const portfolioItems = [
