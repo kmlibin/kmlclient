@@ -9,6 +9,7 @@ import PortfolioCube from "../../../app/main/portfolio/PortfolioCube";
 import Image from "next/image";
 //content
 import { sliderItems } from "./sliderCubes";
+import LogoContainer from "./LogoContainer";
 
 export default function Slider() {
   const [factIndex, setFactIndex] = useState(0);
@@ -33,15 +34,8 @@ export default function Slider() {
 
   return (
     <div className="flex justify-center items-center w-5/6 relative">
-      <div className="absolute right-10  z-[30] min-w-[100px] max-w-[100px] min-h-[100px] bg-customIndigo border-4 shadow-customSmallGrey border-gray-200 p-10 box-content rounded-full flex justify-center items-center">
-        <Fade key={fadeKey} duration={1500}>
-          <Image
-            loading="lazy"
-            alt="Concierge Wellness Logo"
-            className="object-cover"
-            src={currentLogo}
-          />
-        </Fade>
+      <div className="absolute right-10  z-[30] min-w-[100px] max-w-[100px] min-h-[100px] bg-customWhite border-4 shadow-customSmallGrey border-gray-200 p-10 box-content rounded-full flex justify-center items-center">
+        <LogoContainer fadeKey={fadeKey} currentLogo={currentLogo} />
       </div>
       <div className="w-auto">
         <div className="flex items-center w-full">
