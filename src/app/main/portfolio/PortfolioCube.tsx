@@ -7,9 +7,11 @@ import Bubbles from "./Bubbles";
 //libraries
 import { IoStarSharp } from "react-icons/io5";
 import { RiExternalLinkLine } from "react-icons/ri";
+import { BsCaretDownSquareFill, BsCaretUpSquareFill } from "react-icons/bs";
+
 import { Fade } from "react-awesome-reveal";
 //fonts
-import { fredoka, ibm } from "@/app/utils/fonts";
+import { fredoka, ibm, ibmBold } from "@/app/utils/fonts";
 //css
 import "./Portfolio.css";
 //routing
@@ -92,6 +94,14 @@ const Cube = ({
     return (
       <div className="flex flex-col w-auto items-center justify-center">
         <div className="scene w-auto h-auto overflow-hidden z-[30] relative ">
+          {!isHome && (
+            <Link
+              href={link ? link : ""}
+              className={`${ibmBold.className} w-full flex justify-end text-blackTextFont items-center gap-2 text-xl tracking-wide mb-2 underline-offset-4 underline hover:text-customTurquoise duration-300`}
+            >
+              {business} {complete && <RiExternalLinkLine className="text-customIndigo" />}
+            </Link>
+          )}
           <div
             ref={cubeRef}
             className={`cube ${
@@ -104,15 +114,13 @@ const Cube = ({
               } as React.CSSProperties
             }
           >
-            <div className="cube__face cube__face--front cursor-pointer absolute w-[100%] h-[100%] border-2 border-gray-200">
-              <Image
-                className="absolute w-full h-full"
-                src={frontImage ? frontImage : ""}
-                alt="Front Image"
-              />
-              {/* caret for toggling */}
-            </div>
-            <div className="cube__face cube__face--bottom absolute w-[100%] h-[100%]">
+            <div
+              className={`${
+                isHome
+                  ? "cube__face cube__face--front"
+                  : "cube__face cube__face--bottom"
+              } absolute w-[100%] h-[100%]`}
+            >
               <Image
                 className="absolute w-full h-full"
                 src={backImage ? backImage : ""}
@@ -148,12 +156,12 @@ const Cube = ({
                   {/* show more button only if the text is truncated */}
                   {review &&
                     !showFullReview &&
-                    review.split(" ").length > 30 && (
+                    review.split(" ").length > 40 && (
                       <span
                         className="text-customBlue hover:underline cursor-pointer"
                         onClick={handleToggleReviewOn}
                       >
-                        .see more
+                        see more
                       </span>
                     )}
                 </p>
@@ -170,7 +178,7 @@ const Cube = ({
                       </p>
                       <button
                         onClick={handleToggleReviewOff}
-                        className="text-customBlue hover:underline mt-2 absolute  bottom-0 right-0 p-6 "
+                        className="text-customBlue hover:underline mt-2 absolute  bottom-[5%]  p-6 "
                       >
                         ...show less
                       </button>
@@ -178,14 +186,42 @@ const Cube = ({
                   </Fade>
                 )}
               </div>
+              <div
+                className="absolute h-[50px] bottom-[2%] right-[2%] mt-2 flex justify-center items-center bg-transparent z-[50] cursor-pointer text-2xl text-gray-500 hover:text-gray-700"
+                onClick={toggleFace}
+              >
+                {isFront ? (
+                  <BsCaretDownSquareFill className="text-customGold" />
+                ) : (
+                  <BsCaretUpSquareFill className="text-customGold" />
+                )}
+              </div>
+            </div>
+            <div
+              className={`${
+                isHome
+                  ? "cube__face cube__face--bottom"
+                  : "cube__face cube__face--front"
+              } absolute w-[100%] h-[100%] border-2 border-gray-200`}
+            >
+              <Image
+                className="absolute w-full h-full"
+                src={frontImage ? frontImage : ""}
+                alt="Front Image"
+              />
+
+              <div
+                className="absolute h-[50px] bottom-[2%] right-[2%] mt-2 flex justify-center items-center bg-transparent z-[50] cursor-pointer text-2xl text-gray-500 hover:text-gray-700"
+                onClick={toggleFace}
+              >
+                {isFront ? (
+                  <BsCaretDownSquareFill className="text-customGold" />
+                ) : (
+                  <BsCaretUpSquareFill className="text-customGold" />
+                )}
+              </div>
             </div>
           </div>
-        </div>
-        <div
-          className="w-[99.8%] h-[50px] mt-2 flex justify-center items-center bg-slate-400 bg-opacity-70 z-[50] cursor-pointer text-2xl text-gray-500 hover:text-gray-700"
-          onClick={toggleFace}
-        >
-          {isFront ? "▼ View Bottom" : "▲ View Front"}
         </div>
       </div>
     );
