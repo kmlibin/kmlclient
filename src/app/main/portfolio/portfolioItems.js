@@ -1,13 +1,13 @@
 
 //images
-import fittees from "../../../../public/images/fittees.png";
-import cw from "../../../../public/images/cw.png";
-import kellinetlify from "../../../../public/images/kellinetlify.png";
-import jpel from "../../../../public/images/jpel.png";
-import fittees2 from "../../../../public/images/fittees2.png";
-import cw2 from "../../../../public/images/cw2.png";
-import kellinetlify2 from "../../../../public/images/kellinetlify2.png";
-import jpel2 from "../../../../public/images/jpel2.png";
+import fittees from "../../portfolioImages/fittees.png";
+import cw from "../../portfolioImages/cw.png";
+import kellinetlify from "../../portfolioImages/kellinetlify.png";
+import jpel from "../../portfolioImages/jpel.png";
+import fittees2 from "../../portfolioImages/fittees2.png";
+import cw2 from "../../portfolioImages/cw2.png";
+import kellinetlify2 from "../../portfolioImages/kellinetlify2.png";
+import jpel2 from "../../portfolioImages/jpel2.png";
 
 export const portfolioItems = [
   {
