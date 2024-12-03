@@ -11,7 +11,7 @@ type Props = {};
 
 const notFound = (props: Props) => {
   return (
-    <div className="flex flex-col justify-center items-center h-[80vh] w-full">
+    <div className="flex flex-col justify-center items-center h-[80vh] w-full text-blackTextFont">
       <div className="h-full w-full flex justify-center items-center flex-col">
         <h2 className={`${fredoka.className} text-5xl py-4 tracking-wide`}>
           Uh-Oh! This Page Didn't Make It...
