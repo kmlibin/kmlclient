@@ -94,14 +94,21 @@ const Cube = ({
     return (
       <div className="flex flex-col w-auto items-center justify-center">
         <div className="scene w-auto h-auto overflow-hidden z-[30] relative ">
-          {!isHome && (
-            <Link
-              href={link ? link : ""}
-              className={`${ibmBold.className} w-full flex justify-end text-blackTextFont items-center gap-2 text-xl tracking-wide mb-2 underline-offset-4 underline hover:text-customTurquoise duration-300`}
-            >
-              {business} {complete && <RiExternalLinkLine className="text-customIndigo" />}
-            </Link>
-          )}
+          {!isHome &&
+            (complete ? (
+              <Link
+                href={link || ""}
+                className={`${ibmBold.className} w-full flex justify-end text-blackTextFont items-center gap-2 text-xl tracking-wide my-4 hover:text-customTurquoise duration-300`}
+              >
+                {business} <RiExternalLinkLine className="text-customIndigo" />
+              </Link>
+            ) : (
+              <p
+                className={`${ibmBold.className} w-full flex justify-end text-blackTextFont items-center gap-2 text-xl tracking-wide my-4`}
+              >
+                {business}
+              </p>
+            ))}
           <div
             ref={cubeRef}
             className={`cube ${
@@ -142,6 +149,7 @@ const Cube = ({
                   {business}
                   {complete && <RiExternalLinkLine />}
                 </Link>
+
                 {complete && (
                   <div className={`flex w-full gap-4 justify-center mb-4`}>
                     {[...Array(5)].map((_, index) => (
@@ -150,8 +158,14 @@ const Cube = ({
                   </div>
                 )}
 
-                <p className="text-lg w-2/3 bg-customWhite text-blackTextFont p-7 relative">
-                  {review && truncateText(review, 40)}
+                <p
+                  className={` ${
+                    !complete ? "text-center" : ""
+                  } text-lg w-2/3 bg-customWhite text-blackTextFont p-7 relative rounded-lg`}
+                >
+                  {complete
+                    ? review && truncateText(review, 40)
+                    : "Under Construction, Check Back Soon!"}
 
                   {/* show more button only if the text is truncated */}
                   {review &&
@@ -243,12 +257,12 @@ const Cube = ({
     //template for non-cube and non-bubble
     return (
       <div
-        className={`flex flex-col w-3/4 bg-customWhite p-10 tracking-wider justify-between 3xl:w-2/3`}
+        className={`flex flex-col w-3/4 bg-customWhite p-10 tracking-wider justify-between 3xl:w-2/3 `}
         style={{
           height: height,
         }}
       >
-        <div className="flex flex-col w-full gap-4">
+        <div className="flex flex-col w-full gap-4  z-[50]">
           <h3 className={`${fredoka.className} text-4xl`}>
             Ready to create something amazing?
           </h3>
