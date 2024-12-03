@@ -7,7 +7,7 @@ export const infoCards = [
     alt: "the word SEO in a magnifying glass",
     src: seo,
     className:"info-card",
-    text: "With sites build for speed and search optimization, customers can find you easily. Reach more clients with a high-performance site designed to boost your SEO.",
+    text: "By prioritizing clean code, server-side rendering, and mobile responsiveness, your site ranks higher on search engines and ensures a seamless user experience for every visitor.",
   },
   {
     title: "Maximize Value, Minimize Cost",
