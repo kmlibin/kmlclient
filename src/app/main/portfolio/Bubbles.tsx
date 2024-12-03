@@ -35,7 +35,7 @@ const Bubbles = ({ id }: BubblesProps) => {
       autoPlay: true,
       background: {
         color: {
-          value: "#faf9f7",
+          value: "#fefefe",
         },
       },
       fullScreen: false,
