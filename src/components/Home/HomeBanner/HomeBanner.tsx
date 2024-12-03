@@ -23,24 +23,24 @@ const HomeBanner = () => {
       <div className="absolute top-[5vh] -left-[4vw] rotate-45 rainbow-circle w-[500px] h-[500px]  rounded-full  z-10"></div>
       <div className="absolute -bottom-[10vh] -right-[2vw] rotate-180 rainbow-circle w-[300px] h-[300px]  rounded-full z-10"></div>
 
-      <div className="flex w-[90%] justify-evenly items-center  bg-customBlue border-2 border-gray-400 shadow-customSmallGrey p-5 py-10 rounded-xl z-20">
+      <div className="flex w-[90%] justify-evenly items-center  bg-customBlue border-2 border-customIndigo border-opacity-40 shadow-customSmallGrey p-5 py-10 rounded-xl z-20">
         <div className="w-[60%] h-full flex flex-col justify-end item-end gap-10 bg-customIndigo  bg-opacity-80 shadow-lg rounded-xl">
           <div className="px-10 pt-10">
             <ZoomHeading
               as="h2"
-              className={`text-5xl text-customWhite mb-4 w-full tracking-wide leading-normal ${fredoka.className}`}
+              className={`text-5xl text-customWhite mb-3 w-full tracking-wide leading-normal ${fredoka.className}`}
             >
               Say Goodbye to DIY <br />
               Website Hassles!
             </ZoomHeading>
             <p
-              className={`text-xl w-full ${ibmBold.className} text-lightIndigo`}
+              className={`text-md w-full ${ibmBold.className} text-purple-200`}
             >
               {homeBanner.subheading}
             </p>
           </div>
           <div className="w-full px-10">
-            <p className={`text-lg w-full ${ibm.className} text-customWhite`}>
+            <p className={`text-lg w-full ${ibm.className} text-purple-100`}>
               {homeBanner.mainText}
             </p>
           </div>
@@ -51,14 +51,17 @@ const HomeBanner = () => {
           </div>
         </div>
 
-        <div className="w-1/3 flex justify-center box-content">
+        <div className=" relative w-1/3 flex justify-center box-content">
 
             <Image
               loading="lazy"
               src={smallcomp}
               alt="small business with sign saying Our Business is Now Online!"
             />
-     
+            <div className="absolute h-[20px] left-[5%] top-[20%] w-[20px] bg-customWhite rounded-full pulse-circle-1 pulse-circle"></div>
+            <div className="absolute h-[15px] right-[50%] bottom-[13%] w-[15px] bg-customWhite rounded-full pulse-circle-2 pulse-circle"></div>
+            <div className="absolute h-[10px] right-[18%] top-[35%] w-[10px] bg-customWhite rounded-full pulse-circle-3 pulse-circle"></div>
+
         </div>
       </div>
     </div>
