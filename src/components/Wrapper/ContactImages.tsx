@@ -138,12 +138,12 @@ const ContactImages = () => {
   return (
     <>
       {isParticleVisible && (
-        <div className="w-full h-full !z-[40] absolute">
+        <div className="w-full h-full !z-[900] absolute">
           <ParticleExplosion id="particles" />
         </div>
       )}
 
-      <div className="fixed -bottom-[130%] my-9 right-0  flex -translate-y-1/2 flex-col min-h-[100vh] z-[50]">
+      <div className="fixed -bottom-[130%] my-9 right-0  flex -translate-y-1/2 flex-col min-h-[100vh] z-[950]">
         <div className="relative h-full w-[200px]">
           <Image
             priority

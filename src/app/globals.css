@@ -63,7 +63,6 @@
 }
 
 @keyframes shadow-move3 {
-
   0% {
     box-shadow: 0 4px 20px rgba(198, 55, 92, 0.5),
       0 8px 80px rgba(198, 55, 92, 0.3);
@@ -79,7 +78,7 @@
   60% {
     box-shadow: 0 4px 20px rgba(17, 17, 103, 0.5),
       0 8px 80px rgba(17, 17, 103, 0.3);
-  }  
+  }
   80% {
     box-shadow: 0 4px 20px rgba(17, 17, 103, 0.5),
       0 8px 80px rgba(17, 17, 103, 0.3);
@@ -105,11 +104,11 @@
   }
   605% {
     box-shadow: 0 4px 20px rgba(17, 17, 103, 0.5),
-    0 8px 80px rgba(17, 17, 103, 0.3);
+      0 8px 80px rgba(17, 17, 103, 0.3);
   }
   80% {
     box-shadow: 0 4px 20px rgba(98, 211, 228, 0.5),
-    0 8px 80px rgba(98, 211, 228, 0.3);
+      0 8px 80px rgba(98, 211, 228, 0.3);
   }
   100% {
     box-shadow: 0 4px 20px rgba(254, 194, 70, 0.5),
@@ -176,5 +175,42 @@
   }
   100% {
     background-position: 96% 0%;
+  }
+}
+
+/* loading dots for homepage loader */
+.dot {
+  width: 20px; 
+  height: 20px; 
+  border-radius: 50%; 
+  animation: bounce .8s infinite, colorChange 2s infinite; 
+}
+
+@keyframes bounce {
+  0%,
+  80%,
+  100% {
+    transform: translateY(0); 
+  }
+  40% {
+    transform: translateY(-20px); 
+  }
+}
+
+@keyframes colorChange {
+  0% {
+    background-color: #057ee6;
+  }
+  25% {
+    background-color: rgb(98, 211, 228);
+  }
+  50% {
+    background-color: #fec246;
+  }
+  75% {
+    background-color: rgb(198, 55, 92);
+  }
+  100% {
+    background-color: #057ee6;
   }
 }
