@@ -43,7 +43,7 @@ export const sliderItems = [
   {
     id: 7,
     height: "70vh",
-    owner: "Kelli Libin",
+    owner: "Kelli L.",
     business: "Portfolio Site",
     logo: kl,
     cube: true,
