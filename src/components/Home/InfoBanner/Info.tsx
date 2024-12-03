@@ -21,7 +21,7 @@ const Info = () => {
       <div className="absolute -bottom-[0vh] -left-[10%] rotate-90 rainbow-circle w-[700px] h-[700px] 3xl:w-[900px] rounded-full 3xl:h-[900px] -z-1"></div>
 
       <div className=" z-10">
-        <ZoomHeading as="h2" className={`${fredoka.className} text-5xl`}>
+        <ZoomHeading as="h2" className={`${fredoka.className} text-5xl my-10`}>
           Don’t Settle for Less — Get a Site That Works
         </ZoomHeading>
       </div>
