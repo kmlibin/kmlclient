@@ -1,5 +1,6 @@
 import React, { ReactNode } from "react";
-
+//metadata
+import { Metadata } from "next";
 //utils and content
 import { pricingCards } from "./pricingContent";
 import { ibm, fredoka } from "@/app/utils/fonts";
@@ -26,8 +27,32 @@ type PricingData = {
   isNote1?: boolean;
 };
 
-//fix the what's included, it's no longer tracking with the screen. change to fixed and remove top, it works, but then scrolls all the way to the bottom
-//of the screen, irregardless of container.
+export const metadata: Metadata = {
+  title: "Web Development Packages | Libin Web Development",
+  description:
+    "Discover affordable web development packages starting at $350. Each package includes a custom Next.js website, SEO optimization, responsive design, hosting options, and more to help your business shine online.",
+  openGraph: {
+    type: "website",
+    url: "https://libinwebdevelopment.com/main/about/pricing",
+    title: "Web Development Packages | Libin Web Development",
+    description:
+      "Learn about our affordable website packages designed for small businesses. Starting at $350, get a custom-built Next.js site with responsive design, SEO, hosting options, and up to four pages included. Add extra pages or services to suit your needs.",
+    siteName: "Libin Web Development",
+    images: "https://libinwebdevelopment.com/images/icon.png",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  referrer: "origin-when-cross-origin",
+  authors: {
+    name: "Libin Web Development",
+    url: "https://kellidoesdev.com",
+  },
+  keywords:
+    "web development pricing, small business websites, affordable website packages, custom website design, Next.js websites, SEO-friendly websites, mobile-optimized websites, responsive design, hosting services, freelance web developer, additional web development services, domain registration support, custom contact forms",
+};
+
 const page = () => {
   return (
     <div className="w-full flex  flex-col bg-customWhite items-center relative">
