@@ -15,8 +15,9 @@ import Link from "next/link";
 import Links from "./Links";
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setNavIsOpen] = useState(false);
   const [rotate, setRotate] = useState(false);
+  const [isSmall, setIsSmall] = useState(false)
 
 
   //checking for screen width - less than 640px, isopen is set to false.
@@ -24,10 +25,12 @@ const Navbar = () => {
     const handleResize = () => {
       if (window.innerWidth < 640) {
         
-        setIsOpen(false); // Close the navbar by default on smaller screens
+        setNavIsOpen(false); // close the navbar by default on smaller screens
+        setIsSmall(true)
         console.log(innerWidth, isOpen)
       } else {
-        setIsOpen(true); // Keep it open for larger screens
+        setNavIsOpen(true); // keep it open for larger screens
+        setIsSmall(false)
         console.log(innerWidth, isOpen)
       }
     };
@@ -44,7 +47,7 @@ const Navbar = () => {
   }, []);
 
   const toggleNavbar = () => {
-    setIsOpen(!isOpen);
+    setNavIsOpen(!isOpen);
     setRotate(true);
     setTimeout(() => setRotate(false), 500);
   };
@@ -67,7 +70,7 @@ const Navbar = () => {
         <ul
           className={`${ibm.className} sm:flex-row flex-col flex-grow flex w-full gap-6 sm:items-center sm:justify-between justify-start items-end h-full text-customWhite`}
         >
-          <Link href={paths.homePath()} className="sm:mb-0 mb-10">
+          <Link href={paths.homePath()} className="sm:mb-0 mb-10" onClick={() => {isSmall &&setNavIsOpen(false)}}>
             <Image
               src={logo}
               alt="logo"
@@ -76,10 +79,10 @@ const Navbar = () => {
             />
           </Link>
           <div className="sm:flex-row flex-col flex sm:mr-10 gap-20 sm:gap-24 w-full sm:w-auto items-end ">
-            <Links path={paths.homePath()} linkName="Home" />
-            <Links path={paths.portfolioPath()} linkName="Portfolio" />
-            <Links path={paths.aboutPath()} linkName="About" />
-            <Links path={paths.contactPath()} linkName="Contact" />
+            <Links path={paths.homePath()} linkName="Home" navBarOpen={setNavIsOpen} isSmall={isSmall}/>
+            <Links path={paths.portfolioPath()} linkName="Portfolio" navBarOpen={setNavIsOpen} isSmall={isSmall} />
+            <Links path={paths.aboutPath()} linkName="About" navBarOpen={setNavIsOpen} isSmall={isSmall}/>
+            <Links path={paths.contactPath()} linkName="Contact" navBarOpen={setNavIsOpen} isSmall={isSmall}/>
           </div>
         </ul>
       </div>

@@ -10,9 +10,11 @@ import { Fade } from "react-awesome-reveal";
 type Props = {
   path: string;
   linkName: string;
+  navBarOpen: any;
+  isSmall: boolean;
 };
 
-const Links = ({ linkName, path }: Props) => {
+const Links = ({ linkName, path, navBarOpen, isSmall }: Props) => {
   const [isOpen, setIsOpen] = useState(false);
 
   // dropdown links
@@ -28,7 +30,7 @@ const Links = ({ linkName, path }: Props) => {
         <li className="text-2xl sm:text-xl hover:cursor-pointer focus:outline-none">
           <div
             className="flex justify-end items-center hover:text-customTurquoise transition duration-300 sm:group-hover:text-customTurquoise"
-            onClick={() => setIsOpen((prev) => !prev)} // Toggle dropdown on click
+            onClick={() => setIsOpen((prev) => !prev)}
           >
             <span>About</span>
             <BiChevronDown
@@ -58,6 +60,9 @@ const Links = ({ linkName, path }: Props) => {
                     className="w-full text-right px-4 py-2 text-sm text-blackTextFont hover:bg-gray-100  hover:text-customBlue"
                     role="menuitem"
                     id={id}
+                    onClick={() => {
+                      isSmall && navBarOpen(false);
+                    }}
                   >
                     {label}
                   </Link>
@@ -74,6 +79,9 @@ const Links = ({ linkName, path }: Props) => {
       <Link
         className=" hover:text-customTurquoise transition duration-300"
         href={path}
+        onClick={() => {
+          isSmall && navBarOpen(false);
+        }}
       >
         {linkName}
       </Link>
