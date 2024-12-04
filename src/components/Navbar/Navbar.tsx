@@ -52,7 +52,7 @@ const Navbar = () => {
   return (
     <div className="relative w-full">
       <div
-        className={`sm:hidden fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 z-30 transition-opacity duration-300 ease-in-out ${
+        className={`sm:hidden fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 z-[90] transition-opacity duration-300 ease-in-out ${
           isOpen
             ? "opacity-100 pointer-events-auto"
             : "opacity-0 pointer-events-none"
