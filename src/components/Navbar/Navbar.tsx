@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 //libraries
 import { BiSolidSquareRounded } from "react-icons/bi";
 import { RiMenu5Line } from "react-icons/ri";
@@ -15,8 +15,33 @@ import Link from "next/link";
 import Links from "./Links";
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
   const [rotate, setRotate] = useState(false);
+
+
+  //checking for screen width - less than 640px, isopen is set to false.
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 640) {
+        
+        setIsOpen(false); // Close the navbar by default on smaller screens
+        console.log(innerWidth, isOpen)
+      } else {
+        setIsOpen(true); // Keep it open for larger screens
+        console.log(innerWidth, isOpen)
+      }
+    };
+
+    handleResize();
+
+    // listen for window resize events
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      // cleanup
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   const toggleNavbar = () => {
     setIsOpen(!isOpen);
@@ -36,7 +61,7 @@ const Navbar = () => {
       ></div>
       <div
         className={`absolute top-2 left-0 sm:h-[100px] h-[100vh] z-[100] w-5/6 sm:w-2/3 bg-customIndigo  text-customWhite p-4 rounded-tr-lg rounded-br-lg
-              transform ${isOpen ? "translate-x-0" : "-translate-x-full"}
+              transform ${isOpen  ? "translate-x-0" : "-translate-x-full"}
               transition-transform duration-300 ease-in-out z-40 flex items-center`}
       >
         <ul
@@ -67,7 +92,7 @@ const Navbar = () => {
               }`}
       >
         {/* <BiSolidSquareRounded size={24} className="hidden sm:block"/> */}
-        <RiMenu5Line size={24} className=""/>
+        <RiMenu5Line size={24} className="" />
       </button>
     </div>
   );
