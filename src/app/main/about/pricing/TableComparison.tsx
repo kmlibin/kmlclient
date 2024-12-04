@@ -9,7 +9,7 @@ import table from './images/table.svg'
 
 const TableComparison = () => {
   return (
-    <div id="comparison-table" className="hidden sm:flex w-[95%] flex flex-col tracking-wide items-center justify-center border-2 border-customBlue mb-10 border-opacity-50">
+    <div id="comparison-table" className="hidden sm:flex w-[95%] flex-col tracking-wide items-center justify-center border-2 border-customBlue mb-10 border-opacity-50">
       <h3 className={`${fredoka.className} text-center text-4xl mb-4 pt-8 `}>
         See How We Compare to Other Platforms
       </h3>
