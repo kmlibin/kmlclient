@@ -8,6 +8,7 @@ import { ibm, fredoka } from "@/app/utils/fonts";
 import { StaticImageData } from "next/image";
 import pricing from "./images/pricing.svg";
 import Image from "next/image";
+import undraw3 from "./images/undraw3.svg";
 //paths
 import paths from "@/app/paths";
 //components
@@ -57,10 +58,11 @@ const page = () => {
   return (
     <div className="w-full flex  flex-col bg-customWhite items-center relative">
       <div className="absolute -top-[12vh] -left-[12%] rainbow-circle w-[900px] h-[900px] 3xl:w-[1100px] rounded-full 3xl:h-[1100px]"></div>
-      <div className="w-full flex justify-evenly items-start mt-[180px] pb-16 relative">
+      <div className="w-full flex sm:flex-row flex-col justify-evenly items-start sm:mt-[180px] mt-[5rem] pb-16 relative">
         {/* rainbows */}
         <div className="absolute bottom-[0vh] -right-[10%] rainbow-circle w-[500px] rounded-full h-[500px]"></div>
-        <div className="w-1/3 flex flex-col items-end justify-start relative h-[300vh] 3xl:h-[230vh]">
+
+        <div className=" hidden sm:flex sm:w-1/3 w-full flex-col items-end justify-start relative sm:h-[300vh] 3xl:h-[230vh]">
           <div className="sticky top-[4vh] -mt-[3rem]">
             <RollImage delay={1000}>
               <Image
@@ -74,21 +76,31 @@ const page = () => {
         </div>
 
         <div
-          className={`${ibm.className} tracking-wide  w-1/2 relative  flex flex-col items-center justify-start gap-16`}
+          className={`${ibm.className} tracking-wide  sm:w-1/2 relative  flex flex-col items-center justify-start gap-16`}
         >
-          <div className="w-full flex flex-col items-center justify-start ">
+          <div className="w-full flex flex-col items-center justify-start  ">
             <ZoomHeading
               as="h2"
-              className={`${fredoka.className} text-5xl text-center mb-2`}
+              className={`${fredoka.className} text-5xl text-center mb-5 sm:mb-2`}
             >
               Everything You Need <br></br> in a Website
             </ZoomHeading>
             <ZoomHeading
               as="h4"
-              className={`${ibm.className} text-xl text-center mb-4 `}
+              className={`${ibm.className} text-2xl sm:text-xl text-center mb-4 `}
             >
               Starting at $350
             </ZoomHeading>
+            <div className="sm:hidden bg-customWhite bg-opacity-60 p-5">
+              <RollImage delay={500}>
+                <Image
+                  src={undraw3}
+                  alt="people building a website"
+                  height={400}
+                  className="z-10"
+                />
+              </RollImage>
+            </div>
           </div>
 
           {pricingCards.map((item: PricingData) => (
