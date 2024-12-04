@@ -14,10 +14,16 @@ import { Fade } from "react-awesome-reveal";
 
 const About = () => {
   return (
-    <div className=" bg-customWhite flex w-full h-full  relative">
+    <div className=" bg-customWhite flex-col sm:flex-row flex w-full h-full  relative items-start">
       <div className="absolute -top-[12vh] -left-[12%] rainbow-circle w-[900px] h-[900px] 3xl:w-[1100px] rounded-full 3xl:h-[1100px]"></div>
       <div className="absolute -bottom-[10vh] -right-[10vw] rainbow-circle w-[500px] rounded-full h-[500px]"></div>
-      <div className="w-1/2   h-[100vh] flex flex-col items-center justify-center">
+
+
+{/* on smaller screens */}
+      <div className="sm:w-1/2 w-full  sm:mt-[180px] sm:h-[100vh] flex flex-col items-center">
+      <ZoomHeading as="h2" className={`${fredoka.className} sm:hidden text-5xl z-[50] mb-4`}>
+          Nice to Meet You!
+        </ZoomHeading>
         <Fade>
           <Image
             src={kelli}
@@ -29,11 +35,11 @@ const About = () => {
         </Fade>
       </div>
 
-      <div className="w-1/2 flex flex-col items-start justify-start mt-[11rem] gap-10 tracking-wide pb-[8rem]">
-        <ZoomHeading as="h2" className={`${fredoka.className} text-5xl`}>
+      <div className="w-full sm:w-1/2 flex flex-col items-center sm:items-start justify-start sm:mt-[11rem] mt-[5rem] gap-10 tracking-wide pb-[8rem]">
+        <ZoomHeading as="h2" className={`${fredoka.className} text-5xl z-[50] hidden sm:block`}>
           Nice to Meet You!
         </ZoomHeading>
-        <p className={`w-2/3 ${ibm.className} text-md z-[20] bg-customWhite`}>
+        <p className={` w-[95%] sm:w-2/3 ${ibm.className} text-md z-[20] bg-customWhite bg-opacity-90 p-2 rounded-xl`}>
           {bio.mainText}
         </p>
       </div>
