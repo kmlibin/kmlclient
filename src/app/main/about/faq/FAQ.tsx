@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 //images
 import faq from "./faq.svg";
 import Image from "next/image";
+
 //fonts and content
 import { ibm } from "@/app/utils/fonts";
 import { faqCards } from "./faqContent";
@@ -30,21 +31,22 @@ const FAQ = () => {
     <div className="w-full h-full flex bg-customWhite pb-8 relative">
       <div className="absolute -top-[12vh] -left-[12%] rainbow-circle w-[900px] h-[900px] 3xl:w-[1100px] rounded-full 3xl:h-[1100px]"></div>
       <div className="absolute -bottom-[10vh] -right-[10vw] rainbow-circle w-[500px] rounded-full h-[500px]"></div>
-      <div className="w-full relative flex justify-evenly items-start mt-[180px]">
+
+      <div className="w-full relative sm:flex-row flex-col flex justify-evenly items-center sm:items-start sm:mt-[180px] mt-[5rem]">
         {/* rainbows */}
-        <div className="w-1/3 h-full flex flex-col items-end justify-start ">
+        <div className="sm:w-1/3 w-full h-full flex flex-col items-end justify-start ">
           <RollImage>
             <Image
               src={faq}
               alt="faq image"
               height={400}
-              className="z-10 sticky top-4 -mt-[3.75rem]"
+              className="z-10 sm:sticky top-4 -mt-[3.75rem]"
             />
           </RollImage>
         </div>
 
         <div
-          className={`${ibm.className} bg-customWhite bg-opacity-80  tracking-wide text-lg w-1/2 relative  flex flex-col items-center justify-start`}
+          className={`${ibm.className} bg-customWhite rounded-xl bg-opacity-80  tracking-wide text-lg w-[95%] sm:w-1/2 relative  flex flex-col items-center justify-start`}
         >
           {faqCards.map((item) => (
             <Accordion
