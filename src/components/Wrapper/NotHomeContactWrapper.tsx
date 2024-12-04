@@ -13,7 +13,7 @@ const NotHomeContactWrapper = (Component: React.ComponentType) => {
     return (
       <>
         {/* social media icons on side */}
-        <div className={`fixed mt-[170px] top-5 left-4 z-50 flex -translate-y-1/2 flex-col`}>
+        <div className={`sm:fixed mt-[60px] sm:mt-[170px] top-5 sm:left-4 left-1 z-50 flex -translate-y-1/2 sm:flex-col flex-row items-start justify-center w-full sm:w-auto`}>
           <SMIcons href={"https://etsy.com/shop/CreationsKMP"} icon={FaEtsy} />
           <SMIcons href={"https://www.linkedin.com/in/kelli-libin-b5ba78151/"} icon={FaLinkedinIn} />
           <SMIcons href={"https://github.com/kmlibin"} icon={FaGithub} />
