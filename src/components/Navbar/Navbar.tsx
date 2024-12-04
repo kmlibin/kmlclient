@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 //libraries
 import { BiSolidSquareRounded } from "react-icons/bi";
+import { RiMenu5Line } from "react-icons/ri";
 //images
 import logo from "../../../public/images/klbg.svg";
 import Image from "next/image";
@@ -12,7 +13,6 @@ import paths from "@/app/paths";
 import Link from "next/link";
 //components
 import Links from "./Links";
-
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(true);
@@ -27,22 +27,30 @@ const Navbar = () => {
   return (
     <div className="relative w-full">
       <div
-        className={`absolute top-2 left-0 h-[100px] w-2/3 bg-customIndigo  text-customWhite p-4 rounded-tr-lg rounded-br-lg
+        className={`sm:hidden fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 z-30 transition-opacity duration-300 ease-in-out ${
+          isOpen
+            ? "opacity-100 pointer-events-auto"
+            : "opacity-0 pointer-events-none"
+        }`}
+        onClick={toggleNavbar}
+      ></div>
+      <div
+        className={`absolute top-2 left-0 sm:h-[100px] h-[100vh] z-[100] w-5/6 sm:w-2/3 bg-customIndigo  text-customWhite p-4 rounded-tr-lg rounded-br-lg
               transform ${isOpen ? "translate-x-0" : "-translate-x-full"}
               transition-transform duration-300 ease-in-out z-40 flex items-center`}
       >
         <ul
-          className={`${ibm.className} flex-grow flex w-full gap-6 items-center justify-between text-customWhite`}
+          className={`${ibm.className} sm:flex-row flex-col flex-grow flex w-full gap-6 sm:items-center sm:justify-between justify-start items-end h-full text-customWhite`}
         >
-          <Link href={paths.homePath()}>
+          <Link href={paths.homePath()} className="sm:mb-0 mb-10">
             <Image
               src={logo}
               alt="logo"
               height={75}
-              className="ml-4 rounded-full box-content border-4 border-customGold "
+              className="ml-4 rounded-full box-content border-4 border-customGold"
             />
           </Link>
-          <div className="flex mr-10 gap-24 items-center">
+          <div className="sm:flex-row flex-col flex sm:mr-10 gap-20 sm:gap-24 w-full sm:w-auto items-end ">
             <Links path={paths.homePath()} linkName="Home" />
             <Links path={paths.portfolioPath()} linkName="Portfolio" />
             <Links path={paths.aboutPath()} linkName="About" />
@@ -53,12 +61,13 @@ const Navbar = () => {
 
       <button
         onClick={toggleNavbar}
-        className={`absolute top-[2.4rem] right-6 text-customGold w-10 h-10 rounded flex items-center justify-center
+        className={`absolute top-2 sm:top-[2.4rem] right-2 sm:right-6 text-blackTextFont  bg-customGold w-10 h-10 rounded flex items-center justify-center
               transition-transform duration-300 ease-in-out z-50 ${
                 rotate ? "rotate-color-360" : ""
               }`}
       >
-        <BiSolidSquareRounded size={24} />
+        {/* <BiSolidSquareRounded size={24} className="hidden sm:block"/> */}
+        <RiMenu5Line size={24} className=""/>
       </button>
     </div>
   );
