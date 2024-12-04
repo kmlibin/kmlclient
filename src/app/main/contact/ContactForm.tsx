@@ -3,6 +3,7 @@ import React, { useState, useRef } from "react";
 //libraries
 import emailjs from "@emailjs/browser";
 import { LuSend } from "react-icons/lu";
+import {Fade} from 'react-awesome-reveal'
 //components
 import SuccessErrorModal from "./SuccessErrorModal";
 //fonts
@@ -147,11 +148,11 @@ const ContactForm = () => {
   return (
     <>
       <form
-        className="space-y-6 w-3/4 p-8 bg-customWhite rounded-lg shadow-lg border-customGold border-4 border-opacity-90"
+        className="space-y-6 w-[95%] sm:w-3/4 p-8 bg-customWhite rounded-lg shadow-lg border-customGold border-4 border-opacity-90"
         ref={formRef}
         onSubmit={handleSubmit}
       >
-        <h3 className={`${ibmBold.className} text-2xl  mb-4`}>
+        <h3 className={`${ibmBold.className} text-2xl  text-center sm:text-left mb-4`}>
           Let&apos;s Bring Your Vision to Life!
         </h3>
 
