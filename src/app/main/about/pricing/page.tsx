@@ -76,7 +76,7 @@ const page = () => {
         </div>
 
         <div
-          className={`${ibm.className} tracking-wide  sm:w-1/2 relative  flex flex-col items-center justify-start gap-16`}
+          className={`${ibm.className} tracking-wide  sm:w-1/2 relative  flex flex-col items-center justify-start gap-4 sm:gap-16`}
         >
           <div className="w-full flex flex-col items-center justify-start  ">
             <ZoomHeading

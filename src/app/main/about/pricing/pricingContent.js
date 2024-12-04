@@ -8,7 +8,8 @@ import seo from "../../../../../public/images/seo.svg";
 import hosting from "./images/hosting.svg";
 //fonts
 import { fredoka, ibmBold } from "@/app/utils/fonts";
-
+//icons
+import { SiNextra } from "react-icons/si";
 
 export const pricingCards = [
   {
@@ -41,7 +42,7 @@ export const pricingCards = [
   },
   {
     title: (
-      <p className={`${fredoka.className} text-2xl`}>
+      <p className={`${fredoka.className} text-3xl sm:text-2xl`}>
         Contact Form Integration
       </p>
     ),
@@ -61,10 +62,12 @@ export const pricingCards = [
   },
   {
     title: (
-      <p className={`${fredoka.className} text-2xl w-full`}>
+      <p className={`${fredoka.className} text-3xl sm:text-2xl w-full`}>
         Reliable Hosting & Content Updates<br></br>
-        <span className={`${ibmBold.className} text-lg`}>
-          - additional $60 per year
+        <span
+          className={`${ibmBold.className} sm:text-lg text-[14px] flex items-center justify-start gap-2 w-full mt-4 sm:mt-0`}
+        >
+          <SiNextra className="text-customBlue" size={12} /> additional $60 per year
         </span>
       </p>
     ),
@@ -72,15 +75,15 @@ export const pricingCards = [
     src: hosting,
     text: (
       <>
-        <ul className="list-disc list-outside pl-10 text-md space-y-2">
+        <ul className={`list-disc list-outside pl-10 text-md space-y-2 `}>
           <li>Fast, secure hosting with Netlify</li>
           <li>
             Regular content updates included (excludes major redesigns or adding
-            new features)
+            new features).
           </li>
           <li>
             Video Support: Showcase videos (up to 75MB) to enhance customer
-            engagement
+            engagement.
           </li>
         </ul>
       </>
@@ -95,7 +98,7 @@ export const additionalInfo = [
   },
   {
     content:
-      "Domain Registration: If you choose to host with me on Netlify, I can assist with domain registration. If you decide to host the site yourself, you'll be responsible for purchasing and setting up your own domain.",
+      "Domain Registration: If you choose to host with me on Netlify, I can assist with domain registration and setup. If you decide to host the site yourself, you'll be responsible for purchasing and setting up your own domain.",
   },
   {
     content:
