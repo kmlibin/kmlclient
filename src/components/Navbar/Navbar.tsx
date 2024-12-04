@@ -87,7 +87,7 @@ const Navbar = () => {
       <button
         onClick={toggleNavbar}
         className={`absolute top-2 sm:top-[2.4rem] right-2 sm:right-6 text-blackTextFont  bg-customGold w-10 h-10 rounded flex items-center justify-center
-              transition-transform duration-300 ease-in-out z-50 ${
+              transition-transform duration-300 ease-in-out z-[95] ${
                 rotate ? "rotate-color-360" : ""
               }`}
       >
