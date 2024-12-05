@@ -1,7 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
 //libraries
-import { BiSolidSquareRounded } from "react-icons/bi";
 import { RiMenu5Line } from "react-icons/ri";
 //images
 import logo from "../../../public/images/klbg.svg";
