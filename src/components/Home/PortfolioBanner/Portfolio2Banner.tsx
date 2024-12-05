@@ -1,11 +1,10 @@
 import React from "react";
 //fonts and utils
-import { fredoka } from "@/app/utils/fonts";
+import { fredoka, ibm } from "@/app/utils/fonts";
 import paths from "@/app/paths";
 
-
 //libraries
-import { FcIdea } from "react-icons/fc";
+import { FcCompactCamera } from "react-icons/fc";
 //components
 import Slider from "./Slider";
 import Button from "@/components/Button";
@@ -17,21 +16,23 @@ const Portfolio2Banner = () => {
       id="portfolio-section"
       className="relative flex flex-col justify-center items-center w-full pb-[4rem]"
     >
-      <div className="absolute -bottom-[10vh] -right-[10vw] rainbow-circle w-[500px] rounded-full h-[500px] -z-1"></div>
+      {/* rainbow */}
+      <div className=" absolute -bottom-[10vh] -right-[50vw] sm:-right-[10vw] rainbow-circle sm:w-[500px] w-[400px] rounded-full sm:h-[500px] h-[400px] -z-1"></div>
+
       <ZoomHeading
         as="h3"
-        className={`${fredoka.className} text-5xl w-full tracking-wide flex items-center justify-center gap-3 pt-10  mb-10 z-10`}
+        className={`${fredoka.className} text-4xl sm:text-5xl w-full text-center tracking-wide flex items-center justify-center gap-3 sm:pt-10  mb-5 z-10`}
       >
-        Bringing Ideas to Life <FcIdea />
+        Our Work In Action <FcCompactCamera className="hidden sm:block" />
       </ZoomHeading>
-
-      {/* <div className="w-2/3 text-[16px] bg-customWhite bg-opacity-55 shadow-indigo rounded-xl p-5 my-10">
-        <p className={`${ibm.className} text-center px-5`}>
-          {portfolioBanner.mainText}
-        </p>
-      </div> */}
+      <p
+        className={`${ibm.className} w-[95%] text-lg sm:w-1/2 text-center mb-5 sm:mb-0`}
+      >
+        Every project is a partnership—see how we collaborate with clients to
+        craft impactful, results-driven solutions.
+      </p>
       <Slider />
-      <div className="flex justify-center mt-[3rem] items-center w-5/6">
+      <div className="h-[150px] bg-customBlue bg-opacity-20 w-full flex items-center justify-center mt-5 sm:mt-0">
         <Button path={paths.portfolioPath()} text="See More" />
       </div>
     </div>

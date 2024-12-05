@@ -30,7 +30,7 @@ const NavLinks = () => {
     { label: "Getting Started", path: paths.getStartedPath()},
   ];
   return (
-    <ul className={` ${ibm.className} mb-5`}>
+    <ul className={` ${ibm.className} mb-5 `}>
       <Trail open={open}>
       {navItems.map(({ label, path }, index) => (
           <li key={index} className="relative flex items-center">

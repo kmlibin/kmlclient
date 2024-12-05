@@ -7,6 +7,7 @@ import PortfolioBanner from "@/components/Home/PortfolioBanner/Portfolio2Banner"
 import HomeBanner from "@/components/Home/HomeBanner/HomeBanner";
 import Info from "@/components/Home/InfoBanner/Info";
 
+
 export const metadata: Metadata = {
   title: "Libin Web Development",
   description:

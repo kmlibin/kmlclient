@@ -3,7 +3,7 @@ import { useState } from "react";
 import { StaticImageData } from "next/image";
 
 import { Fade } from "react-awesome-reveal";
-import { createPortal } from "react-dom";
+// import { createPortal } from "react-dom";
 
 import { IoMdClose } from "react-icons/io";
 
@@ -123,13 +123,13 @@ export default function ReviewSection({
           <div className="sm:hidden absolute w-[90vw] h-full z-[900]">
             <div className="bg-white w-[90vw] h-full overflow-y-auto z-[900] p-6 rounded-lg shadow-lg relative">
               <button
-                className="absolute top-4 right-4"
+                className="absolute top-3 right-4"
                 onClick={handleClosePopup}
               >
                 <IoMdClose className="text-customBlue" />
               </button>{" "}
               <Fade>
-                <p className="tracking-wider text-blackTextFont text-xs mt-5">
+                <p className="tracking-wider text-blackTextFont text-xs mt-3">
                   {review}
                 </p>{" "}
               </Fade>

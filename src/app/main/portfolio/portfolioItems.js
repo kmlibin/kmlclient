@@ -100,8 +100,5 @@ export const portfolioItems = [
     bubbles: true,
     review: "bubbles 3",
   },
-  {
-    id: 12,
-    height: "392px",
-  },
+
 ];

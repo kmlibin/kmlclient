@@ -12,13 +12,13 @@ import CTA from "./CTA";
 
 const PortfolioPage = () => {
   return (
-    <div className="flex w-full sm:flex-row flex-col bg-customWhite min-h-[300vh] ">
+    <div className="flex w-full sm:flex-row flex-col bg-customWhite min-h-[300vh] h-full ">
       {/* rainbows */}
       <div className="absolute -top-[12vh] -left-[12%] rainbow-circle w-[900px] h-[900px] 3xl:w-[1100px] rounded-full 3xl:h-[1100px]"></div>
       <div className="hidden sm:absolute -bottom-[10vh] -right-[10vw] rainbow-circle w-[500px] rounded-full h-[500px]"></div>
 
 
-      <div className="flex sm:w-1/3 w-full flex-col items-end sm:justify-start relative sm:h-[300vh] 3xl:h-[230vh] sm:mt-[170px] mt-[5rem]">
+      <div className="flex sm:w-1/3 w-full flex-col h-full items-end sm:justify-start relative sm:h-[300vh] 3xl:h-[230vh] sm:mt-[170px] mt-[5rem]">
         <div className="sm:sticky top-[4vh]">
           <RollImage>
             <Image alt="portfolio" src={myport} height={350} className="z-10" />

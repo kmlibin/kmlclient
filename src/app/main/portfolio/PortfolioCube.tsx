@@ -8,16 +8,13 @@ import Bubbles from "./Bubbles";
 import { IoStarSharp } from "react-icons/io5";
 import { RiExternalLinkLine } from "react-icons/ri";
 import { BsCaretDownSquareFill, BsCaretUpSquareFill } from "react-icons/bs";
-
 //fonts
-import { fredoka, ibm, ibmBold } from "@/app/utils/fonts";
+import { ibm, ibmBold } from "@/app/utils/fonts";
 //css
 import "./Portfolio.css";
 //routing
 import Link from "next/link";
-import paths from "../../paths";
 //components
-import Button from "@/components/Button";
 import ReviewSection from "./ReviewPopover";
 
 type CubeProps = {
@@ -91,7 +88,7 @@ const Cube = ({
   //     window.removeEventListener("resize", handleResize);
   //   };
   // }, []);
-  console.log(cubeDepth);
+
   const cubeRef = useRef<HTMLDivElement>(null);
 
   // const shouldTruncate = cube && !isLarge;
