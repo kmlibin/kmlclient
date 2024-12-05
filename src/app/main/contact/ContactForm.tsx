@@ -3,7 +3,6 @@ import React, { useState, useRef } from "react";
 //libraries
 import emailjs from "@emailjs/browser";
 import { LuSend } from "react-icons/lu";
-import {Fade} from 'react-awesome-reveal'
 //components
 import SuccessErrorModal from "./SuccessErrorModal";
 //fonts
