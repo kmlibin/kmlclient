@@ -61,7 +61,9 @@ const Links = ({ linkName, path, navBarOpen, isSmall }: Props) => {
                     role="menuitem"
                     id={id}
                     onClick={() => {
-                      isSmall && navBarOpen(false);
+                      if (isSmall) {
+                        navBarOpen(false);
+                      }
                     }}
                   >
                     {label}
@@ -80,7 +82,9 @@ const Links = ({ linkName, path, navBarOpen, isSmall }: Props) => {
         className=" hover:text-customTurquoise transition duration-300"
         href={path}
         onClick={() => {
-          isSmall && navBarOpen(false);
+          if (isSmall) {
+            navBarOpen(false);
+          }
         }}
       >
         {linkName}

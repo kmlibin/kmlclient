@@ -26,11 +26,11 @@ const Navbar = () => {
         
         setNavIsOpen(false); // close the navbar by default on smaller screens
         setIsSmall(true)
-        console.log(innerWidth, isOpen)
+     
       } else {
         setNavIsOpen(true); // keep it open for larger screens
         setIsSmall(false)
-        console.log(innerWidth, isOpen)
+
       }
     };
 

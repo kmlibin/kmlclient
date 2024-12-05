@@ -1,7 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
 //libraries
-import { Fade } from "react-awesome-reveal";
 import { RiArrowRightSLine, RiArrowLeftSLine } from "react-icons/ri";
 //components
 import PortfolioCube from "../../../app/main/portfolio/PortfolioCube";

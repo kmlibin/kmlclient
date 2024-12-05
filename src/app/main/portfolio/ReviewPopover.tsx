@@ -138,7 +138,7 @@ export default function ReviewSection({
         )
 
         // document.body
-        //@ts-ignore
+  
         // document.getElementById("popup-container")  // Ensure the popup is appended to the correct container
         // )
       }
