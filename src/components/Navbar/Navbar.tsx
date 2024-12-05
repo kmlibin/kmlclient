@@ -85,25 +85,25 @@ const Navbar = () => {
             <Links
               path={paths.homePath()}
               linkName="Home"
-              navBarOpen={setNavIsOpen}
+              setNavIsOpen={setNavIsOpen}
               isSmall={isSmall}
             />
             <Links
               path={paths.portfolioPath()}
               linkName="Portfolio"
-              navBarOpen={setNavIsOpen}
+              setNavIsOpen={setNavIsOpen}
               isSmall={isSmall}
             />
             <Links
               path={paths.aboutPath()}
               linkName="About"
-              navBarOpen={setNavIsOpen}
+              setNavIsOpen={setNavIsOpen}
               isSmall={isSmall}
             />
             <Links
               path={paths.contactPath()}
               linkName="Contact"
-              navBarOpen={setNavIsOpen}
+              setNavIsOpen={setNavIsOpen}
               isSmall={isSmall}
             />
           </div>
