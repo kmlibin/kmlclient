@@ -8,6 +8,13 @@
   aspect-ratio: 2; 
   transform-style: preserve-3d;
   transform: translateZ(var(--cube-depth));
+  height: 475px;
+
+  @media (max-width: 640px) {
+    .cube {
+      height: 200px;
+    }
+  }
 }
 
 .cube.show-front {
