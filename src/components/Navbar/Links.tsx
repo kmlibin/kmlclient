@@ -10,7 +10,7 @@ import { Fade } from "react-awesome-reveal";
 type Props = {
   path: string;
   linkName: string;
-  navBarOpen: any;
+  navBarOpen:  React.Dispatch<React.SetStateAction<boolean>>;
   isSmall: boolean;
 };
 
