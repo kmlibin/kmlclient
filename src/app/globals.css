@@ -7,6 +7,9 @@
 *::after {
   box-sizing: border-box;
 }
+html, body {
+  height: 100%;
+}
 
 /* rainbow band */
 .rainbow {
