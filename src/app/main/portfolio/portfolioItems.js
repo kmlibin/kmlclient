@@ -22,7 +22,7 @@ export const portfolioItems = [
     complete: true,
     link: "https://conciergewellnessandpt.com/",
     review:
-      "Kelli has been outstanding with all of her help building my company website! She far exceeded any of my expectations and went above and beyond. I’m so thankful for her knowledge and attention to detail because it made the whole process so much easier for me. She even helped me figure out how to activate my company email and all other IT questions I had. I highly recommend Kelli for any web development or anything related!",
+      "Kelli has been outstanding with all of her help building my company website! She far exceeded any of my expectations and went above and beyond. I’m so thankful for her knowledge and attention to detail because it made the whole process so much easier for me. I highly recommend Kelli for any web development or anything related!",
     backImage: cw2,
     isLarge: false,
   },
