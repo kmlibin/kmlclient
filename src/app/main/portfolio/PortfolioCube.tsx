@@ -19,6 +19,7 @@ import Link from "next/link";
 import paths from "../../paths";
 //components
 import Button from "@/components/Button";
+import ReviewSection from "./ReviewPopover";
 
 type CubeProps = {
   frontImage?: StaticImageData | string;
@@ -49,34 +50,58 @@ const Cube = ({
   business,
 }: CubeProps) => {
   const [isFront, setIsFront] = useState(true);
+  const [isSmall, setIsSmall] = useState(false)
   const [cubeDepth, setCubeDepth] = useState("175px");
-  const [showFullReview, setShowFullReview] = useState(false);
-  const [popup, setPopup] = useState(false);
-  //change value from height to "isCube"
+  const [calcCubeHeight, setCalcCubeHeight] = useState("");
 
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 640px)");
+  
+    const handleMediaChange = () => {
+      setCalcCubeHeight(mediaQuery.matches ? "200px" : "475px");
+   
+    };
+  
+    // Initial check
+    handleMediaChange();
+     if(calcCubeHeight !== "475x") {
+        setIsSmall(true)
+      }
+    // Listen for media query changes
+    mediaQuery.addEventListener("change", handleMediaChange);
+  
+    return () => {
+      mediaQuery.removeEventListener("change", handleMediaChange);
+    };
+  }, []);
+
+  // useEffect(() => {
+  //   const handleResize = () => {
+  //     const width = window.innerWidth;
+  
+  //     // Dynamically update calcCubeHeight based on screen width
+  //     if (width < 640) {
+  //       setCalcCubeHeight("200px");
+  //     } else {
+  //       setCalcCubeHeight("475px");
+  //     }
+  //   };
+  
+  //   // Initial check and add event listener
+  //   handleResize();
+  //   window.addEventListener("resize", handleResize);
+  
+  //   // Cleanup
+  //   return () => {
+  //     window.removeEventListener("resize", handleResize);
+  //   };
+  // }, []);
+  console.log(cubeDepth)
   const cubeRef = useRef<HTMLDivElement>(null);
 
-  // truncates text to 30 words, use for small cubes
-  const truncateText = (text: string, wordLimit: number) => {
-    const words = text.split(" ");
-    return words.length > wordLimit
-      ? words.slice(0, wordLimit).join(" ") + "..."
-      : text;
-  };
   // const shouldTruncate = cube && !isLarge;
 
-  const handleToggleReviewOn = () => {
-    setPopup(true);
-    setTimeout(() => {
-      setShowFullReview(!showFullReview);
-    }, 1000);
-  };
-
-  // toggle review
-  const handleToggleReviewOff = () => {
-    setShowFullReview(false);
-    setPopup(false);
-  };
 
   //check the height of the cube, which then calculates the height of the cube, divides by two and sends to css
   useEffect(() => {
@@ -84,7 +109,7 @@ const Cube = ({
       const cubeHeight = cubeRef.current.offsetHeight;
       setCubeDepth(`${cubeHeight / 2}px`);
     }
-  }, [cubeRef]);
+  }, [cubeRef, calcCubeHeight]);
 
   const toggleFace = () => {
     setIsFront((prev) => !prev);
@@ -93,14 +118,14 @@ const Cube = ({
   if (cube) {
     return (
       <div className="flex flex-col w-auto items-center justify-center">
-        <div className="scene w-auto h-auto overflow-hidden z-[30] relative ">
+        <div   className="scene w-auto h-auto overflow-hidden z-[30] relative flex justify-center flex-col items-center">
           {!isHome &&
             (complete ? (
               <Link
                 href={link || ""}
-                className={`${ibmBold.className} w-full flex justify-end text-blackTextFont items-center gap-2 text-xl tracking-wide my-4 hover:text-customTurquoise duration-300`}
+                className={`${ibmBold.className} w-full flex justify-end text-right text-blackTextFont items-center gap-4 text-lg sm:text-xl tracking-wide my-4 hover:text-customTurquoise duration-300`}
               >
-                {business} <RiExternalLinkLine className="text-customIndigo" />
+                {business} <RiExternalLinkLine className="text-customIndigo sm:w-auto w-[10%]" />
               </Link>
             ) : (
               <p
@@ -110,6 +135,7 @@ const Cube = ({
               </p>
             ))}
           <div
+        
             ref={cubeRef}
             className={`cube ${
               isFront ? "show-front" : "show-bottom"
@@ -117,11 +143,12 @@ const Cube = ({
             style={
               {
                 "--cube-depth": cubeDepth,
-                height: height,
+                height: calcCubeHeight,
               } as React.CSSProperties
             }
           >
             <div
+            
               className={`${
                 isHome
                   ? "cube__face cube__face--front"
@@ -134,71 +161,31 @@ const Cube = ({
                 alt="Back Image"
               />
 
-              <div className="absolute inset-0 bg-gradient-to-b from-gray-900 bg-gray-900 bg-opacity-60 to-transparent z-10"></div>
+              <div  className="absolute inset-0 bg-gradient-to-b from-gray-900 bg-gray-900 bg-opacity-60 to-transparent z-10"></div>
 
-              <div
-                className={`${ibm.className} absolute tracking-wide inset-0 z-20 flex flex-col items-center justify-center text-customWhite text-xl gap-5`}
+              <div 
+                className={`${ibm.className} absolute tracking-wide inset-0 z-20 flex flex-col items-center justify-center text-customWhite text-xl gap-2 sm:gap-5`}
               >
-                <h3 className="text-4xl">{owner}</h3>
+                <h3 className="text-xl sm:text-4xl">{owner}</h3>
                 <Link
                   href={link ? link : ""}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-xl cursor-pointer flex items-center gap-4 hover:text-customTurquoise hover:underline transition duration-300 hover:underline-offset-4"
+                  className="sm:flex hidden text-xl cursor-pointer  items-center gap-4 hover:text-customTurquoise hover:underline transition duration-300 hover:underline-offset-4"
                 >
                   {business}
                   {complete && <RiExternalLinkLine />}
                 </Link>
 
                 {complete && (
-                  <div className={`flex w-full gap-4 justify-center mb-4`}>
+                  <div className={`flex w-full gap-4 justify-center mb-4 text-xl sm:text-3xl`}>
                     {[...Array(5)].map((_, index) => (
-                      <IoStarSharp key={index} size={35} color={"#fec246"} />
+                      <IoStarSharp key={index}  color={"#fec246"} />
                     ))}
                   </div>
                 )}
 
-                <p
-                  className={` ${
-                    !complete ? "text-center" : ""
-                  } text-lg w-2/3 bg-customWhite text-blackTextFont p-7 relative rounded-lg`}
-                >
-                  {complete
-                    ? review && truncateText(review, 40)
-                    : "Under Construction, Check Back Soon!"}
-
-                  {/* show more button only if the text is truncated */}
-                  {review &&
-                    !showFullReview &&
-                    review.split(" ").length > 40 && (
-                      <span
-                        className="text-customBlue hover:underline cursor-pointer"
-                        onClick={handleToggleReviewOn}
-                      >
-                        see more
-                      </span>
-                    )}
-                </p>
-                {/* popover for show more */}
-                {popup && (
-                  <Fade duration={500}>
-                    <div className="absolute flex flex-col items-center justify-center -top-2 left-0 mt-2 p-4 h-full bg-customWhite shadow-lg border border-gray-300 w-full z-30">
-                      <p
-                        className={`${
-                          isHome ? "w-[70%]" : "w-5/6"
-                        } text-lg text-blackTextFont`}
-                      >
-                        {review}
-                      </p>
-                      <button
-                        onClick={handleToggleReviewOff}
-                        className="text-customBlue hover:underline mt-2 absolute  bottom-[5%]  p-6 "
-                      >
-                        ...show less
-                      </button>
-                    </div>
-                  </Fade>
-                )}
+                <ReviewSection complete={complete} isHome={isHome} review={review}/>
               </div>
               <div
                 className="absolute h-[50px] bottom-[2%] right-[2%] mt-2 flex justify-center items-center bg-transparent z-[50] cursor-pointer text-2xl text-gray-500 hover:text-gray-700"
