@@ -8,6 +8,7 @@ import { portfolioItems } from "./portfolioItems";
 //components
 import RollImage from "@/components/RollImage";
 import PortfolioCard from "./PortfolioCube";
+import CTA from "./CTA";
 
 const PortfolioPage = () => {
   return (
@@ -41,6 +42,7 @@ const PortfolioPage = () => {
             backImage={item.backImage}
           />
         ))}
+        <CTA />
       </div>
     </div>
   );
