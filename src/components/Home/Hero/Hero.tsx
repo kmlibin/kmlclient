@@ -5,6 +5,7 @@ import Image from "next/image";
 import background from "../../../../public/images/kmlbg.jpg";
 import bwsvg4 from "../../../../public/images/newlogo.png";
 import smalllogo from "./smalllogo.svg";
+import smallbg from "./smallrainbowbg.jpg";
 //libraries
 import { Fade } from "react-awesome-reveal";
 //css
@@ -47,6 +48,15 @@ const Hero = () => {
             style={{ objectFit: "cover" }}
             alt="rainbow background"
             priority
+            className="sm:block hidden"
+          />
+          <Image
+            src={smallbg}
+            fill
+            style={{ objectFit: "cover" }}
+            alt="rainbow background"
+            priority
+            className="sm:hidden"
           />
           <div className="absolute inset-0 sm:w-1/3 w-2/3 bg-gradient-to-r from-slate-500 sm:bg-gradient-to-r sm:from-gray-900 to-transparent "></div>
         </div>
@@ -60,6 +70,7 @@ const Hero = () => {
               width={650}
               alt="Libin Web Development and image of Kelli"
               className="hidden sm:block"
+              priority
             />
           </Fade>
 
@@ -69,6 +80,7 @@ const Hero = () => {
               width={650}
               alt="Libin Web Development and image of Kelli"
               className="h-[530px] object-cover sm:hidden"
+              priority
             />
           </Fade>
 
