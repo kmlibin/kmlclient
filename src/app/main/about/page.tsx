@@ -35,7 +35,19 @@ export const metadata: Metadata = {
 };
 
 const page = () => {
-  return <About />;
+  return (
+    <>
+      {" "}
+      <link
+        rel="preload"
+        as="image"
+        href="/images/bw8.jpg"
+        fetchPriority="high"
+        type="image/jpg"
+      />
+      <About />
+    </>
+  );
 };
 
 export default page;
