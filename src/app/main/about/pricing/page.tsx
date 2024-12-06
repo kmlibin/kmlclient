@@ -57,11 +57,10 @@ export const metadata: Metadata = {
 const page = () => {
   return (
     <div className="w-full flex  flex-col bg-customWhite items-center relative">
-      
       <div className="w-full flex sm:flex-row flex-col justify-evenly items-start sm:mt-[180px] mt-[5rem] pb-16 relative">
         {/* rainbows */}
         <div className="absolute bottom-[0vh] -right-[10%] rainbow-circle w-[500px] rounded-full h-[500px]"></div>
-<div className="absolute -top-[12vh] -left-[12%] rainbow-circle w-[900px] h-[900px] 3xl:w-[1100px] rounded-full 3xl:h-[1100px]"></div>
+        <div className="absolute -top-[12vh] -left-[12%] rainbow-circle w-[900px] h-[900px] 3xl:w-[1100px] rounded-full 3xl:h-[1100px]"></div>
 
         <div className=" hidden sm:flex sm:w-1/3 w-full flex-col items-end justify-start relative sm:h-[300vh] 3xl:h-[230vh]">
           <div className="sticky top-[4vh] -mt-[3rem]">
