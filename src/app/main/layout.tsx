@@ -6,7 +6,7 @@ export default function NotHomeLayout({
     children: React.ReactNode;
   }) {
     return (
-      <div className={`flex w-full flex-col bg-customWhite justify-center items-center`}>
+      <div className={`flex w-full flex-col bg-customWhite justify-center items-center !overflow-hidden`}>
         <Navbar />
         {children}
       </div>
