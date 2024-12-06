@@ -113,14 +113,14 @@ const Cube = ({
             (complete ? (
               <Link
                 href={link || ""}
-                className={`${ibmBold.className} w-full flex justify-end text-right text-blackTextFont items-center gap-4 text-lg sm:text-xl tracking-wide my-4 hover:text-customTurquoise duration-300`}
+                className={`${ibmBold.className} w-[95%] flex justify-end text-right text-blackTextFont items-center gap-4 text-lg sm:text-xl tracking-wide my-4 hover:text-customTurquoise duration-300`}
               >
                 {business}{" "}
                 <RiExternalLinkLine className="text-customIndigo sm:w-auto w-[10%]" />
               </Link>
             ) : (
               <p
-                className={`${ibmBold.className} w-full flex justify-end text-blackTextFont items-center gap-2 text-xl tracking-wide my-4`}
+                className={`${ibmBold.className} w-full flex justify-end text-blackTextFont items-center gap-2 text-xl tracking-wide my-4 sm:mr-0 mr-4`}
               >
                 {business}
               </p>
