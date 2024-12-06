@@ -11,10 +11,10 @@ type Props = {
   path: string;
   linkName: string;
   setNavIsOpen:  React.Dispatch<React.SetStateAction<boolean>>;
-  isSmall: boolean;
+
 };
 
-const Links = ({ linkName, path, setNavIsOpen, isSmall }: Props) => {
+const Links = ({ linkName, path, setNavIsOpen}: Props) => {
   const [isOpen, setIsOpen] = useState(false);
 
   // dropdown links
