@@ -1,12 +1,14 @@
 //metadata
 import { Metadata } from "next";
 //components
-import HomeContactWrapper from "@/components/Wrapper/HomeContactWrapper";
+
 import Hero from "@/components/Home/Hero/Hero";
 import PortfolioBanner from "@/components/Home/PortfolioBanner/Portfolio2Banner";
 import HomeBanner from "@/components/Home/HomeBanner/HomeBanner";
 import Info from "@/components/Home/InfoBanner/Info";
-
+import SMIcons from "@/components/Wrapper/SMIcons";
+//icons
+import { FaEtsy, FaLinkedinIn, FaGithub } from "react-icons/fa";
 
 export const metadata: Metadata = {
   title: "Libin Web Development",
@@ -40,13 +42,55 @@ export const metadata: Metadata = {
 
 function Home() {
   return (
-    <div className="flex flex-col w-full h-full">
-      <Hero />
-      <HomeBanner />
-      <Info />
-      <PortfolioBanner />
-    </div>
+    <>
+      <link
+        rel="preload"
+        as="image"
+        href="/images/smalllogo.png"
+        fetchPriority="high"
+        type="image/png"
+      />
+      <link
+        rel="preload"
+        as="image"
+        href="/images/kmlbg.jpg"
+        fetchPriority="high"
+        type="image/png"
+      />
+
+      <link
+        rel="preload"
+        as="image"
+        href="/images/newlogo.png"
+        fetchPriority="high"
+        type="image/png"
+      />
+      <link
+        rel="preload"
+        as="image"
+        href="/images/smallrainbowbg.jpg"
+        fetchPriority="high"
+        type="image/jpg"
+      />
+      <div className="flex flex-col w-full h-full">
+        <div
+          className={`fixed hidden sm:flex sm:mt-[5%] top-24 sm:top-5 left-4 z-50 -translate-y-1/2 flex-col `}
+        >
+          <SMIcons href={"https://etsy.com/shop/CreationsKMP"} icon={FaEtsy} />
+          <SMIcons
+            href={"https://www.linkedin.com/in/kelli-libin-b5ba78151/"}
+            icon={FaLinkedinIn}
+          />
+          <SMIcons href={"https://github.com/kmlibin"} icon={FaGithub} />
+        </div>
+
+        <Hero />
+        <HomeBanner />
+        <Info />
+        <PortfolioBanner />
+      </div>
+    </>
   );
 }
 
-export default HomeContactWrapper(Home);
+export default Home;

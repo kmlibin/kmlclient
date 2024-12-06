@@ -4,7 +4,7 @@ import React from "react";
 import { FaEtsy, FaLinkedinIn, FaGithub } from "react-icons/fa";
 //components
 import SMIcons from "./SMIcons";
-import ContactImages from "./ContactImages";
+
 
 
 const ContactWrapper = (Component: React.ComponentType) => {
@@ -18,8 +18,6 @@ const ContactWrapper = (Component: React.ComponentType) => {
           <SMIcons href={"https://www.linkedin.com/in/kelli-libin-b5ba78151/"} icon={FaLinkedinIn} />
           <SMIcons href={"https://github.com/kmlibin"} icon={FaGithub} />
         </div>
-
-        <ContactImages />
 
         {/* wrapper */}
         <div className=" w-full ">
