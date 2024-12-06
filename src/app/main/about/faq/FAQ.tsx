@@ -28,7 +28,7 @@ const FAQ = () => {
     setOpenId(openId === id ? null : id);
   };
   return (
-    <div className="w-full h-full flex bg-customWhite pb-8 overflow-x-hidden">
+    <div className="w-full h-full flex bg-customWhite pb-8">
       {/* rainbows */}
       <div className="absolute -top-[12vh] -left-[12%] rainbow-circle w-[900px] h-[900px] 3xl:w-[1100px] rounded-full 3xl:h-[1100px]"></div>
       <div className="absolute -bottom-[10vh] -right-[10vw] rainbow-circle w-[500px] rounded-full h-[500px]"></div>
