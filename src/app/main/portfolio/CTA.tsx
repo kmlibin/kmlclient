@@ -9,7 +9,7 @@ import paths from "@/app/paths";
 const CTA = () => {
   return (
     <div
-      className={`flex flex-col mb-4 w-[93%] bg-customWhite p-10 tracking-wider gap-8 justify-between items-end 3xl:w-2/3 border-2 border-opacity-50 rounded-lg border-customBlue `}
+      className={`flex flex-col mb-4 w-[93%] z-[50] bg-customWhite p-10 tracking-wider gap-8 justify-between items-end 3xl:w-2/3 border-2 border-opacity-50 rounded-lg border-customBlue `}
     >
       <div className="flex flex-col w-full gap-4  z-[50]">
         <h3 className={`${fredoka.className} text-4xl`}>

@@ -26,7 +26,7 @@ const PortfolioPage = () => {
         </div>
       </div>
 
-      <div id="popup-container" className="w-full sm:w-2/3 flex flex-col justify-center gap-4 items-center overflow-hidden mx-auto sm:mt-[180px]">
+      <div id="popup-container" className="w-full sm:w-2/3 flex bg-customWhite flex-col justify-center gap-4 items-center overflow-hidden mx-auto sm:mt-[180px]">
         {portfolioItems.map((item) => (
           <PortfolioCard
             key={item.id}
