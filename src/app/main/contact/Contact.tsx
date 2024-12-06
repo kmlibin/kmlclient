@@ -15,8 +15,8 @@ const Contact = () => {
   return (
     <div className=" relative bg-customWhite flex w-full min-h-[100vh] overflow-hidden">
       {/* rainbows */}
-      <div className="absolute -bottom-[20rem] -right-[15rem] rainbow-circle w-[1100px] rounded-full h-[1100px] "></div>
-      <div className="sm:hidden absolute -top-[12vh] -right-[12%] rainbow-circle w-[900px] h-[900px] 3xl:w-[1100px] rounded-full 3xl:h-[1100px]"></div>
+      <div className="absolute sm:-bottom-[20rem] -bottom-[10rem] sm:-right-[15rem] -right-[8rem] rainbow-circle w-[400px] h-[400px] sm:w-[1100px] rounded-full sm:h-[1100px] "></div>
+      <div className="sm:hidden absolute -top-[12vh] -right-[12%] rainbow-circle w-[900px] h-[900px] rounded-full "></div>
 
       <div className="flex sm:flex-row flex-col justify-center items-center sm:items-start w-full sm:mt-[180px] mt-[5rem] mb-10">
         <div className="w-full sm:w-1/3 flex items-center justify-center tracking-wide">
