@@ -25,7 +25,7 @@ const InfoCard = ({ title, text, src, alt, className }: Props) => {
         ) : (
           <video loop playsInline muted autoPlay className="w-1/2 sm:w-full">
             <source src={bankvid} type="video/mp4" />
-            <Image src={bank} alt="putting money in a piggy bank" />
+            <Image src={bank} loading="lazy" alt="putting money in a piggy bank" />
           </video>
         )}
       </div>
