@@ -64,7 +64,7 @@ const Hero = () => {
         {/* image */}
 
         <div className="relative flex justify-end sm:flex-row flex-col items-center sm:ml-[5rem] sm:py-10 sm:mb-4 z-[10]">
-          <Fade triggerOnce>
+        {!isMobile && ( <Fade triggerOnce>
             <Image
               src={bwsvg4}
               width={650}
@@ -73,7 +73,7 @@ const Hero = () => {
               priority
             />
           </Fade>
-
+)}
           <Fade triggerOnce>
             <Image
               src={smalllogo}
