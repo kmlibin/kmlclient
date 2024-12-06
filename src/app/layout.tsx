@@ -1,4 +1,3 @@
-
 //components
 import Footer from "@/components/Footer";
 //css
@@ -12,7 +11,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="text-blackTextFont">
-        {children}
+        <div className="w-full">{children}</div>
         <Footer />
       </body>
     </html>
