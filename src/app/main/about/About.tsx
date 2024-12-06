@@ -14,10 +14,11 @@ import { Fade } from "react-awesome-reveal";
 
 const About = () => {
   return (
-    <div className=" bg-customWhite flex-col sm:flex-row flex w-full h-full  relative items-start">
-      <div className="absolute -top-[12vh] -left-[12%] rainbow-circle w-[900px] h-[900px] 3xl:w-[1100px] rounded-full 3xl:h-[1100px]"></div>
-      <div className="absolute -bottom-[10vh] -right-[10vw] rainbow-circle w-[500px] rounded-full h-[500px]"></div>
-
+    <div className=" bg-customWhite flex-col sm:flex-row flex w-full relative h-full items-start ">
+      <div className="h-full w-[100vw] overflow-x-hidden absolute -mt-[7rem] sm:-mt-0">
+        <div className="absolute -top-[12vh] -left-[12%] rainbow-circle w-[900px] h-[900px] 3xl:w-[1100px] rounded-full 3xl:h-[1100px]"></div>
+        <div className="absolute -bottom-[10vh] -right-[10vw] rainbow-circle w-[500px] rounded-full h-[500px]"></div>
+      </div>
       {/* on smaller screens */}
       <div className="sm:w-1/2 w-full  sm:mt-[180px] sm:h-[100vh] flex flex-col items-center">
         <ZoomHeading
