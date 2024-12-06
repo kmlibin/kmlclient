@@ -21,9 +21,8 @@ const Navbar = () => {
   //checking for screen width - less than 640px, isopen is set to false.
   useEffect(() => {
     const handleResize = () => {
-      console.log(window.innerWidth)
+      console.log(window.innerWidth);
       if (window.innerWidth < 640) {
-        
         setNavIsOpen(false); // close the navbar by default on smaller screens
         setIsSmall(true);
       } else {
@@ -42,14 +41,14 @@ const Navbar = () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-console.log(isSmall)
+
   const linkClickToggle = () => {
-    if(isSmall) {
-      setNavIsOpen(false)
+    if (isSmall) {
+      setNavIsOpen(false);
     } else {
-      setNavIsOpen(true)
+      setNavIsOpen(true);
     }
-  }
+  };
 
   const toggleNavbar = () => {
     setNavIsOpen(!isOpen);
@@ -92,25 +91,21 @@ console.log(isSmall)
               path={paths.homePath()}
               linkName="Home"
               linkClickToggle={linkClickToggle}
- 
             />
             <Links
               path={paths.portfolioPath()}
               linkName="Portfolio"
               linkClickToggle={linkClickToggle}
-
             />
             <Links
               path={paths.aboutPath()}
               linkName="About"
               linkClickToggle={linkClickToggle}
-   
             />
             <Links
               path={paths.contactPath()}
               linkName="Contact"
               linkClickToggle={linkClickToggle}
-     
             />
           </div>
         </ul>
