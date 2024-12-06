@@ -3,7 +3,6 @@ import React from "react";
 //fonts
 import { ibm, fredoka } from "../../utils/fonts";
 //images and content
-import Image from "next/image";
 import kelli from "../../../../public/images/bw8.jpg";
 import { bio } from "./aboutContent";
 //components
