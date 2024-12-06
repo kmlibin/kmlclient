@@ -72,7 +72,7 @@ function Home() {
         fetchPriority="high"
         type="image/jpg"
       />
-      <div className="flex flex-col w-full h-full">
+      <div className="flex flex-col w-full h-full overflow-hidden">
         <div
           className={`fixed hidden sm:flex sm:mt-[5%] top-24 sm:top-5 left-4 z-50 -translate-y-1/2 flex-col `}
         >
