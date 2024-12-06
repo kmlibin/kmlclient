@@ -10,11 +10,11 @@ import { Fade } from "react-awesome-reveal";
 type Props = {
   path: string;
   linkName: string;
-  setNavIsOpen:  React.Dispatch<React.SetStateAction<boolean>>;
+  linkClickToggle: () => void
 
 };
 
-const Links = ({ linkName, path, setNavIsOpen}: Props) => {
+const Links = ({ linkName, path, linkClickToggle}: Props) => {
   const [isOpen, setIsOpen] = useState(false);
 
   // dropdown links
@@ -60,7 +60,7 @@ const Links = ({ linkName, path, setNavIsOpen}: Props) => {
                     className="w-full text-right px-4 py-2 text-sm text-blackTextFont hover:bg-gray-100  hover:text-customBlue"
                     role="menuitem"
                     id={id}
-                    onClick={() => setNavIsOpen(false)}
+                    onClick={linkClickToggle}
                   >
                     {label}
                   </Link>
@@ -77,7 +77,7 @@ const Links = ({ linkName, path, setNavIsOpen}: Props) => {
       <Link
         className=" hover:text-customTurquoise transition duration-300"
         href={path}
-        onClick={() => setNavIsOpen(false)}
+        onClick={linkClickToggle}
       >
         {linkName}
       </Link>

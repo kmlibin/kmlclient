@@ -21,7 +21,9 @@ const Navbar = () => {
   //checking for screen width - less than 640px, isopen is set to false.
   useEffect(() => {
     const handleResize = () => {
+      console.log(window.innerWidth)
       if (window.innerWidth < 640) {
+        
         setNavIsOpen(false); // close the navbar by default on smaller screens
         setIsSmall(true);
       } else {
@@ -40,6 +42,14 @@ const Navbar = () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+console.log(isSmall)
+  const linkClickToggle = () => {
+    if(isSmall) {
+      setNavIsOpen(false)
+    } else {
+      setNavIsOpen(true)
+    }
+  }
 
   const toggleNavbar = () => {
     setNavIsOpen(!isOpen);
@@ -50,7 +60,7 @@ const Navbar = () => {
   return (
     <div className="relative w-full">
       <div
-        className={`sm:hidden fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 z-[90] transition-opacity duration-300 ease-in-out ${
+        className={`sm:hidden fixed top-0 left-0 w-full h-full z-[100] bg-black bg-opacity-50  transition-opacity duration-300 ease-in-out ${
           isOpen
             ? "opacity-100 pointer-events-auto"
             : "opacity-0 pointer-events-none"
@@ -58,7 +68,7 @@ const Navbar = () => {
         onClick={toggleNavbar}
       ></div>
       <div
-        className={`absolute top-2 left-0 sm:h-[100px] h-[100vh] z-[100] w-5/6 sm:w-2/3 bg-customIndigo  text-customWhite p-4 rounded-tr-lg rounded-br-lg
+        className={`absolute top-2 left-0 sm:h-[100px] h-[100vh]  w-5/6 sm:w-2/3 bg-customIndigo z-[200] text-customWhite p-4 rounded-tr-lg rounded-br-lg
               transform ${isOpen ? "translate-x-0" : "-translate-x-full"}
               transition-transform duration-300 ease-in-out z-40 flex items-center`}
       >
@@ -68,11 +78,7 @@ const Navbar = () => {
           <Link
             href={paths.homePath()}
             className="sm:mb-0 mb-10"
-            onClick={() => {
-              if (isSmall) {
-                setNavIsOpen(false);
-              }
-            }}
+            onClick={linkClickToggle}
           >
             <Image
               src={logo}
@@ -85,25 +91,25 @@ const Navbar = () => {
             <Links
               path={paths.homePath()}
               linkName="Home"
-              setNavIsOpen={setNavIsOpen}
+              linkClickToggle={linkClickToggle}
  
             />
             <Links
               path={paths.portfolioPath()}
               linkName="Portfolio"
-              setNavIsOpen={setNavIsOpen}
+              linkClickToggle={linkClickToggle}
 
             />
             <Links
               path={paths.aboutPath()}
               linkName="About"
-              setNavIsOpen={setNavIsOpen}
+              linkClickToggle={linkClickToggle}
    
             />
             <Links
               path={paths.contactPath()}
               linkName="Contact"
-              setNavIsOpen={setNavIsOpen}
+              linkClickToggle={linkClickToggle}
      
             />
           </div>
@@ -113,7 +119,7 @@ const Navbar = () => {
       <button
         onClick={toggleNavbar}
         className={`absolute top-2 sm:top-[2.4rem] right-2 sm:right-6 text-blackTextFont  bg-customGold w-10 h-10 rounded flex items-center justify-center
-              transition-transform duration-300 ease-in-out z-[95] ${
+              transition-transform duration-300 ease-in-out z-[200] ${
                 rotate ? "rotate-color-360" : ""
               }`}
       >
