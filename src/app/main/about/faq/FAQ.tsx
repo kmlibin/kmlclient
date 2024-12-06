@@ -33,7 +33,7 @@ const FAQ = () => {
       <div className="absolute -top-[12vh] -left-[12%] rainbow-circle w-[900px] h-[900px] 3xl:w-[1100px] rounded-full 3xl:h-[1100px]"></div>
       <div className="absolute -bottom-[10vh] -right-[10vw] rainbow-circle w-[500px] rounded-full h-[500px]"></div>
 
-      <div className="w-full relative sm:h-full  sm:flex-row flex-col flex justify-evenly items-center sm:items-start sm:mt-[180px] mt-[5rem]">
+      <div className="w-full relative sm:h-[300vh]  sm:flex-row flex-col flex justify-evenly items-center sm:items-start sm:mt-[180px] mt-[5rem]">
 
         <div className="sm:w-1/3 sm:sticky top-4 w-full sm:h-24 z-10 flex flex-col -mt-[3.75rem] items-end justify-start ">
             <RollImage>
