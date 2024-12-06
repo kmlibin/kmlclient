@@ -143,10 +143,9 @@ const ContactImages = () => {
         </div>
       )}
 
-      <div className="hidden sm:flex fixed -bottom-[130%] my-9 right-0 -translate-y-1/2 flex-col min-h-[100vh] z-[950]">
+      <div className="hidden sm:flex fixed -bottom-[125%] my-9 right-6 -translate-y-1/2 flex-col min-h-[100vh] z-[950]">
         <div className="relative h-full w-[200px]">
           <Image
-            priority
             src={kelli2}
             height={150}
             alt="kelli"
