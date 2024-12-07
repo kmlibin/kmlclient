@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 //libraries
 import { RiMenu5Line } from "react-icons/ri";
 //images
@@ -18,31 +19,41 @@ const Navbar = () => {
   const [rotate, setRotate] = useState(false);
   const [isSmall, setIsSmall] = useState(false);
 
-  //checking for screen width - less than 640px, isopen is set to false.
+  const pathname = usePathname();
+
   useEffect(() => {
-    const handleResize = () => {
-      console.log(window.innerWidth);
-      if (window.innerWidth < 640) {
-        setNavIsOpen(false); // close the navbar by default on smaller screens
-        setIsSmall(true);
-      } else {
-        setNavIsOpen(true); // keep it open for larger screens
-        setIsSmall(false);
-      }
+    const mediaQuery = window.matchMedia("(max-width: 639px)");
+
+    // screen size changes
+    const handleResize = (event: MediaQueryListEvent) => {
+      setIsSmall(event.matches);
+      setNavIsOpen(!event.matches);
     };
 
-    handleResize();
+    // if the query is correct, set isSmall to true. if isSmall is false, is Open needs to be set to true.
+    //if isSmall is true, set isopen to false
+    setIsSmall(mediaQuery.matches);
+    setNavIsOpen(!mediaQuery.matches);
 
-    // listen for window resize events
-    window.addEventListener("resize", handleResize);
+    //listen for changes
+    mediaQuery.addEventListener("change", handleResize);
 
+    // cleanup
     return () => {
-      // cleanup
-      window.removeEventListener("resize", handleResize);
+      mediaQuery.removeEventListener("change", handleResize);
     };
   }, []);
+ 
+//checks if the screen is small size on every url change
+  useEffect(() => {
+    if (isSmall) setNavIsOpen(false);
+  }, [pathname]);
 
+  console.log("isSmall", isSmall);
+
+  //for responsive screens, checks if the screen is small it will set nav to false
   const linkClickToggle = () => {
+    console.log(isSmall);
     if (isSmall) {
       setNavIsOpen(false);
     } else {
@@ -50,6 +61,7 @@ const Navbar = () => {
     }
   };
 
+  //for the button to toggle navbar
   const toggleNavbar = () => {
     setNavIsOpen(!isOpen);
     setRotate(true);
@@ -58,6 +70,7 @@ const Navbar = () => {
 
   return (
     <div className="relative w-full">
+      
       <div
         className={`sm:hidden fixed top-0 left-0 w-full h-full z-[100] bg-black bg-opacity-50  transition-opacity duration-300 ease-in-out ${
           isOpen
