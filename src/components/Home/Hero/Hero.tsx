@@ -18,7 +18,6 @@ const Hero = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    console.log(window.innerWidth);
     // check if the screen width is below 640px
     const handleResize = () => {
       setIsMobile(window.innerWidth < 640);
