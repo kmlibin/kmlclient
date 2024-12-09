@@ -21,7 +21,7 @@ const ContactImages = () => {
   const [isParticleVisible, setIsParticleVisible] = useState(false);
   const [initialAnimationPlayed, setInitialAnimationPlayed] = useState(false);
   const [flyBack, setFlyBack] = useState(false);
-
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null); // Store timeout reference
   const observerRef = useRef<NodeJS.Timeout | null>(null);
 
   gsap.registerPlugin(MotionPathPlugin);
@@ -31,7 +31,7 @@ const ContactImages = () => {
     if (observerRef.current) {
       clearTimeout(observerRef.current);
     }
-    observerRef.current = setTimeout(() => setFlyBack(true), 100);
+    observerRef.current = setTimeout(() => setFlyBack(true), 500);
   };
 
   useEffect(() => {
@@ -76,7 +76,7 @@ const ContactImages = () => {
   useEffect(() => {
     if (!initialAnimationPlayed) return; // avoid fly-back on initial load
 
-    const handleSectionInView = (entries: IntersectionObserverEntry[] ) => {
+    const handleSectionInView = (entries: IntersectionObserverEntry[]) => {
       entries.forEach((entry: IntersectionObserverEntry) => {
         if (entry.isIntersecting) {
           debouncedSetFlyBack(); // debounced to avoid re-trigger
@@ -123,8 +123,16 @@ const ContactImages = () => {
   const handleClick = () => {
     const animateElement = document.querySelector("#kelli-image");
 
+    // clear any potential existing timeout to avoid stacking
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+
+    // trigger the particle explosion
     setIsParticleVisible(true);
-    setTimeout(() => setIsParticleVisible(false), 2500);
+    timeoutRef.current = setTimeout(() => {
+      setIsParticleVisible(false);
+    }, 2500);
 
     gsap.to(animateElement, {
       x: "-10",
