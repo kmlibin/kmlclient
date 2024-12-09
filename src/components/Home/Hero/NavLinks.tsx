@@ -33,7 +33,7 @@ const NavLinks = () => {
     <ul className={` ${ibm.className} mb-5 `}>
       <Trail open={open}>
       {navItems.map(({ label, path }, index) => (
-          <li key={index} className="relative flex items-center">
+          <li key={index} className="relative flex items-center text-blackTextFont text-2xl">
             <span className="slash transition-transform duration-300">/</span>
             <Link href={path} className="ml-2 transition-all duration-300 relative hover:text-customPink">
               {label}
