@@ -156,7 +156,7 @@ const ContactImages = () => {
           <Image
             src={kelli2}
             height={150}
-            alt="kelli"
+            alt="cartoon kelli on a spaceship"
             id="kelli-image"
             className="absolute -top-12 z-10 cursor-pointer opacity-0"
             onClick={handleClick}
