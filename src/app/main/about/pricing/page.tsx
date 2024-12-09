@@ -56,16 +56,16 @@ export const metadata: Metadata = {
 
 const page = () => {
   return (
-    <div className="w-full flex  flex-col bg-customWhite items-center relative">
-      <div className="h-full w-[100vw] overflow-x-hidden overflow-y-visible absolute -z-1">
+    <div className="w-full flex  flex-col bg-customWhite items-center relative"> 
+    {/* rainbows */}
+    <div className="h-full min-w-[100vw] md:min-w-[99vw] md:max-w-[99vw] overflow-hidden absolute">
         <div className="absolute bottom-[0vh] -right-[10%] rainbow-circle w-[500px] rounded-full h-[500px]"></div>
         <div className="absolute -top-[12vh] -left-[12%] rainbow-circle w-[900px] h-[900px] 3xl:w-[1100px] rounded-full 3xl:h-[1100px]"></div>
-        /
       </div>
-      <div className="w-full flex sm:flex-row flex-col justify-evenly items-start sm:mt-[180px] mt-[5rem] pb-16  ">
-        {/* rainbows */}
+      <div className="w-full flex md:flex-row flex-col justify-evenly items-start md:mt-[180px] mt-[5rem] pb-16  ">
+       
 
-        <div className=" hidden sm:flex sm:w-1/3 w-full flex-col items-end justify-start relative sm:h-[300vh] 3xl:h-[230vh]">
+        <div className=" hidden md:flex md:w-1/3 w-full flex-col items-end justify-start relative md:h-[300vh] 3xl:h-[230vh]">
           <div className="sticky top-[4vh] -mt-[3rem]">
             <RollImage delay={1000}>
               <Image
@@ -79,22 +79,22 @@ const page = () => {
         </div>
 
         <div
-          className={`${ibm.className} tracking-wide  sm:w-1/2 relative  flex flex-col items-center justify-start gap-4 sm:gap-16`}
+          className={`${ibm.className} tracking-wide  md:w-1/2 relative  flex flex-col items-center justify-start gap-4 md:gap-16`}
         >
           <div className="w-full flex flex-col items-center justify-start  ">
             <ZoomHeading
               as="h2"
-              className={`${fredoka.className} text-5xl text-center mb-5 sm:mb-2`}
+              className={`${fredoka.className} text-5xl text-center mb-5 md:mb-2`}
             >
               Everything You Need <br></br> in a Website
             </ZoomHeading>
             <ZoomHeading
               as="h4"
-              className={`${ibm.className} text-2xl sm:text-xl text-center mb-4 `}
+              className={`${ibm.className} text-2xl md:text-xl text-center mb-4 `}
             >
               Starting at $350
             </ZoomHeading>
-            <div className="sm:hidden bg-customWhite bg-opacity-60 p-5">
+            <div className="md:hidden bg-customWhite bg-opacity-60 w-full md:w-auto flex justify-center items-center p-5">
               <RollImage delay={500}>
                 <Image
                   src={undraw3}

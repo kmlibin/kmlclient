@@ -43,13 +43,11 @@ const Navbar = () => {
       mediaQuery.removeEventListener("change", handleResize);
     };
   }, []);
- 
-//checks if the screen is small size on every url change
+
+  //checks if the screen is small size on every url change
   useEffect(() => {
     if (isSmall) setNavIsOpen(false);
   }, [pathname]);
-
-
 
   //for responsive screens, checks if the screen is small it will set nav to false
   const linkClickToggle = () => {
@@ -69,7 +67,6 @@ const Navbar = () => {
 
   return (
     <div className="relative w-full">
-      
       <div
         className={`md:hidden fixed top-0 left-0 w-full h-full z-[100] bg-black bg-opacity-50  transition-opacity duration-300 ease-in-out ${
           isOpen
@@ -79,7 +76,7 @@ const Navbar = () => {
         onClick={toggleNavbar}
       ></div>
       <div
-        className={`absolute top-2 left-0 md:h-[100px] h-[100vh]  w-5/6 md:w-2/3 bg-customIndigo z-[200] text-customWhite p-4 rounded-tr-lg rounded-br-lg
+        className={`absolute top-2 left-0 md:h-[100px] h-[100vh]  w-5/6 xl:w-2/3 bg-customIndigo z-[200] text-customWhite p-4 rounded-tr-lg rounded-br-lg
               transform ${isOpen ? "translate-x-0" : "-translate-x-full"}
               transition-transform duration-300 ease-in-out z-40 flex items-center`}
       >
@@ -94,11 +91,10 @@ const Navbar = () => {
             <Image
               src={logo}
               alt="logo"
-              height={75}
-              className="ml-4 rounded-full box-content border-4 border-customGold"
+              className="ml-4 h-[75px] w-[75px] rounded-full box-content border-4 border-customGold"
             />
           </Link>
-          <div className="md:flex-row flex-col flex md:mr-10 gap-20 sm:gap-24 w-full md:w-auto items-end ">
+          <div className="md:flex-row flex-col flex md:mr-10 gap-10 lg:gap-24 w-full md:w-auto items-end ">
             <Links
               path={paths.homePath()}
               linkName="Home"
@@ -125,12 +121,11 @@ const Navbar = () => {
 
       <button
         onClick={toggleNavbar}
-        className={`absolute top-2 md:top-[2.4rem] right-2 sm:right-6 text-blackTextFont  bg-customGold w-10 h-10 rounded flex items-center justify-center
+        className={`absolute top-2 sm:top-[1rem] md:top-[2.4rem] right-2 sm:right-6  text-blackTextFont  bg-customGold w-10 h-10 rounded flex items-center justify-center
               transition-transform duration-300 ease-in-out z-[200] ${
                 rotate ? "rotate-color-360" : ""
               }`}
       >
-        {/* <BiSolidSquareRounded size={24} className="hidden sm:block"/> */}
         <RiMenu5Line size={24} className="" />
       </button>
     </div>

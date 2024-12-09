@@ -36,7 +36,7 @@ export const metadata: Metadata = {
 
 const page = () => {
   return (
-    <>
+    <div className="bg-customWhite bg-opacity-0">
       {" "}
       <link
         rel="preload"
@@ -46,7 +46,7 @@ const page = () => {
         type="image/jpg"
       />
       <About />
-    </>
+    </div>
   );
 };
 

@@ -13,18 +13,18 @@ type listItem = {
 
 const AdditionalInfo = () => {
   return (
-    <div className=" z-[50] sm:flex-row flex-col flex w-3/4 sm:items-start items-center p-8 justify-center mt-12 mb-10 gap-8 bg-customWhite border-2 border-gray-200 shadow-lg  box-content">
-      <div className=" w-[150px] h-[150px] sm:w-[200px] sm:h-[200px] info-bg flex justify-center items-center rounded-full">
+    <div className=" z-[50] md:flex-row flex-col flex w-3/4 md:items-start items-center p-8 justify-center mt-12 mb-10 gap-8 bg-customWhite border-2 border-gray-200 shadow-lg  box-content">
+      <div className=" w-[150px] h-[150px] md:w-[200px] md:h-[200px] info-bg flex justify-center items-center rounded-full">
         <Image
           src={info}
           alt="an information logo"
-          className="h-[125px] w-[125px] sm:h-[175px] sm:w-[175px]"
+          className="h-[125px] w-[125px] md:h-[175px] md:w-[175px]"
         />
       </div>
-      <div className="w-full sm:w-4/5 flex flex-col justify-start items-start tracking-wide">
+      <div className="w-full md:w-4/5 flex flex-col justify-start items-start tracking-wide">
         {" "}
         <h3
-          className={`${fredoka.className} text-4xl mb-6 w-full text-center sm:text-left `}
+          className={`${fredoka.className} text-4xl mb-6 w-full text-center md:text-left `}
         >
           Additional Services and Notes
         </h3>

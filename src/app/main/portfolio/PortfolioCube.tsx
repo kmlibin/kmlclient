@@ -99,12 +99,12 @@ const Cube = ({
     return (
  
         <div className="flex flex-col w-auto items-center justify-center">
-          <div className="scene w-auto h-auto overflow-hidden z-[30] relative flex justify-center flex-col items-center">
+          <div className="scene w-auto h-auto overflow-hidden z-[30] relative flex justify-center xs:justify-end xs:items-end flex-col items-center">
             {!isHome &&
               (complete ? (
                 <Link
                   href={link || ""}
-                  className={`${ibmBold.className} w-[95%] flex justify-end text-right text-blackTextFont items-center gap-4 text-lg sm:text-xl tracking-wide my-4 hover:text-customTurquoise duration-300`}
+                  className={`${ibmBold.className} xs:w-[95%] w-3/4 flex justify-end text-right text-blackTextFont items-center xs:gap-4 text-sm xs:text-xl tracking-wide my-4 hover:text-customTurquoise duration-300`}
                 >
                   {business}{" "}
                   <RiExternalLinkLine className="text-customIndigo sm:w-auto w-[10%]" />

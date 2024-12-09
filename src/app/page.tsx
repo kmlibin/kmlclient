@@ -7,6 +7,7 @@ import PortfolioBanner from "@/components/Home/PortfolioBanner/Portfolio2Banner"
 import HomeBanner from "@/components/Home/HomeBanner/HomeBanner";
 import Info from "@/components/Home/InfoBanner/Info";
 import SMIcons from "@/components/Wrapper/SMIcons";
+import Icons from "@/components/Icons";
 //icons
 import { FaEtsy, FaLinkedinIn, FaGithub } from "react-icons/fa";
 
@@ -59,7 +60,7 @@ function Home() {
       />
       <div className="flex flex-col w-full h-full overflow-hidden">
         <div
-          className={`fixed hidden sm:flex md:mt-[5%] top-24 sm:top-15 md:top-5 left-4 z-50 -translate-y-1/2 flex-col `}
+          className={`fixed hidden sm:flex lg:mt-[5%] top-24 sm:top-15 lg:top-5 left-4 z-50 -translate-y-1/2 flex-col `}
         >
           <SMIcons href={"https://etsy.com/shop/CreationsKMP"} icon={FaEtsy} />
           <SMIcons

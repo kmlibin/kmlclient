@@ -31,15 +31,15 @@ const PricingCards = ({ title, text, src, alt, isList, isNote1 }: Props) => {
   return (
     <Fade triggerOnce direction="up">
       <div
-        className={`flex flex-col w-full border-2 border-gray-200 shadow-lg box-content z-[50] bg-customWhite ${
+        className={`flex flex-col w-[95%] md:w-full border-2 border-gray-200 shadow-lg box-content z-[50] mx-auto bg-customWhite ${
           isOpen ? "pb-4" : ""
         }`}
       >
         <div className="flex w-full gap-6 items-start p-4 sm:p-8">
-          <div className="w-1/4 sm:w-1/5 flex items-center justify-center">
+          <div className="w-1/4 md:w-1/5 flex items-center justify-center">
             <Image src={src} alt={alt} height={150} />
           </div>
-          <div className=" w-3/4 sm:w-4/5 flex flex-col items-start justify-start gap-4">
+          <div className=" w-3/4 md:w-4/5 flex flex-col items-start justify-start gap-4">
             {isList || isNote1 ? (
              title
             ) : (

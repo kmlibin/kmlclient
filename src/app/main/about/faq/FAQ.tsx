@@ -32,7 +32,7 @@ const FAQ = () => {
   };
   return (
     <div className="w-full h-full flex bg-customWhite pb-8 relative">
-      <div className="h-full w-[100vw] overflow-hidden absolute">
+       <div className="h-full min-w-[100vw] md:min-w-[99vw] md:max-w-[99vw] overflow-hidden absolute">
         {/* rainbows */}
         <div className="absolute -top-[12vh] -left-[12%] rainbow-circle w-[900px] h-[900px] 3xl:w-[1100px] rounded-full 3xl:h-[1100px]"></div>
         <div className="absolute -bottom-[10vh] -right-[10vw] rainbow-circle w-[500px] rounded-full h-[500px]"></div>
@@ -47,7 +47,7 @@ const FAQ = () => {
         <div
           className={`${ibm.className} bg-customWhite rounded-xl bg-opacity-80 tracking-wide text-lg w-[95%] md:w-1/2 relative  flex flex-col items-center justify-start`}
         >
-          <Fade direction="up" cascade damping={0.1}>
+          <Fade direction="up" cascade damping={0.1} triggerOnce>
             {faqCards.map((item) => (
               <Accordion
                 toggleItem={toggleItem}

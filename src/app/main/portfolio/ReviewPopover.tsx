@@ -121,7 +121,7 @@ export default function ReviewSection({
           // createPortal(
 
           <div className="md:hidden absolute w-[90vw] h-full z-[900]">
-            <div className="bg-white w-[90vw] h-full overflow-y-auto z-[900] sm:h-3/4 p-6 rounded-lg shadow-lg relative">
+            <div className="bg-white w-[90vw] h-full overflow-y-auto z-[900] sm:h-full p-6 rounded-lg shadow-lg relative">
               <button
                 className="absolute top-3 right-4"
                 onClick={handleClosePopup}
@@ -129,7 +129,7 @@ export default function ReviewSection({
                 <IoMdClose className="text-customBlue" />
               </button>{" "}
               <Fade>
-                <p className="tracking-wider text-blackTextFont text-xs sm:text-lg sm:text-center mt-3">
+                <p className="tracking-wider text-blackTextFont w-5/6 mx-auto text-xs sm:text-lg sm:text-center mt-3">
                   {review}
                 </p>{" "}
               </Fade>

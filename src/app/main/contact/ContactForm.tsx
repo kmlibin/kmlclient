@@ -3,6 +3,7 @@ import React, { useState, useRef } from "react";
 //libraries
 import emailjs from "@emailjs/browser";
 import { LuSend } from "react-icons/lu";
+
 //components
 import SuccessErrorModal from "./SuccessErrorModal";
 //fonts
@@ -10,7 +11,6 @@ import { ibm, ibmBold } from "../../utils/fonts";
 import InputField from "./InputField";
 //components
 import SelectField from "./SelectField";
-
 
 type formState = {
   name: string;
@@ -145,13 +145,15 @@ const ContactForm = () => {
     }
   };
   return (
-    <>
+    <div className="w-full flex items-end justify-center md:justify-end">
       <form
-        className="space-y-6 w-[95%] sm:w-3/4 p-8 bg-customWhite rounded-lg shadow-lg border-customGold border-4 border-opacity-90"
+        className="space-y-6 w-[95%] md:w-3/4 p-8 bg-customWhite rounded-lg shadow-lg border-customGold border-4 border-opacity-90"
         ref={formRef}
         onSubmit={handleSubmit}
       >
-        <h3 className={`${ibmBold.className} text-2xl  text-center sm:text-left mb-4`}>
+        <h3
+          className={`${ibmBold.className} text-2xl  text-center sm:text-left mb-4`}
+        >
           Let&apos;s Bring Your Vision to Life!
         </h3>
 
@@ -248,7 +250,7 @@ const ContactForm = () => {
           setSubmissionStatus={setSubmissionStatus}
         />
       )}
-    </>
+    </div>
   );
 };
 

@@ -29,7 +29,6 @@ const Hero = () => {
     // if the query is correct, set isSmall to true. if isSmall is false
     setIsMobile(mediaQuery.matches);
 
-
     //listen for changes
     mediaQuery.addEventListener("change", handleResize);
 
@@ -38,7 +37,6 @@ const Hero = () => {
       mediaQuery.removeEventListener("change", handleResize);
     };
   }, []);
-
 
   return (
     <>
@@ -81,7 +79,7 @@ const Hero = () => {
 
         {/* image */}
         {/* also couldn't get srcset to work... */}
-        <div className="relative flex justify-end md:flex-row flex-col items-center md:ml-[5rem] sm:py-10 sm:mb-4 z-[10]">
+        <div className="relative flex justify-end lg:flex-row flex-col items-center lg:ml-[5rem] sm:py-10 sm:mb-4 z-[10]">
           <Fade triggerOnce delay={0.5}>
             <img
               src={bwsvg4.src}
@@ -100,7 +98,7 @@ const Hero = () => {
               />
             </Fade>
           )}
-          <div className="md:absolute md:-right-[52%] md:bottom-0 flex flex-col justify-end sm:mb-2 sm:py-10 text-gray-900 text-2xl leading-loose list-none">
+          <div className="lg:absolute lg:-right-[52%] lg:bottom-0 flex flex-col justify-end sm:mb-2 sm:py-10 text-gray-900 text-2xl leading-loose list-none">
             <NavLinks />
           </div>
         </div>

@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import React from "react";
 //react icons
 import { IoMdClose } from "react-icons/io";
@@ -39,14 +39,14 @@ const SuccessErrorModal = ({
   return (
     <>
       {submissionStatus?.heading == "You're all set!" ? (
-        <div className="fixed inset-0 z-50 bg-black bg-opacity-50">
+        <div className="fixed inset-0 z-[500] bg-black bg-opacity-50 min-h-screen w-full top-0">
           <Fireworks id="tsparticles" />
         </div>
       ) : (
         <div className="fixed inset-0  z-50 bg-black bg-opacity-60"></div>
       )}
       {/* modal start */}
-      <div className="fixed inset-0 z-50 flex items-center justify-center">
+      <div className="fixed inset-0 z-[600] flex items-center justify-center min-h-screen w-full">
         <div className="relative w-full max-w-sm transform rounded-xl bg-customWhite p-6 shadow-xl">
           <div className="mb-4 flex items-center justify-between tracking-wider">
             <h5
@@ -68,7 +68,9 @@ const SuccessErrorModal = ({
           </div>
 
           {/* text */}
-          <div className={`${ibm.className} mb-6 text-center text-blackTextFont tracking-wider`}>
+          <div
+            className={`${ibm.className} mb-6 text-center text-blackTextFont tracking-wider`}
+          >
             <p>{submissionStatus?.message}</p>
           </div>
 
