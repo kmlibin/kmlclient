@@ -49,11 +49,10 @@ const Navbar = () => {
     if (isSmall) setNavIsOpen(false);
   }, [pathname]);
 
-  console.log("isSmall", isSmall);
+
 
   //for responsive screens, checks if the screen is small it will set nav to false
   const linkClickToggle = () => {
-    console.log(isSmall);
     if (isSmall) {
       setNavIsOpen(false);
     } else {
