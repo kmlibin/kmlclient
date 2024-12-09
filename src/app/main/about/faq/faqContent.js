@@ -3,9 +3,24 @@ export const faqCards = [
     id: "getting-started",
     question: "How do we get started?",
     answer: (
-      <>To start, please message at (email) me or fill out the contact form on my site, and we&apos;ll get the ball rolling. I want to hear your ideas and preferences to make sure your site aligns with your brand and goals. <br></br><br></br>To help me understand your style, share 2-3 example websites you like, along with what you appreciate about them (such as layout, colors, or features). I&apos;ll use this as inspiration while we outline your site structure, especially the homepage. The homepage is often the first impression for visitors, so any details you have in mind (like a tagline, contact form, or calls-to-action) are invaluable.<br></br><br></br> After that, I&apos;ll create a mockup within 7-10 business days, and we&apos;ll go over it together to refine any details. Your input helps me craft something unique, so I look forward to collaborating and shaping your vision into a stunning site!
-  </>)
-},
+      <>
+        To start, please message at (email) me or fill out the contact form on
+        my site, and we&apos;ll get the ball rolling. I want to hear your ideas
+        and preferences to make sure your site aligns with your brand and goals.{" "}
+        <br></br>
+        <br></br>To help me understand your style, share 2-3 example websites
+        you like, along with what you appreciate about them (such as layout,
+        colors, or features). I&apos;ll use this as inspiration while we outline
+        your site structure, especially the homepage. The homepage is often the
+        first impression for visitors, so any details you have in mind (like a
+        tagline, contact form, or calls-to-action) are invaluable.<br></br>
+        <br></br> After that, I&apos;ll create a mockup within 7-10 business
+        days, and we&apos;ll go over it together to refine any details. Your
+        input helps me craft something unique, so I look forward to
+        collaborating and shaping your vision into a stunning site!
+      </>
+    ),
+  },
   {
     id: "payment-process",
     question: "What is your payment process?",
@@ -21,22 +36,65 @@ export const faqCards = [
   {
     id: "need-database",
     question: "How do I know if I need a database for my website?",
-    answer:
-      (<>A database is generally required for complex sites, like e-commerce platforms, social media applications, or any site that stores user data long-term. For most small business sites, informational pages, or basic contact forms, a database isn&apos;t necessary. I specialize in these simpler sites, which keeps costs down and streamlines maintenance. <br></br><br></br>If you need advanced features like payment processing or shopping functionality, I can set up your site to link with secure, third-party services like PayPal or Shopify. This way, you can manage those services independently, saving you the added costs and setup time associated with a full database on your site.
-  </>)},
+    answer: (
+      <>
+        A database is generally required for complex sites, like e-commerce
+        platforms, social media applications, or any site that stores user data
+        long-term. For most small business sites, informational pages, or basic
+        contact forms, a database isn&apos;t necessary. I specialize in these
+        simpler sites, which keeps costs down and streamlines maintenance.{" "}
+        <br></br>
+        <br></br>If you need advanced features like payment processing or
+        shopping functionality, I can set up your site to link with secure,
+        third-party services like PayPal or Shopify. This way, you can manage
+        those services independently, saving you the added costs and setup time
+        associated with a full database on your site.
+      </>
+    ),
+  },
   {
     id: "domain-registration",
-    question: "How does domain registration work?",
-    answer:
-      "If you don't have a domain, there are tons of sites you can use to buy domain names, such as Namecheap, or GoDaddy. If you're planning on hosting with me, I can purchase the domain names through Netlify; I charge exactly what the provider charges annually. If you're planning on hosting with me but already have a domain name elsewhere, I can also manage the setup if you share login info (or we can coordinate it quickly together).",
+    question:
+      "How do I buy a domain, and how do we connect it to my custom site?",
+    answer: (
+      <>
+        If you don't already have a domain name (e.g., www.yourbusiness.com),
+        you can purchase one from domain registrars like Namecheap, GoDaddy, or
+        Google Domains. After purchasing, the domain needs to be connected to
+        your custom website by configuring DNS settings. This involves logging
+        into the registrar's dashboard and updating records like CNAME or A
+        records to point to your hosting provider.
+        <br></br>
+        <br></br>
+        If you’re hosting your site with me:
+        <br></br>
+        <br></br>I can help you purchase the domain through Netlify, charging
+        the same price as the domain provider charges annually.
+        <br></br>
+        <br></br> If you already own a domain, I can guide you through the setup
+        process or handle it for you if you provide temporary access to your
+        domain account.
+      </>
+    ),
   },
-
+  
   {
     id: "external-hosting",
     question: "What if I choose to host somewhere else?",
-    answer:
-      (<>If you prefer to host your site with another provider, no problem! Make sure you find a provider that hosts Next.js code, and I&apos;ll provide a complete build folder with all project files and code. Just let me know where you plan to host, so I can configure everything correctly on my end. <br></br><br></br>Please note that if you&apos;re not hosting with me, you&apos;ll be responsible for setting up your domain and, if applicable, configuring custom email settings. Additionally, free content updates aren&apos;t included with this option.
-  </>)},
+    answer: (
+      <>
+        If you prefer to host your site with another provider, no problem! Make
+        sure you find a provider that hosts Next.js code, and I&apos;ll provide
+        a complete build folder with all project files and code. Just let me
+        know where you plan to host, so I can configure everything correctly on
+        my end. <br></br>
+        <br></br>Please note that if you&apos;re not hosting with me,
+        you&apos;ll be responsible for setting up your domain and, if
+        applicable, configuring custom email settings. Additionally, free
+        content updates aren&apos;t included with this option.
+      </>
+    ),
+  },
   {
     id: "custom-email",
     question: "Can I use a custom email address (e.g., name@yourbusiness.com)?",
