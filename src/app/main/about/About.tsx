@@ -26,7 +26,7 @@ const About = () => {
         >
           Nice to Meet You!
         </ZoomHeading>
-        <Fade>
+        <Fade delay={0.5}>
           <img
             src={kelli.src}
             alt="kelli"
@@ -42,11 +42,15 @@ const About = () => {
         >
           Nice to Meet You!
         </ZoomHeading>
-        <p
-          className={` w-[95%] sm:w-2/3 ${ibm.className} text-md z-[20] bg-customWhite bg-opacity-90 p-2 rounded-xl`}
-        >
-          {bio.mainText}
-        </p>
+        <Fade direction="up" triggerOnce>
+          <div className="w-full flex items-center justify-center sm:items-start sm:justify-start ">
+            <p
+              className={` w-[95%] sm:w-2/3 ${ibm.className} text-md z-[20] bg-customWhite bg-opacity-90 p-2 rounded-xl`}
+            >
+              {bio.mainText}
+            </p>
+          </div>
+        </Fade>
       </div>
     </div>
   );

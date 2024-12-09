@@ -12,6 +12,9 @@ import { faqCards } from "./faqContent";
 import Accordion from "./Accordion";
 import RollImage from "@/components/RollImage";
 
+//libraries
+import { Fade } from "react-awesome-reveal";
+
 const FAQ = () => {
   const [openId, setOpenId] = useState<string | null>(null);
 
@@ -44,14 +47,16 @@ const FAQ = () => {
         <div
           className={`${ibm.className} bg-customWhite rounded-xl bg-opacity-80  tracking-wide text-lg w-[95%] sm:w-1/2 relative  flex flex-col items-center justify-start`}
         >
-          {faqCards.map((item) => (
-            <Accordion
-              toggleItem={toggleItem}
-              item={item}
-              openId={openId}
-              key={item.id}
-            />
-          ))}
+          <Fade direction="up" cascade damping={0.1}>
+            {faqCards.map((item) => (
+              <Accordion
+                toggleItem={toggleItem}
+                item={item}
+                openId={openId}
+                key={item.id}
+              />
+            ))}
+          </Fade>
         </div>
       </div>
     </div>

@@ -1,7 +1,10 @@
+"use client";
 import React from "react";
 //routing and paths
 import Link from "next/link";
 import paths from "../../paths";
+//libraries
+import { Fade } from "react-awesome-reveal";
 //fonts
 import { ibm, fredoka } from "../../utils/fonts";
 //components
@@ -27,7 +30,9 @@ const Contact = () => {
             >
               Ready to Connect?
             </ZoomHeading>
-            <p className={`${ibm.className} hidden sm:block text-lg mb-8 px-4 sm:px-0`}>
+            <p
+              className={`${ibm.className} hidden sm:block text-lg mb-8 px-4 sm:px-0`}
+            >
               If you have any questions, see my{" "}
               <Link
                 className="hover:cursor text-customBlue hover:text-customTurquoise"
@@ -37,7 +42,7 @@ const Contact = () => {
               </Link>{" "}
               or use the form to send me a message!
             </p>
-     
+
             <div className="flex flex-col w-full border-2 border-gray-200 shadow-customSmallGrey sm:shadow-lg p-8 bg-customWhite my-2 sm:my-0">
               <p className={`${ibm.className} text-lg mb-2`}>
                 If you&apos;re ready to start chatting about a custom site:
@@ -68,8 +73,11 @@ const Contact = () => {
             </div>
           </div>
         </div>
+
         <div className="w-full sm:w-1/2 relative flex items-center justify-center sm:justify-end mt-4 sm:mt-0">
-          <ContactForm />
+          <Fade direction="up" triggerOnce>
+            <ContactForm />
+          </Fade>
         </div>
       </div>
     </div>
