@@ -59,7 +59,7 @@ function Home() {
       />
       <div className="flex flex-col w-full h-full overflow-hidden">
         <div
-          className={`fixed hidden sm:flex sm:mt-[5%] top-24 sm:top-5 left-4 z-50 -translate-y-1/2 flex-col `}
+          className={`fixed hidden sm:flex md:mt-[5%] top-24 sm:top-15 md:top-5 left-4 z-50 -translate-y-1/2 flex-col `}
         >
           <SMIcons href={"https://etsy.com/shop/CreationsKMP"} icon={FaEtsy} />
           <SMIcons

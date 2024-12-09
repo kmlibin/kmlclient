@@ -26,7 +26,7 @@ const Portfolio2Banner = () => {
         Our Work In Action <FcCompactCamera className="hidden sm:block" />
       </ZoomHeading>
       <p
-        className={`${ibm.className} w-[95%] text-lg sm:w-1/2 text-center mb-5 sm:mb-0`}
+        className={`${ibm.className} w-[95%] text-lg md:w-1/2 text-center mb-5 sm:mb-0`}
       >
         Every project is a partnership—see how we collaborate with clients to
         craft impactful, results-driven solutions.

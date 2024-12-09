@@ -27,28 +27,28 @@ const Links = ({ linkName, path, linkClickToggle}: Props) => {
   if (linkName === "About")
     return (
       <div className="relative group">
-        <li className="text-2xl sm:text-xl hover:cursor-pointer focus:outline-none">
+        <li className="text-2xl md:text-xl hover:cursor-pointer focus:outline-none">
           <div
-            className="flex justify-end items-center hover:text-customTurquoise transition duration-300 sm:group-hover:text-customTurquoise"
+            className="flex justify-end items-center hover:text-customTurquoise transition duration-300 md:group-hover:text-customTurquoise"
             onClick={() => setIsOpen((prev) => !prev)}
           >
             <span>About</span>
             <BiChevronDown
               className={`ml-1 transition-transform duration-200 ${
                 isOpen ? "rotate-180" : ""
-              } sm:group-hover:rotate-180`}
+              } md:group-hover:rotate-180`}
             />
           </div>
           <Fade
             triggerOnce
             duration={400}
-            className={`sm:block ${isOpen ? "block" : "hidden"}`}
+            className={`md:block ${isOpen ? "block" : "hidden"}`}
           >
             <div
               className={`
               mt-2 flex flex-col bg-customWhite rounded-md shadow-lg
-              sm:absolute sm:right-0 w-[15rem] sm:w-56 sm:mt-0 sm:opacity-0 sm:group-hover:opacity-100 sm:transition-opacity
-              ${isOpen ? "block" : "hidden"} sm:block
+              md:absolute md:right-0 w-[15rem] md:w-56 md:mt-0 md:opacity-0 md:group-hover:opacity-100 md:transition-opacity
+              ${isOpen ? "block" : "hidden"} md:block
             `}
             >
               {" "}
@@ -73,7 +73,7 @@ const Links = ({ linkName, path, linkClickToggle}: Props) => {
     );
 
   return (
-    <li className="relative text-2xl sm:text-xl group hover:cursor-pointer">
+    <li className="relative text-2xl md:text-xl group hover:cursor-pointer">
       <Link
         className=" hover:text-customTurquoise transition duration-300"
         href={path}

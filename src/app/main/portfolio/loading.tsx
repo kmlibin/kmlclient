@@ -6,7 +6,7 @@ import "react-loading-skeleton/dist/skeleton.css";
 const Loading = () => {
   return (
     <>
-      <div className="w-full h-full hidden sm:block">
+      <div className="w-full h-full hidden md:block">
         <SkeletonTheme highlightColor="rgb(17, 17, 103, .25)">
           <div className="flex min-h-screen  w-full justify-center bg-customWhite px-4">
             <div className="w-full h-full flex my-[180px] items-start justify-center">
@@ -23,7 +23,7 @@ const Loading = () => {
           </div>
         </SkeletonTheme>
       </div>
-      <div className=" flex sm:hidden h-screen items-center justify-center bg-customWhite">
+      <div className=" flex md:hidden h-screen items-center justify-center bg-customWhite">
         <div className="flex gap-6">
           {[...Array(5)].map((_, index) => (
             <div

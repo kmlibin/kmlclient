@@ -32,7 +32,7 @@ const InfoCard = ({ title, text, src, alt, className }: Props) => {
 
       <div className="flex flex-col items-center sm:items-start justify-evenly w-full sm:w-2/3 gap-4 sm:pr-10 text-center sm:text-left">   
         <h3
-            className={`${fredoka.className} text-2xl sm:text-3xl tracking-wide text-center`}
+            className={`${fredoka.className} text-2xl sm:text-3xl tracking-wide text-center sm:text-left`}
           >
             {title}
           </h3>

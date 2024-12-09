@@ -32,20 +32,20 @@ const FAQ = () => {
   };
   return (
     <div className="w-full h-full flex bg-customWhite pb-8 relative">
-      <div className="h-full w-[100vw] overflow-x-hidden absolute">
+      <div className="h-full w-[100vw] overflow-hidden absolute">
         {/* rainbows */}
         <div className="absolute -top-[12vh] -left-[12%] rainbow-circle w-[900px] h-[900px] 3xl:w-[1100px] rounded-full 3xl:h-[1100px]"></div>
         <div className="absolute -bottom-[10vh] -right-[10vw] rainbow-circle w-[500px] rounded-full h-[500px]"></div>
       </div>
-      <div className="w-full relative sm:h-full  sm:flex-row flex-col flex justify-evenly items-center sm:items-start sm:mt-[180px] mt-[5rem]">
-        <div className="sm:w-1/3 sm:sticky top-4 w-full sm:h-24 z-10 flex flex-col -mt-[3.75rem] items-end justify-start ">
+      <div className="w-full relative md:h-full  md:flex-row flex-col flex justify-evenly items-center md:items-start md:mt-[180px] mt-[5rem]">
+        <div className="md:w-1/3 md:sticky top-4 w-full md:h-24 z-10 flex flex-col -mt-[3.75rem] md:items-end md:justify-start items-center">
           <RollImage>
             <Image src={faq} alt="faq image" height={400} className="z-10" />
           </RollImage>
         </div>
 
         <div
-          className={`${ibm.className} bg-customWhite rounded-xl bg-opacity-80  tracking-wide text-lg w-[95%] sm:w-1/2 relative  flex flex-col items-center justify-start`}
+          className={`${ibm.className} bg-customWhite rounded-xl bg-opacity-80 tracking-wide text-lg w-[95%] md:w-1/2 relative  flex flex-col items-center justify-start`}
         >
           <Fade direction="up" cascade damping={0.1}>
             {faqCards.map((item) => (

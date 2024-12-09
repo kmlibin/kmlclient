@@ -22,11 +22,11 @@ const HomeBanner = () => {
     >
       {/* rainbows */}
       <div className="absolute top-[5vh] -left-[4vw] rotate-45 rainbow-circle w-[500px] h-[500px]  rounded-full  z-1"></div>
-      <div className="absolute -bottom-[10vh] sm:-right-[2vw] -right-[28vw] rotate-180 rainbow-circle w-[300px] h-[300px]  rounded-full z-1"></div>
-      <Fade triggerOnce direction="up">
-        <div className="w-full h-full flex justify-center items-center z-[50]">
-          <div className="flex sm:flex-row flex-col w-[95%] sm:w-[90%] justify-evenly items-center  bg-customBlue border-2 border-customIndigo border-opacity-40 shadow-customSmallGrey p-5 sm:py-10 rounded-xl z-20">
-            <div className="w-full sm:w-[60%] h-full flex flex-col justify-end gap-10 bg-customIndigo  bg-opacity-80 shadow-lg rounded-xl">
+      <div className="absolute -bottom-[10vh] sm:-right-[2vw] -right-[28vw] rotate-180 rainbow-circle w-[300px] h-[300px]  rounded-full z-10"></div>
+
+
+          <div className="flex md:flex-row flex-col w-[95%] md:w-[90%] justify-evenly items-center  bg-customBlue border-2 border-customIndigo border-opacity-40 shadow-customSmallGrey p-5 md:py-10 rounded-xl z-20">
+            <div className="w-full md:w-[60%] h-full flex flex-col justify-end gap-10 bg-customIndigo  bg-opacity-80 shadow-lg rounded-xl">
               <div className="sm:px-10 px-4 pt-10">
                 <ZoomHeading
                   as="h2"
@@ -36,16 +36,17 @@ const HomeBanner = () => {
                   Website Hassles!
                 </ZoomHeading>
                 <p
-                  className={`text-md sm:text-left  w-full ${ibmBold.className} text-purple-200 hidden sm:block`}
+                  className={`sm:text-[20px] sm:text-left  w-full ${ibmBold.className} text-purple-200 hidden sm:block`}
                 >
                   {homeBanner.subheading}
                 </p>
 
-                <div className=" relative w-full flex justify-center items-center box-content sm:hidden">
+                {/* //image for small screens */}
+                <div className=" relative w-full flex justify-center items-center box-content md:hidden">
                   <Image
                     loading="lazy"
                     src={smallcomp}
-                    alt="small business with sign saying Our Business is Now Online!"
+                    alt="two people shaking hands in a laptop"
                   />
                   <div className="absolute h-[20px] left-[5%] top-[20%] w-[20px] bg-customWhite rounded-full pulse-circle-1 pulse-circle"></div>
                   <div className="absolute h-[15px] right-[50%] bottom-[13%] w-[15px] bg-customWhite rounded-full pulse-circle-2 pulse-circle"></div>
@@ -65,20 +66,20 @@ const HomeBanner = () => {
                 </div>
               </div>
             </div>
-
-            <div className=" relative w-1/3 justify-center box-content hidden sm:flex">
+            {/* //image for larger screens */}
+            <div className=" relative w-1/3 justify-center box-content hidden md:flex">
               <Image
                 loading="lazy"
                 src={smallcomp}
-                alt="small business with sign saying Our Business is Now Online!"
+                alt="two people shaking hands in a laptop"
               />
               <div className="absolute h-[20px] left-[5%] top-[20%] w-[20px] bg-customWhite rounded-full pulse-circle-1 pulse-circle"></div>
               <div className="absolute h-[15px] right-[50%] bottom-[13%] w-[15px] bg-customWhite rounded-full pulse-circle-2 pulse-circle"></div>
               <div className="absolute h-[10px] right-[18%] top-[35%] w-[10px] bg-customWhite rounded-full pulse-circle-3 pulse-circle"></div>
             </div>
           </div>
-        </div>
-      </Fade>
+
+
     </div>
   );
 };

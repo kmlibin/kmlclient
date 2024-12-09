@@ -22,7 +22,7 @@ const Navbar = () => {
   const pathname = usePathname();
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia("(max-width: 639px)");
+    const mediaQuery = window.matchMedia("(max-width: 850px)");
 
     // screen size changes
     const handleResize = (event: MediaQueryListEvent) => {
@@ -71,7 +71,7 @@ const Navbar = () => {
     <div className="relative w-full">
       
       <div
-        className={`sm:hidden fixed top-0 left-0 w-full h-full z-[100] bg-black bg-opacity-50  transition-opacity duration-300 ease-in-out ${
+        className={`md:hidden fixed top-0 left-0 w-full h-full z-[100] bg-black bg-opacity-50  transition-opacity duration-300 ease-in-out ${
           isOpen
             ? "opacity-100 pointer-events-auto"
             : "opacity-0 pointer-events-none"
@@ -79,16 +79,16 @@ const Navbar = () => {
         onClick={toggleNavbar}
       ></div>
       <div
-        className={`absolute top-2 left-0 sm:h-[100px] h-[100vh]  w-5/6 sm:w-2/3 bg-customIndigo z-[200] text-customWhite p-4 rounded-tr-lg rounded-br-lg
+        className={`absolute top-2 left-0 md:h-[100px] h-[100vh]  w-5/6 md:w-2/3 bg-customIndigo z-[200] text-customWhite p-4 rounded-tr-lg rounded-br-lg
               transform ${isOpen ? "translate-x-0" : "-translate-x-full"}
               transition-transform duration-300 ease-in-out z-40 flex items-center`}
       >
         <ul
-          className={`${ibm.className} sm:flex-row flex-col flex-grow flex w-full gap-6 sm:items-center sm:justify-between justify-start items-end h-full text-customWhite`}
+          className={`${ibm.className} md:flex-row flex-col flex-grow flex w-full gap-6 md:items-center md:justify-between justify-start items-end h-full text-customWhite`}
         >
           <Link
             href={paths.homePath()}
-            className="sm:mb-0 mb-10"
+            className="md:mb-0 mb-10"
             onClick={linkClickToggle}
           >
             <Image
@@ -98,7 +98,7 @@ const Navbar = () => {
               className="ml-4 rounded-full box-content border-4 border-customGold"
             />
           </Link>
-          <div className="sm:flex-row flex-col flex sm:mr-10 gap-20 sm:gap-24 w-full sm:w-auto items-end ">
+          <div className="md:flex-row flex-col flex md:mr-10 gap-20 sm:gap-24 w-full md:w-auto items-end ">
             <Links
               path={paths.homePath()}
               linkName="Home"
@@ -125,7 +125,7 @@ const Navbar = () => {
 
       <button
         onClick={toggleNavbar}
-        className={`absolute top-2 sm:top-[2.4rem] right-2 sm:right-6 text-blackTextFont  bg-customGold w-10 h-10 rounded flex items-center justify-center
+        className={`absolute top-2 md:top-[2.4rem] right-2 sm:right-6 text-blackTextFont  bg-customGold w-10 h-10 rounded flex items-center justify-center
               transition-transform duration-300 ease-in-out z-[200] ${
                 rotate ? "rotate-color-360" : ""
               }`}

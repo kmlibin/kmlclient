@@ -55,7 +55,7 @@ export default function ReviewSection({
       <p
         className={` ${
           !complete ? "text-center" : ""
-        } text-lg w-2/3 bg-customWhite text-blackTextFont p-7 relative rounded-lg sm:block hidden`}
+        } text-lg w-2/3 bg-customWhite text-blackTextFont p-7 relative rounded-lg md:block hidden`}
       >
         {complete
           ? review && truncateText(review, 40)
@@ -98,7 +98,7 @@ export default function ReviewSection({
         <>
           {/* Button to show review on small screens */}
           <button
-            className="block sm:hidden bg-customBlue text-white py-2 px-4 rounded"
+            className="block md:hidden bg-customBlue text-white py-2 px-4 rounded"
             onClick={handleShowPopup}
           >
             Read Review
@@ -108,7 +108,7 @@ export default function ReviewSection({
         <p
           className={` ${
             !complete ? "text-center" : ""
-          } block sm:hidden text-sm w-2/3 bg-customWhite text-blackTextFont p-7 relative rounded-lg`}
+          } block md:hidden text-sm w-2/3 bg-customWhite text-blackTextFont p-7 relative rounded-lg`}
         >
           {" "}
           Under Construction, Check Back Soon!
@@ -120,8 +120,8 @@ export default function ReviewSection({
         smallPopup && (
           // createPortal(
 
-          <div className="sm:hidden absolute w-[90vw] h-full z-[900]">
-            <div className="bg-white w-[90vw] h-full overflow-y-auto z-[900] p-6 rounded-lg shadow-lg relative">
+          <div className="md:hidden absolute w-[90vw] h-full z-[900]">
+            <div className="bg-white w-[90vw] h-full overflow-y-auto z-[900] sm:h-3/4 p-6 rounded-lg shadow-lg relative">
               <button
                 className="absolute top-3 right-4"
                 onClick={handleClosePopup}
@@ -129,7 +129,7 @@ export default function ReviewSection({
                 <IoMdClose className="text-customBlue" />
               </button>{" "}
               <Fade>
-                <p className="tracking-wider text-blackTextFont text-xs mt-3">
+                <p className="tracking-wider text-blackTextFont text-xs sm:text-lg sm:text-center mt-3">
                   {review}
                 </p>{" "}
               </Fade>

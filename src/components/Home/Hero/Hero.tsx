@@ -81,7 +81,7 @@ const Hero = () => {
 
         {/* image */}
         {/* also couldn't get srcset to work... */}
-        <div className="relative flex justify-end sm:flex-row flex-col items-center sm:ml-[5rem] sm:py-10 sm:mb-4 z-[10]">
+        <div className="relative flex justify-end md:flex-row flex-col items-center md:ml-[5rem] sm:py-10 sm:mb-4 z-[10]">
           <Fade triggerOnce delay={0.5}>
             <img
               src={bwsvg4.src}
@@ -100,7 +100,7 @@ const Hero = () => {
               />
             </Fade>
           )}
-          <div className="sm:absolute sm:-right-[52%] sm:bottom-0 flex flex-col justify-end sm:mb-2 sm:py-10 text-gray-900 text-2xl leading-loose list-none">
+          <div className="md:absolute md:-right-[52%] md:bottom-0 flex flex-col justify-end sm:mb-2 sm:py-10 text-gray-900 text-2xl leading-loose list-none">
             <NavLinks />
           </div>
         </div>
