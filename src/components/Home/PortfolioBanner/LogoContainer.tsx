@@ -14,7 +14,7 @@ const LogoContainer = ({fadeKey, currentLogo}: LogoContainerProps) => {
     <Fade key={fadeKey} duration={1500}>
     <Image
       loading="lazy"
-      alt="Concierge Wellness Logo"
+      alt="Business Logo"
       className="object-cover"
       src={currentLogo}
     />

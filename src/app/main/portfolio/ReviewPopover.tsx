@@ -55,7 +55,7 @@ export default function ReviewSection({
       <p
         className={` ${
           !complete ? "text-center" : ""
-        } text-lg w-2/3 bg-customWhite text-blackTextFont p-7 relative rounded-lg md:block hidden`}
+        } text-lg w-2/3 bg-customWhite text-blackTextFont p-7 relative rounded-lg xl:block hidden`}
       >
         {complete
           ? review && truncateText(review, 40)
@@ -98,7 +98,7 @@ export default function ReviewSection({
         <>
           {/* Button to show review on small screens */}
           <button
-            className="block md:hidden bg-customBlue text-white py-2 px-4 rounded"
+            className="block xl:hidden bg-customBlue text-white py-2 px-4 rounded"
             onClick={handleShowPopup}
           >
             Read Review
@@ -108,7 +108,7 @@ export default function ReviewSection({
         <p
           className={` ${
             !complete ? "text-center" : ""
-          } block md:hidden text-sm w-2/3 bg-customWhite text-blackTextFont p-7 relative rounded-lg`}
+          } block xl:hidden text-sm w-2/3 bg-customWhite text-blackTextFont p-7 relative rounded-lg`}
         >
           {" "}
           Under Construction, Check Back Soon!
@@ -120,25 +120,25 @@ export default function ReviewSection({
         smallPopup && (
           // createPortal(
 
-          <div className="md:hidden absolute w-[90vw] h-full z-[900]">
-            <div className="bg-white w-[90vw] h-full overflow-y-auto z-[900] sm:h-full p-6 rounded-lg shadow-lg relative">
+          <div className="xl:hidden absolute inset-0 flex items-center  justify-center bg-black bg-opacity-50 z-[900]">
+            <div className="bg-white w-[90%] h-full rounded-lg shadow-lg relative">
               <button
-                className="absolute top-3 right-4"
                 onClick={handleClosePopup}
+                className="absolute top-2 right-2 text-[20px] md:text-[30px] text-customBlue z-[999] mb-2 md:mb-0"
               >
-                <IoMdClose className="text-customBlue" />
-              </button>{" "}
+                <IoMdClose size={20} />
+              </button>
               <Fade>
-                <p className="tracking-wider text-blackTextFont w-5/6 mx-auto text-xs sm:text-lg sm:text-center mt-3">
+                <p className="tracking-wider leading-snug text-blackTextFont mx-auto text-[10px] sm:text-lg sm:text-center mt-8 px-4">
                   {review}
-                </p>{" "}
+                </p>
               </Fade>
             </div>
           </div>
         )
 
         // document.body
-  
+
         // document.getElementById("popup-container")  // Ensure the popup is appended to the correct container
         // )
       }

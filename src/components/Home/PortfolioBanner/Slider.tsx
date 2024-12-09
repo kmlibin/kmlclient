@@ -32,8 +32,8 @@ export default function Slider() {
   }, [factIndex]);
 
   return (
-    <div className="flex justify-center items-center w-5/6 relative sm:-mt-16 lg:mt-0 ">
-      <div className="absolute  hidden lg:flex right-10  z-[30] min-w-[100px] max-w-[100px] min-h-[100px] bg-customWhite border-4 shadow-customSmallGrey border-gray-200 p-10 box-content rounded-full justify-center items-center">
+    <div className="flex justify-center items-center w-5/6 relative -mt-16  ">
+      <div className="absolute  hidden xl:flex right-10  z-[30] min-w-[100px] max-w-[100px] min-h-[100px] bg-customWhite border-4 shadow-customSmallGrey border-gray-200 p-10 box-content rounded-full justify-center items-center">
         <LogoContainer fadeKey={fadeKey} currentLogo={currentLogo} />
       </div>
       <Fade direction="up" triggerOnce>
@@ -67,16 +67,16 @@ export default function Slider() {
               </div>
 
               {/* small screen buttons */}
-              <div className="sm:-mt-16 lg:mt-0">
+              <div className="sm:-mt-[15rem] lg:mt-0">
                 <button
                   onClick={showPreviousSlide}
-                  className="lg:hidden  text-blackTextFont bottom-0 left-[4rem] hover:scale-110 transition duration-400 z-10 hover:text-brightOrange"
+                  className="xl:hidden  text-blackTextFont bottom-0 left-[4rem] hover:scale-110 transition duration-400 z-10 hover:text-brightOrange"
                 >
                   <RiArrowLeftSLine size={50} />
                 </button>
                 <button
                   onClick={showNextSlide}
-                  className="lg:hidden  text-blackTextFont bottom-0 right-[4rem] hover:scale-110 transition duration-400 hover:text-brightOrange"
+                  className="xl:hidden  text-blackTextFont bottom-0 right-[4rem] hover:scale-110 transition duration-400 hover:text-brightOrange"
                 >
                   <RiArrowRightSLine size={50} />
                 </button>
@@ -85,13 +85,13 @@ export default function Slider() {
 
             <button
               onClick={showPreviousSlide}
-              className="hidden lg:block absolute text-blackTextFont sm:top-20 left-[4rem] hover:scale-110 transition duration-400 z-10 hover:text-brightOrange"
+              className="hidden xl:block absolute text-blackTextFont sm:top-20 left-[4rem] hover:scale-110 transition duration-400 z-10 hover:text-brightOrange"
             >
               <RiArrowLeftSLine size={50} />
             </button>
             <button
               onClick={showNextSlide}
-              className="hidden lg:block absolute text-blackTextFont sm:top-20 right-[4rem] hover:scale-110 transition duration-400 hover:text-brightOrange"
+              className="hidden xl:block absolute text-blackTextFont sm:top-20 right-[4rem] hover:scale-110 transition duration-400 hover:text-brightOrange"
             >
               <RiArrowRightSLine size={50} />
             </button>

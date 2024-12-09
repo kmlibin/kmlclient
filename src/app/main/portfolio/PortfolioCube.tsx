@@ -52,7 +52,7 @@ const Cube = ({
 
   useEffect(() => {
     const mediaQuerySmall = window.matchMedia("(max-width: 640px)");
-    const mediaQueryMedium = window.matchMedia("(min-width: 641px) and (max-width: 900px)");
+    const mediaQueryMedium = window.matchMedia("(min-width: 641px) and (max-width: 1300px)");
     const mediaQueryLarge = window.matchMedia("(min-width: 901px)");
   
     const handleMediaChange = () => {
@@ -146,7 +146,7 @@ const Cube = ({
                 <div
                   className={`${ibm.className} absolute tracking-wide inset-0 z-20 flex flex-col items-center justify-center text-customWhite text-xl gap-2 md:gap-5`}
                 >
-                  <h3 className="text-xl md:text-4xl">{owner}</h3>
+                  <h3 className="text-xl xl:text-4xl">{owner}</h3>
                   <Link
                     href={link ? link : ""}
                     target="_blank"
@@ -159,7 +159,7 @@ const Cube = ({
 
                   {complete && (
                     <div
-                      className={`flex w-full gap-4 justify-center mb-4 text-xl md:text-3xl`}
+                      className={`flex w-full gap-4 justify-center mb-4 text-xl xl:text-3xl`}
                     >
                       {[...Array(5)].map((_, index) => (
                         <IoStarSharp key={index} color={"#fec246"} />

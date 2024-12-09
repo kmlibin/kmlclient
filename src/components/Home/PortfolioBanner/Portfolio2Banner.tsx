@@ -26,12 +26,14 @@ const Portfolio2Banner = () => {
         Our Work In Action <FcCompactCamera className="hidden sm:block" />
       </ZoomHeading>
       <p
-        className={`${ibm.className} w-[95%] text-lg md:w-1/2 text-center mb-5 sm:mb-0`}
+        className={`${ibm.className} w-[95%] text-lg md:w-1/2 text-center md:mb-5 mb-[5rem]`}
       >
         Every project is a partnership—see how we collaborate with clients to
         craft impactful, results-driven solutions.
       </p>
-      <Slider />
+      <div className="flex justify-center items-center  sm:-mt-[10rem] lg:-mt-0">
+        <Slider />
+      </div>
       <div className="h-[150px] bg-customBlue bg-opacity-20 w-full flex items-center justify-center mt-5 sm:mt-0">
         <Button path={paths.portfolioPath()} text="See More" />
       </div>
