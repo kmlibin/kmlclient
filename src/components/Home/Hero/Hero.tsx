@@ -5,6 +5,7 @@ import background from "../../../../public/images/kmlbg.jpg";
 import bwsvg4 from "../../../../public/images/newlogo.png";
 import smalllogo from "../../../../public/images/smalllogo.png";
 import smallbg from "../../../../public/images/smallrainbowbg.jpg";
+import Image from "next/image";
 //libraries
 import { Fade } from "react-awesome-reveal";
 //css
@@ -18,21 +19,27 @@ const Hero = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    // check if the screen width is below 640px
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 640);
+    const mediaQuery = window.matchMedia("(max-width: 639px)");
+
+    // screen size changes
+    const handleResize = (event: MediaQueryListEvent) => {
+      setIsMobile(event.matches);
     };
 
-    handleResize();
+    // if the query is correct, set isSmall to true. if isSmall is false
+    setIsMobile(mediaQuery.matches);
 
-    // event listener for changes
-    window.addEventListener("resize", handleResize);
+
+    //listen for changes
+    mediaQuery.addEventListener("change", handleResize);
 
     // cleanup
     return () => {
-      window.removeEventListener("resize", handleResize);
+      mediaQuery.removeEventListener("change", handleResize);
     };
   }, []);
+
+
   return (
     <>
       {!isMobile && <ContactImages />}
@@ -52,18 +59,20 @@ const Hero = () => {
             style={{ objectFit: "cover", width: "100%", height: "100%" }}
             alt="rainbow background"
           /> */}
-          <img
-            src={background.src}
+          <Image
+            src={background}
             style={{ objectFit: "cover" }}
             alt="rainbow background"
             className="sm:block hidden h-full w-full"
+            placeholder="blur"
           />
           {isMobile && (
-            <img
-              src={smallbg.src}
+            <Image
+              src={smallbg}
               style={{ objectFit: "cover" }}
               alt="rainbow background"
               className="sm:hidden h-full w-full "
+              placeholder="blur"
             />
           )}
 
@@ -73,7 +82,7 @@ const Hero = () => {
         {/* image */}
         {/* also couldn't get srcset to work... */}
         <div className="relative flex justify-end sm:flex-row flex-col items-center sm:ml-[5rem] sm:py-10 sm:mb-4 z-[10]">
-          <Fade triggerOnce>
+          <Fade triggerOnce delay={0.5}>
             <img
               src={bwsvg4.src}
               width={650}
@@ -83,7 +92,7 @@ const Hero = () => {
           </Fade>
 
           {isMobile && (
-            <Fade triggerOnce>
+            <Fade triggerOnce delay={0.5}>
               <img
                 src={smalllogo.src}
                 alt="Libin Web Development and image of Kelli"

@@ -53,24 +53,9 @@ function Home() {
       <link
         rel="preload"
         as="image"
-        href="/images/kmlbg.jpg"
-        fetchPriority="high"
-        type="image/png"
-      />
-
-      <link
-        rel="preload"
-        as="image"
         href="/images/newlogo.png"
         fetchPriority="high"
         type="image/png"
-      />
-      <link
-        rel="preload"
-        as="image"
-        href="/images/smallrainbowbg.jpg"
-        fetchPriority="high"
-        type="image/jpg"
       />
       <div className="flex flex-col w-full h-full overflow-hidden">
         <div
