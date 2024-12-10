@@ -67,7 +67,7 @@ export default function Slider() {
               </div>
 
               {/* small screen buttons */}
-              <div className="sm:-mt-[15rem] lg:mt-0">
+              <div className="sm:-mt-[10rem] lg:mt-0">
                 <button
                   onClick={showPreviousSlide}
                   className="xl:hidden  text-blackTextFont bottom-0 left-[4rem] hover:scale-110 transition duration-400 z-10 hover:text-brightOrange"

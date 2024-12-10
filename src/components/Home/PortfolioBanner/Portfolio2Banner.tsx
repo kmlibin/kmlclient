@@ -31,10 +31,10 @@ const Portfolio2Banner = () => {
         Every project is a partnership—see how we collaborate with clients to
         craft impactful, results-driven solutions.
       </p>
-      <div className="flex justify-center items-center  sm:-mt-[10rem] lg:-mt-0">
+      <div className="flex justify-center items-center  sm:-mt-[10rem] lg:mt-[5rem]">
         <Slider />
       </div>
-      <div className="h-[150px] bg-customBlue bg-opacity-20 w-full flex items-center justify-center mt-5 sm:mt-0">
+      <div className="h-[150px] bg-customBlue bg-opacity-20 w-full flex items-center justify-center mt-5 sm:mt-[5rem] md:mt-5" >
         <Button path={paths.portfolioPath()} text="See More" />
       </div>
     </div>

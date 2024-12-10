@@ -53,7 +53,7 @@ const Cube = ({
   useEffect(() => {
     const mediaQuerySmall = window.matchMedia("(max-width: 640px)");
     const mediaQueryMedium = window.matchMedia("(min-width: 641px) and (max-width: 1300px)");
-    const mediaQueryLarge = window.matchMedia("(min-width: 901px)");
+    const mediaQueryLarge = window.matchMedia("(min-width: 1300px)");
   
     const handleMediaChange = () => {
       if (mediaQuerySmall.matches) {
