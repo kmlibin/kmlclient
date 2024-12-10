@@ -74,6 +74,7 @@ const PricingCards = ({ title, text, src, alt, isList, isNote1 }: Props) => {
                     tier).{" "}
                     <Link
                       href={paths.emailjsPath()}
+                      aria-label="Go to FAQ page"
                       className="cursor:hover text-customBlue hover:underline hover:text-customIndigo duration-300 transition-all"
                     >
                       See FAQ for details.

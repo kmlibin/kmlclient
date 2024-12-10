@@ -103,6 +103,7 @@ const Cube = ({
             {!isHome &&
               (complete ? (
                 <Link
+                aria-label={`link to ${business} webpage`}
                   href={link || ""}
                   className={`${ibmBold.className} xs:w-[95%] w-3/4 flex justify-end text-right text-blackTextFont items-center xs:gap-4 text-sm xs:text-xl tracking-wide my-4 hover:text-customTurquoise duration-300`}
                 >
@@ -148,6 +149,7 @@ const Cube = ({
                 >
                   <h3 className="text-xl xl:text-4xl">{owner}</h3>
                   <Link
+                  aria-label={`link to ${business} webpage`}
                     href={link ? link : ""}
                     target="_blank"
                     rel="noopener noreferrer"

@@ -163,6 +163,7 @@ const ContactImages = () => {
           />
           <Fade triggerOnce delay={3500}>
             <Link
+              aria-label="Link to contact page"
               href={paths.contactPath()}
               className="absolute right-2 top-16 flex flex-col gap-2 items-center justify-center hover:cursor-pointer"
             >
