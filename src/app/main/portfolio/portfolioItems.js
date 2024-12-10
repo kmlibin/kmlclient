@@ -41,7 +41,7 @@ export const portfolioItems = [
     frontImage: fittees,
     complete: true,
     link: "https://poetic-selkie-096f2e.netlify.app/",
-    review: "Placeholder review from Tochi",
+    review: "placeholder",
     backImage: fittees2,
     isLarge: false,
  
@@ -56,7 +56,7 @@ export const portfolioItems = [
     complete: true,
     link: "https://kellidoesdev.com/",
     review:
-      "This is my original portfolio site, which is geared more towards large employers seeking specific coding skills. Though the projects showcased on this site focus on demonstrating skill with different libraries, this site shows a variety of design and coding skills, enjoy!",
+      "This is my original portfolio site, which is geared more towards large employers seeking specific coding skills. Though the projects showcased on this site focus on demonstrating skill with different libraries, this site shows a variety of design skills, enjoy!",
     backImage: kellinetlify2,
     isLarge: false,
 

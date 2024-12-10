@@ -35,7 +35,7 @@ export const sliderItems = [
     frontImage: fittees,
     complete: true,
     link: "https://poetic-selkie-096f2e.netlify.app/",
-    review: "Placeholder review from Tochi",
+    review: "placeholder",
     backImage: fittees2,
     isLarge: true,
     isHome: true,

@@ -1,10 +1,9 @@
 "use client";
 import { useState } from "react";
-import { StaticImageData } from "next/image";
-
-import { Fade } from "react-awesome-reveal";
 // import { createPortal } from "react-dom";
-
+import { StaticImageData } from "next/image";
+//libraries
+import { Fade } from "react-awesome-reveal";
 import { IoMdClose } from "react-icons/io";
 
 type ReviewProps = {
@@ -52,25 +51,31 @@ export default function ReviewSection({
   return (
     <>
       {/* //normal size */}
-      <p
-        className={` ${
-          !complete ? "text-center" : ""
-        } text-lg w-2/3 bg-customWhite text-blackTextFont p-7 relative rounded-lg xl:block hidden`}
-      >
-        {complete
-          ? review && truncateText(review, 40)
-          : "Under Construction, Check Back Soon!"}
+      {review !== "placeholder" ? (
+        <p
+          className={` ${
+            !complete ? "text-center" : ""
+          } text-lg w-2/3 bg-customWhite text-blackTextFont p-7 relative rounded-lg xl:block hidden`}
+        >
+          
+          {complete 
+            ? review && truncateText(review, 40)
+            : "Under Construction, Check Back Soon!"}
 
-        {/* show more button only if the text is truncated */}
-        {review && !showFullReview && review.split(" ").length > 40 && (
-          <span
-            className="text-customBlue hover:underline cursor-pointer"
-            onClick={handleToggleReviewOn}
-          >
-            see more
-          </span>
-        )}
-      </p>
+          {/* show more button only if the text is truncated */}
+          {review && !showFullReview && review.split(" ").length > 40 && (
+            <span
+              className="text-customBlue hover:underline cursor-pointer"
+              onClick={handleToggleReviewOn}
+            >
+              see more
+            </span>
+          )}
+        </p>
+      ) : (
+        ""
+      )}
+
       {/* popover for show more */}
       {popup && (
         <Fade duration={500}>
@@ -94,7 +99,7 @@ export default function ReviewSection({
 
       {/* small screen */}
 
-      {complete ? (
+      {complete && review !== "placeholder" ? (
         <>
           {/* Button to show review on small screens */}
           <button
@@ -104,15 +109,16 @@ export default function ReviewSection({
             Read Review
           </button>
         </>
-      ) : (
+      ) : review !== "placeholder" ? (
         <p
-          className={` ${
+          className={`${
             !complete ? "text-center" : ""
           } block xl:hidden text-sm w-2/3 bg-customWhite text-blackTextFont p-7 relative rounded-lg`}
         >
-          {" "}
           Under Construction, Check Back Soon!
         </p>
+      ) : (
+        ""
       )}
 
       {/* popover for show more */}
