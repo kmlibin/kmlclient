@@ -62,7 +62,7 @@ const page = () => {
         <div className="absolute bottom-[0vh] -right-[10%] rainbow-circle w-[500px] rounded-full h-[500px]"></div>
         <div className="absolute -top-[12vh] -left-[12%] rainbow-circle w-[900px] h-[900px] 3xl:w-[1100px] rounded-full 3xl:h-[1100px]"></div>
       </div>
-      <div className="w-full flex md:flex-row flex-col justify-evenly items-start md:mt-[180px] mt-[5rem] pb-16  ">
+      <section className="w-full flex md:flex-row flex-col justify-evenly items-start md:mt-[180px] mt-[5rem] pb-16  ">
        
 
         <div className=" hidden md:flex md:w-1/3 w-full flex-col items-end justify-start relative md:h-[300vh] 3xl:h-[230vh]">
@@ -105,7 +105,7 @@ const page = () => {
               </RollImage>
             </div>
           </div>
-
+          <section aria-labelledby="pricing-cards" className="w-full flex flex-col items-center justify-start gap-4 md:gap-16">
           {pricingCards.map((item: PricingData) => (
             <PricingCards
               key={item.alt}
@@ -117,8 +117,9 @@ const page = () => {
               isNote1={item.isNote1}
             />
           ))}
+          </section>
         </div>
-      </div>
+      </section>
 
       <AdditionalInfo />
       <div className="h-[150px] bg-customBlue bg-opacity-20 w-full flex items-center justify-center mb-10 z-[50]">

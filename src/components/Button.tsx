@@ -14,6 +14,7 @@ type Props = {
 const Button = ({path, text}: Props) => {
   return (
     <Link
+    aria-label="Get Started Button"
     href={path}
     className={` ${ibm.className}  bg-customIndigo shadow-customSmallGrey relative overflow-hidden z-10 btn p-4 text-lightGrey flex items-center gap-3 justify-center`}
   >

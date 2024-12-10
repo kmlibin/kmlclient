@@ -74,11 +74,14 @@ const Navbar = () => {
             : "opacity-0 pointer-events-none"
         }`}
         onClick={toggleNavbar}
+        aria-hidden={!isOpen}
       ></div>
       <div
         className={`absolute top-2 left-0 md:h-[100px] h-[100vh]  w-5/6 xl:w-2/3 bg-customIndigo z-[200] text-customWhite p-4 rounded-tr-lg rounded-br-lg
               transform ${isOpen ? "translate-x-0" : "-translate-x-full"}
               transition-transform duration-300 ease-in-out z-40 flex items-center`}
+        aria-labelledby="navbar"
+        role="navigation"
       >
         <ul
           className={`${ibm.className} md:flex-row flex-col flex-grow flex w-full gap-6 md:items-center md:justify-between justify-start items-end h-full text-customWhite`}
@@ -87,10 +90,12 @@ const Navbar = () => {
             href={paths.homePath()}
             className="md:mb-0 mb-10"
             onClick={linkClickToggle}
+            aria-label="Navigate to home"
           >
             <Image
               src={logo}
               alt="logo"
+              role="img"
               className="ml-4 h-[75px] w-[75px] rounded-full box-content border-4 border-customGold"
             />
           </Link>
@@ -99,21 +104,25 @@ const Navbar = () => {
               path={paths.homePath()}
               linkName="Home"
               linkClickToggle={linkClickToggle}
+              aria-label="Navigate to home"
             />
             <Links
               path={paths.portfolioPath()}
               linkName="Portfolio"
               linkClickToggle={linkClickToggle}
+              aria-label="View portfolio"
             />
             <Links
               path={paths.aboutPath()}
               linkName="About"
               linkClickToggle={linkClickToggle}
+              aria-label="Learn more about us"
             />
             <Links
               path={paths.contactPath()}
               linkName="Contact"
               linkClickToggle={linkClickToggle}
+              aria-label="Contact us"
             />
           </div>
         </ul>
@@ -125,6 +134,7 @@ const Navbar = () => {
               transition-transform duration-300 ease-in-out z-[200] ${
                 rotate ? "rotate-color-360" : ""
               }`}
+        aria-expanded={isOpen}
       >
         <RiMenu5Line size={24} className="" />
       </button>

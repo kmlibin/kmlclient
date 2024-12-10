@@ -10,11 +10,10 @@ import { Fade } from "react-awesome-reveal";
 type Props = {
   path: string;
   linkName: string;
-  linkClickToggle: () => void
-
+  linkClickToggle: () => void;
 };
 
-const Links = ({ linkName, path, linkClickToggle}: Props) => {
+const Links = ({ linkName, path, linkClickToggle }: Props) => {
   const [isOpen, setIsOpen] = useState(false);
 
   // dropdown links
@@ -27,10 +26,15 @@ const Links = ({ linkName, path, linkClickToggle}: Props) => {
   if (linkName === "About")
     return (
       <div className="relative group">
-        <li className="text-2xl md:text-xl hover:cursor-pointer focus:outline-none">
+        <li
+          className="text-2xl md:text-xl hover:cursor-pointer focus:outline-none"
+          aria-haspopup="true"
+        >
           <div
             className="flex justify-end items-center hover:text-customTurquoise transition duration-300 md:group-hover:text-customTurquoise"
             onClick={() => setIsOpen((prev) => !prev)}
+            aria-expanded={isOpen}
+            aria-controls="about-dropdown"
           >
             <span>About</span>
             <BiChevronDown
@@ -45,19 +49,19 @@ const Links = ({ linkName, path, linkClickToggle}: Props) => {
             className={`md:block ${isOpen ? "block" : "hidden"}`}
           >
             <div
-              className={`
-              mt-2 flex flex-col bg-customWhite rounded-md shadow-lg
+              id="about-dropdown"
+              className={`mt-2 flex flex-col bg-customWhite rounded-md shadow-lg
               md:absolute md:right-0 w-[15rem] md:w-56 md:mt-0 md:opacity-0 md:group-hover:opacity-100 md:transition-opacity
-              ${isOpen ? "block" : "hidden"} md:block
-            `}
+              ${isOpen ? "block" : "hidden"} md:block`}
+              role="menu"
+              aria-labelledby="about-link"
             >
-              {" "}
               <div className="py-1 flex w-full items-end flex-col">
                 {links.map(({ href, label, id }) => (
                   <Link
                     key={id}
                     href={href}
-                    className="w-full text-right px-4 py-2 text-sm text-blackTextFont hover:bg-gray-100  hover:text-customBlue"
+                    className="w-full text-right px-4 py-2 text-sm text-blackTextFont hover:bg-gray-100 hover:text-customBlue"
                     role="menuitem"
                     id={id}
                     onClick={linkClickToggle}
@@ -75,13 +79,14 @@ const Links = ({ linkName, path, linkClickToggle}: Props) => {
   return (
     <li className="relative text-2xl md:text-xl group hover:cursor-pointer">
       <Link
-        className=" hover:text-customTurquoise transition duration-300"
+        className="hover:text-customTurquoise transition duration-300"
         href={path}
         onClick={linkClickToggle}
+        aria-label={`Navigate to ${linkName}`}
       >
         {linkName}
       </Link>
-      <span className="absolute left-1/2 -bottom-3 w-[.5rem] h-[.5rem] bg-white rounded-full transition-opacity duration-300 opacity-0 group-hover:opacity-100 transform -translate-x-1/2"></span>{" "}
+      <span className="absolute left-1/2 -bottom-3 w-[.5rem] h-[.5rem] bg-white rounded-full transition-opacity duration-300 opacity-0 group-hover:opacity-100 transform -translate-x-1/2"></span>
     </li>
   );
 };

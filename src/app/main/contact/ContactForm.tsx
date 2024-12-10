@@ -149,6 +149,8 @@ const ContactForm = () => {
       <form
         className="space-y-6 w-[95%] md:w-3/4 p-8 bg-customWhite rounded-lg shadow-lg border-customGold border-4 border-opacity-90"
         ref={formRef}
+        aria-labelledby="contact-form-title"
+        role="form"
         onSubmit={handleSubmit}
       >
         <h3
@@ -229,13 +231,15 @@ const ContactForm = () => {
             required
             value={formData.message}
             onChange={handleChange}
+            aria-describedby="message-error"
           ></textarea>
           {formErrors.message && (
-            <p className="mt-1 text-sm text-red-500">{formErrors.message}</p>
+            <p id="message-error" className="mt-1 text-sm text-red-500">{formErrors.message}</p>
           )}
         </div>
 
         <button
+         aria-label="Submit Form"
           type="submit"
           className={`${ibm.className} flex items-center justify-center gap-3 w-full z-10 overflow-hidden text-customWhite bg-customIndigo btn relative py-3 px-6 rounded-lg`}
         >
@@ -248,6 +252,7 @@ const ContactForm = () => {
           setIsOpen={setShowErrorOrSuccessModal}
           submissionStatus={submissionStatus}
           setSubmissionStatus={setSubmissionStatus}
+           aria-live="assertive"
         />
       )}
     </div>

@@ -88,6 +88,8 @@ const PricingCards = ({ title, text, src, alt, isList, isNote1 }: Props) => {
         </div>
         <button
           onClick={toggleContent}
+          aria-expanded={isOpen}
+          aria-controls={`pricing-card-${title}-content`}
           className="sm:hidden w-full flex justify-center items-center pb-5 "
         >
           {isOpen ? <FaCaretUp size={40} className="text-brightOrange"/> : <FaCaretDown size={40} className="text-customBlue"/>}

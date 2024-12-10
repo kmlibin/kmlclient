@@ -69,7 +69,6 @@ function Home() {
           />
           <SMIcons href={"https://github.com/kmlibin"} icon={FaGithub} />
         </div>
-
         <Hero />
         <HomeBanner />
         <Info />
