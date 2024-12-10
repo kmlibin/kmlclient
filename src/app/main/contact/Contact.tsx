@@ -13,6 +13,7 @@ import undrawcomm from "./undrawcomm.svg";
 import Image from "next/image";
 import RollImage from "@/components/RollImage";
 
+
 const Contact = () => {
   return (
     <div className="relative bg-customWhite flex w-full min-h-[100vh] overflow-hidden">
@@ -71,7 +72,7 @@ const Contact = () => {
             </li>
           </ul>
         </div>
-        <div className="md:hidden bg-customWhite bg-opacity-60 p-5 my-4">
+        <div className="md:hidden bg-customWhite bg-opacity-60 p-5 my-4  w-full md:w-auto flex justify-center items-center ">
           <RollImage delay={500}>
             <Image
               src={undrawcomm}
@@ -79,13 +80,12 @@ const Contact = () => {
               height={400}
               className="z-10"
               role="img"
-              aria-labelledby="contact-info" // Associates image with description for context
+              aria-labelledby="contact-info"
             />
           </RollImage>
         </div>
       </div>
     </div>
-
     <div className="w-full md:w-1/2 relative h-full flex items-center justify-center md:justify-end mt-4 md:mt-0">
       <ContactForm />
     </div>

@@ -11,6 +11,7 @@ import { ibm, ibmBold } from "../../utils/fonts";
 import InputField from "./InputField";
 //components
 import SelectField from "./SelectField";
+import { Fade } from "react-awesome-reveal";
 
 type formState = {
   name: string;
@@ -139,123 +140,131 @@ const ContactForm = () => {
       setSubmissionStatus({
         heading: "Error",
         message:
-          "Oh no! There was an error sending your message. Please try again later or email email@email directly.",
+          "Oh no! There was an error sending your message. Please try again later...",
       });
       setShowErrorOrSuccessModal(true);
     }
   };
   return (
-    <div className="w-full flex items-end justify-center md:justify-end">
-      <form
-        className="space-y-6 w-[95%] md:w-3/4 p-8 bg-customWhite rounded-lg shadow-lg border-customGold border-4 border-opacity-90"
-        ref={formRef}
-        aria-labelledby="contact-form-title"
-        role="form"
-        onSubmit={handleSubmit}
-      >
-        <h3
-          className={`${ibmBold.className} text-2xl  text-center sm:text-left mb-4`}
-        >
-          Let&apos;s Bring Your Vision to Life!
-        </h3>
-
-        <InputField
-          label="Name"
-          name="name"
-          value={formData.name}
-          error={formErrors.name}
-          onChange={handleChange}
-        />
-        <InputField
-          label="Email"
-          name="email"
-          value={formData.email}
-          error={formErrors.email}
-          onChange={handleChange}
-          type="email"
-        />
-        <SelectField
-          label="Do you have a domain purchased?"
-          name="hasDomain"
-          value={formData.hasDomain}
-          options={[
-            { value: "yes", label: "Yes" },
-            { value: "no", label: "No" },
-          ]}
-          onChange={handleChange}
-        />
-
-        {formData.hasDomain === "yes" && (
-          <InputField
-            label="Where did you buy your domain from?"
-            name="domainProvider"
-            value={formData.domainProvider || ""}
-            onChange={handleChange}
-          />
-        )}
-
-        <SelectField
-          label="Do you know if you're planning to host with me or somewhere else?"
-          name="hostingPreference"
-          value={formData.hostingPreference}
-          options={[
-            { value: "hostWithYou", label: "Host with you" },
-            { value: "hostElsewhere", label: "Host somewhere else" },
-            { value: "hostUndecided", label: "Undecided" },
-          ]}
-          onChange={handleChange}
-        />
-
-        {formData.hostingPreference === "hostElsewhere" && (
-          <InputField
-            label="What hosting platform?"
-            name="otherHostingPlatform"
-            value={formData.otherHostingPlatform || ""}
-            onChange={handleChange}
-          />
-        )}
-
-        <div className={`${ibm.className} flex flex-col tracking-wider`}>
-          <label htmlFor="message" className=" text-[16px]">
-            Message
-          </label>
-          <textarea
-            id="message"
-            name="message"
-            rows={4}
-            className={`w-full rounded-xl border-2 p-3 focus:outline-none ${
-              formErrors.message
-                ? "border-red-500 focus:ring-red-500"
-                : "border-gray-300 border-opacity-50"
-            }`}
-            required
-            value={formData.message}
-            onChange={handleChange}
-            aria-describedby="message-error"
-          ></textarea>
-          {formErrors.message && (
-            <p id="message-error" className="mt-1 text-sm text-red-500">{formErrors.message}</p>
-          )}
-        </div>
-
-        <button
-         aria-label="Submit Form"
-          type="submit"
-          className={`${ibm.className} flex items-center justify-center gap-3 w-full z-10 overflow-hidden text-customWhite bg-customIndigo btn relative py-3 px-6 rounded-lg`}
-        >
-          {buttonStatus} <LuSend className="mt-[.1rem]" />
-        </button>
-      </form>
-      {/* Success/Error Modal */}
+    <>
       {showErrorOrSuccessModal && (
         <SuccessErrorModal
           setIsOpen={setShowErrorOrSuccessModal}
           submissionStatus={submissionStatus}
           setSubmissionStatus={setSubmissionStatus}
-           aria-live="assertive"
+          aria-live="assertive"
         />
       )}
-    </div>
+      <div className="w-full h-full">
+        <Fade direction="up" triggerOnce>
+          <div className="w-full flex items-end justify-center md:justify-end">
+            <form
+              className="space-y-6 w-[95%] md:w-3/4 p-8 bg-customWhite rounded-lg shadow-lg border-customGold border-4 border-opacity-90"
+              ref={formRef}
+              aria-labelledby="contact-form-title"
+              role="form"
+              onSubmit={handleSubmit}
+            >
+              <h3
+                className={`${ibmBold.className} text-2xl  text-center sm:text-left mb-4`}
+              >
+                Let&apos;s Bring Your Vision to Life!
+              </h3>
+
+              <InputField
+                label="Name"
+                name="name"
+                value={formData.name}
+                error={formErrors.name}
+                onChange={handleChange}
+              />
+              <InputField
+                label="Email"
+                name="email"
+                value={formData.email}
+                error={formErrors.email}
+                onChange={handleChange}
+                type="email"
+              />
+              <SelectField
+                label="Do you have a domain purchased?"
+                name="hasDomain"
+                value={formData.hasDomain}
+                options={[
+                  { value: "yes", label: "Yes" },
+                  { value: "no", label: "No" },
+                ]}
+                onChange={handleChange}
+              />
+
+              {formData.hasDomain === "yes" && (
+                <InputField
+                  label="Where did you buy your domain from?"
+                  name="domainProvider"
+                  value={formData.domainProvider || ""}
+                  onChange={handleChange}
+                />
+              )}
+
+              <SelectField
+                label="Do you know if you're planning to host with me or somewhere else?"
+                name="hostingPreference"
+                value={formData.hostingPreference}
+                options={[
+                  { value: "hostWithYou", label: "Host with you" },
+                  { value: "hostElsewhere", label: "Host somewhere else" },
+                  { value: "hostUndecided", label: "Undecided" },
+                ]}
+                onChange={handleChange}
+              />
+
+              {formData.hostingPreference === "hostElsewhere" && (
+                <InputField
+                  label="What hosting platform?"
+                  name="otherHostingPlatform"
+                  value={formData.otherHostingPlatform || ""}
+                  onChange={handleChange}
+                />
+              )}
+
+              <div className={`${ibm.className} flex flex-col tracking-wider`}>
+                <label htmlFor="message" className=" text-[16px]">
+                  Message
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows={4}
+                  className={`w-full rounded-xl border-2 p-3 focus:outline-none ${
+                    formErrors.message
+                      ? "border-red-500 focus:ring-red-500"
+                      : "border-gray-300 border-opacity-50"
+                  }`}
+                  required
+                  value={formData.message}
+                  onChange={handleChange}
+                  aria-describedby="message-error"
+                ></textarea>
+                {formErrors.message && (
+                  <p id="message-error" className="mt-1 text-sm text-red-500">
+                    {formErrors.message}
+                  </p>
+                )}
+              </div>
+
+              <button
+                aria-label="Submit Form"
+                type="submit"
+                className={`${ibm.className} flex items-center justify-center gap-3 w-full z-10 overflow-hidden text-customWhite bg-customIndigo btn relative py-3 px-6 rounded-lg`}
+              >
+                {buttonStatus} <LuSend className="mt-[.1rem]" />
+              </button>
+            </form>
+            {/* Success/Error Modal */}
+          </div>
+        </Fade>
+      </div>
+    </>
   );
 };
 
