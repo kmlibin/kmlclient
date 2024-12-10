@@ -58,15 +58,15 @@ export const faqCards = [
       "How do I buy a domain, and how do we connect it to my custom site?",
     answer: (
       <>
-        If you don't already have a domain name (e.g., www.yourbusiness.com),
+        If you don&apos;t already have a domain name (e.g., www.yourbusiness.com),
         you can purchase one from domain registrars like Namecheap, GoDaddy, or
         Google Domains. After purchasing, the domain needs to be connected to
         your custom website by configuring DNS settings. This involves logging
-        into the registrar's dashboard and updating records like CNAME or A
+        into the registrar&apos;s dashboard and updating records like CNAME or A
         records to point to your hosting provider.
         <br></br>
         <br></br>
-        If you’re hosting your site with me:
+        If you&apos;re hosting your site with me:
         <br></br>
         <br></br>I can help you purchase the domain through Netlify, charging
         the same price as the domain provider charges annually.
