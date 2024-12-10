@@ -8,7 +8,7 @@ import Bubbles from "./Bubbles";
 import { IoStarSharp } from "react-icons/io5";
 import { RiExternalLinkLine } from "react-icons/ri";
 import { BsCaretDownSquareFill, BsCaretUpSquareFill } from "react-icons/bs";
-import { Fade } from "react-awesome-reveal";
+
 //fonts
 import { ibm, ibmBold } from "@/app/utils/fonts";
 //css
