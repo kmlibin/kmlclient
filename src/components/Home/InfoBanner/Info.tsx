@@ -74,7 +74,7 @@ const Info = () => {
       {/* Button Section */}
       <div className="h-[150px] bg-customPink bg-opacity-20 w-full flex items-center justify-center mt-8">
         <Button
-          path={paths.tablePath()}
+          path={paths.faqPath()}
           text="Learn More"
           aria-label="Learn more about our services"
         />
