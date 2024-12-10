@@ -7,7 +7,7 @@ import PortfolioBanner from "@/components/Home/PortfolioBanner/Portfolio2Banner"
 import HomeBanner from "@/components/Home/HomeBanner/HomeBanner";
 import Info from "@/components/Home/InfoBanner/Info";
 import SMIcons from "@/components/Wrapper/SMIcons";
-import Icons from "@/components/Icons";
+
 //icons
 import { FaEtsy, FaLinkedinIn, FaGithub } from "react-icons/fa";
 
