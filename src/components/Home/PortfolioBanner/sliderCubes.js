@@ -34,8 +34,9 @@ export const sliderItems = [
     cube: true,
     frontImage: fittees,
     complete: true,
-    link: "https://poetic-selkie-096f2e.netlify.app/",
-    review: "placeholder",
+    link: "https://fitteespt.com",
+    review:
+      "I highly recommend Kelli for her exceptional web development services. She meticulously listened to my needs, paying close attention to every detail. She was very patient with me and ensured I received a website that perfectly met my expectations. Kelli's outstanding work and professionalism make her an excellent choice for anyone seeking top-notch web design services.",
     backImage: fittees2,
     isLarge: true,
     isHome: true,
