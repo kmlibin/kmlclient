@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     url: "https://kellidoesdev.com",
   },
   keywords:
-    "web development, custom websites, small business websites, Next.js developer, SEO optimization, Colorado Springs web design, user-friendly websites, mobile-responsive websites, freelance web developer, website speed, small business branding, website design for small businesses",
+    "web development, libin web development, custom websites, small business websites, Next.js developer, SEO optimization, Colorado Springs web design, frontend developer, user-friendly websites, mobile-responsive websites, freelance web developer, website speed, small business branding, website design for small businesses",
 };
 
 function Home() {
