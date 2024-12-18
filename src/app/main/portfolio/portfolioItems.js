@@ -49,7 +49,7 @@ export const portfolioItems = [
   {
     id: 4,
     height: "475px",
-    owner: "Kelli Libin",
+    owner: "Kelli L.",
     business: "Portfolio Site",
     cube: true,
     frontImage: kellinetlify,
