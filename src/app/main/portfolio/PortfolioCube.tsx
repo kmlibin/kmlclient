@@ -3,7 +3,7 @@ import React, { useState, useRef, useEffect } from "react";
 //images
 import Image, { StaticImageData } from "next/image";
 //components
-import Bubbles from "./Bubbles";
+// import Bubbles from "./Bubbles";
 //libraries
 import { IoStarSharp } from "react-icons/io5";
 import { RiExternalLinkLine } from "react-icons/ri";
