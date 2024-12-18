@@ -26,6 +26,7 @@ const PortfolioPage = () => {
               alt="portfolio"
               src={myport}
               className="z-10 h-[350px] w-auto"
+              priority
             />
           </RollImage>
         </div>
