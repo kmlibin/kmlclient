@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 //images
 import Image, { StaticImageData } from "next/image";
 //components
@@ -49,13 +49,12 @@ const Cube = ({
   const [isFront, setIsFront] = useState(true);
   const [showBubbles, setShowBubbles] = useState(false);
 
-
   //delay bubbles render
   useEffect(() => {
     if (bubbles) {
       const timer = setTimeout(() => {
         setShowBubbles(true);
-      }, 500);
+      }, 300);
       return () => clearTimeout(timer);
     }
   }, [bubbles]);
@@ -88,11 +87,9 @@ const Cube = ({
               </p>
             ))}
           <div
-      
             className={`cube ${
               isFront ? "show-front" : "show-bottom"
             } w-auto relative transition-transform duration-1000`}
-       
           >
             <div
               className={`${
