@@ -20,10 +20,10 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
-    noarchive: true,
-    nosnippet: true,
-    noimageindex: true,
-    nocache: true,
+    noarchive: false,
+    nosnippet: false,
+    noimageindex:false,
+    nocache: false,
   },
   referrer: "origin-when-cross-origin",
   authors: {
