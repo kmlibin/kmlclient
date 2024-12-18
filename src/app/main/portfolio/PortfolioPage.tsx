@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useState, useEffect } from "react";
 
 //images
 import Image from "next/image";
@@ -11,6 +12,15 @@ import PortfolioCard from "./PortfolioCube";
 import CTA from "./CTA";
 
 const PortfolioPage = () => {
+  const [renderPortfolioItems, setRenderPortfolioItems] = useState(false);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setRenderPortfolioItems(true);
+    }, 200);
+
+    return () => clearTimeout(timeout);
+  }, []);
   return (
     <div className="flex lg:flex-row flex-col bg-customWhite h-full relative ">
       {/* rainbows */}
@@ -36,21 +46,23 @@ const PortfolioPage = () => {
         id="popup-container"
         className="w-full lg:w-2/3 flex z-[50] bg-customWhite  lg:bg-transparent flex-col justify-center gap-4 items-center mx-auto lg:mt-[180px]"
       >
-        {portfolioItems.map((item) => (
-          <PortfolioCard
-            key={item.id}
-            cube={item.cube}
-            business={item.business}
-            owner={item.owner}
-            height={item.height}
-            complete={item.complete}
-            review={item.review}
-            link={item.link}
-            bubbles={item.bubbles}
-            frontImage={item.frontImage}
-            backImage={item.backImage}
-          />
-        ))}
+        {renderPortfolioItems
+          ? portfolioItems.map((item) => (
+              <PortfolioCard
+                key={item.id}
+                cube={item.cube}
+                business={item.business}
+                owner={item.owner}
+                height={item.height}
+                complete={item.complete}
+                review={item.review}
+                link={item.link}
+                frontImage={item.frontImage}
+                backImage={item.backImage}
+                bubbles={item.bubbles}
+              />
+            ))
+          : null}
         <CTA />
       </div>
     </div>

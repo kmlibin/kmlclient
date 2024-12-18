@@ -49,6 +49,7 @@ const Cube = ({
   const [isFront, setIsFront] = useState(true);
   const [cubeDepth, setCubeDepth] = useState("175px");
   const [calcCubeHeight, setCalcCubeHeight] = useState("");
+  const [showBubbles, setShowBubbles] = useState(false);
 
   useEffect(() => {
     const mediaQuerySmall = window.matchMedia("(max-width: 640px)");
@@ -90,6 +91,18 @@ const Cube = ({
       setCubeDepth(`${cubeHeight / 2}px`);
     }
   }, [cubeRef, calcCubeHeight]);
+
+  useEffect(() => {
+    console.log('Bubbles prop:', bubbles);
+    if (bubbles) {
+      const timer = setTimeout(() => {
+        setShowBubbles(true);
+      }, 500);
+  
+      return () => clearTimeout(timer); 
+    }
+  }, [bubbles]);
+  
 
   const toggleFace = () => {
     setIsFront((prev) => !prev);
@@ -217,7 +230,7 @@ const Cube = ({
     );
   }
   if (bubbles) {
-    return (
+    return showBubbles ? (
       <div
         className="md:w-[58%] w-full"
         style={{
@@ -228,7 +241,7 @@ const Cube = ({
       >
         <Bubbles id={review ? review : "string"} />
       </div>
-    );
+    ) : null;
   }
 };
 
