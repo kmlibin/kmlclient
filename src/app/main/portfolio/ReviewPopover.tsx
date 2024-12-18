@@ -8,10 +8,8 @@ import { IoMdClose } from "react-icons/io";
 
 type ReviewProps = {
   frontImage?: StaticImageData | string;
-
   complete?: boolean;
   review?: string;
-
   isHome?: boolean;
 };
 
@@ -50,15 +48,14 @@ export default function ReviewSection({
 
   return (
     <>
-      {/* //normal size */}
+      {/* //larger size */}
       {review !== "placeholder" ? (
         <p
           className={` ${
             !complete ? "text-center" : ""
           } text-lg w-2/3 bg-customWhite text-blackTextFont p-7 relative rounded-lg xl:block hidden`}
         >
-          
-          {complete 
+          {complete
             ? review && truncateText(review, 40)
             : "Under Construction, Check Back Soon!"}
 
