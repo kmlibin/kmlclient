@@ -31,11 +31,11 @@ const Info = () => {
       ></div>
 
       {/* Headings */}
-      <div className="z-10 w-full flex gap-4 items-center justify-center flex-col md:flex-row">
+      <div className="z-10 w-full flex gap-4 items-center justify-center flex-col lg:flex-row">
         <ZoomHeading
           as="h2"
           id="info-section-heading"
-          className={`${fredoka.className} text-5xl mt-5 md:my-10 text-center hidden sm:block`}
+          className={`${fredoka.className} text-5xl mt-5 lg:my-10 text-center hidden sm:block`}
         >
           Don’t Settle for Less — Get a Site That Works
         </ZoomHeading>
