@@ -36,20 +36,20 @@ type CubeProps = {
 const Cube = ({
   frontImage,
   backImage,
-  height,
+  
   complete,
   cube,
   review,
   link,
   isHome,
-  bubbles,
+ 
   owner,
   business,
 }: CubeProps) => {
   const [isFront, setIsFront] = useState(true);
   const [cubeDepth, setCubeDepth] = useState("175px");
   const [calcCubeHeight, setCalcCubeHeight] = useState("");
-  const [showBubbles, setShowBubbles] = useState(false);
+  // const [showBubbles, setShowBubbles] = useState(false);
 
   useEffect(() => {
     const mediaQuerySmall = window.matchMedia("(max-width: 640px)");
@@ -92,16 +92,16 @@ const Cube = ({
     }
   }, [cubeRef, calcCubeHeight]);
 
-  useEffect(() => {
-    console.log('Bubbles prop:', bubbles);
-    if (bubbles) {
-      const timer = setTimeout(() => {
-        setShowBubbles(true);
-      }, 500);
+  // useEffect(() => {
+  //   console.log('Bubbles prop:', bubbles);
+  //   if (bubbles) {
+  //     const timer = setTimeout(() => {
+  //       setShowBubbles(true);
+  //     }, 500);
   
-      return () => clearTimeout(timer); 
-    }
-  }, [bubbles]);
+  //     return () => clearTimeout(timer); 
+  //   }
+  // }, [bubbles]);
   
 
   const toggleFace = () => {
