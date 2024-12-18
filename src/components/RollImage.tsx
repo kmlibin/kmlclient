@@ -6,18 +6,8 @@ import { Roll } from "react-awesome-reveal";
 interface ZoomHeadingProps {
   children: ReactNode;
   delay?: number;
-  onRenderComplete?: () => void;
 }
-const RollImage: React.FC<ZoomHeadingProps> = ({
-  delay,
-  children,
-  onRenderComplete,
-}) => {
-  useEffect(() => {
-    if (onRenderComplete) {
-      onRenderComplete();
-    }
-  }, [onRenderComplete]);
+const RollImage: React.FC<ZoomHeadingProps> = ({ delay, children }) => {
   return (
     <Roll duration={1200} delay={delay ? delay : 0} triggerOnce={true}>
       {children}

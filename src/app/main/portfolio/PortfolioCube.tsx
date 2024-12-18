@@ -47,50 +47,8 @@ const Cube = ({
   business,
 }: CubeProps) => {
   const [isFront, setIsFront] = useState(true);
-  const [cubeDepth, setCubeDepth] = useState("175px");
-  const [calcCubeHeight, setCalcCubeHeight] = useState("");
   const [showBubbles, setShowBubbles] = useState(false);
 
-  useEffect(() => {
-    const mediaQuerySmall = window.matchMedia("(max-width: 640px)");
-    const mediaQueryMedium = window.matchMedia(
-      "(min-width: 641px) and (max-width: 1300px)"
-    );
-    const mediaQueryLarge = window.matchMedia("(min-width: 1300px)");
-
-    const handleMediaChange = () => {
-      if (mediaQuerySmall.matches) {
-        setCalcCubeHeight("200px");
-      } else if (mediaQueryMedium.matches) {
-        setCalcCubeHeight("350px");
-      } else if (mediaQueryLarge.matches) {
-        setCalcCubeHeight("475px");
-      }
-    };
-
-    // Initial check
-    handleMediaChange();
-
-    // Listen for media query changes
-    mediaQuerySmall.addEventListener("change", handleMediaChange);
-    mediaQueryMedium.addEventListener("change", handleMediaChange);
-    mediaQueryLarge.addEventListener("change", handleMediaChange);
-
-    return () => {
-      mediaQuerySmall.removeEventListener("change", handleMediaChange);
-      mediaQueryMedium.removeEventListener("change", handleMediaChange);
-      mediaQueryLarge.removeEventListener("change", handleMediaChange);
-    };
-  }, []);
-  const cubeRef = useRef<HTMLDivElement>(null);
-
-  //check the height of the cube, which then calculates the height of the cube, divides by two and sends to css
-  useEffect(() => {
-    if (cubeRef.current) {
-      const cubeHeight = cubeRef.current.offsetHeight;
-      setCubeDepth(`${cubeHeight / 2}px`);
-    }
-  }, [cubeRef, calcCubeHeight]);
 
   //delay bubbles render
   useEffect(() => {
@@ -98,10 +56,9 @@ const Cube = ({
       const timer = setTimeout(() => {
         setShowBubbles(true);
       }, 500);
-      return () => clearTimeout(timer); 
+      return () => clearTimeout(timer);
     }
   }, [bubbles]);
-  
 
   const toggleFace = () => {
     setIsFront((prev) => !prev);
@@ -131,16 +88,11 @@ const Cube = ({
               </p>
             ))}
           <div
-            ref={cubeRef}
+      
             className={`cube ${
               isFront ? "show-front" : "show-bottom"
             } w-auto relative transition-transform duration-1000`}
-            style={
-              {
-                "--cube-depth": cubeDepth,
-                height: calcCubeHeight,
-              } as React.CSSProperties
-            }
+       
           >
             <div
               className={`${
