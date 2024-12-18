@@ -229,20 +229,20 @@ const Cube = ({
       </div>
     );
   }
-  if (bubbles) {
-    return showBubbles ? (
-      <div
-        className="md:w-[58%] w-full"
-        style={{
-          height: height,
-          cursor: "pointer",
-          zIndex: "20",
-        }}
-      >
-        <Bubbles id={review ? review : "string"} />
-      </div>
-    ) : null;
-  }
+  // if (bubbles) {
+  //   return showBubbles ? (
+  //     <div
+  //       className="md:w-[58%] w-full"
+  //       style={{
+  //         height: height,
+  //         cursor: "pointer",
+  //         zIndex: "20",
+  //       }}
+  //     >
+  //       <Bubbles id={review ? review : "string"} />
+  //     </div>
+  //   ) : null;
+  // }
 };
 
 export default Cube;
