@@ -45,7 +45,7 @@ const Hero = () => {
 
       <div
         id="hero-section"
-        className="relative min-h-[100vh] flex w-full items-end sm:items-center z-10"
+        className="relative min-h-[100vh] flex w-full justify-center md:justify-start items-end sm:items-center z-10"
       >
         {/* bg */}
         <div className="absolute inset-0 -z-10">
@@ -64,15 +64,14 @@ const Hero = () => {
             className="sm:block hidden h-full w-full"
             placeholder="blur"
           />
-          {isMobile && (
-            <Image
-              src={smallbg}
-              style={{ objectFit: "cover" }}
-              alt="rainbow background"
-              className="sm:hidden h-full w-full "
-              placeholder="blur"
-            />
-          )}
+
+          <Image
+            src={smallbg}
+            style={{ objectFit: "cover" }}
+            alt="rainbow background"
+            className="sm:hidden h-full w-full "
+            placeholder="blur"
+          />
 
           <div className="absolute inset-0 sm:w-1/3 w-2/3 bg-gradient-to-r from-slate-500 sm:bg-gradient-to-r sm:from-gray-900 to-transparent "></div>
         </div>
@@ -85,19 +84,18 @@ const Hero = () => {
               src={bwsvg4.src}
               width={650}
               alt="Libin Web Development and image of Kelli"
-              className="hidden sm:block"
+              className="hidden md:block"
             />
           </Fade>
 
-          {isMobile && (
-            <Fade triggerOnce delay={0.5}>
-              <img
-                src={smalllogo.src}
-                alt="Libin Web Development and image of Kelli"
-                className="xs:h-[530px] h-[450px] object-cover sm:hidden"
-              />
-            </Fade>
-          )}
+          <Fade triggerOnce delay={0.5}>
+            <img
+              src={smalllogo.src}
+              alt="Libin Web Development and image of Kelli"
+              className="xs:h-[530px] h-[450px] object-cover md:hidden"
+            />
+          </Fade>
+
           <div className="lg:absolute lg:-right-[52%] lg:bottom-0 flex flex-col justify-end sm:mb-2 sm:py-10 text-gray-900 text-2xl leading-loose list-none">
             <NavLinks />
           </div>
