@@ -53,7 +53,7 @@ const Accordion = ({ toggleItem, item, openId }: Props) => {
       <div
         id={`accordion-content-${item.id}`}
         className={`transition-all duration-300 overflow-hidden w-full ${
-          isOpen ? "opacity-100 max-h-screen" : "max-h-0 opacity-0"
+          isOpen ? "opacity-100 max-h-auto" : "max-h-0 opacity-0"
         }`}
         style={{ transitionProperty: "max-height, opacity" }}
         aria-hidden={!isOpen}
