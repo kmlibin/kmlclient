@@ -1,5 +1,5 @@
 "use client";
-import React, { ReactNode, useEffect } from "react";
+import React, { ReactNode } from "react";
 //libraries
 import { Roll } from "react-awesome-reveal";
 
