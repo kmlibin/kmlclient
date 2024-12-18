@@ -3,7 +3,7 @@ import React, { useState, useRef, useEffect } from "react";
 //images
 import Image, { StaticImageData } from "next/image";
 //components
-// import Bubbles from "./Bubbles";
+import Bubbles from "./Bubbles";
 //libraries
 import { IoStarSharp } from "react-icons/io5";
 import { RiExternalLinkLine } from "react-icons/ri";
@@ -36,20 +36,20 @@ type CubeProps = {
 const Cube = ({
   frontImage,
   backImage,
-  
+  height,
   complete,
   cube,
   review,
   link,
   isHome,
- 
+  bubbles,
   owner,
   business,
 }: CubeProps) => {
   const [isFront, setIsFront] = useState(true);
   const [cubeDepth, setCubeDepth] = useState("175px");
   const [calcCubeHeight, setCalcCubeHeight] = useState("");
-  // const [showBubbles, setShowBubbles] = useState(false);
+  const [showBubbles, setShowBubbles] = useState(false);
 
   useEffect(() => {
     const mediaQuerySmall = window.matchMedia("(max-width: 640px)");
@@ -92,16 +92,15 @@ const Cube = ({
     }
   }, [cubeRef, calcCubeHeight]);
 
-  // useEffect(() => {
-  //   console.log('Bubbles prop:', bubbles);
-  //   if (bubbles) {
-  //     const timer = setTimeout(() => {
-  //       setShowBubbles(true);
-  //     }, 500);
-  
-  //     return () => clearTimeout(timer); 
-  //   }
-  // }, [bubbles]);
+  //delay bubbles render
+  useEffect(() => {
+    if (bubbles) {
+      const timer = setTimeout(() => {
+        setShowBubbles(true);
+      }, 500);
+      return () => clearTimeout(timer); 
+    }
+  }, [bubbles]);
   
 
   const toggleFace = () => {
@@ -211,6 +210,7 @@ const Cube = ({
                 className="absolute w-full h-full"
                 src={frontImage ? frontImage : ""}
                 alt="Front Image"
+                loading="lazy"
               />
 
               <div
@@ -229,20 +229,20 @@ const Cube = ({
       </div>
     );
   }
-  // if (bubbles) {
-  //   return showBubbles ? (
-  //     <div
-  //       className="md:w-[58%] w-full"
-  //       style={{
-  //         height: height,
-  //         cursor: "pointer",
-  //         zIndex: "20",
-  //       }}
-  //     >
-  //       <Bubbles id={review ? review : "string"} />
-  //     </div>
-  //   ) : null;
-  // }
+  if (bubbles) {
+    return showBubbles ? (
+      <div
+        className="md:w-[58%] w-full"
+        style={{
+          height: height,
+          cursor: "pointer",
+          zIndex: "20",
+        }}
+      >
+        <Bubbles id={review ? review : "string"} />
+      </div>
+    ) : null;
+  }
 };
 
 export default Cube;
