@@ -18,15 +18,15 @@ import paths from "@/app/paths";
 import Link from "next/link";
 
 const ContactImages = () => {
-  const [isParticleVisible, setIsParticleVisible] = useState(false);
   const [initialAnimationPlayed, setInitialAnimationPlayed] = useState(false);
   const [flyBack, setFlyBack] = useState(false);
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null); // Store timeout reference
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const observerRef = useRef<NodeJS.Timeout | null>(null);
+  const [isParticleVisible, setIsParticleVisible] = useState(false)
 
   gsap.registerPlugin(MotionPathPlugin);
 
-  // Debounced state setter
+  // debounced state setter
   const debouncedSetFlyBack = () => {
     if (observerRef.current) {
       clearTimeout(observerRef.current);
@@ -121,17 +121,21 @@ const ContactImages = () => {
   }, [flyBack]);
 
   const handleClick = () => {
+    console.log('runs!')
     const animateElement = document.querySelector("#kelli-image");
 
+    
     // clear any potential existing timeout to avoid stacking
     if (timeoutRef.current) {
       clearTimeout(timeoutRef.current);
     }
 
+    if (isParticleVisible) return;
+
     // trigger the particle explosion
-    setIsParticleVisible(true);
+    setIsParticleVisible(true)
     timeoutRef.current = setTimeout(() => {
-      setIsParticleVisible(false);
+      setIsParticleVisible(false)
     }, 2500);
 
     gsap.to(animateElement, {
