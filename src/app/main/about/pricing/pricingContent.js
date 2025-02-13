@@ -67,7 +67,7 @@ export const pricingCards = [
         <span
           className={`${ibmBold.className} sm:text-lg text-[14px] flex items-center justify-start gap-2 w-full mt-4 sm:mt-0`}
         >
-          <SiNextra className="text-customBlue" size={12} /> additional $60 per year
+          <SiNextra className="text-customBlue" size={12} /> additional $75 per year
         </span>
       </p>
     ),
