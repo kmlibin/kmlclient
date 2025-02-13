@@ -136,7 +136,8 @@ const ContactImages = () => {
     setIsParticleVisible(true)
     timeoutRef.current = setTimeout(() => {
       setIsParticleVisible(false)
-    }, 2500);
+      setInitialAnimationPlayed(true)
+    }, 1500);
 
     gsap.to(animateElement, {
       x: "-10",
