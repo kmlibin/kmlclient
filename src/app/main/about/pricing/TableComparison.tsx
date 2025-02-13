@@ -4,7 +4,7 @@ import { fredoka, ibm } from "@/app/utils/fonts";
 //libs
 import Image from "next/image";
 //images
-import table from "./images/table.svg";
+import table from "./images/pricetable.png";
 
 const TableComparison = () => {
   return (
@@ -32,7 +32,7 @@ const TableComparison = () => {
       <Image
         src={table}
         alt="Comparison table showing features of our package against other platforms"
-        className="sm:-mt-8"
+        className="mt-10 w-2/3"
         role="img"
         aria-labelledby="comparison-table" 
       />
