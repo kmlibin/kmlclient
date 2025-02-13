@@ -65,7 +65,7 @@ const page = () => {
       <section className="w-full flex md:flex-row flex-col justify-evenly items-start md:mt-[180px] mt-[5rem] pb-16  ">
        
 
-        <div className=" hidden md:flex md:w-1/3 w-full flex-col items-end justify-start relative md:h-[300vh] 3xl:h-[230vh]">
+        <div className=" hidden md:flex md:w-1/3 w-full flex-col items-end justify-start relative md:h-[230vh] 3xl:h-[230vh]">
           <div className="sticky top-[4vh] -mt-[3rem]">
             <RollImage delay={1000}>
               <Image
@@ -86,7 +86,7 @@ const page = () => {
               as="h2"
               className={`${fredoka.className} text-5xl text-center mb-5 md:mb-2`}
             >
-              Everything You Need <br></br> in a Website
+              Everything You Need <br/> in a Website
             </ZoomHeading>
             <ZoomHeading
               as="h4"
