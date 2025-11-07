@@ -35,7 +35,7 @@ const Portfolio2Banner = () => {
         <Slider />
       </div>
       <div className="h-[150px] bg-customBlue bg-opacity-20 w-full flex items-center justify-center mt-5 sm:mt-[5rem] md:mt-5" >
-        <Button path={paths.portfolioPath()} text="See More" />
+        <Button path={paths.portfolioPath()} text="See More" label="View Portfolio" />
       </div>
     </div>
   );

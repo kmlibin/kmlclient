@@ -128,7 +128,7 @@ const HomeBanner = () => {
               <Button
                 path={paths.getStartedPath()}
                 text="Get Started"
-                aria-label="Get started with your website"
+                label="Contact us to get started"
               />
             </div>
           </div>

@@ -76,7 +76,7 @@ const Info = () => {
         <Button
           path={paths.faqPath()}
           text="Learn More"
-          aria-label="Learn more about our services"
+          label="Learn more about our services at our FAQ page"
         />
       </div>
     </section>

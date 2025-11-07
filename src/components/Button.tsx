@@ -9,12 +9,13 @@ import { PiArrowFatLinesRightFill } from "react-icons/pi";
 type Props = {
     path: string,
     text: string,
+    label: string
 };
 
-const Button = ({path, text}: Props) => {
+const Button = ({path, text, label}: Props) => {
   return (
     <Link
-    aria-label="Get Started Button"
+    aria-label={label}
     href={path}
     className={` ${ibm.className}  bg-customIndigo shadow-customSmallGrey relative overflow-hidden z-10 btn p-4 text-lightGrey flex items-center gap-3 justify-center`}
   >

@@ -23,7 +23,7 @@ const CTA = () => {
         </p>
       </div>
       <div className="sm:mt-0 mt-10">
-        <Button path={paths.getStartedPath()} text="Get Started" />
+        <Button path={paths.getStartedPath()} text="Get Started" label="Contact us for more information"/>
       </div>
     </div>
   );
