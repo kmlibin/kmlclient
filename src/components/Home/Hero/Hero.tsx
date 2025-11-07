@@ -56,6 +56,7 @@ const Hero = () => {
             src={background}
             style={{ objectFit: "cover" }}
             priority
+            fetchPriority="high"
             alt="rainbow background"
             className="sm:block hidden h-full w-full"
             placeholder="blur"
@@ -64,6 +65,7 @@ const Hero = () => {
           <Image
             src={smallbg}
             priority
+            fetchPriority="high"
             style={{ objectFit: "cover" }}
             alt="rainbow background"
             className="sm:hidden h-full w-full "
@@ -82,6 +84,7 @@ const Hero = () => {
               height={600}
               width={650}
               priority
+              fetchPriority="high"
               alt="Libin Web Development and image of Kelli"
               className="hidden md:block animate-fadeIn"
             />
@@ -93,6 +96,7 @@ const Hero = () => {
               height={650}
               src={smalllogo.src}
               priority
+              fetchPriority="high"
               alt="Libin Web Development and image of Kelli"
               className="xs:h-[550px] sm:h-[600px] h-[450px] object-cover md:hidden animate-fadeIn"
             />
