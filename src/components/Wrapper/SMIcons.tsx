@@ -5,9 +5,10 @@ import { IconType } from "react-icons";
 type SMIconsProps = {
   href: string;
   icon: IconType;
+  label: string;
 };
 
-const SMIcons = ({ href, icon: Icon }: SMIconsProps) => {
+const SMIcons = ({ href, label, icon: Icon }: SMIconsProps) => {
   return (
     <div className="border-customIndigo cursor  m-1 flex h-[40px] w-[40px] items-center justify-center rounded-lg border border-opacity-90 bg-lightGrey bg-opacity-25 shadow-md duration-300 hover:bg-opacity-100">
       <a
@@ -15,6 +16,7 @@ const SMIcons = ({ href, icon: Icon }: SMIconsProps) => {
         href={href}
         target="_blank"
         rel="noopener noreferrer"
+        aria-label={label}
       >
         <Icon size={20} />
       </a>
