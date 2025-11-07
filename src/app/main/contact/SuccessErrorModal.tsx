@@ -8,6 +8,8 @@ import { fredoka, ibm } from "../../utils/fonts";
 import { useRouter } from "next/navigation";
 //components
 import Fireworks from "./Fireworks";
+//next dynamic
+import dynamic from "next/dynamic";
 
 type SuccessOrErrorModalProps = {
   setIsOpen: (isOpen: boolean) => void;
@@ -35,12 +37,15 @@ const SuccessErrorModal = ({
 
     setIsOpen(false);
     setSubmissionStatus(null);
-  };
+
+
+  };    
+  const Particles = dynamic(() => import("./Fireworks"), { ssr: false });
   return (
     <>
       {submissionStatus?.heading == "You're all set!" ? (
         <div className="fixed inset-0 z-[500] bg-black bg-opacity-50 min-h-screen w-full top-0">
-          <Fireworks id="tsparticles" />
+          <Particles id="tsparticles" />
         </div>
       ) : (
         <div className="fixed inset-0  z-50 bg-black bg-opacity-60"></div>
