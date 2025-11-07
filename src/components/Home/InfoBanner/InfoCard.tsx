@@ -4,7 +4,7 @@ import { fredoka, ibm } from "@/app/utils/fonts";
 //images
 import Image, { StaticImageData } from "next/image";
 import bank from "../../../../public/images/bank.svg";
-import bankvid from "../../../../public/videos/bankvid.mp4";
+
 
 type Props = {
   title: string;
@@ -38,7 +38,7 @@ const InfoCard = ({ title, text, src, alt, className }: Props) => {
             className="w-1/2 sm:w-full"
             aria-label="Video of putting money in a piggy bank"
           >
-            <source src={bankvid} type="video/mp4" />
+            <source src="/videos/bankvid.mp4" type="video/mp4" />
             {/* Fallback Image */}
             <Image
               src={bank}
