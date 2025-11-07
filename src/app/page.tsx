@@ -47,14 +47,14 @@ function Home() {
       <link
         rel="preload"
         as="image"
-        href="/images/smalllogo.svg"
+        href="/images/smalllogo.webp"
         fetchPriority="high"
         type="image/svg"
       />
       <link
         rel="preload"
         as="image"
-        href="/images/newlogo.svg"
+        href="/images/newlogo.webp"
         fetchPriority="high"
         type="image/svg"
       />

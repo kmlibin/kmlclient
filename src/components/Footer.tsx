@@ -2,7 +2,7 @@ import React from "react";
 //fonts
 import { ibm } from "@/app/utils/fonts";
 //images
-import webdevlogo from "../../public/images/logowhite.png";
+import webdevlogo from "../../public/images/libinlogowhite.jpg";
 import Image from "next/image";
 //libraries
 import { RiCopyrightLine } from "react-icons/ri";

@@ -1,7 +1,7 @@
 //images
-import logosmall from "../../../app/portfolioImages/logosmall.png";
-import cw from "../../../app/portfolioImages/cw.png";
-import cw2 from "../../../app/portfolioImages/cw2.png";
+import logosmall from "../../../app/portfolioImages/logosmall.webp";
+import cw from "../../../app/portfolioImages/cw.jpg";
+import cw2 from "../../../app/portfolioImages/cw2.jpg";
 import fittees from "../../../app/portfolioImages/fittees.png";
 import fittees2 from "../../../app/portfolioImages/fittees2.png";
 import fitteeslogo from "../../../app/portfolioImages/goldpng.png";

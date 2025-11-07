@@ -1,11 +1,11 @@
 
 //images
 import fittees from "../../portfolioImages/fittees.png";
-import cw from "../../portfolioImages/cw.png";
+import cw from "../../portfolioImages/cw.jpg";
 import kellinetlify from "../../portfolioImages/kellinetlify.png";
 import jpel from "../../portfolioImages/jpel.png";
 import fittees2 from "../../portfolioImages/fittees2.png";
-import cw2 from "../../portfolioImages/cw2.png";
+import cw2 from "../../portfolioImages/cw2.jpg";
 import kellinetlify2 from "../../portfolioImages/kellinetlify2.png";
 import jpel2 from "../../portfolioImages/jpel2.png";
 import IFScreen1 from '../../portfolioImages/IFscreen1.png';

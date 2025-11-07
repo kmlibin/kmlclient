@@ -260,7 +260,7 @@ const ContactForm = () => {
                 {buttonStatus} <LuSend className="mt-[.1rem]" />
               </button>
             </form>
-            {/* Success/Error Modal */}
+     
           </div>
         </Fade>
       </div>
