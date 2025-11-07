@@ -1,3 +1,4 @@
+'use client'
 import React from "react";
 //fonts and utils
 import { fredoka, ibm } from "@/app/utils/fonts";
@@ -6,9 +7,14 @@ import paths from "@/app/paths";
 //libraries
 import { FcCompactCamera } from "react-icons/fc";
 //components
-import Slider from "./Slider";
+
 import Button from "@/components/Button";
 import ZoomHeading from "@/components/ZoomHeading";
+//next dynamic
+import dynamic from "next/dynamic";
+
+
+const LazySlider = dynamic(() => import("./Slider"), { ssr: false });
 
 const Portfolio2Banner = () => {
   return (
@@ -32,7 +38,7 @@ const Portfolio2Banner = () => {
         craft impactful, results-driven solutions.
       </p>
       <div className="flex justify-center items-center  sm:-mt-[10rem] lg:mt-[5rem]">
-        <Slider />
+        <LazySlider />
       </div>
       <div className="h-[150px] bg-customBlue bg-opacity-20 w-full flex items-center justify-center mt-5 sm:mt-[5rem] md:mt-5" >
         <Button path={paths.portfolioPath()} text="See More" label="View Portfolio" />
