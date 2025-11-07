@@ -12,6 +12,8 @@ import Button from "../../Button";
 import ZoomHeading from "@/components/ZoomHeading";
 //next
 import dynamic from "next/dynamic";
+//css
+import "./HomeBanner.css"
 
 const LazyContactImages = dynamic(
   () => import("@/components/Wrapper/ContactImages"),
@@ -106,7 +108,7 @@ const HomeBanner = () => {
               className="relative w-full flex justify-center items-center box-content md:hidden"
               aria-hidden="true"
             >
-              <Image loading="lazy" src={smallcomp} alt="" />
+              <Image loading="lazy"  src={smallcomp} alt="" />
               {/* pulsing circles */}
               <div className="absolute h-[20px] left-[5%] top-[20%] w-[20px] bg-customWhite rounded-full pulse-circle-1 pulse-circle"></div>
               <div className="absolute h-[15px] right-[50%] bottom-[13%] w-[15px] bg-customWhite rounded-full pulse-circle-2 pulse-circle"></div>

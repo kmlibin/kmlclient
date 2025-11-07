@@ -5,6 +5,8 @@ import info from "./images/info.svg";
 //fonts and content
 import { fredoka, ibm, ibmBold } from "@/app/utils/fonts";
 import { additionalInfo } from "./pricingContent";
+//css
+import './Pricing.css'
 
 type listItem = {
   content: string | ReactNode;

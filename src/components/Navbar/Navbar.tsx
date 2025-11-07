@@ -13,6 +13,8 @@ import paths from "@/app/paths";
 import Link from "next/link";
 //components
 import Links from "./Links";
+//css
+import "./Navbar.css"
 
 const Navbar = () => {
   const [isOpen, setNavIsOpen] = useState(false);

@@ -26,131 +26,8 @@ html, body {
   background-size: cover;
 }
 
-/* pulsing circles on home banner */
-.pulse-circle {
-  animation: pulse 4s infinite ease-in-out;
-}
-
-.pulse-circle-1 {
-  animation-delay: 0s; /* No delay */
-}
-.pulse-circle-2 {
-  animation-delay: .3s; /* 1-second delay */
-}
-
-.pulse-circle-2 {
-  animation-delay: .6s; /* 1-second delay */
-}
 
 
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  50% {
-    transform: scale(1.2);
-    opacity: 0.5;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-/* //changes shadow color on infocards*/
-.info-card {
-  animation: shadow-move 10s ease infinite;
-}
-
-.info-card2 {
-  animation: shadow-move2 10s ease infinite;
-}
-
-.info-card3 {
-  animation: shadow-move3 10s ease infinite;
-}
-
-@keyframes shadow-move {
-  0% {
-    box-shadow: 0 4px 20px rgba(17, 17, 103, 0.5),
-      0 8px 80px rgba(17, 17, 103, 0.3);
-  }
-  20% {
-    box-shadow: 0 4px 20px rgba(98, 211, 228, 0.5),
-      0 8px 80px rgba(98, 211, 228, 0.3);
-  }
-  40% {
-    box-shadow: 0 4px 20px rgba(198, 55, 92, 0.5),
-      0 8px 80px rgba(198, 55, 92, 0.3);
-  }
-  605% {
-    box-shadow: 0 4px 20px rgba(254, 194, 70, 0.5),
-      0 8px 80px rgba(254, 194, 70, 0.3);
-  }
-  80% {
-    box-shadow: 0 4px 20px rgba(225, 92, 58, 0.5),
-      0 8px 80px rgba(225, 92, 58, 0.3);
-  }
-  100% {
-    box-shadow: 0 4px 20px rgba(17, 17, 103, 0.5),
-      0 8px 80px rgba(17, 17, 103, 0.3);
-  }
-}
-
-@keyframes shadow-move3 {
-  0% {
-    box-shadow: 0 4px 20px rgba(198, 55, 92, 0.5),
-      0 8px 80px rgba(198, 55, 92, 0.3);
-  }
-  20% {
-    box-shadow: 0 4px 20px rgba(254, 194, 70, 0.5),
-      0 8px 80px rgba(254, 194, 70, 0.3);
-  }
-  40% {
-    box-shadow: 0 4px 20px rgba(225, 92, 58, 0.5),
-      0 8px 80px rgba(225, 92, 58, 0.3);
-  }
-  60% {
-    box-shadow: 0 4px 20px rgba(17, 17, 103, 0.5),
-      0 8px 80px rgba(17, 17, 103, 0.3);
-  }
-  80% {
-    box-shadow: 0 4px 20px rgba(17, 17, 103, 0.5),
-      0 8px 80px rgba(17, 17, 103, 0.3);
-  }
-  100% {
-    box-shadow: 0 4px 20px rgba(198, 55, 92, 0.5),
-      0 8px 80px rgba(198, 55, 92, 0.3);
-  }
-}
-
-@keyframes shadow-move2 {
-  0% {
-    box-shadow: 0 4px 20px rgba(254, 194, 70, 0.5),
-      0 8px 80px rgba(254, 194, 70, 0.3);
-  }
-  20% {
-    box-shadow: 0 4px 20px rgba(225, 92, 58, 0.5),
-      0 8px 80px rgba(225, 92, 58, 0.3);
-  }
-  40% {
-    box-shadow: 0 4px 20px rgba(198, 55, 92, 0.5),
-      0 8px 80px rgba(198, 55, 92, 0.3);
-  }
-  605% {
-    box-shadow: 0 4px 20px rgba(17, 17, 103, 0.5),
-      0 8px 80px rgba(17, 17, 103, 0.3);
-  }
-  80% {
-    box-shadow: 0 4px 20px rgba(98, 211, 228, 0.5),
-      0 8px 80px rgba(98, 211, 228, 0.3);
-  }
-  100% {
-    box-shadow: 0 4px 20px rgba(254, 194, 70, 0.5),
-      0 8px 80px rgba(254, 194, 70, 0.3);
-  }
-}
 
 /* //button classes make sure the element also has relative, overflow-hidden and z-10 */
 .btn::before {
@@ -171,48 +48,9 @@ html, body {
   height: 190%;
 }
 
-/* for navbar */
-@keyframes rotateAndColor {
-  0% {
-    transform: rotate(0deg);
-    background-color: #fec246;
-  }
-  25% {
-    background-color: #e15c3a;
-  }
-  50% {
-    background-color: rgb(98, 211, 228);
-  }
-  75% {
-    background-color: #1f2937;
-  }
-  100% {
-    transform: rotate(360deg);
-    background-color: #fec246;
-  }
-}
 
-.rotate-color-360 {
-  animation: rotateAndColor 0.5s ease-in-out;
-}
 
-.info-bg {
-  background: linear-gradient(212deg, #fec246, rgb(98, 211, 228), #057ee6);
-  background-size: 600% 600%;
-  animation: change 15s ease infinite;
-}
 
-@keyframes change {
-  0% {
-    background-position: 96% 0%;
-  }
-  50% {
-    background-position: 5% 100%;
-  }
-  100% {
-    background-position: 96% 0%;
-  }
-}
 
 /* loading dots for homepage loader */
 .dot {

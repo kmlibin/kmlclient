@@ -1,0 +1,23 @@
+@keyframes rotateAndColor {
+  0% {
+    transform: rotate(0deg);
+    background-color: #fec246;
+  }
+  25% {
+    background-color: #e15c3a;
+  }
+  50% {
+    background-color: rgb(98, 211, 228);
+  }
+  75% {
+    background-color: #1f2937;
+  }
+  100% {
+    transform: rotate(360deg);
+    background-color: #fec246;
+  }
+}
+
+.rotate-color-360 {
+  animation: rotateAndColor 0.5s ease-in-out;
+}

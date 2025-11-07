@@ -1,0 +1,17 @@
+.info-bg {
+  background: linear-gradient(212deg, #fec246, rgb(98, 211, 228), #057ee6);
+  background-size: 600% 600%;
+  animation: change 15s ease infinite;
+}
+
+@keyframes change {
+  0% {
+    background-position: 96% 0%;
+  }
+  50% {
+    background-position: 5% 100%;
+  }
+  100% {
+    background-position: 96% 0%;
+  }
+}
