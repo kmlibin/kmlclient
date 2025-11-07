@@ -2,7 +2,13 @@
 const nextConfig = {
   webpack: (config) => {
     config.module.rules.push({
-
+      experimental: {
+        modern: true,
+        esmExternals: true,
+      },
+      compiler: {
+        removeConsole: true,
+      },
       test: /\.mp4$/,
       use: {
         loader: "file-loader",
