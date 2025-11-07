@@ -15,31 +15,32 @@ import NavLinks from "./NavLinks";
 import Navbar from "@/components/Navbar/Navbar";
 
 const Hero = () => {
-  const [isMobile, setIsMobile] = useState(false);
+  // useEffect(() => {
+  //   const mediaQuery = window.matchMedia("(max-width: 639px)");
 
-  useEffect(() => {
-    const mediaQuery = window.matchMedia("(max-width: 639px)");
+  //   // screen size changes
+  //   const handleResize = (event: MediaQueryListEvent) => {
+  //     setIsMobile(event.matches);
+  //   };
 
-    // screen size changes
-    const handleResize = (event: MediaQueryListEvent) => {
-      setIsMobile(event.matches);
-    };
+  //   // if the query is correct, set isSmall to true. if isSmall is false
+  //   setIsMobile(mediaQuery.matches);
 
-    // if the query is correct, set isSmall to true. if isSmall is false
-    setIsMobile(mediaQuery.matches);
+  //   //listen for changes
+  //   mediaQuery.addEventListener("change", handleResize);
 
-    //listen for changes
-    mediaQuery.addEventListener("change", handleResize);
-
-    // cleanup
-    return () => {
-      mediaQuery.removeEventListener("change", handleResize);
-    };
-  }, []);
+  //   // cleanup
+  //   return () => {
+  //     mediaQuery.removeEventListener("change", handleResize);
+  //   };
+  // }, []);
 
   return (
     <>
-      {isMobile && <Navbar />}
+      <div className="md:hidden block">
+        <Navbar />
+      </div>
+      <div className="hidden md:block">{/* desktop content */}</div>
 
       <div
         id="hero-section"
