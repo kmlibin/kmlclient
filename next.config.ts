@@ -1,9 +1,10 @@
-import type { NextConfig } from 'next'
- 
-const nextConfig: NextConfig = {
-   turbopack: {
-    resolveExtensions: ['.mdx', '.tsx', '.ts', '.jsx', '.js', '.mjs', '.json'],
+import type { NextConfig } from "next";
 
+const nextConfig: NextConfig = {
+  reactStrictMode: true,
+  experimental: { optimizeCss: true },
+  turbopack: {
+    resolveExtensions: [".mdx", ".tsx", ".ts", ".jsx", ".js", ".mjs", ".json"],
   },
 };
-export default nextConfig
+export default nextConfig;
