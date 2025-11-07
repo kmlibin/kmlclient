@@ -56,20 +56,21 @@ const Links = ({ linkName, path, linkClickToggle }: Props) => {
               role="menu"
               aria-labelledby="about-link"
             >
-              <div className="py-1 flex w-full items-end flex-col">
+              <ul className="py-1 flex w-full items-end flex-col">
                 {links.map(({ href, label, id }) => (
-                  <Link
-                    key={id}
-                    href={href}
-                    className="w-full text-right px-4 py-2 text-sm text-blackTextFont hover:bg-gray-100 hover:text-customBlue"
-                    role="menuitem"
-                    id={id}
-                    onClick={linkClickToggle}
-                  >
-                    {label}
-                  </Link>
+                  <li key={id}>
+                    <Link
+                      href={href}
+                      className="w-full text-right px-4 py-2 text-sm text-blackTextFont hover:bg-gray-100 hover:text-customBlue"
+                      role="menuitem"
+                      id={id}
+                      onClick={linkClickToggle}
+                    >
+                      {label}
+                    </Link>
+                  </li>
                 ))}
-              </div>
+              </ul>
             </div>
           </Fade>
         </li>

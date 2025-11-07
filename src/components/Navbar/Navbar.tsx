@@ -88,6 +88,7 @@ const Navbar = () => {
         <ul
           className={`${ibm.className} md:flex-row flex-col flex-grow flex w-full gap-6 md:items-center md:justify-between justify-start items-end h-full text-customWhite`}
         >
+          <li>
           <Link
             href={paths.homePath()}
             className="md:mb-0 mb-10"
@@ -101,7 +102,9 @@ const Navbar = () => {
               className="ml-4 h-[75px] w-[75px] rounded-full box-content border-4 border-customGold"
             />
           </Link>
+          </li>
           <div className="md:flex-row flex-col flex md:mr-10 gap-10 lg:gap-24 w-full md:w-auto items-end ">
+            
             <Links
               path={paths.homePath()}
               linkName="Home"
