@@ -47,16 +47,16 @@ function Home() {
       <link
         rel="preload"
         as="image"
-        href="/images/smalllogo.png"
+        href="/images/smalllogo.svg"
         fetchPriority="high"
-        type="image/png"
+        type="image/svg"
       />
       <link
         rel="preload"
         as="image"
-        href="/images/newlogo.png"
+        href="/images/newlogo.svg"
         fetchPriority="high"
-        type="image/png"
+        type="image/svg"
       />
       <div className="flex flex-col w-full h-full overflow-hidden">
         <div
