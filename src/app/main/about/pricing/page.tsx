@@ -123,7 +123,7 @@ const page = () => {
 
       <AdditionalInfo />
       <div className="h-[150px] bg-customBlue bg-opacity-20 w-full flex items-center justify-center mb-10 z-[50]">
-        <Button path={paths.contactPath()} text="Get Started" />
+        <Button path={paths.contactPath()} text="Get Started" label="Contact us" />
       </div>
       <TableComparison />
     </div>
