@@ -13,7 +13,6 @@ import "./Home.css";
 //components
 import NavLinks from "./NavLinks";
 import Navbar from "@/components/Navbar/Navbar";
-import ContactImages from "@/components/Wrapper/ContactImages";
 
 const Hero = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -40,7 +39,6 @@ const Hero = () => {
 
   return (
     <>
-      {!isMobile && <ContactImages />}
       {isMobile && <Navbar />}
 
       <div
@@ -60,6 +58,7 @@ const Hero = () => {
           <Image
             src={background}
             style={{ objectFit: "cover" }}
+            priority
             alt="rainbow background"
             className="sm:block hidden h-full w-full"
             placeholder="blur"
@@ -67,6 +66,7 @@ const Hero = () => {
 
           <Image
             src={smallbg}
+            priority
             style={{ objectFit: "cover" }}
             alt="rainbow background"
             className="sm:hidden h-full w-full "

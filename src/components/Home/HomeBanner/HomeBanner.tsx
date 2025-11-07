@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, {useState, useEffect} from "react";
 //images
 import Image from "next/image";
 import smallcomp from "./peoplecomputer.svg";
@@ -10,9 +10,41 @@ import { homeBanner } from "../homeContent";
 //components
 import Button from "../../Button";
 import ZoomHeading from "@/components/ZoomHeading";
+//next
+import dynamic from "next/dynamic";
+
+const LazyContactImages = dynamic(
+  () => import("@/components/Wrapper/ContactImages"),
+  {
+    ssr: false, 
+
+  }
+);
 
 
 const HomeBanner = () => {
+
+    const [isMobile, setIsMobile] = useState(false);
+  
+    useEffect(() => {
+      const mediaQuery = window.matchMedia("(max-width: 639px)");
+  
+      // screen size changes
+      const handleResize = (event: MediaQueryListEvent) => {
+        setIsMobile(event.matches);
+      };
+  
+      // if the query is correct, set isSmall to true. if isSmall is false
+      setIsMobile(mediaQuery.matches);
+  
+      //listen for changes
+      mediaQuery.addEventListener("change", handleResize);
+  
+      // cleanup
+      return () => {
+        mediaQuery.removeEventListener("change", handleResize);
+      };
+    }, []);
   return (
     <section
     id="banner-section"
@@ -98,6 +130,7 @@ const HomeBanner = () => {
         <div className="absolute h-[10px] right-[18%] top-[35%] w-[10px] bg-customWhite rounded-full pulse-circle-3 pulse-circle"></div>
       </div>
     </div>
+     {!isMobile && <LazyContactImages />}
   </section>
   );
 };
