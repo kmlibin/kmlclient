@@ -1,15 +1,12 @@
-"use client";
-import React, { useState, useEffect } from "react";
+
+import React from "react";
 //images
 import background from "../../../../public/images/kmlbg.jpg";
 import bwsvg4 from "../../../../public/images/newlogo.png";
 import smalllogo from "../../../../public/images/smalllogo.png";
 import smallbg from "../../../../public/images/smallrainbowbg.jpg";
 import Image from "next/image";
-//libraries
-import { Fade } from "react-awesome-reveal";
-//css
-import "./Home.css";
+
 //components
 import NavLinks from "./NavLinks";
 import Navbar from "@/components/Navbar/Navbar";
@@ -80,22 +77,27 @@ const Hero = () => {
         {/* image */}
         {/* also couldn't get srcset to work... */}
         <div className="relative flex justify-end lg:flex-row flex-col items-center lg:ml-[5rem] sm:py-10 sm:mb-4 z-[10]">
-          <Fade triggerOnce delay={0.5}>
-            <img
+         
+            <Image
               src={bwsvg4.src}
+              height={600}
               width={650}
+              priority
               alt="Libin Web Development and image of Kelli"
-              className="hidden md:block"
+              className="hidden md:block animate-fadeIn"
             />
-          </Fade>
+        
 
-          <Fade triggerOnce delay={0.5}>
-            <img
+       
+            <Image
+              width={650}
+              height={650}
               src={smalllogo.src}
+              priority
               alt="Libin Web Development and image of Kelli"
-              className="xs:h-[530px] h-[450px] object-cover md:hidden"
+              className="xs:h-[550px] sm:h-[600px] h-[450px] object-cover md:hidden animate-fadeIn"
             />
-          </Fade>
+       
 
           <div className="lg:absolute lg:-right-[52%] lg:bottom-0 flex flex-col justify-end sm:mb-2 sm:py-10 text-gray-900 text-2xl leading-loose list-none">
             <NavLinks />
