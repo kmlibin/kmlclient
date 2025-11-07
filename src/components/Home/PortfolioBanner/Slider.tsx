@@ -69,6 +69,7 @@ export default function Slider() {
               {/* small screen buttons */}
               <div className="sm:-mt-[10rem] lg:mt-0">
                 <button
+                aria-label="Previous slide"
                   onClick={showPreviousSlide}
                   className="xl:hidden  text-blackTextFont bottom-0 left-[4rem] hover:scale-110 transition duration-400 z-10 hover:text-brightOrange"
                 >
@@ -76,6 +77,7 @@ export default function Slider() {
                 </button>
                 <button
                   onClick={showNextSlide}
+                  aria-label="Next slide"
                   className="xl:hidden  text-blackTextFont bottom-0 right-[4rem] hover:scale-110 transition duration-400 hover:text-brightOrange"
                 >
                   <RiArrowRightSLine size={50} />
@@ -84,6 +86,7 @@ export default function Slider() {
             </div>
 
             <button
+            aria-label="Previous slide"
               onClick={showPreviousSlide}
               className="hidden xl:block absolute text-blackTextFont sm:top-20 left-[4rem] hover:scale-110 transition duration-400 z-10 hover:text-brightOrange"
             >
@@ -91,6 +94,7 @@ export default function Slider() {
             </button>
             <button
               onClick={showNextSlide}
+              aria-label="Next slide"
               className="hidden xl:block absolute text-blackTextFont sm:top-20 right-[4rem] hover:scale-110 transition duration-400 hover:text-brightOrange"
             >
               <RiArrowRightSLine size={50} />
