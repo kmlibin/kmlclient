@@ -1,9 +1,8 @@
-
 import React from "react";
 //images
 import background from "../../../../public/images/kmlbg.jpg";
-import bwsvg4 from "../../../../public/images/newlogo.png";
-import smalllogo from "../../../../public/images/smalllogo.png";
+import bwsvg4 from "../../../../public/images/bwsvg4.svg";
+import smalllogo from "../../../../public/images/smalllogo.svg";
 import smallbg from "../../../../public/images/smallrainbowbg.jpg";
 import Image from "next/image";
 
