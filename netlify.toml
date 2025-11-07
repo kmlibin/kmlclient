@@ -1,0 +1,7 @@
+[build]
+  command = "next build --turbopack"
+  publish = ".next"
+  environment = { NODE_VERSION = "20.11.1" }
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
