@@ -7,6 +7,8 @@ import { ibm } from "@/app/utils/fonts";
 //routing
 import paths from "@/app/paths";
 import Link from "next/link";
+//css
+import "./Home.css"
 
 const NavLinks = () => {
   const [open, setOpen] = useState(false);

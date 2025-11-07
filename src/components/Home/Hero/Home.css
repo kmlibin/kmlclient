@@ -15,10 +15,6 @@
   }
   
   
-  .relative {
-    position: relative; 
-  }
-  
   .underline {
     position: absolute;
     bottom: -3px; 

@@ -2,6 +2,7 @@
 import React from 'react'
 //libraries
 import { useTrail, a } from '@react-spring/web'
+import "./Home.css"
 
 
 const Trail: React.FC<{ open: boolean; children: React.ReactNode }> = ({ open, children }) => {
