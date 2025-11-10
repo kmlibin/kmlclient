@@ -14,9 +14,23 @@ type formState = {
   domainProvider: string;
   hostingPreference: string;
   otherHostingPlatform: string;
+  website: string;
 };
 
 export async function sendEmail(formData: formState) {
+
+    const honeypot = formData.website.toString().trim();
+
+  if (honeypot) {
+    console.warn("honeypot triggered");
+    return {
+      heading: "bot detected!",
+      message: "don't be a bot!",
+      success: false,
+    };
+  }
+
+  
   // console.log("formData", formData);
   try {
     const kmlEmail = process.env.KML_EMAIL;

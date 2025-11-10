@@ -22,6 +22,7 @@ type formState = {
   domainProvider: string;
   hostingPreference: string;
   otherHostingPlatform: string;
+  website: any;
 };
 const ContactForm = () => {
   const formRef = useRef<HTMLFormElement>(null);
@@ -52,6 +53,7 @@ const ContactForm = () => {
     domainProvider: "Enter domain provider",
     hostingPreference: "",
     otherHostingPlatform: "Enter platform name",
+    website: ""
   });
 
   //handles changes to inputs
@@ -129,6 +131,7 @@ const ContactForm = () => {
           domainProvider: "",
           hostingPreference: "",
           otherHostingPlatform: "",
+          website: ""
         });
       } else {
         setButtonStatus("Submit");
@@ -170,6 +173,19 @@ const ContactForm = () => {
               role="form"
               onSubmit={handleSubmit}
             >
+       
+              <div className="hidden" aria-hidden="true">
+                <label htmlFor="website">
+                  Do not fill this field (spam filter)
+                </label>
+                <input
+                  type="text"
+                  id="website"
+                  name="website"
+                  tabIndex={-1}
+                  autoComplete="off"
+                />
+              </div>
               <h3
                 className={`${ibmBold.className} text-2xl  text-center sm:text-left mb-4`}
               >
