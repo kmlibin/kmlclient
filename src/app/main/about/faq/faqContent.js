@@ -4,7 +4,7 @@ export const faqCards = [
     question: "How do we get started?",
     answer: (
       <>
-        To start, please message at (email) me or fill out the contact form on
+        To start, please message me at kelli@libinwebdevelopment.com, or fill out the contact form on
         my site, and we&apos;ll get the ball rolling. I want to hear your ideas
         and preferences to make sure your site aligns with your brand and goals.{" "}
         <br></br>
