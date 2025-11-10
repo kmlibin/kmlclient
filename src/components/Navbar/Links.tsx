@@ -30,11 +30,12 @@ const Links = ({ linkName, path, linkClickToggle }: Props) => {
           className="text-2xl md:text-xl hover:cursor-pointer focus:outline-none"
           aria-haspopup="true"
         >
-          <div
+          <button
             className="flex justify-end items-center hover:text-customTurquoise transition duration-300 md:group-hover:text-customTurquoise"
             onClick={() => setIsOpen((prev) => !prev)}
             aria-expanded={isOpen}
             aria-controls="about-dropdown"
+             id="about-link"
           >
             <span>About</span>
             <BiChevronDown
@@ -42,7 +43,7 @@ const Links = ({ linkName, path, linkClickToggle }: Props) => {
                 isOpen ? "rotate-180" : ""
               } md:group-hover:rotate-180`}
             />
-          </div>
+          </button>
           <Fade
             triggerOnce
             duration={400}
@@ -58,10 +59,10 @@ const Links = ({ linkName, path, linkClickToggle }: Props) => {
             >
               <ul className="py-1 flex w-full items-end flex-col">
                 {links.map(({ href, label, id }) => (
-                  <li key={id}>
+                  <li key={id} className="hover:bg-gray-100 w-full text-right">
                     <Link
                       href={href}
-                      className="w-full text-right px-4 py-2 text-sm text-blackTextFont hover:bg-gray-100 hover:text-customBlue"
+                      className="w-full text-right px-4 py-2 text-sm text-blackTextFont hover:text-customBlue"
                       role="menuitem"
                       id={id}
                       onClick={linkClickToggle}
