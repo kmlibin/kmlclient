@@ -34,9 +34,11 @@ const Accordion = ({ toggleItem, item, openId }: Props) => {
         aria-controls={`accordion-content-${item.id}`}
         className="w-full flex items-center justify-between px-4 py-2"
       >
-        <div className="flex items-center gap-6">
+        <div className="flex items-center gap-6 ">
           <HiOutlineComputerDesktop className="text-customPink" />
-          <span className={`${fredoka.className} text-2xl flex text-left`}>
+          <span
+            className={`${fredoka.className} flex-1 text-2xl flex text-left`}
+          >
             {item.question}
           </span>
         </div>
@@ -58,7 +60,7 @@ const Accordion = ({ toggleItem, item, openId }: Props) => {
         style={{ transitionProperty: "max-height, opacity" }}
         aria-hidden={!isOpen}
       >
-        <div className="px-8 py-4 bg-lightIndigo w-4/5 ml-[3rem] text-[1rem] flex justify-start items-start">
+        <div className="px-4 py-4 bg-lightIndigo w-full md:w-4/5 md:ml-[3rem] text-[1rem] flex justify-start items-start">
           <p>{item.answer}</p>
         </div>
       </div>
