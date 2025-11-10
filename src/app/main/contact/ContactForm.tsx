@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useRef } from "react";
 //libraries
-import emailjs from "@emailjs/browser";
+
 import { LuSend } from "react-icons/lu";
 
 //components
@@ -12,15 +12,16 @@ import InputField from "./InputField";
 //components
 import SelectField from "./SelectField";
 import { Fade } from "react-awesome-reveal";
+import { sendEmail } from "@/app/actions";
 
 type formState = {
   name: string;
   email: string;
   message: string;
   hasDomain: string;
-  domainProvider?: string;
+  domainProvider: string;
   hostingPreference: string;
-  otherHostingPlatform?: string;
+  otherHostingPlatform: string;
 };
 const ContactForm = () => {
   const formRef = useRef<HTMLFormElement>(null);
@@ -48,9 +49,9 @@ const ContactForm = () => {
     email: "",
     message: "",
     hasDomain: "",
-    domainProvider: "",
+    domainProvider: "Enter domain provider",
     hostingPreference: "",
-    otherHostingPlatform: "",
+    otherHostingPlatform: "Enter platform name",
   });
 
   //handles changes to inputs
@@ -92,10 +93,10 @@ const ContactForm = () => {
       email: !formData.email
         ? "Please enter your email"
         : !/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(
-            formData.email
-          )
-        ? "Please enter a valid email address"
-        : null,
+              formData.email
+            )
+          ? "Please enter a valid email address"
+          : null,
       message: !formData.message ? "Please enter your message" : null,
     };
 
@@ -108,32 +109,36 @@ const ContactForm = () => {
     }
 
     try {
-      const result = await emailjs.sendForm(
-        process.env.NEXT_PUBLIC_SERVICE_ID || "",
-        "template_jwbblc5",
-        formRef.current || "",
-        process.env.NEXT_PUBLIC_PUBLIC_KEY || ""
-      );
+      const result = await sendEmail(formData);
       localStorage.setItem("lastSentTime", now.toString());
-      console.log(result);
-      setSubmissionStatus({
-        heading: "You're all set!",
-        message:
-          "Thanks for your sending a message to Libin Web Development. Please allow 1-2 business days for a response.",
-      });
+      console.log(result?.success);
+      if (result?.success) {
+        setSubmissionStatus({
+          heading: "You're all set!",
+          message:
+            "Thanks for your sending a message to Libin Web Development. Please allow 1-2 business days for a response.",
+        });
+        setButtonStatus("Submit");
+        setShowErrorOrSuccessModal(true);
 
-      setButtonStatus("Submit");
-      setShowErrorOrSuccessModal(true);
-
-      setFormData({
-        name: "",
-        email: "",
-        message: "",
-        hasDomain: "",
-        domainProvider: "",
-        hostingPreference: "",
-        otherHostingPlatform: "",
-      });
+        setFormData({
+          name: "",
+          email: "",
+          message: "",
+          hasDomain: "",
+          domainProvider: "",
+          hostingPreference: "",
+          otherHostingPlatform: "",
+        });
+      } else {
+        setButtonStatus("Submit");
+        setSubmissionStatus({
+          heading: "Error",
+          message:
+            "Oh no! There was an error sending your message. Please try again later...",
+        });
+        setShowErrorOrSuccessModal(true);
+      }
     } catch (error) {
       console.log(error);
       setButtonStatus("Submit");
@@ -260,7 +265,6 @@ const ContactForm = () => {
                 {buttonStatus} <LuSend className="mt-[.1rem]" />
               </button>
             </form>
-     
           </div>
         </Fade>
       </div>
