@@ -86,7 +86,7 @@ const Hero = () => {
               priority
               fetchPriority="high"
               alt="Libin Web Development and image of Kelli"
-              className="hidden md:block animate-fadeIn"
+              className="hidden md:block animate-fadeIn h-full max-w-auto"
             />
         
 
@@ -107,6 +107,7 @@ const Hero = () => {
           </div>
         </div>
       </div>
+      
     </>
   );
 };
