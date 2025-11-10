@@ -11,6 +11,7 @@ import SMIcons from "@/components/Wrapper/SMIcons";
 //icons
 import { FaEtsy, FaLinkedinIn, FaGithub } from "react-icons/fa";
 
+
 export const metadata: Metadata = {
   title: "Libin Web Development",
   description:
@@ -49,26 +50,32 @@ function Home() {
         as="image"
         href="/images/smalllogo.webp"
         fetchPriority="high"
-        type="image/svg"
       />
       <link
         rel="preload"
         as="image"
         href="/images/newlogo.webp"
         fetchPriority="high"
-        type="image/svg"
       />
       <div className="flex flex-col w-full h-full overflow-hidden">
         <div
           className={`fixed hidden sm:flex lg:mt-[5%] top-24 sm:top-15 lg:top-5 left-4 z-50 -translate-y-1/2 flex-col `}
         >
-          <SMIcons href={"https://etsy.com/shop/CreationsKMP"} icon={FaEtsy} label="link to Etsy Shop" />
+          <SMIcons
+            href={"https://etsy.com/shop/CreationsKMP"}
+            icon={FaEtsy}
+            label="link to Etsy Shop"
+          />
           <SMIcons
             href={"https://www.linkedin.com/in/kelli-libin-b5ba78151/"}
             icon={FaLinkedinIn}
             label="link to LinkedIn page"
           />
-          <SMIcons href={"https://github.com/kmlibin"} icon={FaGithub} label="link to Github page"/>
+          <SMIcons
+            href={"https://github.com/kmlibin"}
+            icon={FaGithub}
+            label="link to Github page"
+          />
         </div>
         <Hero />
         <HomeBanner />
