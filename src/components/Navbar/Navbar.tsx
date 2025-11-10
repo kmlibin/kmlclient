@@ -14,7 +14,7 @@ import Link from "next/link";
 //components
 import Links from "./Links";
 //css
-import "./Navbar.css"
+import "./Navbar.css";
 
 const Navbar = () => {
   const [isOpen, setNavIsOpen] = useState(false);
@@ -68,7 +68,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="relative w-full">
+    <div className="relative w-full" id="navbar-menu">
       <div
         className={`md:hidden fixed top-0 left-0 w-full h-full z-[100] bg-black bg-opacity-50  transition-opacity duration-300 ease-in-out ${
           isOpen
@@ -89,22 +89,21 @@ const Navbar = () => {
           className={`${ibm.className} md:flex-row flex-col flex-grow flex w-full gap-6 md:items-center md:justify-between justify-start items-end h-full text-customWhite`}
         >
           <li>
-          <Link
-            href={paths.homePath()}
-            className="md:mb-0 mb-10"
-            onClick={linkClickToggle}
-            aria-label="Navigate to home"
-          >
-            <Image
-              src={logo}
-              alt="logo"
-              role="img"
-              className="ml-4 h-[75px] w-[75px] rounded-full box-content border-4 border-customGold"
-            />
-          </Link>
+            <Link
+              href={paths.homePath()}
+              className="md:mb-0 mb-10"
+              onClick={linkClickToggle}
+              aria-label="Navigate to home"
+            >
+              <Image
+                src={logo}
+                alt="logo"
+                role="img"
+                className="ml-4 h-[75px] w-[75px] rounded-full box-content border-4 border-customGold"
+              />
+            </Link>
           </li>
           <div className="md:flex-row flex-col flex md:mr-10 gap-10 lg:gap-24 w-full md:w-auto items-end ">
-            
             <Links
               path={paths.homePath()}
               linkName="Home"
@@ -139,7 +138,9 @@ const Navbar = () => {
               transition-transform duration-300 ease-in-out z-[200] ${
                 rotate ? "rotate-color-360" : ""
               }`}
+        aria-label={isOpen? "Close navigation" : "Open Navigation"}
         aria-expanded={isOpen}
+        aria-controls="navbar-menu"
       >
         <RiMenu5Line size={24} className="" />
       </button>
