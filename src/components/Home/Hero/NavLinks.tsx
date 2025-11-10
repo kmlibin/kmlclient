@@ -14,12 +14,12 @@ const NavLinks = () => {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    // Set open to true after the component mounts
+    // set open to true after the component mounts
     const timer = setTimeout(() => {
       setOpen(true);
-    }, 20); // Slight delay to allow for rendering (adjust if needed)
+    }, 20); // slight delay to allow for rendering (adjust if needed)
 
-    return () => clearTimeout(timer); // Clean up timeout on unmount
+    return () => clearTimeout(timer); // clean up timeout on unmount
   }, []);
 
   //links
