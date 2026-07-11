@@ -34,55 +34,71 @@ export default function ServicesGrid() {
           onClick={() => toggle(services[1].id)}
         />
 
-        <div
-          className="col-span-2 md:col-span-1 rounded-2xl border
-"
-        >
+        <div className="col-span-2 md:col-span-1 rounded-2xl border">
           illustration
         </div>
 
-        {/* row 2 */}
-        <ServiceCard
-          service={services[0]}
-          size="col-span-4 md:col-span-2"
-          isActive={active === services[0].id}
-          onClick={() => toggle(services[0].id)}
-        />
-        <ServiceCard
-          service={services[0]}
-          size="col-span-4 md:col-span-2"
-          isActive={active === services[0].id}
-          onClick={() => toggle(services[0].id)}
-        />
-
-        {/* //row 3 */}
-        <ServiceCard
-          service={services[1]}
-          size="col-span-2 md:col-span-1"
-          isActive={active === services[1].id}
-          onClick={() => toggle(services[1].id)}
-        />
-
-        <div
-          className="col-span-2 md:col-span-1 rounded-2xl border
-"
-        >
-          illustration
-        </div>
-        <ServiceCard
-          service={services[0]}
-          size="col-span-4 md:col-span-2"
-          isActive={active === services[0].id}
-          onClick={() => toggle(services[0].id)}
-        />
+        {/* ROW 1 DRAWER */}
+        {activeService &&
+          [services[0].id, services[1].id].includes(activeService.id) && (
+            <ServiceDrawer
+            
+              service={activeService}
+              onClose={() => setActive(null)}
+            />
+          )}
       </div>
-
-      {activeService && (
-        <ServiceDrawer
-          service={activeService}
-          onClose={() => setActive(null)}
+      {/* row 2 */}
+      <div className="grid grid-cols-4 gap-3">
+        <ServiceCard
+          service={services[2]}
+          size="col-span-4 md:col-span-2"
+          isActive={active === services[2].id}
+          onClick={() => toggle(services[2].id)}
         />
-      )}
+        <ServiceCard
+          service={services[3]}
+          size="col-span-4 md:col-span-2"
+          isActive={active === services[3].id}
+          onClick={() => toggle(services[3].id)}
+        />
+
+        {activeService &&
+          [services[2].id, services[3].id].includes(activeService.id) && (
+            <ServiceDrawer
+              service={activeService}
+              onClose={() => setActive(null)}
+            />
+          )}
+      </div>
+      {/* //row 3 */}
+      <div className="grid grid-cols-4 gap-3">
+        <ServiceCard
+          service={services[4]}
+          size="col-span-2 md:col-span-1"
+          isActive={active === services[4].id}
+          onClick={() => toggle(services[4].id)}
+        />
+
+        <div className="col-span-2 md:col-span-1 rounded-2xl border">
+          illustration
+        </div>
+        <ServiceCard
+          service={services[5]}
+          size="col-span-4 md:col-span-2"
+          isActive={active === services[5].id}
+          onClick={() => toggle(services[5].id)}
+        />
+
+        {/* ROW 3 DRAWER */}
+        {activeService &&
+          [services[4].id, services[5].id].includes(activeService.id) && (
+            <ServiceDrawer
+              service={activeService}
+              onClose={() => setActive(null)}
+            />
+          )}
+      </div>
     </div>
   );
 }
