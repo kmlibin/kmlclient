@@ -1,26 +1,25 @@
 "use client";
 
-import { Service } from "./servicesContent";
 
 export default function ServiceDrawer({
   service,
   onClose,
 }: {
-  service: Service;
+  service: {
+    id: string;
+    title: string;
+    tagline: string;
+    accent: string;
+    short: string;
+    body: string;
+    tags: string[];
+    details: string[];
+  };
   onClose: () => void;
 }) {
   return (
-    <div
-      className="
-mt-3
-rounded-2xl
-overflow-hidden
-bg-white
-border
-animate-in
-slide-in-from-top-3
-"
-    >
+    // fix animations
+    <div className="mt-3 rounded-2xl overflow-hidden bg-white border animate-in slide-in-from-top-3 w-[100%] col-span-4">
       <div
         className="h-1"
         style={{
@@ -47,12 +46,7 @@ slide-in-from-top-3
         </div>
 
         <div
-          className="
-grid
-md:grid-cols-2
-gap-8
-mt-6
-"
+          className="grid md:grid-cols-2 gap-8 mt-6"
         >
           <div>
             <p className="text-gray-600">{service.body}</p>
