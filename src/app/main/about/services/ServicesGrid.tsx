@@ -1,104 +1,95 @@
 "use client";
-
 import { useState } from "react";
 
 import { services } from "./servicesContent";
 
-import ServiceCard from "./ServicesCard";
-import ServiceDrawer from "./ServiceDrawer";
+import ServiceRow from "./ServiceRow";
+
+//if size small
+//left hand border
+//bg is accent 10 (or customWhite?)
+
+//hover is dropshadow
+//hover is bg accent20
+
+// active is boxshadow accent20
+// active is bg accent20
+//active is full border accent
+
+//if medium
+//border accent 40
+// bg accent30
+
+//hover is bg accent
+//active is full bg color
+//active is box shadow accent 20
 
 export default function ServicesGrid() {
   const [active, setActive] = useState<string | null>(null);
 
-  const activeService = services.find((service) => service.id === active);
-
-  function toggle(id: string) {
-    setActive((prev) => (prev === id ? null : id));
-  }
-
   return (
-    <div className="w-4/5 mx-auto z-[200]">
-      <div className="grid grid-cols-4 gap-3">
-        {/* //row 1 */}
-        <ServiceCard
-          service={services[0]}
-          size="col-span-4 md:col-span-2"
-          isActive={active === services[0].id}
-          onClick={() => toggle(services[0].id)}
-        />
+    <div className="w-4/5 mx-auto space-y-3">
+      <ServiceRow
+        active={active}
+        setActive={setActive}
+        items={[
+          {
+            type: "service",
+            size: "hero",
+            service: services[0],
+            className: "col-start-1 col-end-3 row-start-1 row-end-3",
+          },
+          {
+            type: "service",
+            size: "medium",
+            service: services[1],
+            className: "col-start-3 row-start-1 row-end-3",
+          },
+          {
+            type: "illustration",
 
-        <ServiceCard
-          service={services[1]}
-          size="col-span-2 md:col-span-1"
-          isActive={active === services[1].id}
-          onClick={() => toggle(services[1].id)}
-        />
+            className: "col-start-4 row-start-1",
+            children: "Illustration",
+          },
+          {
+            type: "service",
+            size: "small",
+            service: services[2],
+            className: "col-start-4 row-start-2",
+          },
+        ]}
+      />
 
-        <div className="col-span-2 md:col-span-1 rounded-2xl border">
-          illustration
-        </div>
+      <ServiceRow
+        active={active}
+        setActive={setActive}
+        items={[
+          {
+            type: "service",
+            size: "small",
+            service: services[3],
+            className: "col-start-1 row-start-1 col-end-2 row-end-1",
+          },
+          {
+            type: "illustration",
 
-        {/* ROW 1 DRAWER */}
-        {activeService &&
-          [services[0].id, services[1].id].includes(activeService.id) && (
-            <ServiceDrawer
-            
-              service={activeService}
-              onClose={() => setActive(null)}
-            />
-          )}
-      </div>
-      {/* row 2 */}
-      <div className="grid grid-cols-4 gap-3">
-        <ServiceCard
-          service={services[2]}
-          size="col-span-4 md:col-span-2"
-          isActive={active === services[2].id}
-          onClick={() => toggle(services[2].id)}
-        />
-        <ServiceCard
-          service={services[3]}
-          size="col-span-4 md:col-span-2"
-          isActive={active === services[3].id}
-          onClick={() => toggle(services[3].id)}
-        />
-
-        {activeService &&
-          [services[2].id, services[3].id].includes(activeService.id) && (
-            <ServiceDrawer
-              service={activeService}
-              onClose={() => setActive(null)}
-            />
-          )}
-      </div>
-      {/* //row 3 */}
-      <div className="grid grid-cols-4 gap-3">
-        <ServiceCard
-          service={services[4]}
-          size="col-span-2 md:col-span-1"
-          isActive={active === services[4].id}
-          onClick={() => toggle(services[4].id)}
-        />
-
-        <div className="col-span-2 md:col-span-1 rounded-2xl border">
-          illustration
-        </div>
-        <ServiceCard
-          service={services[5]}
-          size="col-span-4 md:col-span-2"
-          isActive={active === services[5].id}
-          onClick={() => toggle(services[5].id)}
-        />
-
-        {/* ROW 3 DRAWER */}
-        {activeService &&
-          [services[4].id, services[5].id].includes(activeService.id) && (
-            <ServiceDrawer
-              service={activeService}
-              onClose={() => setActive(null)}
-            />
-          )}
-      </div>
+            className: "col-start-2 row-start-1 col-end-2 row-end-1",
+            children: "Illustration",
+          },
+          {
+            type: "service",
+            size: "small",
+            service: services[4],
+            className: "row-start-2 col-start-1 col-span-2",
+          },
+          {
+            type: "service",
+            size: "medium",
+            service: services[5],
+            className: "col-start-3 col-end-5 row-start-1 row-end-3",
+          },
+        ]}
+      />
     </div>
   );
 }
