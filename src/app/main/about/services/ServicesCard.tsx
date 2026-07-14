@@ -2,7 +2,7 @@
 
 import { services } from "./servicesContent";
 import { useState } from "react";
-
+type CardSize = "hero" | "medium" | "smallCard";
 type Props = {
   service: {
     id: string;
@@ -14,40 +14,59 @@ type Props = {
     tags: string[];
     details: string[];
   };
-  size?: string;
+  size: CardSize;
   isActive: boolean;
   onClick: () => void;
 };
 
+//if size small
+//hover is dropshadow
+// active is boxshadow accent20
+//active is full border accent
+
+//if medium
+//border accent 40
+//active is box shadow accent 20
+
+
 export default function ServiceCard({
   service,
-  size = "",
   isActive,
+  size,
   onClick,
 }: Props) {
   const [hovered, setHovered] = useState(false);
-
   const active = hovered || isActive;
+  console.log(size, "active", active, "isActive", isActive);
+
+  const bgStyles = {
+    hero: {
+      background: service.accent,
+    },
+    medium: {
+      background: active ? `${service.accent}` : `${service.accent}20`,
+    },
+    smallCard: {
+      background: active ? `${service.accent}20` : `${service.accent}10`,
+    },
+  };
+
+  const cardStyle = bgStyles[size];
 
   return (
     <button
       onClick={onClick}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className={`
-        ${size}
-        relative
-        overflow-hidden
-        rounded-2xl
-        text-left
-        transition-all
-      `}
+      className="relative h-full w-full overflow-hidden rounded-2xl text-left transition-all"
       style={{
-        background: active ? service.accent : "white",
-
+        ...cardStyle,
         border: isActive ? `2px solid ${service.accent}` : "1px solid #e5e7eb",
-
-        boxShadow: isActive ? `0 0 0 4px ${service.accent}30` : undefined,
+        borderLeft:
+          size === "smallCard" && !isActive
+            ? `4px solid ${service.accent}`
+            : undefined,
+        boxShadow: isActive ? `0 0 0 4px ${service.accent}50` : undefined,
       }}
     >
       <div className="p-5 flex flex-col h-full justify-between">
