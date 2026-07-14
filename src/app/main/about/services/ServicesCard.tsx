@@ -19,15 +19,13 @@ type Props = {
   onClick: () => void;
 };
 
-//if size small
-//hover is dropshadow
-// active is boxshadow accent20
-//active is full border accent
+//hero always white text
 
-//if medium
-//border accent 40
-//active is box shadow accent 20
+//small always black
+//all top text is accent but lighter
 
+//medium keep text change to white
+//topo text turns accent but like, 20
 
 export default function ServiceCard({
   service,
@@ -42,12 +40,16 @@ export default function ServiceCard({
   const bgStyles = {
     hero: {
       background: service.accent,
+      border: "1px solid #e5e7eb",
     },
     medium: {
       background: active ? `${service.accent}` : `${service.accent}20`,
+      border: `1px solid ${service.accent}30`,
     },
     smallCard: {
       background: active ? `${service.accent}20` : `${service.accent}10`,
+       border: isActive ? `2px solid ${service.accent}` : "1px solid #e5e7eb",
+       borderLeft: isActive ?  `2px solid ${service.accent}` : `4px solid ${service.accent}`,
     },
   };
 
@@ -61,12 +63,7 @@ export default function ServiceCard({
       className="relative h-full w-full overflow-hidden rounded-2xl text-left transition-all"
       style={{
         ...cardStyle,
-        border: isActive ? `2px solid ${service.accent}` : "1px solid #e5e7eb",
-        borderLeft:
-          size === "smallCard" && !isActive
-            ? `4px solid ${service.accent}`
-            : undefined,
-        boxShadow: isActive ? `0 0 0 4px ${service.accent}50` : undefined,
+        boxShadow: isActive ? `0 0 0 4px ${service.accent}20` : undefined,
       }}
     >
       <div className="p-5 flex flex-col h-full justify-between">
