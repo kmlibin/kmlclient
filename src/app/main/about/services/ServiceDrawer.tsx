@@ -1,11 +1,6 @@
 "use client";
 
-
-export default function ServiceDrawer({
-  service,
-  onClose,
-}: {
-  service: {
+export default function ServiceDrawer({service, setActive,}: {service: {
     id: string;
     title: string;
     tagline: string;
@@ -15,7 +10,8 @@ export default function ServiceDrawer({
     tags: string[];
     details: string[];
   };
-  onClose: () => void;
+  // onClose: () => void;
+  setActive: any;
 }) {
   return (
     // fix animations
@@ -42,12 +38,10 @@ export default function ServiceDrawer({
             <h2 className="text-2xl font-bold">{service.title}</h2>
           </div>
 
-          <button onClick={onClose}>×</button>
+          <button className="z-[5]" onClick={() => setActive(null)}>×</button>
         </div>
 
-        <div
-          className="grid md:grid-cols-2 gap-8 mt-6"
-        >
+        <div className="grid md:grid-cols-2 gap-8 mt-6">
           <div>
             <p className="text-gray-600">{service.body}</p>
 
