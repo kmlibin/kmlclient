@@ -14,10 +14,12 @@ export type Service = {
   details: string[];
 };
 
+type CardSize = "hero" | "medium" | "smallCard";
+
 type RowItem =
   | {
       type: "service";
-      size: string;
+      size: CardSize;
       service: Service;
       className: string;
     }
@@ -64,6 +66,7 @@ export default function ServiceRow({ items, active, setActive }: Props) {
             <div key={item.service.id} className={item.className}>
               <ServicesCard
                 service={item.service}
+                size={item.size}
                 isActive={active === item.service.id}
                 onClick={() =>
                   setActive(active === item.service.id ? null : item.service.id)
@@ -78,7 +81,7 @@ export default function ServiceRow({ items, active, setActive }: Props) {
         <div className="mt-3">
           <ServiceDrawer
             service={activeService.service}
-            onClose={() => setActive(null)}
+            setActive={setActive}
           />
         </div>
       )}
