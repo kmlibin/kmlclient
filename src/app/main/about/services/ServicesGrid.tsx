@@ -12,7 +12,7 @@ export default function ServicesGrid() {
   console.log("active", active)
 
   return (
-    <div className="w-4/5 mx-auto space-y-3 bg-customWhite bg-opacity-75 rounded-md p-2 z-10 ">
+    <div className="w-4/5 mx-auto space-y-3 bg-customWhite bg-opacity-95 rounded-md p-2 z-10 ">
       <ServiceRow
         active={active}
         setActive={setActive}
