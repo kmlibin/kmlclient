@@ -1,6 +1,12 @@
 "use client";
 
-export default function ServiceDrawer({service, setActive,}: {service: {
+import { useEffect, useRef } from "react";
+
+export default function ServiceDrawer({
+  service,
+  setActive,
+}: {
+  service: {
     id: string;
     title: string;
     tagline: string;
@@ -13,9 +19,21 @@ export default function ServiceDrawer({service, setActive,}: {service: {
   // onClose: () => void;
   setActive: any;
 }) {
+  //when user clicks on bento and drawer opens, it scrolls to the drawer
+  const drawerRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    drawerRef.current?.scrollIntoView({
+      behavior: "smooth",
+      block: "center",
+    });
+  }, []);
+
   return (
     // fix animations
-    <div className="mt-3 rounded-2xl overflow-hidden bg-white border animate-in slide-in-from-top-3 w-[100%] col-span-4">
+    <div
+      ref={drawerRef}
+      className="drawer-in mt-3 rounded-2xl overflow-hidden bg-white border w-[100%] col-span-4"
+    >
       <div
         className="h-1"
         style={{
@@ -38,7 +56,9 @@ export default function ServiceDrawer({service, setActive,}: {service: {
             <h2 className="text-2xl font-bold">{service.title}</h2>
           </div>
 
-          <button className="z-[5]" onClick={() => setActive(null)}>×</button>
+          <button className="z-[5]" onClick={() => setActive(null)}>
+            ×
+          </button>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8 mt-6">
