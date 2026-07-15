@@ -19,14 +19,6 @@ type Props = {
   onClick: () => void;
 };
 
-//hero always white text
-
-//small always black
-//all top text is accent but lighter
-
-//medium keep text change to white
-//topo text turns accent but like, 20
-
 export default function ServiceCard({
   service,
   isActive,
@@ -43,13 +35,15 @@ export default function ServiceCard({
       border: "1px solid #e5e7eb",
     },
     medium: {
-      background: active ? `${service.accent}` : `${service.accent}20`,
+      background: active ? `${service.accent}` : `${service.accent}10`,
       border: `1px solid ${service.accent}30`,
     },
     smallCard: {
       background: active ? `${service.accent}20` : `${service.accent}10`,
-       border: isActive ? `2px solid ${service.accent}` : "1px solid #e5e7eb",
-       borderLeft: isActive ?  `2px solid ${service.accent}` : `4px solid ${service.accent}`,
+      border: isActive ? `2px solid ${service.accent}` : "1px solid #e5e7eb",
+      borderLeft: isActive
+        ? `2px solid ${service.accent}`
+        : `4px solid ${service.accent}`,
     },
   };
 
@@ -71,7 +65,10 @@ export default function ServiceCard({
           <p
             className="text-xs uppercase tracking-widest"
             style={{
-              color: active ? "rgba(255,255,255,.6)" : "#9ca3af",
+              color:
+                size === "hero" || (active && size === "medium")
+                  ? "rgba(255,255,255,.6)"
+                  : service.accent,
             }}
           >
             {service.tagline}
@@ -80,7 +77,10 @@ export default function ServiceCard({
           <h3
             className="font-bold mt-3"
             style={{
-              color: active ? "white" : "#111",
+              color:
+                (active && size === "medium") || size === "hero"
+                  ? "#fefefe"
+                  : "#333",
             }}
           >
             {service.title}
@@ -89,7 +89,12 @@ export default function ServiceCard({
           <p
             className="text-sm mt-2"
             style={{
-              color: active ? "rgba(255,255,255,.75)" : "#6b7280",
+              color:
+                size == "hero"
+                  ? "#fefefe"
+                  : active && size === "medium"
+                    ? "rgba(51,51,51, .85)"
+                    : "#333",
             }}
           >
             {service.short}
