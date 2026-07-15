@@ -82,6 +82,7 @@ export default function ServiceRow({ items, active, setActive }: Props) {
           <ServiceDrawer
             service={activeService.service}
             setActive={setActive}
+            key={activeService.service.id}
           />
         </div>
       )}
