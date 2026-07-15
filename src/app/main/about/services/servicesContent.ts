@@ -5,8 +5,8 @@ export const services = [
     tagline: "Built for your business",
     accent: "#057ee6",
     short:
-      "A custom website designed around your goals — not a generic template.",
-    body: "Your website is designed and developed specifically for your business using modern technologies. Every decision is made with performance, scalability, and your customers in mind.",
+     " Your website is designed and developed specifically for your business using modern technologies. Every decision is made with performance, scalability, and your customers in mind.",
+    body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     tags: ["Next.js", "Custom Code", "Responsive"],
     details: [
       "Custom website design and development",
@@ -20,7 +20,7 @@ export const services = [
     id: "support",
     title: "Personal Developer Support",
     tagline: "A real person behind your website",
-    accent: "#e15c3a",
+    accent: "#fec246", 
     short:
       "Work directly with a developer who understands your business and goals.",
     body: "A website is more than just code. It requires thoughtful decisions, problem solving, and someone who can help guide you through the technical side of running your online presence.",
@@ -37,7 +37,7 @@ export const services = [
     id: "seo",
     title: "SEO & Performance",
     tagline: "Built to be discovered",
-    accent: "#fec246",
+    accent: "#e15c3a",
     short: "Fast websites with the technical foundation search engines expect.",
     body: "A beautiful website only helps your business if customers can find it. Your site is built with speed, accessibility, and search visibility in mind.",
     tags: ["SEO", "Speed", "Google"],
@@ -70,7 +70,7 @@ export const services = [
     id: "structure",
     title: "Website Structure",
     tagline: "Clear and intentional",
-    accent: "#62D3E4",
+    accent: "#111167",
     short: "The right pages and content flow to guide your visitors.",
     body: "Your website includes the essential pages needed for a professional online presence. Additional pages can be added as your business grows.",
     tags: ["Pages", "UX", "Content"],
@@ -86,7 +86,7 @@ export const services = [
     id: "maintenance",
     title: "Website Care Plan",
     tagline: "Ongoing reliability",
-    accent: "#111167",
+    accent: "#62D3E4",
     short:
       "Keep your website secure, updated, and running smoothly after launch.",
     body: "Websites need ongoing maintenance just like any other business tool. The Website Care Plan helps keep your site reliable, secure, and up to date.",
