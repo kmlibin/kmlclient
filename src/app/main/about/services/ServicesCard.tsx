@@ -45,7 +45,7 @@ export default function ServiceCard({
     `,
     },
     medium: {
-      background: active ? `${service.accent}` : `${service.accent}10`,
+      background: active ? `${service.accent}` : `${service.accent}20`,
       border: `1px solid ${service.accent}30`,
       boxShadow: isActive ? `0 0 0 4px ${service.accent}20` : undefined,
     },
@@ -75,20 +75,24 @@ export default function ServiceCard({
     >
       <div className="p-5 flex flex-col h-full justify-between">
         <div>
-          <p
-            className="text-xs uppercase tracking-widest"
-            style={{
-              color:
-                size === "hero" || (active && size === "medium")
-                  ? "rgba(255,255,255,.6)"
-                  : service.accent,
-            }}
-          >
-            {service.tagline}
-          </p>
-
+          <div className="flex justify-between w-full">
+            <p
+              className={`${ibm.className} text-xs uppercase tracking-widest`}
+              style={{
+                color:
+                  size === "hero" || (active && size === "medium")
+                    ? "rgba(255,255,255,.6)"
+                    : service.accent,
+              }}
+            >
+              {service.tagline}
+       
+            </p>       {service.id === "maintenance" ? (
+                <p className = {`${ibmBold.className}`}>${service.price} / year</p>
+              ) : undefined}
+          </div>
           <h3
-            className={`${fredoka.className} ${size === "hero" ? "text-3xl" : "text-lg"} font-bold mt-3 tracking-wider`}
+            className={`${fredoka.className} ${size === "hero" ? "text-3xl" : size === "medium" ? "text-[22px]" : "text-lg"} font-bold mt-3 tracking-wider`}
             style={{
               color:
                 (active && size === "medium") || size === "hero"
@@ -114,7 +118,7 @@ export default function ServiceCard({
             {service.tags.slice(0, 2).map((tag) => (
               <span
                 key={tag}
-                className="text-xs px-2 py-1 rounded-full"
+                className={`${ibm.className} text-xs px-2 rounded-full flex items-center justify-center`}
                 style={{
                   background:
                     (active && size !== "smallCard") || size === "hero"
@@ -130,7 +134,7 @@ export default function ServiceCard({
               </span>
             ))}
           </div>
-{/* adding price on hero */}
+          {/* adding price on hero */}
           {size === "hero" ? (
             <p
               className={`${ibmBold.className} text-sm text-[rgba(255,255,255,.7)]`}
