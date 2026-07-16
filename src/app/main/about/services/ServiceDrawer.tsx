@@ -9,6 +9,7 @@ export default function ServiceDrawer({
   service: {
     id: string;
     title: string;
+    price?: string;
     tagline: string;
     accent: string;
     lightAccent: string | undefined;

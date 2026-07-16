@@ -6,6 +6,7 @@ import ServiceDrawer from "./ServiceDrawer";
 export type Service = {
   id: string;
   title: string;
+  price? : string;
   tagline: string;
   accent: string;
   lightAccent: string | undefined;

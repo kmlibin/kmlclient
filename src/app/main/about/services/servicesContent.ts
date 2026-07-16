@@ -2,6 +2,7 @@ export const services = [
   {
     id: "website",
     title: "Custom Website Development",
+    price: "700",
     tagline: "Built for your business",
     accent: "#057ee6",
     lightAccent: undefined,
@@ -90,6 +91,7 @@ export const services = [
   {
     id: "maintenance",
     title: "Website Care Plan",
+    price: "75",
     tagline: "Ongoing reliability",
     accent: "#62D3E4",
     lightAccent: undefined,
