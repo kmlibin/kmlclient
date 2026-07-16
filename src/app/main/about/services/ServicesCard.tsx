@@ -2,12 +2,15 @@
 import { useState } from "react";
 //libraries
 import { MdOutlineReadMore } from "react-icons/md";
+//fonts
+import { fredoka, ibm, ibmBold } from "../../../utils/fonts.js";
 
 type CardSize = "hero" | "medium" | "smallCard";
 type Props = {
   service: {
     id: string;
     title: string;
+    price?: string;
     tagline: string;
     accent: string;
     lightAccent: string | undefined;
@@ -85,7 +88,7 @@ export default function ServiceCard({
           </p>
 
           <h3
-            className="font-bold mt-3 tracking-wide"
+            className={`${fredoka.className} ${size === "hero" ? "text-3xl" : "text-lg"} font-bold mt-3 tracking-wider`}
             style={{
               color:
                 (active && size === "medium") || size === "hero"
@@ -97,7 +100,7 @@ export default function ServiceCard({
           </h3>
 
           <p
-            className="text-sm mt-2 tracking-wide"
+            className={`${ibm.className} ${size === "hero" ? "text-[18px]" : "text-sm"} mt-2 tracking-wide`}
             style={{
               color: size == "hero" ? "#fefefe" : "rgba(51,51,51, .85)",
             }}
@@ -119,7 +122,7 @@ export default function ServiceCard({
                       : `${service.accent}20`,
                   color:
                     (active && size !== "smallCard") || size === "hero"
-                      ? "white"
+                      ? "#fefefe"
                       : service.accent,
                 }}
               >
@@ -127,20 +130,33 @@ export default function ServiceCard({
               </span>
             ))}
           </div>
-
-          <span
-            className="text-2xl"
-            style={{
-              color:
-                (active && size !== "smallCard") || size === "hero"
-                  ? "#fefefe"
-                  : active && size === "smallCard"
-                    ? `${service.accent}70`
-                    : service.accent,
-            }}
-          >
-            <MdOutlineReadMore />
-          </span>
+{/* adding price on hero */}
+          {size === "hero" ? (
+            <p
+              className={`${ibmBold.className} text-sm text-[rgba(255,255,255,.7)]`}
+            >
+              <span
+                className={`${fredoka.className} ${ibmBold.className} text-3xl tracking-wider text-customWhite`}
+              >
+                ${service.price}
+              </span>
+              &nbsp;flat rate
+            </p>
+          ) : (
+            <span
+              className="text-2xl"
+              style={{
+                color:
+                  active && size !== "smallCard"
+                    ? "#fefefe"
+                    : active && size === "smallCard"
+                      ? `${service.accent}70`
+                      : service.accent,
+              }}
+            >
+              <MdOutlineReadMore />
+            </span>
+          )}
         </div>
       </div>
     </button>
