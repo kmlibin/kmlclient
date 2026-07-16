@@ -1,7 +1,8 @@
 "use client";
-
-import { services } from "./servicesContent";
 import { useState } from "react";
+//libraries
+import { MdOutlineReadMore } from "react-icons/md";
+
 type CardSize = "hero" | "medium" | "smallCard";
 type Props = {
   service: {
@@ -9,6 +10,7 @@ type Props = {
     title: string;
     tagline: string;
     accent: string;
+    lightAccent: string | undefined;
     short: string;
     body: string;
     tags: string[];
@@ -32,18 +34,27 @@ export default function ServiceCard({
   const bgStyles = {
     hero: {
       background: service.accent,
-      border: "1px solid #e5e7eb",
+      border: isActive ? "4px solid #fefefe" : "1px solid #fefefe",
+      boxShadow: `
+      inset 0 1px 2px rgba(255,255,255,0.15),
+      inset 0 -6px 12px rgba(0,0,0,0.1),
+      ${isActive ? `0 0 0 2px ${service.accent}` : "0 4px 12px rgba(0,0,0,0.2)"}
+    `,
     },
     medium: {
       background: active ? `${service.accent}` : `${service.accent}10`,
       border: `1px solid ${service.accent}30`,
+      boxShadow: isActive ? `0 0 0 4px ${service.accent}20` : undefined,
     },
     smallCard: {
-      background: active ? `${service.accent}20` : `${service.accent}10`,
+      background: active
+        ? `${service.lightAccent}20`
+        : `${service.lightAccent}`,
       border: isActive ? `2px solid ${service.accent}` : "1px solid #e5e7eb",
       borderLeft: isActive
         ? `2px solid ${service.accent}`
         : `4px solid ${service.accent}`,
+      boxShadow: isActive ? `0 0 0 4px ${service.accent}20` : undefined,
     },
   };
 
@@ -57,7 +68,6 @@ export default function ServiceCard({
       className="relative h-full w-full overflow-hidden rounded-2xl text-left transition-all"
       style={{
         ...cardStyle,
-        boxShadow: isActive ? `0 0 0 4px ${service.accent}20` : undefined,
       }}
     >
       <div className="p-5 flex flex-col h-full justify-between">
@@ -75,7 +85,7 @@ export default function ServiceCard({
           </p>
 
           <h3
-            className="font-bold mt-3"
+            className="font-bold mt-3 tracking-wide"
             style={{
               color:
                 (active && size === "medium") || size === "hero"
@@ -87,14 +97,9 @@ export default function ServiceCard({
           </h3>
 
           <p
-            className="text-sm mt-2"
+            className="text-sm mt-2 tracking-wide"
             style={{
-              color:
-                size == "hero"
-                  ? "#fefefe"
-                  : active && size === "medium"
-                    ? "rgba(51,51,51, .85)"
-                    : "#333",
+              color: size == "hero" ? "#fefefe" : "rgba(51,51,51, .85)",
             }}
           >
             {service.short}
@@ -108,10 +113,14 @@ export default function ServiceCard({
                 key={tag}
                 className="text-xs px-2 py-1 rounded-full"
                 style={{
-                  background: active
-                    ? "rgba(255,255,255,.2)"
-                    : `${service.accent}20`,
-                  color: active ? "white" : service.accent,
+                  background:
+                    (active && size !== "smallCard") || size === "hero"
+                      ? "rgba(255,255,255,.2)"
+                      : `${service.accent}20`,
+                  color:
+                    (active && size !== "smallCard") || size === "hero"
+                      ? "white"
+                      : service.accent,
                 }}
               >
                 {tag}
@@ -120,11 +129,17 @@ export default function ServiceCard({
           </div>
 
           <span
+            className="text-2xl"
             style={{
-              color: active ? "white" : "#ddd",
+              color:
+                (active && size !== "smallCard") || size === "hero"
+                  ? "#fefefe"
+                  : active && size === "smallCard"
+                    ? `${service.accent}70`
+                    : service.accent,
             }}
           >
-            →
+            <MdOutlineReadMore />
           </span>
         </div>
       </div>
