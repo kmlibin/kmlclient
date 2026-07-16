@@ -86,10 +86,15 @@ export default function ServiceCard({
               }}
             >
               {service.tagline}
-       
-            </p>       {service.id === "maintenance" ? (
-                <p className = {`${ibmBold.className}`}>${service.price} / year</p>
-              ) : undefined}
+              {/* adding price on web maintenance card */}
+            </p>{" "}
+            {service.id === "maintenance" ? (
+              <p
+                className={`${ibmBold.className} text-sm text-${service.accent}`}
+              >
+                ${service.price}&nbsp;/ year
+              </p>
+            ) : undefined}
           </div>
           <h3
             className={`${fredoka.className} ${size === "hero" ? "text-3xl" : size === "medium" ? "text-[22px]" : "text-lg"} font-bold mt-3 tracking-wider`}

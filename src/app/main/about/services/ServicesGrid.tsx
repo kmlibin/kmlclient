@@ -1,10 +1,11 @@
 "use client";
 import { useState } from "react";
-
-import { services } from "./servicesContent";
-
+//components
 import ServiceRow from "./ServiceRow";
-
+//content
+import { services } from "./servicesContent";
+import webapp from './images/webapp.svg'
+import handshake from './images/handshake.svg'
 
 
 export default function ServicesGrid() {
@@ -33,7 +34,7 @@ export default function ServicesGrid() {
             type: "illustration",
 
             className: "col-start-4 row-start-1",
-            children: "Illustration",
+            element: handshake,
           },
           {
             type: "service",
@@ -58,7 +59,7 @@ export default function ServicesGrid() {
             type: "illustration",
 
             className: "col-start-2 row-start-1 col-end-2 row-end-1",
-            children: "Illustration",
+            element: webapp,
           },
           {
             type: "service",
