@@ -2,6 +2,8 @@
 
 import ServicesCard from "./ServicesCard";
 import ServiceDrawer from "./ServiceDrawer";
+import { StaticImageData } from "next/image";
+import Image from "next/image";
 
 export type Service = {
   id: string;
@@ -28,7 +30,7 @@ type RowItem =
   | {
       type: "illustration";
       className: string;
-      children?: React.ReactNode;
+      element: StaticImageData;
     };
 
 type Props = {
@@ -52,17 +54,23 @@ export default function ServiceRow({ items, active, setActive }: Props) {
         }}
       >
         {/* if item is image */}
-        {items.map((item, index) => {
-          if (item.type === "illustration") {
-            return (
-              <div
-                key={index}
-                className={`${item.className} rounded-2xl border`}
-              >
-                {item.children}
-              </div>
-            );
-          }
+
+
+  {items.map((item, index) => {
+  if (item.type === "illustration") {
+    return (
+      <div
+        key={index}
+        className={`${item.className} rounded-2xl border relative`}
+      >
+        <Image
+          src={item.element}
+          alt=""
+          className="h-full w-full object-contain p-6"
+        />
+      </div>
+    );
+  }
 
           return (
             <div key={item.service.id} className={item.className}>
