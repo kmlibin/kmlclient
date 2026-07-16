@@ -11,6 +11,7 @@ export default function ServiceDrawer({
     title: string;
     tagline: string;
     accent: string;
+    lightAccent: string | undefined;
     short: string;
     body: string;
     tags: string[];
