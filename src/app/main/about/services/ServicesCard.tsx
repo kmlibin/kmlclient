@@ -109,7 +109,7 @@ export default function ServiceCard({
           </h3>
 
           <p
-            className={`${ibm.className} ${size === "hero" ? "text-[18px]" : "text-sm"} mt-2 tracking-wide`}
+            className={`${ibm.className} ${size === "hero" ? "text-[18px]" : size ==="smallCard" ? "text-xs" : "text-sm"} mt-2 tracking-wide`}
             style={{
               color: size == "hero" ? "#fefefe" : "rgba(51,51,51, .85)",
             }}
