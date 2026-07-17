@@ -7,105 +7,124 @@ export const services = [
     accent: "#057ee6",
     lightAccent: undefined,
     short:
-     " Your website is designed and developed specifically for your business using modern technologies. Every decision is made with performance, scalability, and your customers in mind.",
-    body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    tags: ["Next.js", "Custom Code", "Responsive"],
+      "A custom website designed and developed specifically for your business — fast, modern, responsive, and built to grow with you.",
+
+    body: "Your website should be as unique as your business. Every project is designed from the ground up and built with clean, hand-written code — not generic templates or drag-and-drop website builders. The result is a fast, professional website tailored to your goals, your brand, and your customers. The Website Launch Package includes up to four custom pages, responsive design, contact form integration, and everything needed to launch with confidence.",
+    tags: ["Custom Code", "Responsive", "SEO Ready"],
     details: [
-      "Custom website design and development",
-      "Modern, maintainable code",
-      "Mobile-first layouts",
-      "Performance-focused architecture",
+      "Up to four custom pages",
+      "Complete design & development",
+      "Contact form integration",
+      "Fast, modern codebase",
+      "Cross-browser compatibility",
+      "$75 per additional page",
     ],
   },
-
   {
-    id: "support",
-    title: "Personal Developer Support",
-    tagline: "A real person behind your website",
-    accent: "#fec246", 
+    id: "communication",
+    title: "Work Directly With Your Developer",
+    tagline: "Real support. Real communication.",
+    accent: "#fec246",
     lightAccent: undefined,
     short:
-      "Work directly with a developer who understands your business and goals.",
-    body: "A website is more than just code. It requires thoughtful decisions, problem solving, and someone who can help guide you through the technical side of running your online presence.",
-    tags: ["Communication", "Guidance", "Support"],
+      "No support tickets or outsourced teams — just direct communication with the person building your website.",
+
+    body: "Throughout the project, you'll work directly with me. That means faster communication, personalized recommendations, and a website that's built around your goals instead of fitting your business into a template.",
+    tags: ["Support", "Collaboration", "Small Business"],
     details: [
-      "Direct communication throughout your project",
+      "One point of contact",
       "Personalized recommendations",
-      "Help navigating technical decisions",
-      "A developer you can contact after launch",
+      "Project updates",
+      "Quick revisions",
+      "Support throughout the build",
     ],
   },
 
   {
-    id: "seo",
-    title: "SEO & Performance",
-    tagline: "Built to be discovered",
+    id: "responsive",
+    title: "Responsive Design",
+    tagline: "For every screen",
     accent: "#e15c3a",
     lightAccent: "#FFFCFD",
-    short: "Fast websites with the technical foundation search engines expect.",
-    body: "A beautiful website only helps your business if customers can find it. Your site is built with speed, accessibility, and search visibility in mind.",
-    tags: ["SEO", "Speed", "Google"],
+    short:
+      "Your website will provide a consistent experience on desktop, tablet, and mobile devices.",
+
+    body: "More than half of all web traffic comes from mobile devices. Every website I build is designed mobile-first, then carefully refined for tablets and desktops. Rather than simply shrinking content to fit a smaller screen, each layout is thoughtfully crafted to remain fast, intuitive, and easy to navigate on any device.",
+
+    tags: ["Mobile-First", "Responsive", "Fast"],
     details: [
-      "SEO-friendly website structure",
-      "Metadata configuration",
-      "Custom robots.txt setup",
-      "XML sitemap generation",
-      "Performance optimization",
+      "Mobile-first development",
+      "Optimized for phones, tablets, and desktops",
+      "Consistent layouts across devices",
+      "Touch-friendly navigation",
+      "Performance-conscious design",
     ],
   },
 
   {
     id: "integrations",
-    title: "Forms & Integrations",
-    tagline: "Connected tools",
+    title: "Business Integrations",
+    tagline: "Connect with customers",
     accent: "#C6375C",
     lightAccent: "#FFFCFD",
-    short: "Connect your website with the tools your business relies on.",
-    body: "Your website can integrate with the services that help you connect with customers, manage inquiries, and streamline your workflow.",
-    tags: ["Forms", "Email", "Scheduling"],
+    short:
+      "Have a website that helps customers interact with your business.",
+
+    body: "Whether your business relies on appointment scheduling, contact forms, social media, maps, or other third-party services, I can integrate the tools you already use into a seamless experience. The goal is to make it as easy as possible for customers to connect with you.",
+    tags: ["Contact Forms", "Scheduling", "Third-Party Tools"],
     details: [
-      "Contact form integration",
-      "Email service setup",
-      "Scheduling tool integration",
-      "Third-party service connections",
+      "Secure contact form integration",
+      "Reliable email delivery with Resend",
+      "Google Maps embedding",
+      "Social media integration",
+      "Links to existing business tools",
     ],
   },
-
-  {
-    id: "structure",
-    title: "Website Structure",
-    tagline: "Clear and intentional",
-    accent: "#111167",
-    lightAccent: "#FEFEFF",
-    short: "The right pages and content flow to guide your visitors.",
-    body: "Your website includes the essential pages needed for a professional online presence. Additional pages can be added as your business grows.",
-    tags: ["Pages", "UX", "Content"],
-    details: [
-      "Up to four pages included",
-      "Additional pages available",
-      "Content organization guidance",
-      "User-focused layouts",
-    ],
-  },
-
   {
     id: "maintenance",
-    title: "Website Care Plan",
+    title: "Hosting & Maintenance",
     price: "75",
-    tagline: "Ongoing reliability",
+    tagline: "Optional annual plan",
+    accent: "#111167",
+    lightAccent: undefined,
+
+    short:
+      "Keep your website secure, online, and up-to-date without worrying about the technical details.",
+
+    body: "After launch, I offer an optional maintenance package that keeps your website healthy throughout the year. It includes secure hosting, uptime monitoring, routine content updates, code maintenance, and deployment management, so you can focus on running your business.",
+
+    tags: ["Hosting", "Maintenance", "Monitoring"],
+
+    details: [
+      "Secure hosting",
+      "Uptime monitoring",
+      "Routine content & image updates",
+      "Dependency & code updates",
+      "Deployment management",
+      "Minor changes included",
+    ],
+  },
+
+  {
+    id: "seo",
+    title: "Performance & Technical SEO",
+    tagline: "Built to be found",
     accent: "#62D3E4",
     lightAccent: undefined,
     short:
-      "Keep your website secure, updated, and running smoothly after launch.",
-    body: "Websites need ongoing maintenance just like any other business tool. The Website Care Plan helps keep your site reliable, secure, and up to date.",
-    tags: ["Hosting", "Updates", "Monitoring"],
+      "Search engines and customers both appreciate fast, well-built websites. Every project is optimized behind the scenes so your business has the best chance to be found and make a strong first impression.",
+
+    body: "Search engines reward websites that are fast, well-structured, and easy to understand. Rather than relying on bulky page builders or generic templates, every website is built with clean, modern code and includes the technical SEO essentials that help search engines crawl and understand your site.",
+
+    tags: ["Performance", "Technical SEO", "Structured Data"],
+
     details: [
-      "Secure Netlify hosting",
-      "Uptime monitoring",
-      "Website updates and deployments",
-      "Dependency and code updates",
-      "Minor content updates included",
-      "Video support up to 75MB",
+      "Performance-focused development",
+      "Page metadata",
+      "Structured data (JSON-LD)",
+      "Image optimization",
+      "XML sitemap",
+      "robots.txt configuration",
     ],
   },
 ];
