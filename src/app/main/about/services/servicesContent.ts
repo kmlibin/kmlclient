@@ -7,7 +7,7 @@ export const services = [
     accent: "#057ee6",
     lightAccent: undefined,
     short:
-      "A custom website designed and developed specifically for your business — fast, modern, responsive, and built to grow with you.",
+      "Skip the templates and generic page builders. Every website is custom designed and hand-coded to reflect your business, providing a fast, responsive experience, clean performance, and the flexibility to grow as your business evolves.",
 
     body: "Your website should be as unique as your business. Every project is designed from the ground up and built with clean, hand-written code — not generic templates or drag-and-drop website builders. The result is a fast, professional website tailored to your goals, your brand, and your customers. The Website Launch Package includes up to four custom pages, responsive design, contact form integration, and everything needed to launch with confidence.",
     tags: ["Custom Code", "Responsive", "SEO Ready"],
@@ -46,12 +46,11 @@ export const services = [
     tagline: "For every screen",
     accent: "#e15c3a",
     lightAccent: "#FFFCFD",
-    short:
-      "Your website will provide a consistent experience on desktop, tablet, and mobile devices.",
+    short: undefined,
 
     body: "More than half of all web traffic comes from mobile devices. Every website I build is designed mobile-first, then carefully refined for tablets and desktops. Rather than simply shrinking content to fit a smaller screen, each layout is thoughtfully crafted to remain fast, intuitive, and easy to navigate on any device.",
 
-    tags: ["Mobile-First", "Responsive", "Fast"],
+    tags: ["Mobile-First", "Fast", "Responsive"],
     details: [
       "Mobile-first development",
       "Optimized for phones, tablets, and desktops",
@@ -67,11 +66,10 @@ export const services = [
     tagline: "Connect with customers",
     accent: "#C6375C",
     lightAccent: "#FFFCFD",
-    short:
-      "Have a website that helps customers interact with your business.",
+    short: undefined,
 
     body: "Whether your business relies on appointment scheduling, contact forms, social media, maps, or other third-party services, I can integrate the tools you already use into a seamless experience. The goal is to make it as easy as possible for customers to connect with you.",
-    tags: ["Contact Forms", "Scheduling", "Third-Party Tools"],
+    tags: ["Contact", "Scheduling", "Third-Party Tools"],
     details: [
       "Secure contact form integration",
       "Reliable email delivery with Resend",
@@ -93,7 +91,7 @@ export const services = [
 
     body: "After launch, I offer an optional maintenance package that keeps your website healthy throughout the year. It includes secure hosting, uptime monitoring, routine content updates, code maintenance, and deployment management, so you can focus on running your business.",
 
-    tags: ["Hosting", "Maintenance", "Monitoring"],
+    tags: ["Content Updates", "Code Maintenance", "Uptime Monitoring"],
 
     details: [
       "Secure hosting",
@@ -116,7 +114,7 @@ export const services = [
 
     body: "Search engines reward websites that are fast, well-structured, and easy to understand. Rather than relying on bulky page builders or generic templates, every website is built with clean, modern code and includes the technical SEO essentials that help search engines crawl and understand your site.",
 
-    tags: ["Performance", "Technical SEO", "Structured Data"],
+    tags: ["Metadata", "JSON-LD", "Image Optimization"],
 
     details: [
       "Performance-focused development",
