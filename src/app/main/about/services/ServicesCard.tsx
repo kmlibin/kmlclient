@@ -14,7 +14,7 @@ type Props = {
     tagline: string;
     accent: string;
     lightAccent: string | undefined;
-    short: string;
+    short: string | undefined;
     body: string;
     tags: string[];
     details: string[];
@@ -109,8 +109,12 @@ export default function ServiceCard({
           </h3>
 
           <p
-            className={`${ibm.className} ${size === "hero" ? "text-[18px]" : size ==="smallCard" ? "text-xs" : "text-sm"} mt-2 tracking-wide`}
+            className={`${ibm.className} ${size === "hero" ? "text-[18px]" : size === "smallCard" ? "text-xs" : service.id === "seo" ? "text-[16px]" : "text-sm"} mt-2 tracking-wide`}
             style={{
+              paddingRight:
+                size === "hero" || service.id === "seo" ? "2rem" : undefined,
+              paddingTop:
+                size === "hero" || service.id === "seo" ? "1rem" : undefined,
               color: size == "hero" ? "#fefefe" : "rgba(51,51,51, .85)",
             }}
           >
@@ -153,7 +157,9 @@ export default function ServiceCard({
             </p>
           ) : (
             <span
-              className="text-2xl"
+              className={`text-2xl transition-transform duration-300 ${
+                isActive ? "rotate-180" : "rotate-0"
+              }`}
               style={{
                 color:
                   active && size !== "smallCard"

@@ -13,7 +13,7 @@ export default function ServiceDrawer({
     tagline: string;
     accent: string;
     lightAccent: string | undefined;
-    short: string;
+    short: string | undefined;
     body: string;
     tags: string[];
     details: string[];
@@ -31,7 +31,6 @@ export default function ServiceDrawer({
   }, []);
 
   return (
-    // fix animations
     <div
       ref={drawerRef}
       className="drawer-in mt-3 rounded-2xl overflow-hidden bg-white border w-[100%] col-span-4"

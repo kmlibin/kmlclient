@@ -12,7 +12,7 @@ export type Service = {
   tagline: string;
   accent: string;
   lightAccent: string | undefined;
-  short: string;
+  short: string | undefined;
   body: string;
   tags: string[];
   details: string[];
@@ -50,7 +50,7 @@ export default function ServiceRow({ items, active, setActive }: Props) {
         className="grid gap-3"
         style={{
           gridTemplateColumns: "repeat(4,1fr)",
-          gridTemplateRows: "repeat(2,180px)",
+          gridTemplateRows: "repeat(2,200px)",
         }}
       >
         {/* if item is image */}
