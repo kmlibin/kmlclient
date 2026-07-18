@@ -9,7 +9,7 @@ export const services = [
     short:
       "Skip the templates and generic page builders. Every website is custom designed and hand-coded to reflect your business, providing a fast, responsive experience, clean performance, and the flexibility to grow as your business evolves.",
 
-    body: "Your website should be as unique as your business. Every project is designed from the ground up and built with clean, hand-written code — not generic templates or drag-and-drop website builders. The result is a fast, professional website tailored to your goals, your brand, and your customers. The Website Launch Package includes up to four custom pages, responsive design, contact form integration, and everything needed to launch with confidence.",
+    body: "Every project is designed from the ground up and built with clean, hand-written code — not generic templates or drag-and-drop website builders. The result is a fast, professional website tailored to your goals, your brand, and your customers. The Website Launch Package includes up to four custom pages, responsive design, contact form integration, and everything needed to launch with confidence.",
     tags: ["Custom Code", "Responsive", "SEO Ready"],
     details: [
       "Up to four custom pages",
