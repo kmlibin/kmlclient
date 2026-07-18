@@ -1,6 +1,9 @@
 "use client";
 
+import { ibm, fredoka } from "@/app/utils/fonts";
 import { useEffect, useRef } from "react";
+import { IoMdClose } from "react-icons/io";
+import { GiCheckMark } from "react-icons/gi";
 
 export default function ServiceDrawer({
   service,
@@ -18,7 +21,6 @@ export default function ServiceDrawer({
     tags: string[];
     details: string[];
   };
-  // onClose: () => void;
   setActive: any;
 }) {
   //when user clicks on bento and drawer opens, it scrolls to the drawer
@@ -33,7 +35,7 @@ export default function ServiceDrawer({
   return (
     <div
       ref={drawerRef}
-      className="drawer-in mt-3 rounded-2xl overflow-hidden bg-white border w-[100%] col-span-4"
+      className={`${ibm.className} drawer-in mt-3 rounded-2xl overflow-hidden bg-white border w-[100%] col-span-`}
     >
       <div
         className="h-1"
@@ -46,7 +48,7 @@ export default function ServiceDrawer({
         <div className="flex justify-between">
           <div>
             <p
-              className="uppercase text-xs tracking-widest"
+              className={`uppercase text-xs tracking-widest`}
               style={{
                 color: service.accent,
               }}
@@ -54,23 +56,28 @@ export default function ServiceDrawer({
               What's included
             </p>
 
-            <h2 className="text-2xl font-bold">{service.title}</h2>
+            <h2 className={`${fredoka.className} text-2xl text-blackTextFont tracking-wide`}>
+              {service.title}
+            </h2>
           </div>
 
           <button className="z-[5]" onClick={() => setActive(null)}>
-            ×
+            <IoMdClose
+              className="hover:opacity-30 transition-opacity duration-200"
+              color={service.accent}
+            />
           </button>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8 mt-6">
           <div>
-            <p className="text-gray-600">{service.body}</p>
+            <p className={`text-blackTextFont text-sm`}>{service.body}</p>
 
             <div className="flex gap-2 mt-5 flex-wrap">
               {service.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="px-3 py-1 rounded-full text-xs"
+                  className={`${ibm.className} px-3 py-1 rounded-full text-xs`}
                   style={{
                     background: `${service.accent}20`,
                     color: service.accent,
@@ -87,9 +94,9 @@ export default function ServiceDrawer({
               Deliverables
             </p>
 
-            <ul className="mt-3 space-y-2">
+            <ul className="mt-3 space-y-2 text-md">
               {service.details.map((item) => (
-                <li key={item}>✓ {item}</li>
+                <li className="flex justify-start items-center gap-2" key={item}><GiCheckMark color={service.accent} /> {item}</li>
               ))}
             </ul>
           </div>
