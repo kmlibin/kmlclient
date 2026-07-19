@@ -1,4 +1,4 @@
-.info-bg {
+.infoBg {
   background: linear-gradient(212deg, #fec246, rgb(98, 211, 228), #057ee6);
   background-size: 600% 600%;
   animation: change 15s ease infinite;

@@ -4,9 +4,9 @@ import Image from "next/image";
 import info from "./images/info.svg";
 //fonts and content
 import { fredoka, ibm, ibmBold } from "@/app/utils/fonts";
-import { additionalInfo } from "./pricingContent";
+import { additionalInfo } from "./servicesContent";
 //css
-import './Pricing.css'
+import styles from './services.module.css'
 
 type listItem = {
   content: string | ReactNode;
@@ -20,7 +20,7 @@ const AdditionalInfo = () => {
       role="region"
       aria-labelledby="additional-services-heading"
     >
-      <div className="w-[150px] h-[150px] md:w-[200px] md:h-[200px] info-bg flex justify-center items-center rounded-full">
+      <div className={`w-[150px] h-[150px] md:w-[200px] md:h-[200px] ${styles.infoBg} flex justify-center items-center rounded-full`}>
         <Image
           src={info}
           alt="an information logo"
@@ -33,7 +33,7 @@ const AdditionalInfo = () => {
       <div className="w-full md:w-4/5 flex flex-col justify-start items-start tracking-wide">
         <h3
           id="additional-services-heading"
-          className={`${fredoka.className} text-4xl mb-6 w-full text-center md:text-left`}
+          className={`${fredoka.className} text-4xl mb-6 w-full md:pl-5 text-center md:text-left`}
         >
           Additional Services and Notes
         </h3>
