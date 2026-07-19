@@ -19,6 +19,8 @@ import RollImage from "../../../../components/RollImage";
 import PricingCards from "../pricing/PricingCards";
 import ZoomHeading from "@/components/ZoomHeading";
 import ServicesGrid from "./ServicesGrid";
+//libraries
+import { Zoom } from "react-awesome-reveal";
 
 type PricingData = {
   title: ReactNode | string;
@@ -65,33 +67,31 @@ const page = () => {
       </div>
 
 
-      <section className="w-full flex md:flex-row flex-col justify-evenly items-start md:mt-[180px] mt-[5rem] pb-16  ">
+      <section className="md:w-4/5 w-full flex md:flex-row flex-col justify-evenly items-center md:mt-[180px] mt-[5rem] md:py-14 md:pl-5 rounded-lg md:bg-opacity-70 md:bg-customWhite z-50 ">
        
 
-
-
         <div
-          className={`${ibm.className} tracking-wide  md:w-1/2 relative  flex flex-col items-center justify-start gap-4 md:gap-16`}
+          className={`${ibm.className} tracking-wide  md:w-full relative flex flex-col items-center justify-center gap-4 md:gap-16`}
         >
-          <div className="w-full flex flex-col items-center justify-start  ">
+          <div className="w-full flex flex-col items-start justify-center  ">
             <ZoomHeading
               as="h2"
               className={`${fredoka.className} text-5xl text-center mb-5 md:mb-2`}
             >
-              Everything You Need <br/> in a Website
+              Website Launch Package
             </ZoomHeading>
             <ZoomHeading
               as="h4"
-              className={`${ibm.className} text-2xl md:text-xl text-center mb-4 `}
+              className={`${ibm.className} text-md md:text-xl text-center md:text-left`}
             >
-              Starting at $350
+              Get a custom-built website - <br></br> designed, developed, and optimized for your business.
             </ZoomHeading>
-            <div className="md:hidden bg-customWhite bg-opacity-60 w-full md:w-auto flex justify-center items-center p-5">
+            <div className="md:hidden bg-customWhite bg-opacity-60 w-full flex justify-center items-center p-5 my-5">
               <RollImage delay={500}>
                 <Image
                   src={undraw3}
                   alt="people building a website"
-                  height={400}
+                  height={200}
                   className="z-10"
                 />
               </RollImage>

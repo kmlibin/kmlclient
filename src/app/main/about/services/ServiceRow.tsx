@@ -47,7 +47,7 @@ export default function ServiceRow({ items, active, setActive }: Props) {
   return (
     <>
       <div
-        className="grid gap-3"
+        className="md:grid gap-3 flex flex-col"
         style={{
           gridTemplateColumns: "repeat(4,1fr)",
           gridTemplateRows: "repeat(2,200px)",
@@ -59,7 +59,7 @@ export default function ServiceRow({ items, active, setActive }: Props) {
             return (
               <div
                 key={index}
-                className={`${item.className} rounded-2xl border relative`}
+                className={`${item.className} hidden md:block rounded-2xl border relative`}
               >
                 <Image
                   src={item.element}
