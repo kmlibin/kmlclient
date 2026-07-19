@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { ReactNode, useState } from "react";
 //libraries
 import { MdOutlineReadMore } from "react-icons/md";
 //fonts
@@ -15,7 +15,7 @@ type Props = {
     accent: string;
     lightAccent: string | undefined;
     short: string | undefined;
-    body: string;
+    body: string | ReactNode;
     tags: string[];
     details: string[];
   };
@@ -109,7 +109,7 @@ export default function ServiceCard({
           </h3>
 
           <p
-            className={`${ibm.className} ${size === "hero" ? "text-[18px]" : size === "smallCard" ? "text-xs" : service.id === "seo" ? "text-[16px]" : "text-sm"} mt-2 tracking-wide`}
+            className={`${ibm.className} ${size === "hero" ? " text-md sm:text-[18px]" : size === "smallCard" ? "text-xs" : service.id === "seo" ? "text-[16px]" : "text-sm"} mt-2 tracking-wide`}
             style={{
               paddingRight:
                 size === "hero" || service.id === "seo" ? "2rem" : undefined,
@@ -127,7 +127,7 @@ export default function ServiceCard({
             {service.tags.slice(0, 2).map((tag) => (
               <span
                 key={tag}
-                className={`${ibm.className} text-xs px-2 rounded-full flex items-center justify-center`}
+                className={`${ibm.className} text-[10px] sm:text-xs px-2 rounded-full flex items-center justify-center`}
                 style={{
                   background:
                     (active && size !== "smallCard") || size === "hero"
@@ -149,7 +149,7 @@ export default function ServiceCard({
               className={`${ibmBold.className} text-sm text-[rgba(255,255,255,.7)]`}
             >
               <span
-                className={`${fredoka.className} ${ibmBold.className} text-3xl tracking-wider text-customWhite`}
+                className={`${fredoka.className} ${ibmBold.className} text-xl sm:text-3xl tracking-wider text-customWhite`}
               >
                 ${service.price}
               </span>

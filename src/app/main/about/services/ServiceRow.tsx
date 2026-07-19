@@ -4,6 +4,7 @@ import ServicesCard from "./ServicesCard";
 import ServiceDrawer from "./ServiceDrawer";
 import { StaticImageData } from "next/image";
 import Image from "next/image";
+import { ReactNode } from "react";
 
 export type Service = {
   id: string;
@@ -13,7 +14,7 @@ export type Service = {
   accent: string;
   lightAccent: string | undefined;
   short: string | undefined;
-  body: string;
+  body: string | ReactNode;
   tags: string[];
   details: string[];
 };

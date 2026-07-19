@@ -1,7 +1,7 @@
 "use client";
 
 import { ibm, fredoka } from "@/app/utils/fonts";
-import { useEffect, useRef } from "react";
+import { ReactNode, useEffect, useRef } from "react";
 import { IoMdClose } from "react-icons/io";
 import { GiCheckMark } from "react-icons/gi";
 
@@ -17,7 +17,7 @@ export default function ServiceDrawer({
     accent: string;
     lightAccent: string | undefined;
     short: string | undefined;
-    body: string;
+    body: string | ReactNode;
     tags: string[];
     details: string[];
   };
