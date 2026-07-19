@@ -2,34 +2,21 @@ import React, { ReactNode } from "react";
 //metadata
 import { Metadata } from "next";
 //utils and content
-
 import { ibm, fredoka } from "@/app/utils/fonts";
 //images
 import { StaticImageData } from "next/image";
-import pricing from "./images/pricing.svg";
 import Image from "next/image";
 import undraw3 from "../pricing/images/undraw3.svg";
 //paths
 import paths from "@/app/paths";
 //components
 import Button from "@/components/Button";
-import TableComparison from "../pricing/TableComparison";
-import AdditionalInfo from "../pricing/AdditionalInfo";
+import AdditionalInfo from "./AdditionalInfo";
 import RollImage from "../../../../components/RollImage";
-import PricingCards from "../pricing/PricingCards";
 import ZoomHeading from "@/components/ZoomHeading";
 import ServicesGrid from "./ServicesGrid";
-//libraries
-import { Zoom } from "react-awesome-reveal";
 
-type PricingData = {
-  title: ReactNode | string;
-  text: ReactNode | string;
-  src: StaticImageData;
-  alt: string;
-  isList: boolean;
-  isNote1?: boolean;
-};
+
 
 export const metadata: Metadata = {
   title: "Web Development Packages | Libin Web Development",
@@ -59,17 +46,14 @@ export const metadata: Metadata = {
 
 const page = () => {
   return (
-    <div className="w-full flex  flex-col bg-customWhite items-center relative"> 
-    {/* rainbows */}
-    <div className="h-full min-w-[100vw] md:min-w-[99vw] md:max-w-[99vw] overflow-hidden absolute">
+    <div className="w-full flex  flex-col bg-customWhite items-center relative">
+      {/* rainbows */}
+      <div className="h-full min-w-[100vw] md:min-w-[99vw] md:max-w-[99vw] overflow-hidden absolute">
         <div className="absolute bottom-[0vh] -right-[10%] rainbow-circle w-[500px] rounded-full h-[500px]"></div>
         <div className="absolute -top-[12vh] -left-[12%] rainbow-circle w-[900px] h-[900px] 3xl:w-[1100px] rounded-full 3xl:h-[1100px]"></div>
       </div>
 
-
       <section className="md:w-4/5 w-full flex md:flex-row flex-col justify-evenly items-center md:mt-[180px] mt-[5rem] md:py-14 md:pl-5 rounded-lg md:bg-opacity-70 md:bg-customWhite z-50 ">
-       
-
         <div
           className={`${ibm.className} tracking-wide  md:w-full relative flex flex-col items-center justify-center gap-4 md:gap-16`}
         >
@@ -84,7 +68,8 @@ const page = () => {
               as="h4"
               className={`${ibm.className} text-md md:text-xl text-center md:text-left`}
             >
-              Get a custom-built website - <br></br> designed, developed, and optimized for your business.
+              Get a custom-built website - <br></br> designed, developed, and
+              optimized for your business.
             </ZoomHeading>
             <div className="md:hidden bg-customWhite bg-opacity-60 w-full flex justify-center items-center p-5 my-5">
               <RollImage delay={500}>
@@ -96,18 +81,19 @@ const page = () => {
                 />
               </RollImage>
             </div>
-          </div> 
-   
-        
+          </div>
         </div>
-      </section>    
+      </section>
       <ServicesGrid />
 
       <AdditionalInfo />
       <div className="h-[150px] bg-customBlue bg-opacity-20 w-full flex items-center justify-center mb-10 z-[50]">
-        <Button path={paths.contactPath()} text="Get Started" label="Contact us" />
+        <Button
+          path={paths.contactPath()}
+          text="Get Started"
+          label="Contact us"
+        />
       </div>
-      <TableComparison />
     </div>
   );
 };
