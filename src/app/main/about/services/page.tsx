@@ -1,10 +1,8 @@
-import React, { ReactNode } from "react";
 //metadata
 import { Metadata } from "next";
 //utils and content
 import { ibm, fredoka } from "@/app/utils/fonts";
 //images
-import { StaticImageData } from "next/image";
 import Image from "next/image";
 import undraw3 from "../pricing/images/undraw3.svg";
 //paths
@@ -21,13 +19,13 @@ import ServicesGrid from "./ServicesGrid";
 export const metadata: Metadata = {
   title: "Web Development Packages | Libin Web Development",
   description:
-    "Discover affordable web development packages starting at $350. Each package includes a custom Next.js website, SEO optimization, responsive design, hosting options, and more to help your business shine online.",
+    "Discover affordable web development packages starting at $700. Each package includes a custom Next.js website, SEO optimization, responsive design, hosting options, and more to help your business shine online.",
   openGraph: {
     type: "website",
-    url: "https://libinwebdevelopment.com/main/about/pricing",
+    url: "https://libinwebdevelopment.com/main/about/services",
     title: "Web Development Packages | Libin Web Development",
     description:
-      "Learn about our affordable website packages designed for small businesses. Starting at $350, get a custom-built Next.js site with responsive design, SEO, hosting options, and up to four pages included. Add extra pages or services to suit your needs.",
+      "Learn about our affordable website packages designed for small businesses. Starting at $700, get a custom-built Next.js site with responsive design, SEO, hosting options, and up to four pages included. Add extra pages or services to suit your needs.",
     siteName: "Libin Web Development",
     images: "https://libinwebdevelopment.com/images/icon.png",
   },
