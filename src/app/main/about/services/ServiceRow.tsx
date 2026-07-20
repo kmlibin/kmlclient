@@ -4,22 +4,8 @@ import ServicesCard from "./ServicesCard";
 import ServiceDrawer from "./ServiceDrawer";
 import { StaticImageData } from "next/image";
 import Image from "next/image";
-import { ReactNode } from "react";
+import { Service, CardSize } from "@/types";
 
-export type Service = {
-  id: string;
-  title: string;
-  price?: string;
-  tagline: string;
-  accent: string;
-  lightAccent: string | undefined;
-  short: string | undefined;
-  body: string | ReactNode;
-  tags: string[];
-  details: string[];
-};
-
-type CardSize = "hero" | "medium" | "smallCard";
 
 type RowItem =
   | {
@@ -36,13 +22,13 @@ type RowItem =
 
 type Props = {
   items: RowItem[];
-  active: string | null;
-  setActive: (id: string | null) => void;
+  selectedService: string | null;
+  setSelectedService: (id: string | null) => void;
 };
 
-export default function ServiceRow({ items, active, setActive }: Props) {
+export default function ServiceRow({ items, selectedService, setSelectedService }: Props) {
   const activeService = items.find(
-    (item) => item.type === "service" && item.service.id === active,
+    (item) => item.type === "service" && item.service.id === selectedService,
   );
 
   return (
@@ -76,9 +62,9 @@ export default function ServiceRow({ items, active, setActive }: Props) {
               <ServicesCard
                 service={item.service}
                 size={item.size}
-                isActive={active === item.service.id}
+                isActive={selectedService === item.service.id}
                 onClick={() =>
-                  setActive(active === item.service.id ? null : item.service.id)
+                  setSelectedService(selectedService === item.service.id ? null : item.service.id)
                 }
               />
             </div>
@@ -90,7 +76,7 @@ export default function ServiceRow({ items, active, setActive }: Props) {
         <div className="mt-3">
           <ServiceDrawer
             service={activeService.service}
-            setActive={setActive}
+            setActive={setSelectedService}
             key={activeService.service.id}
           />
         </div>

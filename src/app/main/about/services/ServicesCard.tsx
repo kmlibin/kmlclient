@@ -4,21 +4,11 @@ import { ReactNode, useState } from "react";
 import { MdOutlineReadMore } from "react-icons/md";
 //fonts
 import { fredoka, ibm, ibmBold } from "../../../utils/fonts.js";
+//types
+import { Service, CardSize } from "@/types/service.js";
 
-type CardSize = "hero" | "medium" | "smallCard";
 type Props = {
-  service: {
-    id: string;
-    title: string;
-    price?: string;
-    tagline: string;
-    accent: string;
-    lightAccent: string | undefined;
-    short: string | undefined;
-    body: string | ReactNode;
-    tags: string[];
-    details: string[];
-  };
+  service: Service;
   size: CardSize;
   isActive: boolean;
   onClick: () => void;
@@ -31,6 +21,9 @@ export default function ServiceCard({
   onClick,
 }: Props) {
   const [hovered, setHovered] = useState(false);
+
+  //isActive is the currently selected/open service
+  //active is if it's hovered OR the open/selected service
   const active = hovered || isActive;
   console.log(size, "active", active, "isActive", isActive);
 
@@ -65,6 +58,7 @@ export default function ServiceCard({
 
   return (
     <button
+      id={`service-${service.id}`}
       onClick={onClick}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}

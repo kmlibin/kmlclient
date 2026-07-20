@@ -11,14 +11,14 @@ import handshake from "./images/handshake.svg";
 import { Fade } from "react-awesome-reveal";
 
 export default function ServicesGrid() {
-  const [active, setActive] = useState<string | null>(null);
+  const [selectedService, setSelectedService] = useState<string | null>(null);
 
   return (
     <Fade direction="up" triggerOnce>
       <div className="md:w-4/5 mx-auto md:space-y-3 bg-customWhite bg-opacity-95 rounded-md p-2 z-10 ">
         <ServiceRow
-          active={active}
-          setActive={setActive}
+          selectedService={selectedService}
+          setSelectedService={setSelectedService}
           items={[
             {
               type: "service",
@@ -48,8 +48,8 @@ export default function ServicesGrid() {
         />
 
         <ServiceRow
-          active={active}
-          setActive={setActive}
+          selectedService={selectedService}
+          setSelectedService={setSelectedService}
           items={[
             {
               type: "service",
