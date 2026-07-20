@@ -18,11 +18,10 @@ type formState = {
   name: string;
   email: string;
   message: string;
-  hasDomain: string;
-  domainProvider: string;
-  hostingPreference: string;
-  otherHostingPlatform: string;
-  website: any;
+  hasWebsite: string;
+  websiteLink: string;
+  website: string;
+
 };
 const ContactForm = () => {
   const formRef = useRef<HTMLFormElement>(null);
@@ -49,18 +48,17 @@ const ContactForm = () => {
     name: "",
     email: "",
     message: "",
-    hasDomain: "",
-    domainProvider: "Enter domain provider",
-    hostingPreference: "",
-    otherHostingPlatform: "Enter platform name",
-    website: ""
+    hasWebsite: "",
+    websiteLink: "",
+    website: "",
+
   });
 
   //handles changes to inputs
   const handleChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >
+    >,
   ) => {
     const { name, value } = e.target;
 
@@ -95,7 +93,7 @@ const ContactForm = () => {
       email: !formData.email
         ? "Please enter your email"
         : !/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(
-              formData.email
+              formData.email,
             )
           ? "Please enter a valid email address"
           : null,
@@ -127,11 +125,10 @@ const ContactForm = () => {
           name: "",
           email: "",
           message: "",
-          hasDomain: "",
-          domainProvider: "",
-          hostingPreference: "",
-          otherHostingPlatform: "",
-          website: ""
+          hasWebsite: "",
+          websiteLink: "",
+          website: "",
+  
         });
       } else {
         setButtonStatus("Submit");
@@ -173,7 +170,6 @@ const ContactForm = () => {
               role="form"
               onSubmit={handleSubmit}
             >
-       
               <div className="hidden" aria-hidden="true">
                 <label htmlFor="website">
                   Do not fill this field (spam filter)
@@ -208,9 +204,9 @@ const ContactForm = () => {
                 type="email"
               />
               <SelectField
-                label="Do you have a domain purchased?"
-                name="hasDomain"
-                value={formData.hasDomain}
+                label="Do you have a website?"
+                name="hasWebsite"
+                value={formData.hasWebsite}
                 options={[
                   { value: "yes", label: "Yes" },
                   { value: "no", label: "No" },
@@ -218,35 +214,16 @@ const ContactForm = () => {
                 onChange={handleChange}
               />
 
-              {formData.hasDomain === "yes" && (
+              {formData.hasWebsite === "yes" && (
                 <InputField
-                  label="Where did you buy your domain from?"
-                  name="domainProvider"
-                  value={formData.domainProvider || ""}
+                  label="Please provide link to your website"
+                  name="websiteLink"
+                  value={formData.websiteLink || ""}
                   onChange={handleChange}
                 />
               )}
 
-              <SelectField
-                label="Do you know if you're planning to host with me or somewhere else?"
-                name="hostingPreference"
-                value={formData.hostingPreference}
-                options={[
-                  { value: "hostWithYou", label: "Host with you" },
-                  { value: "hostElsewhere", label: "Host somewhere else" },
-                  { value: "hostUndecided", label: "Undecided" },
-                ]}
-                onChange={handleChange}
-              />
 
-              {formData.hostingPreference === "hostElsewhere" && (
-                <InputField
-                  label="What hosting platform?"
-                  name="otherHostingPlatform"
-                  value={formData.otherHostingPlatform || ""}
-                  onChange={handleChange}
-                />
-              )}
 
               <div className={`${ibm.className} flex flex-col tracking-wider`}>
                 <label htmlFor="message" className=" text-[16px]">

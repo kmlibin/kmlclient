@@ -13,23 +13,19 @@ interface ConfirmTemplateProps {
   customerEmail: string;
   customerName: string;
   customerMessage: string;
-  hasDomain: string;
-  domainProvider: string;
-  hostingPreference: string;
-  otherHostingPlatform: string;
+  hasWebsite: string;
+  websiteLink: string;
 }
 
 export const ConfirmTemplate = ({
   customerName,
   customerEmail,
   customerMessage,
-  hasDomain,
-  domainProvider,
-  hostingPreference,
-  otherHostingPlatform,
+  hasWebsite,
+  websiteLink,
 }: ConfirmTemplateProps) => {
   const previewText = `We’ve received your message — thank you for reaching out!`;
-  //for images to work, need to switch to  a domain - so putnitz.com/customerconfirmation.png
+  //for images to work, need to switch to  a domain - so libinwebdevelopment.com/customerconfirmation.png
   return (
     <Html>
       <Head />
@@ -83,24 +79,14 @@ export const ConfirmTemplate = ({
               {customerEmail}
             </Text>
             <Text style={receiptItem}>
-              <strong>Do you have a domain?:</strong>
+              <strong>Do you have a website?:</strong>
               <br />
-              {hasDomain}
+              {hasWebsite}
             </Text>
             <Text style={receiptItem}>
-              <strong>Domain Provider:</strong>
+              <strong>Website link:</strong>
               <br />
-              {domainProvider}
-            </Text>
-            <Text style={receiptItem}>
-              <strong>Hosting Preference:</strong>
-              <br />
-              {hostingPreference}
-            </Text>
-            <Text style={receiptItem}>
-              <strong>If hosting preference, where do you host?:</strong>
-              <br />
-              {otherHostingPlatform}
+              {websiteLink}
             </Text>
             <Text style={receiptItem}>
               <strong>Message you wrote:</strong>
@@ -111,7 +97,7 @@ export const ConfirmTemplate = ({
 
           <Section style={footer}>
             <Text style={footerText}>
-              © {new Date().getFullYear()} Putnitz Consulting • All rights
+              © {new Date().getFullYear()} Libin Web Development • All rights
               reserved.
             </Text>
           </Section>
