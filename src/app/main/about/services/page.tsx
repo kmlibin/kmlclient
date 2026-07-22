@@ -13,8 +13,7 @@ import AdditionalInfo from "./AdditionalInfo";
 import RollImage from "../../../../components/RollImage";
 import ZoomHeading from "@/components/ZoomHeading";
 import ServicesGrid from "./ServicesGrid";
-
-
+import Steps from "./Steps";
 
 export const metadata: Metadata = {
   title: "Web Development Packages | Libin Web Development",
@@ -83,7 +82,7 @@ const page = () => {
         </div>
       </section>
       <ServicesGrid />
-
+      <Steps />
       <AdditionalInfo />
       <div className="h-[150px] bg-customBlue bg-opacity-20 w-full flex items-center justify-center mb-10 z-[50]">
         <Button
