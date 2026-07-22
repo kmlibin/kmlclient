@@ -110,9 +110,15 @@ export const services = [
       <>
         After launch, I offer an optional maintenance package that keeps your
         website healthy throughout the year. It includes secure hosting, domain
-        management, uptime monitoring, routine content updates, code
-        maintenance, and deployment management, so you can focus on running your
-        business instead of the technical details.
+        management, uptime monitoring,{" "}
+        <a
+          className="font-bold hover:opacity-75 hover:text-customBlue duration-100"
+          href="/main/about/faq/#maintenance-plan"
+        >
+          routine content updates
+        </a>
+        , code maintenance, and deployment management, so you can focus on
+        running your business instead of the technical details.
         <br></br>
         <br></br>
         <span className="font-bold bg-customGold bg-opacity-30">
@@ -126,7 +132,7 @@ export const services = [
     details: [
       "Secure hosting",
       "Uptime monitoring",
-      "Routine content & image updates",
+      "Routine website updates",
       "Dependency & code updates",
       "Deployment management",
       "Minor changes included",
@@ -172,3 +178,50 @@ export const additionalInfo = [
       "The Website Launch Package is designed for brochure websites that showcase your business and help customers get in touch. Projects requiring user accounts, e-commerce, databases, or other custom backend functionality can absolutely be built, but are quoted separately due to their increased complexity.",
   },
 ];
+
+export const steps = [
+
+  {
+    n: '01',
+    color: "#057ee6",
+    title: 'Discovery',
+    body: "We start with a conversation about your business, goals, timeline, and vision. I'll ask about inspiration sites, your audience, and what success looks like for you. No jargon, no pressure — just a clear picture of what we're building together.",
+    duration: '1-2 days',
+  },
+  {
+    n: '02',
+    color: "#fec246",
+    title: 'Proposal & Contract',
+    body: "You'll receive a detailed written proposal outlining scope, timeline, deliverables, and payment terms. Once we agree on everything, a contract is signed and a deposit secures your spot on the schedule.",
+    duration: '1-3 days',
+  },
+  {
+    n: '03',
+    color: "rgb(198,55,92)",
+    title: 'Content & Assets',
+    body: "I send you a clear checklist of everything I need to get started — logo files, brand photos, written copy, social media handles, domain login, and anything else specific to your project. This is the step where your prep work pays off.",
+    duration: '3-7 days',
+  },
+  {
+    n: '04',
+    color: "#e15c3a",
+    title: 'Design & Development',
+    body: "You'll review a homepage mockup first. Once that's approved, I build out the remaining pages and keep you updated throughout. You're never left wondering where things stand.",
+    duration: '1-3 weeks',
+  },
+  {
+    n: '05',
+    color: "rgb(98, 211, 228)",
+    title: 'Launch',
+    body: "Once final payment is received, I deploy your site, connect your domain, and run final cross-browser and mobile testing. If you're on my hosting plan, everything is handled end-to-end — you just share the announcement.",
+    duration: '1-2 days',
+  },
+  {
+    n: '06',
+    color: "rgb(17, 17, 103)",
+    title: 'After Launch',
+    body: "You receive a handoff guide with next-step recommendations: setting up your Google Business Profile, submitting to Google Search Console, building backlinks and citations, and keeping your site healthy long-term.",
+    duration: 'Ongoing',
+  },
+
+]
