@@ -1,5 +1,45 @@
 export const faqCards = [
   {
+    id: "whats-included",
+    question: "What's included in the Website Launch Package?",
+    answer: (
+      <>
+        <a
+          className="font-bold hover:opacity-75 hover:text-customBlue duration-100"
+          href={"/main/about/services"}
+        >
+          The Website Launch Package
+        </a>{" "}
+        includes up to four custom-designed pages, responsive design for
+        desktop, tablet, and mobile devices, contact form integration, technical
+        SEO setup, performance optimization, and deployment. Every website is
+        built from scratch using modern code—never templates or drag-and-drop
+        builders.
+      </>
+    ),
+  },
+  {
+    id: "maintenance-plan",
+    question: "What's included in your Hosting & Maintenance plan?",
+    answer: (
+      <>
+        My optional annual Hosting & Maintenance plan includes secure hosting,
+        domain management assistance, uptime monitoring, deployment management,
+        routine content updates, dependency updates, and minor website changes
+        throughout the year. New website clients also receive 50% off their
+        first year of the plan.<br></br>
+        <br></br>
+        <span className="font-bold">Note:</span> Routine updates keep your
+        website accurate, secure, and running smoothly. This typically inlcudes
+        things like updating business hours, contact information, photos,
+        pricing, text changes, and keeping the website's code up to date. Larger
+        requests, such as redesigning pages, adding entirely new sections/pages,
+        or creating new functionality, aren't included in routing maintenance
+        and would be quoted separately before any work begins.
+      </>
+    ),
+  },
+  {
     id: "getting-started",
     question: "How do we get started?",
     answer: (
@@ -41,25 +81,7 @@ export const faqCards = [
     answer:
       "Projects require a 50% non-refundable deposit before work begins. The remaining 50% is due once your website is complete, just before launch. Hosting and the optional annual maintenance plan are separate from the website package. I currently accept Venmo, Zelle, and PayPal.",
   },
-  {
-    id: "whats-included",
-    question: "What's included in the Website Launch Package?",
-    answer: (
-      <>
-        <a
-          className="font-bold hover:opacity-75 hover:text-customBlue duration-100"
-          href={"/main/about/services"}
-        >
-          The Website Launch Package
-        </a>{" "}
-        includes up to four custom-designed pages, responsive design for
-        desktop, tablet, and mobile devices, contact form integration, technical
-        SEO setup, performance optimization, and deployment. Every website is
-        built from scratch using modern code—never templates or drag-and-drop
-        builders.
-      </>
-    ),
-  },
+
   {
     id: "timeline",
     question: "How long does a website usually take?",
@@ -78,33 +100,7 @@ export const faqCards = [
     answer:
       "Yes. Once your project has been paid in full, you own your custom website and its source code. You're never locked into my hosting or maintenance services — you can host your website anywhere that supports Next.js applications. If you choose to host elsewhere, you'll simply be responsible for managing your hosting account and domain settings.",
   },
-  {
-    id: "maintenance-plan",
-    question: "What's included in your Hosting & Maintenance plan?",
-    answer: (
-      <>
-        My optional annual Hosting & Maintenance plan includes secure hosting,
-        domain management assistance, uptime monitoring, deployment management,
-        routine content updates, dependency updates, and minor website changes
-        throughout the year. New website clients also receive 50% off their
-        first year of the plan.<br></br>
-        <br></br>
-        <span className="font-bold">Note:</span> Routine updates keep your
-        website accurate, secure, and running smoothly. This typically inlcudes
-        things like updating business hours, contact information, photos,
-        pricing, text changes, and keeping the website's code up to date. Larger
-        requests, such as redesigning pages, adding entirely new sections/pages,
-        or creating new functionality, aren't included in routing maintenance
-        and would be quoted separately before any work begins.
-      </>
-    ),
-  },
-  {
-    id: "routine-updates",
-    question: "What kinds of updates are included in the maintenance plan?",
-    answer:
-      "My optional annual Hosting & Maintenance plan includes secure hosting, domain management assistance, uptime monitoring, deployment management, routine content updates, dependency updates, and minor website changes throughout the year. New website clients also receive 50% off their first year of the plan.",
-  },
+
   {
     id: "existing-tools",
     question: "Can you use my existing domain, email, or business tools?",
