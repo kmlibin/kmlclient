@@ -68,10 +68,13 @@ const Steps = (props: Props) => {
                         {step.title}
                       </h4>
                       <span
-                        className="text-[11px] font-medium px-2.5 py-1 rounded-full shrink-0"
-                       
+                        className={`px-2.5 py-1 rounded-full shrink-0`}
+                          style={{
+                        color: step.color,
+                        opacity: "50%",
+                      }}
                       >
-                       <PiHandshake size={25} />
+                       {step.icon}
                       </span>
                     </div>
                     <p className={`${ibm.className} text-blackTextFont text-sm leading-relaxed`}>
