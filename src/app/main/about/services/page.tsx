@@ -14,6 +14,7 @@ import RollImage from "../../../../components/RollImage";
 import ZoomHeading from "@/components/ZoomHeading";
 import ServicesGrid from "./ServicesGrid";
 import Steps from "./Steps";
+import MobileSteps from "./MobileSteps";
 
 export const metadata: Metadata = {
   title: "Web Development Packages | Libin Web Development",
@@ -82,7 +83,17 @@ const page = () => {
         </div>
       </section>
       <ServicesGrid />
-      <Steps />
+
+      {/* desktop */}
+      <div className="hidden md:block">
+        <Steps />
+      </div>
+
+      {/* mobile */}
+      <div className="md:hidden">
+        <MobileSteps />
+      </div>
+
       <AdditionalInfo />
       <div className="h-[150px] bg-customBlue bg-opacity-20 w-full flex items-center justify-center mb-10 z-[50]">
         <Button
