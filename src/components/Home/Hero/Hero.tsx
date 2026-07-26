@@ -9,6 +9,7 @@ import Image from "next/image";
 //components
 import NavLinks from "./NavLinks";
 import Navbar from "@/components/Navbar/Navbar";
+import styles from './Home.module.css'
 
 const Hero = () => {
   // useEffect(() => {

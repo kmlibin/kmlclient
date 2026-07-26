@@ -1,0 +1,46 @@
+.trailsText {
+    color:  rgb(17 24 39);
+    will-change: transform, opacity;
+    overflow: hidden;
+  }
+  
+  .trailsText > div {
+    overflow: hidden;
+  }
+  
+  .navItem {
+  cursor: pointer;
+}
+  
+  .slash {
+    display: inline-block; 
+    font-weight: bolder;
+    transition: transform 0.3s ease; 
+  }
+  
+  
+  .underline {
+    position: absolute;
+    bottom: -3px; 
+    left: 0;
+    width: 0; 
+    height: 2px; 
+    background: rgb(118, 31, 52); 
+    transition: width 0.3s ease; 
+   
+  }
+  
+  .navItem:hover {
+    cursor: pointer;
+  }
+  
+  .navItem:hover .underline {
+    width: 100%; 
+    
+  }
+  
+  
+  .navItem:hover .slash {
+    transform: translateX(5px); 
+    color: rgb(98, 211, 228);
+  }
