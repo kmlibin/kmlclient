@@ -3,12 +3,12 @@ import React from "react";
 import { fredoka, ibm, ibmBold } from "@/app/utils/fonts";
 //content
 import { steps } from "./servicesContent";
-import { PiHandshake } from "react-icons/pi";
+
 type Props = {};
 
 const Steps = (props: Props) => {
   return (
-     <section className="bg-customWhite tracking-wide border-2 border-customBlue mb-10 border-opacity-50 w-4/5 my-10">
+     <section className="bg-customWhite tracking-wide border-2 border-customBlue mb-10 border-opacity-50 w-4/5 my-10 mx-auto">
 
       <div className="max-w-[75%] mx-auto px-4 md:px-6 pt-16 pb-20">
 
