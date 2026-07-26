@@ -15,3 +15,33 @@
     background-position: 96% 0%;
   }
 }
+
+.stepCardEnterRight {
+  animation: slideRight .3s ease-out;
+}
+
+.stepCardEnterLeft {
+  animation: slideLeft .3s ease-out;
+}
+
+@keyframes slideRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
