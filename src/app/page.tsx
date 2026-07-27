@@ -1,5 +1,6 @@
 //metadata
 import { Metadata } from "next";
+import { homeSchema } from "@/lib/schema/home";
 //components
 
 import Hero from "@/components/Home/Hero/Hero";
@@ -11,11 +12,13 @@ import SMIcons from "@/components/Wrapper/SMIcons";
 //icons
 import { FaEtsy, FaLinkedinIn, FaGithub } from "react-icons/fa";
 
-
 export const metadata: Metadata = {
   title: "Libin Web Development",
   description:
     "Libin Web Development specializes in creating fast, SEO-optimized, and custom websites for small businesses. Say goodbye to DIY hassles and let us build a website tailored to your needs, helping you stand out online and attract more clients.",
+  alternates: {
+    canonical: "https://libinwebdevelopment.com",
+  },
   openGraph: {
     type: "website",
     url: "https://libinwebdevelopment.com/",
@@ -36,7 +39,7 @@ export const metadata: Metadata = {
   referrer: "origin-when-cross-origin",
   authors: {
     name: "Libin Web Development",
-    url: "https://kellidoesdev.com",
+    url: "https://libinwebdevelopment.com",
   },
   keywords:
     "web development, libin web development, custom websites, small business websites, Next.js developer, SEO optimization, Colorado Springs web design, frontend developer, user-friendly websites, mobile-responsive websites, freelance web developer, website speed, small business branding, website design for small businesses",
@@ -45,6 +48,12 @@ export const metadata: Metadata = {
 function Home() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(homeSchema),
+        }}
+      />
       <link
         rel="preload"
         as="image"
