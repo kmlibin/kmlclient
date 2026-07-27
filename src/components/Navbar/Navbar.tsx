@@ -14,7 +14,7 @@ import Link from "next/link";
 //components
 import Links from "./Links";
 //css
-import "./Navbar.css";
+import styles from "./Navbar.module.css";
 
 const Navbar = () => {
   const [isOpen, setNavIsOpen] = useState(false);
@@ -136,7 +136,7 @@ const Navbar = () => {
         onClick={toggleNavbar}
         className={`absolute top-2 sm:top-[1rem] md:top-[2.4rem] right-2 sm:right-6  text-blackTextFont  bg-customGold w-10 h-10 rounded flex items-center justify-center
               transition-transform duration-300 ease-in-out z-[200] ${
-                rotate ? "rotate-color-360" : ""
+                rotate ? `${styles.rotateColor360}` : ""
               }`}
         aria-label={isOpen? "Close navigation" : "Open Navigation"}
         aria-expanded={isOpen}
