@@ -37,9 +37,7 @@ const SuccessErrorModal = ({
 
     setIsOpen(false);
     setSubmissionStatus(null);
-
-
-  };    
+  };
   const Particles = dynamic(() => import("./Fireworks"), { ssr: false });
   return (
     <>

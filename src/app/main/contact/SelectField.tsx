@@ -10,8 +10,14 @@ interface SelectFieldProps {
   onChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
 }
 
-const SelectField = ({ label, name, value, options, onChange }: SelectFieldProps) => (
-    <div className={`${ibm.className} flex flex-col tracking-wider`}>
+const SelectField = ({
+  label,
+  name,
+  value,
+  options,
+  onChange,
+}: SelectFieldProps) => (
+  <div className={`${ibm.className} flex flex-col tracking-wider`}>
     <label className=" text-[16px]">{label}</label>
     <select
       name={name}

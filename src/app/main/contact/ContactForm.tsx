@@ -21,7 +21,6 @@ type formState = {
   hasWebsite: string;
   websiteLink: string;
   website: string;
-
 };
 const ContactForm = () => {
   const formRef = useRef<HTMLFormElement>(null);
@@ -51,7 +50,6 @@ const ContactForm = () => {
     hasWebsite: "",
     websiteLink: "",
     website: "",
-
   });
 
   //handles changes to inputs
@@ -128,7 +126,6 @@ const ContactForm = () => {
           hasWebsite: "",
           websiteLink: "",
           website: "",
-  
         });
       } else {
         setButtonStatus("Submit");
@@ -222,8 +219,6 @@ const ContactForm = () => {
                   onChange={handleChange}
                 />
               )}
-
-
 
               <div className={`${ibm.className} flex flex-col tracking-wider`}>
                 <label htmlFor="message" className=" text-[16px]">
