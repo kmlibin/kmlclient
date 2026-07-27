@@ -8,8 +8,8 @@ const paths = {
   aboutPath() {
     return "/main/about";
   },
-  pricingPath() {
-    return "/main/about/pricing";
+  servicesPath() {
+    return "/main/about/services";
   },
   contactPath() {
     return "/main/contact";
