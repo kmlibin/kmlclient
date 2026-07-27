@@ -25,7 +25,7 @@ const NavLinks = () => {
   //links
   const navItems = [
     { label: "About", path: paths.aboutPath() },
-    { label: "Pricing", path: paths.pricingPath() },
+    { label: "Pricing", path: paths.servicesPath() },
     { label: "FAQ", path: paths.faqPath() },
     { label: "View Client Portfolio", path: paths.portfolioPath() },
     { label: "Getting Started", path: paths.contactPath() },

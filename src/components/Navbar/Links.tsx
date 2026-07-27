@@ -19,7 +19,7 @@ const Links = ({ linkName, path, linkClickToggle }: Props) => {
   // dropdown links
   const links = [
     { href: paths.aboutPath(), label: "Meet Kelli", id: "menu-item-0" },
-    { href: paths.pricingPath(), label: "Website Services", id: "menu-item-2" },
+    { href: paths.servicesPath(), label: "Website Services", id: "menu-item-2" },
     { href: paths.faqPath(), label: "FAQ", id: "menu-item-1" },
   ];
 
