@@ -20,7 +20,7 @@ const Steps = (props: Props) => {
           <h3 className={`${fredoka.className} text-4xl text-customIndigo`}>
             What to expect
           </h3>
-          <p className={`mt-3 text-md sm:text-[18px] ${ibm.className}`}>
+          <p className={`mt-3 text-[16px] sm:text-[18px] ${ibm.className}`}>
             Six straightforward steps from first conversation to a live, optimized website.
           </p>
         </div>

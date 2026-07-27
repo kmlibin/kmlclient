@@ -80,7 +80,7 @@ export default function ServiceDrawer({
 
         <div className="grid md:grid-cols-2 gap-8 mt-6">
           <div>
-            <p className={`text-blackTextFont text-sm`}>{service.body}</p>
+            <p className={`text-blackTextFont text-sm tracking-wide`}>{service.body}</p>
 
             <div className="flex gap-2 mt-5 flex-wrap">
               {service.tags.map((tag) => (
@@ -103,7 +103,7 @@ export default function ServiceDrawer({
               Deliverables
             </p>
 
-            <ul className="mt-3 space-y-2 text-md">
+            <ul className="mt-3 space-y-2 text-[16px]">
               {service.details.map((item) => (
                 <li
                   className="flex justify-start items-center gap-2"

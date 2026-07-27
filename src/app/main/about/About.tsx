@@ -60,7 +60,7 @@ const About = () => {
         >
           <p
             id="about-text"
-            className={`w-[95%] lg:w-2/3 ${ibm.className} text-md z-[20] bg-customWhite bg-opacity-90 p-2 rounded-xl`}
+            className={`w-[95%] lg:w-2/3 ${ibm.className} text-[16px] z-[20] bg-customWhite bg-opacity-90 p-2 rounded-xl`}
           >
             {bio.mainText}
           </p>

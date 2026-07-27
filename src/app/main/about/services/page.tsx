@@ -64,7 +64,7 @@ const page = () => {
             </ZoomHeading>
             <ZoomHeading
               as="h4"
-              className={`${ibm.className} text-md md:text-xl text-center md:text-left`}
+              className={`${ibm.className} text-[16px] md:text-xl text-center md:text-left`}
             >
               Get a custom-built website - <br></br> designed, developed, and
               optimized for your business.

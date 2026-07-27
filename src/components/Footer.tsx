@@ -20,7 +20,7 @@ const Footer = () => {
           role="img"
         />
       </div>
-      <p className="hidden sm:flex w-full items-center text-md gap-4  pr-5  justify-end mb-2">
+      <p className="hidden sm:flex w-full items-center text-[16px] gap-4  pr-5  justify-end mb-2">
         Libin Web Development <RiCopyrightLine /> 2024
       </p>
     </footer>

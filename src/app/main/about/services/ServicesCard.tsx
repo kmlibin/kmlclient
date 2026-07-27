@@ -103,7 +103,7 @@ export default function ServiceCard({
           </h3>
 
           <p
-            className={`${ibm.className} ${size === "hero" ? " text-md sm:text-[18px]" : size === "smallCard" ? "text-xs" : service.id === "seo" ? "text-[16px]" : "text-sm"} mt-2 tracking-wide`}
+            className={`${ibm.className} ${size === "hero" ? " text-[16px] sm:text-[18px]" : size === "smallCard" ? "text-xs" : service.id === "seo" ? "text-[16px]" : "text-sm"} mt-2 tracking-wide`}
             style={{
               paddingRight:
                 size === "hero" || service.id === "seo" ? "2rem" : undefined,
