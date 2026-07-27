@@ -28,7 +28,7 @@ const NavLinks = () => {
     { label: "Pricing", path: paths.pricingPath() },
     { label: "FAQ", path: paths.faqPath() },
     { label: "View Client Portfolio", path: paths.portfolioPath() },
-    { label: "Getting Started", path: paths.getStartedPath() },
+    { label: "Getting Started", path: paths.contactPath() },
   ];
   return (
     <ul className={` ${ibm.className} mb-5 `}>
