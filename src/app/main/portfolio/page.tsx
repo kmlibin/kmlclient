@@ -3,11 +3,16 @@ import React from "react";
 import { Metadata } from "next";
 //components
 import PortfolioPage from "./PortfolioPage";
+import { portfolioSchema } from "@/lib/schema/portfolio";
+//jsonld
 
 export const metadata: Metadata = {
   title: "Portfolio | Libin Web Development",
   description:
     "Explore my portfolio of custom-built websites for small businesses. See how I’ve helped clients create fast, responsive, and SEO-optimized sites tailored to their unique needs and goals.",
+  alternates: {
+    canonical: "https://libinwebdevelopment.com/main/portfolio",
+  },
   openGraph: {
     type: "website",
     url: "https://libinwebdevelopment.com/main/portfolio",
@@ -28,14 +33,24 @@ export const metadata: Metadata = {
   referrer: "origin-when-cross-origin",
   authors: {
     name: "Libin Web Development",
-    url: "https://kellidoesdev.com",
+    url: "https://libinwebdevelopment.com",
   },
   keywords:
     "portfolio, freelance web developer, small business websites, custom website design, Next.js developer, responsive websites, SEO-friendly websites, professional web design, client work, website examples, Colorado Springs web developer, custom website portfolio",
 };
 
 const page = () => {
-  return <PortfolioPage />;
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(portfolioSchema),
+        }}
+      />
+      <PortfolioPage />
+    </>
+  );
 };
 
 export default page;

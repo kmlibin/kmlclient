@@ -15,17 +15,21 @@ import ZoomHeading from "@/components/ZoomHeading";
 import ServicesGrid from "./ServicesGrid";
 import Steps from "./Steps";
 import MobileSteps from "./MobileSteps";
+import { servicesSchema } from "@/lib/schema/services";
 
 export const metadata: Metadata = {
   title: "Web Development Packages | Libin Web Development",
   description:
-    "Discover affordable web development packages starting at $700. Each package includes a custom Next.js website, SEO optimization, responsive design, hosting options, and more to help your business shine online.",
-  openGraph: {
+    "Discover affordable web development packages starting at $700. Each package includes a custom-coded website, SEO optimization, responsive design, hosting options, and more to help your business shine online.",
+    alternates: {
+    canonical: "https://libinwebdevelopment.com/main/about/services",
+  },
+    openGraph: {
     type: "website",
     url: "https://libinwebdevelopment.com/main/about/services",
     title: "Web Development Packages | Libin Web Development",
     description:
-      "Learn about our affordable website packages designed for small businesses. Starting at $700, get a custom-built Next.js site with responsive design, SEO, hosting options, and up to four pages included. Add extra pages or services to suit your needs.",
+      "Learn about our affordable website packages designed for small businesses. Starting at $700, get a custom-built  site with responsive design, SEO, hosting options, and up to four pages included. Add extra pages or services to suit your needs.",
     siteName: "Libin Web Development",
     images: "https://libinwebdevelopment.com/images/icon.png",
   },
@@ -36,7 +40,7 @@ export const metadata: Metadata = {
   referrer: "origin-when-cross-origin",
   authors: {
     name: "Libin Web Development",
-    url: "https://kellidoesdev.com",
+    url: "https://libinwebdevelopment.com",
   },
   keywords:
     "web development pricing, small business websites, affordable website packages, custom website design, Next.js websites, SEO-friendly websites, mobile-optimized websites, responsive design, hosting services, freelance web developer, additional web development services, domain registration support, custom contact forms",
@@ -44,6 +48,13 @@ export const metadata: Metadata = {
 
 const page = () => {
   return (
+    <>
+       <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify(servicesSchema),
+            }}
+          />
     <div className="w-full flex  flex-col bg-customWhite items-center relative">
       {/* rainbows */}
       <div className="h-full min-w-[100vw] md:min-w-[99vw] md:max-w-[99vw] overflow-hidden absolute">
@@ -103,6 +114,7 @@ const page = () => {
         />
       </div>
     </div>
+    </>
   );
 };
 

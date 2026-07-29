@@ -3,6 +3,7 @@ import React from "react";
 import { Metadata } from "next";
 //components
 import Contact from "./Contact";
+import { contactSchema } from "@/lib/schema/contact";
 
 export const metadata: Metadata = {
   title: "Contact | Libin Web Development",
@@ -28,14 +29,24 @@ export const metadata: Metadata = {
   referrer: "origin-when-cross-origin",
   authors: {
     name: "Libin Web Development",
-    url: "https://kellidoesdev.com",
+    url: "https://libinwebdevelopment.com",
   },
   keywords:
     "contact web developer, freelance web developer, small business websites, custom website design, Next.js developer, contact Libin Web Development, Colorado Springs web developer, start a web project, website inquiries",
 };
 
 const page = () => {
-  return <Contact />;
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(contactSchema),
+        }}
+      />
+      <Contact />
+    </>
+  );
 };
 
 export default page;
