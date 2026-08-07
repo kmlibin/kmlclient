@@ -10,8 +10,25 @@ import kellinetlify2 from "../../portfolioImages/kellinetlify2.png";
 import jpel2 from "../../portfolioImages/jpel2.png";
 import IFScreen1 from '../../portfolioImages/IFscreen1.png';
 import IFScreen2 from '../../portfolioImages/IFscreen2.png'
+import putnitz from '../../portfolioImages/putnitzscreen.webp'
+import putnitz2 from '../../portfolioImages/putnitzscreen2.webp'
+
 
 export const portfolioItems = [
+    {
+    id: 12,
+    height: "475px",
+    frontImage: putnitz,
+    owner: "Putnitz Devops",
+    business: "Putnitz Devops",
+    cube: true,
+    complete: true,
+    link: "https://putnitz.com/",
+    review:
+      "Kelli has been outstanding with all of her help building my company website! She far exceeded any of my expectations and went above and beyond. I’m so thankful for her knowledge and attention to detail because it made the whole process so much easier for me. I highly recommend Kelli for any web development or anything related!",
+    backImage: putnitz2,
+    isLarge: false,
+  },
   {
     id: 5,
     height: "475px",
@@ -40,7 +57,7 @@ export const portfolioItems = [
     cube: true,
     frontImage: fittees,
     complete: true,
-    link: "https://fitteespt.com",
+    link: "https://fittees.netlify.app/",
     review: "I highly recommend Kelli for her exceptional web development services. She meticulously listened to my needs, paying close attention to every detail. She was very patience with me and ensured I received a website that perfectly met my expectations. Kelli's outstanding work and professionalism make her an excellent choice for anyone seeking top-notch web design services.",
     backImage: fittees2,
     isLarge: false,
