@@ -20,12 +20,7 @@ const paths = {
   getStartedPath() {
     return "/main/about/faq/#getting-started"
   },
-  tablePath() {
-    return "/main/about/pricing/#comparison-table"
-  },
-  emailjsPath() {
-    return '/main/about/faq/#what-is-emailjs'
-  }
+
 };
 
 export default paths;
