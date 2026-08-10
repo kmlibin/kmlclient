@@ -8,11 +8,11 @@ import fitteeslogo from "../../../app/portfolioImages/goldpng.png";
 import kl from "../../../../public/images/icon.png";
 import kellinetlify from "../../../app/portfolioImages/kellinetlify.png";
 import kellinetlify2 from "../../../app/portfolioImages/kellinetlify2.png";
-import putnitz from '../../../app/portfolioImages/putnitzscreen.webp'
-import putnitz2 from '../../../app/portfolioImages/putnitzscreen2.webp'
-import putnitzlogo from '../../../app/portfolioImages/putnitzlogo.png'
+import putnitz from "../../../app/portfolioImages/putnitzscreen.webp";
+import putnitz2 from "../../../app/portfolioImages/putnitzscreen2.webp";
+import putnitzlogo from "../../../app/portfolioImages/putnitzlogo.png";
 export const sliderItems = [
-    {
+  {
     id: 4,
     height: "70vh",
     logo: putnitzlogo,
@@ -22,8 +22,11 @@ export const sliderItems = [
     frontImage: putnitz,
     complete: true,
     link: "https://putnitz.com/",
-    review:
-      "Kelli has been outstanding with all of her help building my company website! She far exceeded any of my expectations and went above and beyond. I’m so thankful for her knowledge and attention to detail because it made the whole process so much easier for me. She even helped me figure out how to activate my company email and all other IT questions I had. I highly recommend Kelli for any web development or anything related!",
+    review: `Kelli took my vague, hand-wavy client ideas about "the vibe of the
+website" and "experience of the viewer" and turned it into exactly what
+I was looking for in exactly one try. I couldn't be more impressed.
+Prompt communication, high detail, generous results, 10/10 would work
+with again!`,
     backImage: putnitz2,
     isLarge: true,
     isHome: true,
