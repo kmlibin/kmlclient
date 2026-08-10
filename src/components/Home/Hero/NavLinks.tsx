@@ -7,8 +7,8 @@ import { ibm } from "@/app/utils/fonts";
 //routing
 import paths from "@/app/paths";
 import Link from "next/link";
-//css
-import "./Home.css"
+import styles from './Home.module.css'
+
 
 const NavLinks = () => {
   const [open, setOpen] = useState(false);
@@ -25,10 +25,10 @@ const NavLinks = () => {
   //links
   const navItems = [
     { label: "About", path: paths.aboutPath() },
-    { label: "Pricing", path: paths.pricingPath() },
+    { label: "Services", path: paths.servicesPath() },
     { label: "FAQ", path: paths.faqPath() },
-    { label: "View Client Portfolio", path: paths.portfolioPath() },
-    { label: "Getting Started", path: paths.getStartedPath() },
+    { label: "Portfolio", path: paths.portfolioPath() },
+    { label: "Getting Started", path: paths.contactPath() },
   ];
   return (
     <ul className={` ${ibm.className} mb-5 `}>
@@ -36,16 +36,16 @@ const NavLinks = () => {
         {navItems.map(({ label, path }, index) => (
           <li
             key={index}
-            className="relative flex items-center text-blackTextFont text-2xl"
+            className={`${styles.navItem} relative flex items-center text-blackTextFont text-2xl`}
           >
-            <span className="slash transition-transform duration-300">/</span>
+            <span className={`${styles.slash}`}>/</span>
             <Link
               href={path}
               className="ml-2 transition-all duration-300 relative hover:text-customPink"
               aria-label={`link to ${label}`}
             >
               {label}
-              <span className="underline"></span>
+              <span className={`${styles.underline}`}></span>
             </Link>
           </li>
         ))}

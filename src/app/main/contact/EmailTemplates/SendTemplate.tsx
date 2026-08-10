@@ -13,20 +13,16 @@ interface EmailProps {
   customerEmail: string;
   customerName: string;
   customerMessage: string;
-  hasDomain: string;
-  domainProvider: string;
-  hostingPreference: string;
-  otherHostingPlatform: string;
+  hasWebsite: string;
+  websiteLink: string;
 }
 
 export const SendTemplate = ({
   customerEmail,
   customerName,
   customerMessage,
-  hasDomain,
-  domainProvider,
-  hostingPreference,
-  otherHostingPlatform,
+  hasWebsite,
+  websiteLink,
 }: EmailProps) => {
   const previewText = `Read ${customerName}'s message`;
 
@@ -50,20 +46,12 @@ export const SendTemplate = ({
                 <span style={answer}>{customerEmail}</span>
               </Text>
               <Text style={review}>
-                <span style={question}>Does customer have domain?</span>{" "}
-                <span style={answer}>{hasDomain}</span>
+                <span style={question}>Does customer have existing website?</span>{" "}
+                <span style={answer}>{hasWebsite}</span>
               </Text>
               <Text style={review}>
-                <span style={question}>Domain provider:</span>{" "}
-                <span style={answer}>{domainProvider}</span>
-              </Text>
-              <Text style={review}>
-                <span style={question}>Hosting preference:</span>{" "}
-                <span style={answer}>{hostingPreference}</span>
-              </Text>
-              <Text style={review}>
-                <span style={question}>Hosting platform:</span>{" "}
-                <span style={answer}>{otherHostingPlatform}</span>
+                <span style={question}>Site link:</span>{" "}
+                <span style={answer}>{websiteLink}</span>
               </Text>
 
               <Text style={heading}>Here's what {customerName} wrote</Text>

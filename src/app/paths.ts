@@ -8,8 +8,8 @@ const paths = {
   aboutPath() {
     return "/main/about";
   },
-  pricingPath() {
-    return "/main/about/pricing";
+  servicesPath() {
+    return "/main/about/services";
   },
   contactPath() {
     return "/main/contact";
@@ -20,12 +20,7 @@ const paths = {
   getStartedPath() {
     return "/main/about/faq/#getting-started"
   },
-  tablePath() {
-    return "/main/about/pricing/#comparison-table"
-  },
-  emailjsPath() {
-    return '/main/about/faq/#what-is-emailjs'
-  }
+
 };
 
 export default paths;

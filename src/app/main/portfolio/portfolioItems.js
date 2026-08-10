@@ -1,4 +1,3 @@
-
 //images
 import fittees from "../../portfolioImages/fittees.png";
 import cw from "../../portfolioImages/cw.jpg";
@@ -8,10 +7,29 @@ import fittees2 from "../../portfolioImages/fittees2.png";
 import cw2 from "../../portfolioImages/cw2.jpg";
 import kellinetlify2 from "../../portfolioImages/kellinetlify2.png";
 import jpel2 from "../../portfolioImages/jpel2.png";
-import IFScreen1 from '../../portfolioImages/IFscreen1.png';
-import IFScreen2 from '../../portfolioImages/IFscreen2.png'
+import IFScreen1 from "../../portfolioImages/IFscreen1.png";
+import IFScreen2 from "../../portfolioImages/IFscreen2.png";
+import putnitz from "../../portfolioImages/putnitzscreen.webp";
+import putnitz2 from "../../portfolioImages/putnitzscreen2.webp";
 
 export const portfolioItems = [
+  {
+    id: 12,
+    height: "475px",
+    frontImage: putnitz,
+    owner: "Putnitz Devops",
+    business: "Putnitz Devops",
+    cube: true,
+    complete: true,
+    link: "https://putnitz.com/",
+    review: `Kelli took my vague, hand-wavy client ideas about "the vibe of the
+website" and "experience of the viewer" and turned it into exactly what
+I was looking for in exactly one try. I couldn't be more impressed.
+Prompt communication, high detail, generous results, 10/10 would work
+with again!`,
+    backImage: putnitz2,
+    isLarge: false,
+  },
   {
     id: 5,
     height: "475px",
@@ -40,11 +58,11 @@ export const portfolioItems = [
     cube: true,
     frontImage: fittees,
     complete: true,
-    link: "https://fitteespt.com",
-    review: "I highly recommend Kelli for her exceptional web development services. She meticulously listened to my needs, paying close attention to every detail. She was very patience with me and ensured I received a website that perfectly met my expectations. Kelli's outstanding work and professionalism make her an excellent choice for anyone seeking top-notch web design services.",
+    link: "https://fittees.netlify.app/",
+    review:
+      "I highly recommend Kelli for her exceptional web development services. She meticulously listened to my needs, paying close attention to every detail. She was very patience with me and ensured I received a website that perfectly met my expectations. Kelli's outstanding work and professionalism make her an excellent choice for anyone seeking top-notch web design services.",
     backImage: fittees2,
     isLarge: false,
- 
   },
   {
     id: 4,
@@ -59,7 +77,6 @@ export const portfolioItems = [
       "This is my original portfolio site, which is geared more towards large employers seeking specific coding skills. Though the projects showcased on this site focus on demonstrating skill with different libraries, this site shows a variety of design skills, enjoy!",
     backImage: kellinetlify2,
     isLarge: false,
-
   },
   {
     id: 10,
@@ -100,5 +117,4 @@ export const portfolioItems = [
     bubbles: true,
     review: "bubbles 3",
   },
-
 ];

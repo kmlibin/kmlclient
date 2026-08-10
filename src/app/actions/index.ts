@@ -10,10 +10,8 @@ type formState = {
   name: string;
   email: string;
   message: string;
-  hasDomain: string;
-  domainProvider: string;
-  hostingPreference: string;
-  otherHostingPlatform: string;
+  hasWebsite: string;
+  websiteLink: string;
   website: string;
 };
 
@@ -47,12 +45,9 @@ export async function sendEmail(formData: formState) {
     const customerName = formData.name?.toString().trim();
     const customerEmail = formData.email?.toString().trim();
     const customerMessage = formData.message?.toString().trim();
-    const hasDomain = formData.hasDomain?.toString().trim();
-    const domainProvider = formData.domainProvider?.toString().trim();
-    const otherHostingPlatform = formData.otherHostingPlatform
-      ?.toString()
-      .trim();
-    const hostingPreference = formData.hostingPreference?.toString().trim();
+    const hasWebsite = formData.hasWebsite?.toString().trim();
+    const websiteLink = formData.websiteLink?.toString().trim();
+
 
     //form validation was on frontend, confirm values on backend
     if (typeof customerName !== "string" || customerName.length < 1) {
@@ -90,10 +85,9 @@ export async function sendEmail(formData: formState) {
     const safeName = validator.escape(customerName);
     const safeMessage = validator.escape(customerMessage);
     const safeEmail = customerEmail.trim();
-    const safeDomainProvider = validator.escape(domainProvider);
-    const safeHostingPreference = validator.escape(hostingPreference);
-    const safeHostingPlatform = validator.escape(otherHostingPlatform);
-    const safeHasDomain = validator.escape(hasDomain);
+    const safeWebsite = validator.escape(hasWebsite);
+    const safeWebsiteLink = validator.escape(websiteLink);
+
 
     //connect to resend
     const resendKey = process.env.RESEND_API_KEY;
@@ -117,10 +111,9 @@ export async function sendEmail(formData: formState) {
         customerName: safeName,
         customerMessage: safeMessage,
         customerEmail: safeEmail,
-        hasDomain: safeHasDomain,
-        domainProvider: safeDomainProvider,
-        hostingPreference: safeHostingPreference,
-        otherHostingPlatform: safeHostingPlatform,
+        hasWebsite: safeWebsite,
+        websiteLink: safeWebsiteLink,
+    
       }),
     });
 
@@ -140,10 +133,8 @@ export async function sendEmail(formData: formState) {
         customerName: safeName,
         customerMessage: safeMessage,
         customerEmail: safeEmail,
-        hasDomain: safeHasDomain,
-        domainProvider: safeDomainProvider,
-        hostingPreference: safeHostingPreference,
-        otherHostingPlatform: safeHostingPlatform,
+        hasWebsite: safeWebsite,
+        websiteLink: safeWebsiteLink,
       }),
     });
 

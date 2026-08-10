@@ -8,7 +8,29 @@ import fitteeslogo from "../../../app/portfolioImages/goldpng.png";
 import kl from "../../../../public/images/icon.png";
 import kellinetlify from "../../../app/portfolioImages/kellinetlify.png";
 import kellinetlify2 from "../../../app/portfolioImages/kellinetlify2.png";
+import putnitz from "../../../app/portfolioImages/putnitzscreen.webp";
+import putnitz2 from "../../../app/portfolioImages/putnitzscreen2.webp";
+import putnitzlogo from "../../../app/portfolioImages/putnitzlogo.png";
 export const sliderItems = [
+  {
+    id: 4,
+    height: "70vh",
+    logo: putnitzlogo,
+    owner: "Dan",
+    business: "Putnitz Devops",
+    cube: true,
+    frontImage: putnitz,
+    complete: true,
+    link: "https://putnitz.com/",
+    review: `Kelli took my vague, hand-wavy client ideas about "the vibe of the
+website" and "experience of the viewer" and turned it into exactly what
+I was looking for in exactly one try. I couldn't be more impressed.
+Prompt communication, high detail, generous results, 10/10 would work
+with again!`,
+    backImage: putnitz2,
+    isLarge: true,
+    isHome: true,
+  },
   {
     id: 6,
     height: "70vh",
@@ -34,7 +56,7 @@ export const sliderItems = [
     cube: true,
     frontImage: fittees,
     complete: true,
-    link: "https://fitteespt.com",
+    link: "https://fittees.netlify.app/",
     review:
       "I highly recommend Kelli for her exceptional web development services. She meticulously listened to my needs, paying close attention to every detail. She was very patient with me and ensured I received a website that perfectly met my expectations. Kelli's outstanding work and professionalism make her an excellent choice for anyone seeking top-notch web design services.",
     backImage: fittees2,

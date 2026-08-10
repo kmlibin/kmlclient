@@ -18,6 +18,6 @@
   }
 }
 
-.rotate-color-360 {
+.rotateColor360 {
   animation: rotateAndColor 0.5s ease-in-out;
 }

@@ -19,8 +19,8 @@ const Links = ({ linkName, path, linkClickToggle }: Props) => {
   // dropdown links
   const links = [
     { href: paths.aboutPath(), label: "Meet Kelli", id: "menu-item-0" },
+    { href: paths.servicesPath(), label: "Services", id: "menu-item-2" },
     { href: paths.faqPath(), label: "FAQ", id: "menu-item-1" },
-    { href: paths.pricingPath(), label: "Package Pricing", id: "menu-item-2" },
   ];
 
   if (linkName === "About")
@@ -31,11 +31,11 @@ const Links = ({ linkName, path, linkClickToggle }: Props) => {
           aria-haspopup="true"
         >
           <button
-            className="flex justify-end items-center hover:text-customTurquoise transition duration-300 md:group-hover:text-customTurquoise"
+            className="flex justify-end items-center hover:text-customTurquoise transition duration-300 md:group-hover:text-customTurquoise w-full"
             onClick={() => setIsOpen((prev) => !prev)}
             aria-expanded={isOpen}
             aria-controls="about-dropdown"
-             id="about-link"
+            id="about-link"
           >
             <span>About</span>
             <BiChevronDown

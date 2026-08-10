@@ -8,9 +8,13 @@
     overflow: hidden;
   }
   
+  .navItem {
+  cursor: pointer;
+}
   
   .slash {
     display: inline-block; 
+    font-weight: bolder;
     transition: transform 0.3s ease; 
   }
   
@@ -26,21 +30,17 @@
    
   }
   
-  li:hover {
+  .navItem:hover {
     cursor: pointer;
   }
   
-  li:hover .underline {
+  .navItem:hover .underline {
     width: 100%; 
     
   }
   
-  .slash {
-    transition: transform 0.3s ease; 
-    font-weight:bolder
-  }
   
-  li:hover .slash {
+  .navItem:hover .slash {
     transform: translateX(5px); 
     color: rgb(98, 211, 228);
   }

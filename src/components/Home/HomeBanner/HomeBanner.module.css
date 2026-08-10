@@ -1,17 +1,17 @@
 /* pulsing circles on home banner */
-.pulse-circle {
+.pulseCircle {
   animation: pulse 4s infinite ease-in-out;
 }
 
-.pulse-circle-1 {
-  animation-delay: 0s; /* No delay */
+.pulseCircle1 {
+  animation-delay: 0s; 
 }
-.pulse-circle-2 {
-  animation-delay: .3s; /* 1-second delay */
+.pulseCircle2 {
+  animation-delay: .3s; 
 }
 
-.pulse-circle-2 {
-  animation-delay: .6s; /* 1-second delay */
+.pulseCircle3 {
+  animation-delay: .6s; 
 }
 
 

@@ -180,7 +180,7 @@ const ContactImages = () => {
                 className="shadow-customIndigo rounded-full border-[1px] border-opacity-55 border-customIndigo hover:scale-110 hover:z-[11]  duration-200 cursor-pointer"
               />
               <p
-                className={`${ibmBold.className} py-2 px-3 rounded-xl shadow-sm bg-lightGrey bg-opacity-70 text-md border-[1px] border-opacity-55 border-customIndigo`}
+                className={`${ibmBold.className} py-2 px-3 rounded-xl shadow-sm bg-lightGrey bg-opacity-70 text-[16px] border-[1px] border-opacity-55 border-customIndigo`}
               >
                 Got Questions?
               </p>
