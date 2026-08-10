@@ -27,7 +27,7 @@ const NavLinks = () => {
     { label: "About", path: paths.aboutPath() },
     { label: "Services", path: paths.servicesPath() },
     { label: "FAQ", path: paths.faqPath() },
-    { label: "View Client Portfolio", path: paths.portfolioPath() },
+    { label: "Portfolio", path: paths.portfolioPath() },
     { label: "Getting Started", path: paths.contactPath() },
   ];
   return (
