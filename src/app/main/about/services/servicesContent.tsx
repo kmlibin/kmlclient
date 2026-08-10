@@ -8,7 +8,7 @@ export const services = [
   {
     id: "website",
     title: "Custom Website Development",
-    price: "700",
+    price: "400",
     tagline: "Built for your business",
     accent: "#057ee6",
     lightAccent: undefined,
