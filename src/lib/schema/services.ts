@@ -24,7 +24,7 @@ export const servicesSchema = {
 
   offers: {
     "@type": "Offer",
-    price: "700",
+    price: "400",
     priceCurrency: "USD",
     availability: "https://schema.org/InStock",
   },
