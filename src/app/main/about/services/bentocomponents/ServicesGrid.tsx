@@ -4,9 +4,9 @@ import { useState } from "react";
 //components
 import ServiceRow from "./ServiceRow";
 //content
-import { services } from "./servicesContent";
-import webapp from "./images/webapp.svg";
-import handshake from "./images/handshake.svg";
+import { services } from "../servicesContent";
+import webapp from "../images/webapp.svg";
+import handshake from "../images/handshake.svg";
 //libraries
 import { Fade } from "react-awesome-reveal";
 

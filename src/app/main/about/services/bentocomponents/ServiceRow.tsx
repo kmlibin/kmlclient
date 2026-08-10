@@ -6,7 +6,6 @@ import { StaticImageData } from "next/image";
 import Image from "next/image";
 import { Service, CardSize } from "@/types";
 
-
 type RowItem =
   | {
       type: "service";
@@ -26,7 +25,11 @@ type Props = {
   setSelectedService: (id: string | null) => void;
 };
 
-export default function ServiceRow({ items, selectedService, setSelectedService }: Props) {
+export default function ServiceRow({
+  items,
+  selectedService,
+  setSelectedService,
+}: Props) {
   const activeService = items.find(
     (item) => item.type === "service" && item.service.id === selectedService,
   );
@@ -64,7 +67,11 @@ export default function ServiceRow({ items, selectedService, setSelectedService 
                 size={item.size}
                 isActive={selectedService === item.service.id}
                 onClick={() =>
-                  setSelectedService(selectedService === item.service.id ? null : item.service.id)
+                  setSelectedService(
+                    selectedService === item.service.id
+                      ? null
+                      : item.service.id,
+                  )
                 }
               />
             </div>

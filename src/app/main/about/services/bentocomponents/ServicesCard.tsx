@@ -3,7 +3,7 @@ import { ReactNode, useState } from "react";
 //libraries
 import { MdOutlineReadMore } from "react-icons/md";
 //fonts
-import { fredoka, ibm, ibmBold } from "../../../utils/fonts.js";
+import { fredoka, ibm, ibmBold } from "../../../../utils/fonts.js";
 //types
 import { Service, CardSize } from "@/types/service.js";
 

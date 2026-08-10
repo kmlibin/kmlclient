@@ -14,7 +14,7 @@ export const infoCards = [
     alt: "putting money in a piggy bank",
     src: "bank",
     className:"info-card2",
-    text: "Packages start at just $700, with optional hosting and maintenance for an additional $75 per year. Get a professionally designed, fully optimized site at a fraction of the cost of other solutions.",
+    text: "Packages start at just $400, with optional hosting and maintenance for an additional $75 per year. Get a professionally designed, fully optimized site at a fraction of the cost of other solutions.",
   },
   {
     title: `Custom Design, Made for You`,
