@@ -103,7 +103,7 @@ const Hero = () => {
             />
        
 
-          <div className="lg:absolute lg:-right-[52%] lg:bottom-0 flex flex-col justify-end sm:mb-2 sm:py-10 text-gray-900 text-2xl leading-loose list-none">
+          <div className="lg:absolute lg:-right-[40%] lg:bottom-0 flex flex-col justify-end sm:mb-2 sm:py-10 text-gray-900 text-2xl leading-loose list-none">
             <NavLinks />
           </div>
         </div>
