@@ -11,12 +11,30 @@ import kellinetlify2 from "../../../app/portfolioImages/kellinetlify2.png";
 import putnitz from "../../../app/portfolioImages/putnitzscreen.webp";
 import putnitz2 from "../../../app/portfolioImages/putnitzscreen2.webp";
 import putnitzlogo from "../../../app/portfolioImages/putnitzlogo.png";
+import nthlogo from "../../../app/portfolioImages/nthlogo.png";
+import nthscreen from "../../../app/portfolioImages/nthdegreescreen.png";
+import nthscreen2 from "../../../app/portfolioImages/nthscreen2.png";
 export const sliderItems = [
+  // {
+  //   id: 13,
+  //   height: "70vh",
+  //   logo: nthlogo,
+  //   owner: "Nathan W.",
+  //   business: "Nth Degree Physiotherapy",
+  //   cube: true,
+  //   frontImage: nthscreen,
+  //   complete: false,
+  //   link: "https://putnitz.com/",
+  //   review: `Under Construction, Check Back Soon!`,
+  //   backImage: nthscreen2,
+  //   isLarge: true,
+
+  // },
   {
     id: 4,
     height: "70vh",
     logo: putnitzlogo,
-    owner: "Dan",
+    owner: "Dan P.",
     business: "Putnitz Devops",
     cube: true,
     frontImage: putnitz,
@@ -28,7 +46,7 @@ I was looking for in exactly one try. I couldn't be more impressed.
 Prompt communication, high detail, generous results, 10/10 would work
 with again!`,
     backImage: putnitz2,
-    isLarge: true,
+
     isHome: true,
   },
   {
@@ -44,7 +62,7 @@ with again!`,
     review:
       "Kelli has been outstanding with all of her help building my company website! She far exceeded any of my expectations and went above and beyond. I’m so thankful for her knowledge and attention to detail because it made the whole process so much easier for me. She even helped me figure out how to activate my company email and all other IT questions I had. I highly recommend Kelli for any web development or anything related!",
     backImage: cw,
-    isLarge: true,
+
     isHome: true,
   },
   {
@@ -52,7 +70,7 @@ with again!`,
     logo: fitteeslogo,
     height: "70vh",
     owner: "Dr. Tochi Egbuzie",
-    business: "Fittees Osteopractic Physical Therapy & Wellness",
+    business: "Fittees Physical Therapy",
     cube: true,
     frontImage: fittees,
     complete: true,
@@ -60,7 +78,7 @@ with again!`,
     review:
       "I highly recommend Kelli for her exceptional web development services. She meticulously listened to my needs, paying close attention to every detail. She was very patient with me and ensured I received a website that perfectly met my expectations. Kelli's outstanding work and professionalism make her an excellent choice for anyone seeking top-notch web design services.",
     backImage: fittees2,
-    isLarge: true,
+
     isHome: true,
   },
   {
@@ -76,7 +94,7 @@ with again!`,
     review:
       "This is my original portfolio site, which is geared more towards large employers seeking specific coding skills. Though the projects showcased on this site focus on demonstrating skill with different libraries, this site shows a variety of design and coding skills, enjoy!",
     backImage: kellinetlify2,
-    isLarge: true,
+
     isHome: true,
   },
 ];

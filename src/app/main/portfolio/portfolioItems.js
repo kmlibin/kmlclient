@@ -11,8 +11,23 @@ import IFScreen1 from "../../portfolioImages/IFscreen1.png";
 import IFScreen2 from "../../portfolioImages/IFscreen2.png";
 import putnitz from "../../portfolioImages/putnitzscreen.webp";
 import putnitz2 from "../../portfolioImages/putnitzscreen2.webp";
+import nthscreen1 from '../../portfolioImages/nthdegreescreen.png'
+import nthscreen2 from '../../portfolioImages/nthscreen2.png'
 
 export const portfolioItems = [
+    {
+    id: 13,
+    height: "475px",
+    frontImage: nthscreen1,
+    owner: "Nathan W.",
+    business: "Nth Degree Physiotherapy",
+    cube: true,
+    complete: false,
+    link: "https://nthdegree.com/",
+    review: `Under Construction`,
+    backImage: nthscreen2,
+    isLarge: false,
+  },
   {
     id: 12,
     height: "475px",
