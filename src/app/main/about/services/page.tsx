@@ -20,7 +20,7 @@ import { servicesSchema } from "@/lib/schema/services";
 export const metadata: Metadata = {
   title: "Web Development Packages | Libin Web Development",
   description:
-    "Discover affordable web development packages starting at $400. Each package includes a custom-coded website, SEO optimization, responsive design, hosting options, and more to help your business shine online.",
+    "Discover affordable web development packages starting at $600. Each package includes a custom-coded website, SEO optimization, responsive design, hosting options, and more to help your business shine online.",
   alternates: {
     canonical: "https://libinwebdevelopment.com/main/about/services",
   },
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     url: "https://libinwebdevelopment.com/main/about/services",
     title: "Web Development Packages | Libin Web Development",
     description:
-      "Learn about our affordable website packages designed for small businesses. Starting at $400, get a custom-built  site with responsive design, SEO, hosting options, and up to four pages included. Add extra pages or services to suit your needs.",
+      "Learn about our affordable website packages designed for small businesses. Starting at $600, get a custom-built  site with responsive design, SEO, hosting options, and up to four pages included. Add extra pages or services to suit your needs.",
     siteName: "Libin Web Development",
     images: "https://libinwebdevelopment.com/images/icon.png",
   },
