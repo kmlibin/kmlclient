@@ -123,7 +123,7 @@ export default function ReviewSection({
         smallPopup && (
           // createPortal(
 
-          <div className="xl:hidden absolute inset-0 flex items-center  justify-center bg-black bg-opacity-50 z-[900]">
+          <div className="xl:hidden absolute inset-0 flex items-center  justify-center bg-black bg-opacity-50 z-[900] py-2">
             <div className="bg-white w-[90%] h-full rounded-lg shadow-lg relative">
               <button
                 onClick={handleClosePopup}
