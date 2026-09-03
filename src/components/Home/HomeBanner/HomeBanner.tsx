@@ -125,7 +125,7 @@ const HomeBanner = () => {
           <div className="w-full h-full bg-customGold rounded-bl-xl rounded-br-xl border-customDarkGold border-2">
             <div className="w-5/6 flex justify-end my-7">
               <Button
-                path={paths.getStartedPath()}
+                path={paths.servicesPath()}
                 text="Get Started"
                 label="Contact us to get started"
               />
