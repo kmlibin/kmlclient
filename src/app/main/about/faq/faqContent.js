@@ -60,6 +60,14 @@ export const faqCards = [
         your website to accomplish.
         <br />
         <br />
+        After our initial conversation, I'll send you a proposal outlining the
+        project, what's included, and the cost. If you decide to move forward,
+        I'll send over a contract and a short questionnaire to gather
+        information about your business, your content, and your design
+        preferences. A deposit is required before I begin the design and
+        development process.
+        <br />
+        <br />
         If you already have a logo, brand colors, photos, or content, great! If
         not, that's okay too. One of the most helpful things you can provide is
         2-3 websites you like, along with what you like about them. That gives
