@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 //images
 import Image, { StaticImageData } from "next/image";
 //components
@@ -49,6 +49,27 @@ const Cube = ({
   const [isFront, setIsFront] = useState(true);
   const [showBubbles, setShowBubbles] = useState(false);
 
+  //swiping
+  const touchStartX = useRef<number | null>(null);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX.current === null) return;
+
+    const touchEndX = e.changedTouches[0].clientX;
+    const difference = touchStartX.current - touchEndX;
+
+    // Require at least 50px of horizontal movement
+    if (Math.abs(difference) > 50) {
+      toggleFace();
+    }
+
+    touchStartX.current = null;
+  };
+
   //delay bubbles render
   useEffect(() => {
     if (bubbles) {
@@ -87,6 +108,8 @@ const Cube = ({
               </p>
             ))}
           <div
+            onTouchStart={handleTouchStart}
+            onTouchEnd={handleTouchEnd}
             className={`cube ${
               isFront ? "show-front" : "show-bottom"
             } w-auto relative transition-transform duration-1000`}
@@ -109,13 +132,14 @@ const Cube = ({
               <div
                 className={`${ibm.className} absolute tracking-wide inset-0 z-20 flex flex-col items-center justify-center text-customWhite text-xl gap-2 md:gap-5`}
               >
-                <h3 className="text-xl xl:text-4xl">{owner}</h3>
+                <h3 className="hidden md:block text-xl xl:text-4xl">{owner}</h3>
+
                 <Link
                   aria-label={`link to ${business} webpage`}
                   href={link ? link : ""}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="md:flex hidden text-xl cursor-pointer  items-center gap-4 hover:text-customTurquoise hover:underline transition duration-300 hover:underline-offset-4"
+                  className="flex text-xl cursor-pointer  items-center gap-4 hover:text-customTurquoise hover:underline transition duration-300 hover:underline-offset-4"
                 >
                   {business}
                   {complete && <RiExternalLinkLine />}
