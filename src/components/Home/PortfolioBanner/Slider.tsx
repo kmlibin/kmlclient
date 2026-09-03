@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 //libraries
 import { RiArrowRightSLine, RiArrowLeftSLine } from "react-icons/ri";
 import { Fade } from "react-awesome-reveal";
@@ -14,6 +14,36 @@ export default function Slider() {
   const [factIndex, setFactIndex] = useState(0);
   const [currentLogo, setCurrentLogo] = useState(sliderItems[0].logo);
   const [fadeKey, setFadeKey] = useState(0);
+
+  //swiping
+  const touchStartX = useRef<number | null>(null);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX.current === null) return;
+
+    const touchEndX = e.changedTouches[0].clientX;
+    const difference = touchStartX.current - touchEndX;
+
+    // Ignore small movements
+    if (Math.abs(difference) < 50) {
+      touchStartX.current = null;
+      return;
+    }
+
+    if (difference > 0) {
+      // Swiped left
+      showNextSlide();
+    } else {
+      // Swiped right
+      showPreviousSlide();
+    }
+
+    touchStartX.current = null;
+  };
 
   //slider controls
   const showPreviousSlide = () => {
@@ -39,7 +69,12 @@ export default function Slider() {
       <Fade direction="up" triggerOnce>
         <div className="w-auto">
           <div className="flex items-start w-full flex-col">
-            <div className="flex items-center flex-col justify-center w-full overflow-hidden">
+            <div
+              className="flex items-center flex-col justify-center w-full overflow-hidden"
+              onTouchStart={handleTouchStart}
+              onTouchEnd={handleTouchEnd}
+              style={{ touchAction: "pan-y" }}
+            >
               <div
                 className="flex transition-transform duration-1000 w-screen"
                 style={{ transform: `translateX(-${factIndex * 100}%)` }}
@@ -69,7 +104,7 @@ export default function Slider() {
               {/* small screen buttons */}
               <div className="sm:-mt-[10rem] lg:mt-0">
                 <button
-                aria-label="Previous slide"
+                  aria-label="Previous slide"
                   onClick={showPreviousSlide}
                   className="xl:hidden  text-blackTextFont bottom-0 left-[4rem] hover:scale-110 transition duration-400 z-10 hover:text-brightOrange"
                 >
@@ -86,7 +121,7 @@ export default function Slider() {
             </div>
 
             <button
-            aria-label="Previous slide"
+              aria-label="Previous slide"
               onClick={showPreviousSlide}
               className="hidden xl:block absolute text-blackTextFont sm:top-20 left-[4rem] hover:scale-110 transition duration-400 z-10 hover:text-brightOrange"
             >

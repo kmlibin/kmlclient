@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 //images
 import Image, { StaticImageData } from "next/image";
 //components
@@ -49,27 +49,6 @@ const Cube = ({
   const [isFront, setIsFront] = useState(true);
   const [showBubbles, setShowBubbles] = useState(false);
 
-  //swiping
-  const touchStartX = useRef<number | null>(null);
-
-  const handleTouchStart = (e: React.TouchEvent) => {
-    touchStartX.current = e.touches[0].clientX;
-  };
-
-  const handleTouchEnd = (e: React.TouchEvent) => {
-    if (touchStartX.current === null) return;
-
-    const touchEndX = e.changedTouches[0].clientX;
-    const difference = touchStartX.current - touchEndX;
-
-    // Require at least 50px of horizontal movement
-    if (Math.abs(difference) > 50) {
-      toggleFace();
-    }
-
-    touchStartX.current = null;
-  };
-
   //delay bubbles render
   useEffect(() => {
     if (bubbles) {
@@ -108,8 +87,6 @@ const Cube = ({
               </p>
             ))}
           <div
-            onTouchStart={handleTouchStart}
-            onTouchEnd={handleTouchEnd}
             className={`cube ${
               isFront ? "show-front" : "show-bottom"
             } w-auto relative transition-transform duration-1000`}
