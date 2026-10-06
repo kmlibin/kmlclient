@@ -74,13 +74,23 @@ export default function ServiceRow({
                   )
                 }
               />
+
+              {selectedService === item.service.id && (
+                <div className="mt-3 md:hidden">
+                  <ServiceDrawer
+                    service={item.service}
+                    setActive={setSelectedService}
+                    key={item.service.id}
+                  />
+                </div>
+              )}
             </div>
           );
         })}
       </div>
 
       {activeService?.type === "service" && (
-        <div className="mt-3">
+        <div className="mt-3 hidden md:block">
           <ServiceDrawer
             service={activeService.service}
             setActive={setSelectedService}
