@@ -151,7 +151,7 @@ export default function ServiceCard({
             </p>
           ) : (
             <span
-              className={`text-2xl transition-transform duration-300 ${
+              className={`text-3xl md:text-2xl transition-transform duration-300 ${
                 isActive ? "rotate-180" : "rotate-0"
               }`}
               style={{

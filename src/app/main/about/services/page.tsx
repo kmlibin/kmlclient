@@ -66,7 +66,7 @@ const page = () => {
           <div
             className={`${ibm.className} tracking-wide  md:w-full relative flex flex-col items-center justify-center gap-4 md:gap-16`}
           >
-            <div className="w-full flex flex-col items-start justify-center  ">
+            <div className="w-full flex flex-col items-start justify-center  bg-customWhite bg-opacity-60 ">
               <ZoomHeading
                 as="h2"
                 className={`${fredoka.className} text-5xl text-center mb-5 md:mb-2`}
@@ -75,12 +75,14 @@ const page = () => {
               </ZoomHeading>
               <ZoomHeading
                 as="h4"
-                className={`${ibm.className} text-[16px] md:text-xl text-center md:text-left`}
+                className={`${ibm.className} text-[16px] md:text-xl text-center md:text-left `}
               >
                 Get a custom-built website - <br></br> designed, developed, and
                 optimized for your business.
               </ZoomHeading>
-              <div className="md:hidden bg-customWhite bg-opacity-60 w-full flex justify-center items-center p-5 my-5">
+                    <p className="mt-5 text-sm w-full sm:text-left text-center font-bold">Click any card to learn more!</p>
+              <div className="md:hidden  w-full flex justify-center items-center p-5 my-5">
+            
                 <RollImage delay={500}>
                   <Image
                     src={undraw3}
@@ -89,8 +91,10 @@ const page = () => {
                     className="z-10"
                   />
                 </RollImage>
+                
               </div>
             </div>
+            
           </div>
         </section>
         <ServicesGrid />
